@@ -1,0 +1,43 @@
+name: Bump
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '0 6 * * *'
+
+jobs:
+  matrix-crds-url:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - id: set-matrix
+        run: echo "matrix={\"include\":$(jq -c '.' config.json)}" >> $GITHUB_OUTPUT
+  
+  crds-json-schema:
+    needs:
+      - matrix-crds-url
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.matrix-crds-url.outputs.matrix) }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name:
+        run: pip install ruamel.yaml
+      - name: generate jsonschema
+        run: ./openapi2jsonschema.py ${{ matrix.url }}
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          title: 'build(deps): upgrade CRDS ${{ matrix.name }}'
+          commit-message: 'build(deps): upgrade CRDS ${{ matrix.name }}'
+          branch: 'bump-${{ matrix.name }}'
+          delete-branch: true
