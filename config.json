@@ -53,7 +53,13 @@
   {
     "name": "sealed-secrets",
     "urls": [
-      " https://raw.githubusercontent.com/bitnami-labs/sealed-secrets/main/helm/sealed-secrets/crds/bitnami.com_sealedsecrets.yaml"
+      "https://raw.githubusercontent.com/bitnami-labs/sealed-secrets/main/helm/sealed-secrets/crds/bitnami.com_sealedsecrets.yaml"
+    ]
+  },
+  {
+    "name": "kyverno",
+    "urls": [
+      "https://raw.githubusercontent.com/kyverno/kyverno/main/config/install.yaml"
     ]
   }
 ]
