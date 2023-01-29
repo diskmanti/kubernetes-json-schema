@@ -49,5 +49,11 @@
       "https://raw.githubusercontent.com/vmware-tanzu/helm-charts/main/charts/velero/crds/serverstatusrequests.yaml",
       "https://raw.githubusercontent.com/vmware-tanzu/helm-charts/main/charts/velero/crds/volumesnapshotlocations.yaml"
     ]
+  },
+  {
+    "name": "sealed-secrets",
+    "urls": [
+      " https://raw.githubusercontent.com/bitnami-labs/sealed-secrets/main/helm/sealed-secrets/crds/bitnami.com_sealedsecrets.yaml"
+    ]
   }
 ]
