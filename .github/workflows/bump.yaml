@@ -33,7 +33,7 @@ jobs:
       - name:
         run: pip install ruamel.yaml
       - name: generate jsonschema
-        run: ./openapi2jsonschema.py ${{ matrix.url }}
+        run: ./openapi2jsonschema.py ${{ join(matrix.urls, ' ') }}
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:

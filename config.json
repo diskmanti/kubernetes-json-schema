@@ -1,26 +1,53 @@
 [
   {
     "name": "prometheus-operator",
-    "url": "https://github.com/prometheus-operator/prometheus-operator/releases/download/v0.62.0/stripped-down-crds.yaml"
+    "urls": [
+      "https://github.com/prometheus-operator/prometheus-operator/releases/download/v0.62.0/stripped-down-crds.yaml"
+    ]
   },
   {
     "name": "cert-manager",
-    "url": "https://github.com/cert-manager/cert-manager/releases/download/v1.11.0/cert-manager.crds.yaml"
+    "urls": [
+      "https://github.com/cert-manager/cert-manager/releases/download/v1.11.0/cert-manager.crds.yaml"
+    ]
   },
   {
     "name": "eck-operator",
-    "url": "https://download.elastic.co/downloads/eck/2.6.1/crds.yaml"
+    "urls": [
+      "https://download.elastic.co/downloads/eck/2.6.1/crds.yaml"
+    ]
   },
   {
     "name": "fluxcd",
-    "url": "https://github.com/fluxcd/flux2/releases/download/v0.38.3/install.yaml"
+    "urls": [
+      "https://github.com/fluxcd/flux2/releases/download/v0.38.3/install.yaml"
+    ]
   },
   {
     "name": "argo-cd",
-    "url": "https://raw.githubusercontent.com/argoproj/argo-cd/master/manifests/install.yaml"
+    "urls": [
+      "https://raw.githubusercontent.com/argoproj/argo-cd/master/manifests/install.yaml"
+    ]
   },
   {
     "name": "istio",
-    "url": "https://raw.githubusercontent.com/istio/istio/master/manifests/charts/base/crds/crd-all.gen.yaml"
+    "urls": [
+      "https://raw.githubusercontent.com/istio/istio/master/manifests/charts/base/crds/crd-all.gen.yaml"
+    ]
+  },
+  {
+    "name": "velero",
+    "urls": [
+      "https://raw.githubusercontent.com/vmware-tanzu/helm-charts/main/charts/velero/crds/backuprepositories.yaml",
+      "https://raw.githubusercontent.com/vmware-tanzu/helm-charts/main/charts/velero/crds/backups.yaml",
+      "https://raw.githubusercontent.com/vmware-tanzu/helm-charts/main/charts/velero/crds/backupstoragelocations.yaml",
+      "https://raw.githubusercontent.com/vmware-tanzu/helm-charts/main/charts/velero/crds/deletebackuprequests.yaml",
+      "https://raw.githubusercontent.com/vmware-tanzu/helm-charts/main/charts/velero/crds/downloadrequests.yaml",
+      "https://raw.githubusercontent.com/vmware-tanzu/helm-charts/main/charts/velero/crds/podvolumebackups.yaml",
+      "https://raw.githubusercontent.com/vmware-tanzu/helm-charts/main/charts/velero/crds/podvolumerestores.yaml",
+      "https://raw.githubusercontent.com/vmware-tanzu/helm-charts/main/charts/velero/crds/schedules.yaml",
+      "https://raw.githubusercontent.com/vmware-tanzu/helm-charts/main/charts/velero/crds/serverstatusrequests.yaml",
+      "https://raw.githubusercontent.com/vmware-tanzu/helm-charts/main/charts/velero/crds/volumesnapshotlocations.yaml"
+    ]
   }
 ]
