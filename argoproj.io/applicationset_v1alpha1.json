@@ -17172,12 +17172,16 @@
               },
               "status": {
                 "type": "string"
+              },
+              "step": {
+                "type": "string"
               }
             },
             "required": [
               "application",
               "message",
-              "status"
+              "status",
+              "step"
             ],
             "type": "object",
             "additionalProperties": false
