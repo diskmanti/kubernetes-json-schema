@@ -1,12 +1,16 @@
 #!/usr/bin/env python3
 
 from collections.abc import Mapping
+from dataclasses import dataclass
 import datetime
 import logging
-from json import dumps
-from os import mkdir, path
+import json
+import os
+from typing import Optional
 import sys
 import urllib.request
+
+from github import Github
 
 from ruamel.yaml import YAML
 from ruamel.yaml.comments import TaggedScalar
@@ -15,6 +19,7 @@ from ruamel.yaml.scalarbool import ScalarBoolean
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
+github = Github(os.getenv("GITHUB_TOKEN"))
 
  
 def scalar(obj):
@@ -52,7 +57,7 @@ def prep(obj):
 
 
 def json_dump(data):
-    return dumps(prep(data), indent=2)
+    return json.dumps(prep(data), indent=2)
 
 
 def additional_properties(data):
@@ -105,9 +110,10 @@ def generate_json_schema(documents):
             group = spec.get("group")
             version = document_version.get("name")
             filename = f"{group}/{kind}_{version}.json".lower()
-            if not path.isdir(group):
-                mkdir(group)
+            if not os.path.isdir(group):
+                os.mkdir(group)
 
+            logger.info(f"writing crd {group}.{kind}_{version}")
             with open(filename, "w", encoding="utf-8") as f:
                 schema = document_version.get("schema", {}).get("openAPIV3Schema")
                 schema = additional_properties(schema)
@@ -115,20 +121,45 @@ def generate_json_schema(documents):
                 f.write(json_dump(schema))
 
 
-def cli(source: list[str]):
-    for src in source:
-        logger.info(f"reading from {src}")
-        if src.startswith("http"):
-            f = urllib.request.urlopen(src)
-        else:
-            f = open(src)
-        with f:
-            generate_json_schema(YAML(typ="rt", pure=True).load_all(f))
+def openapi2jsonschema(url: str):
+    with urllib.request.urlopen(url) as f:
+        generate_json_schema(YAML(typ="rt", pure=True).load_all(f))
 
-    if not sys.stdin.isatty():
-        logger.info("reading from stdin")
-        generate_json_schema(YAML(typ="rt", pure=True).load_all(sys.stdin))
+
+@dataclass
+class CrdsConfig:
+   github_repository: str
+   asset_name: Optional[str]
+   crds_urls: list[str]
+
+   def openapi2jsonschema(self) -> None:
+        last_realease = github.get_repo(self.github_repository).get_latest_release()
+        if self.asset_name is not None:
+            for asset in last_realease.get_assets():
+                if asset.name == self.asset_name:
+                    openapi2jsonschema(asset.browser_download_url)
+                
+        for url in self.crds_urls:
+            openapi2jsonschema(url.format(version = last_realease.tag_name))
+
+
+def load_config() -> dict[str, CrdsConfig]:
+    with open(f"config.json", "r", encoding="utf-8") as f:
+        crds_configs = {}
+        for k, v in json.load(f).items():
+            crds_configs[k] = CrdsConfig(
+                github_repository=v.get("github_repository"),
+                asset_name=v.get("asset_name", None),
+                crds_urls= v.get("urls", []),
+            ) 
+
+        return crds_configs
 
 
 if __name__ == '__main__':
-    cli(sys.argv[1:])
+    config = load_config()
+    if (len(sys.argv) == 2):
+       config.get(sys.argv[1]).openapi2jsonschema()
+    else:
+        for crds_config in config.values():
+            crds_config.openapi2jsonschema()

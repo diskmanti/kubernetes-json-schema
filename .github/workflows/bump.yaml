@@ -5,24 +5,29 @@ on:
   schedule:
     - cron:  '0 6 * * *'
 
+
 jobs:
-  matrix-crds-url:
+  list_crds:
     runs-on: ubuntu-latest
-    outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - id: set-matrix
-        run: echo "matrix={\"include\":$(jq -c '.' config.json)}" >> $GITHUB_OUTPUT
-  
-  crds-json-schema:
+      - id: crds
+        name: List CRDS
+        run: echo crds=$(jq  -c 'keys' config.json) >> ${GITHUB_OUTPUT}
+    outputs:
+      crds: ${{ steps.crds.outputs.crds }}
+
+  crds_json_schema:
     needs:
-      - matrix-crds-url
+      - list_crds
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     strategy:
       fail-fast: false
-      matrix: ${{ fromJson(needs.matrix-crds-url.outputs.matrix) }}
+      matrix:
+        crds_name: ${{ fromJson(needs.list_crds.outputs.crds) }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -31,13 +36,13 @@ jobs:
         with:
           python-version: '3.11'
       - name:
-        run: pip install ruamel.yaml
+        run: pip install ruamel.yaml PyGithub
       - name: generate jsonschema
-        run: ./openapi2jsonschema.py ${{ join(matrix.urls, ' ') }}
+        run: ./openapi2jsonschema.py ${{ matrix.crds_name }}
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
-          title: 'build(deps): upgrade CRDS ${{ matrix.name }}'
-          commit-message: 'build(deps): upgrade CRDS ${{ matrix.name }}'
-          branch: 'bump-${{ matrix.name }}'
+          title: 'build(deps): upgrade CRDS ${{ matrix.crds_name }}'
+          commit-message: 'build(deps): upgrade CRDS ${{ matrix.crds_name }}'
+          branch: 'bump-${{ matrix.crds_name }}'
           delete-branch: true
