@@ -337,7 +337,7 @@
           "type": "array"
         },
         "handler": {
-          "description": "Handler represents the instance ID that handles the UR",
+          "description": "Handler represents the instance ID that handles the UR Deprecated",
           "type": "string"
         },
         "message": {

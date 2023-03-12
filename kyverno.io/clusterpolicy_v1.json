@@ -55,68 +55,20 @@
                   "description": "ContextEntry adds variables and data sources to a rule Context. Either a ConfigMap reference or a APILookup must be provided.",
                   "properties": {
                     "apiCall": {
-                      "description": "APICall is an HTTP request to the Kubernetes API server, or other JSON web service. The data returned is stored in the context with the name for the context entry.",
+                      "description": "APICall defines an HTTP request to the Kubernetes API server. The JSON data retrieved is stored in the context.",
                       "properties": {
                         "jmesPath": {
-                          "description": "JMESPath is an optional JSON Match Expression that can be used to transform the JSON response returned from the server. For example a JMESPath of \"items | length(@)\" applied to the API server response for the URLPath \"/apis/apps/v1/deployments\" will return the total count of deployments across all namespaces.",
+                          "description": "JMESPath is an optional JSON Match Expression that can be used to transform the JSON response returned from the API server. For example a JMESPath of \"items | length(@)\" applied to the API server response to the URLPath \"/apis/apps/v1/deployments\" will return the total count of deployments across all namespaces.",
                           "type": "string"
-                        },
-                        "service": {
-                          "description": "Service is an API call to a JSON web service",
-                          "properties": {
-                            "caBundle": {
-                              "description": "CABundle is a PEM encoded CA bundle which will be used to validate the server certificate.",
-                              "type": "string"
-                            },
-                            "data": {
-                              "description": "Data specifies the POST data sent to the server.",
-                              "items": {
-                                "description": "RequestData contains the HTTP POST data",
-                                "properties": {
-                                  "key": {
-                                    "description": "Key is a unique identifier for the data value",
-                                    "type": "string"
-                                  },
-                                  "value": {
-                                    "description": "Value is the data value",
-                                    "x-kubernetes-preserve-unknown-fields": true
-                                  }
-                                },
-                                "required": [
-                                  "key",
-                                  "value"
-                                ],
-                                "type": "object",
-                                "additionalProperties": false
-                              },
-                              "type": "array"
-                            },
-                            "requestType": {
-                              "default": "GET",
-                              "description": "Method is the HTTP request type (GET or POST).",
-                              "enum": [
-                                "GET",
-                                "POST"
-                              ],
-                              "type": "string"
-                            },
-                            "urlPath": {
-                              "description": "URL is the JSON web service URL. The typical format is `https://{service}.{namespace}:{port}/{path}`.",
-                              "type": "string"
-                            }
-                          },
-                          "required": [
-                            "requestType",
-                            "urlPath"
-                          ],
-                          "type": "object",
-                          "additionalProperties": false
                         },
                         "urlPath": {
                           "description": "URLPath is the URL path to be used in the HTTP GET request to the Kubernetes API server (e.g. \"/api/v1/namespaces\" or  \"/apis/apps/v1/deployments\"). The format required is the same format used by the `kubectl get --raw` command.",
                           "type": "string"
                         }
                       },
+                      "required": [
+                        "urlPath"
+                      ],
                       "type": "object",
                       "additionalProperties": false
                     },
@@ -1440,7 +1392,7 @@
                   "foreach": {
                     "description": "ForEach applies mutation rules to a list of sub-elements by creating a context for each entry in the list and looping over it to apply the specified logic.",
                     "items": {
-                      "description": "ForEachMutation applies mutation rules to a list of sub-elements by creating a context for each entry in the list and looping over it to apply the specified logic.",
+                      "description": "ForEach applies mutation rules to a list of sub-elements by creating a context for each entry in the list and looping over it to apply the specified logic.",
                       "properties": {
                         "context": {
                           "description": "Context defines variables and data sources that can be used during rule execution.",
@@ -1448,68 +1400,20 @@
                             "description": "ContextEntry adds variables and data sources to a rule Context. Either a ConfigMap reference or a APILookup must be provided.",
                             "properties": {
                               "apiCall": {
-                                "description": "APICall is an HTTP request to the Kubernetes API server, or other JSON web service. The data returned is stored in the context with the name for the context entry.",
+                                "description": "APICall defines an HTTP request to the Kubernetes API server. The JSON data retrieved is stored in the context.",
                                 "properties": {
                                   "jmesPath": {
-                                    "description": "JMESPath is an optional JSON Match Expression that can be used to transform the JSON response returned from the server. For example a JMESPath of \"items | length(@)\" applied to the API server response for the URLPath \"/apis/apps/v1/deployments\" will return the total count of deployments across all namespaces.",
+                                    "description": "JMESPath is an optional JSON Match Expression that can be used to transform the JSON response returned from the API server. For example a JMESPath of \"items | length(@)\" applied to the API server response to the URLPath \"/apis/apps/v1/deployments\" will return the total count of deployments across all namespaces.",
                                     "type": "string"
-                                  },
-                                  "service": {
-                                    "description": "Service is an API call to a JSON web service",
-                                    "properties": {
-                                      "caBundle": {
-                                        "description": "CABundle is a PEM encoded CA bundle which will be used to validate the server certificate.",
-                                        "type": "string"
-                                      },
-                                      "data": {
-                                        "description": "Data specifies the POST data sent to the server.",
-                                        "items": {
-                                          "description": "RequestData contains the HTTP POST data",
-                                          "properties": {
-                                            "key": {
-                                              "description": "Key is a unique identifier for the data value",
-                                              "type": "string"
-                                            },
-                                            "value": {
-                                              "description": "Value is the data value",
-                                              "x-kubernetes-preserve-unknown-fields": true
-                                            }
-                                          },
-                                          "required": [
-                                            "key",
-                                            "value"
-                                          ],
-                                          "type": "object",
-                                          "additionalProperties": false
-                                        },
-                                        "type": "array"
-                                      },
-                                      "requestType": {
-                                        "default": "GET",
-                                        "description": "Method is the HTTP request type (GET or POST).",
-                                        "enum": [
-                                          "GET",
-                                          "POST"
-                                        ],
-                                        "type": "string"
-                                      },
-                                      "urlPath": {
-                                        "description": "URL is the JSON web service URL. The typical format is `https://{service}.{namespace}:{port}/{path}`.",
-                                        "type": "string"
-                                      }
-                                    },
-                                    "required": [
-                                      "requestType",
-                                      "urlPath"
-                                    ],
-                                    "type": "object",
-                                    "additionalProperties": false
                                   },
                                   "urlPath": {
                                     "description": "URLPath is the URL path to be used in the HTTP GET request to the Kubernetes API server (e.g. \"/api/v1/namespaces\" or  \"/apis/apps/v1/deployments\"). The format required is the same format used by the `kubectl get --raw` command.",
                                     "type": "string"
                                   }
                                 },
+                                "required": [
+                                  "urlPath"
+                                ],
                                 "type": "object",
                                 "additionalProperties": false
                               },
@@ -1758,7 +1662,7 @@
                   "foreach": {
                     "description": "ForEach applies validate rules to a list of sub-elements by creating a context for each entry in the list and looping over it to apply the specified logic.",
                     "items": {
-                      "description": "ForEachValidation applies validate rules to a list of sub-elements by creating a context for each entry in the list and looping over it to apply the specified logic.",
+                      "description": "ForEach applies validate rules to a list of sub-elements by creating a context for each entry in the list and looping over it to apply the specified logic.",
                       "properties": {
                         "anyPattern": {
                           "description": "AnyPattern specifies list of validation patterns. At least one of the patterns must be satisfied for the validation rule to succeed.",
@@ -1770,68 +1674,20 @@
                             "description": "ContextEntry adds variables and data sources to a rule Context. Either a ConfigMap reference or a APILookup must be provided.",
                             "properties": {
                               "apiCall": {
-                                "description": "APICall is an HTTP request to the Kubernetes API server, or other JSON web service. The data returned is stored in the context with the name for the context entry.",
+                                "description": "APICall defines an HTTP request to the Kubernetes API server. The JSON data retrieved is stored in the context.",
                                 "properties": {
                                   "jmesPath": {
-                                    "description": "JMESPath is an optional JSON Match Expression that can be used to transform the JSON response returned from the server. For example a JMESPath of \"items | length(@)\" applied to the API server response for the URLPath \"/apis/apps/v1/deployments\" will return the total count of deployments across all namespaces.",
+                                    "description": "JMESPath is an optional JSON Match Expression that can be used to transform the JSON response returned from the API server. For example a JMESPath of \"items | length(@)\" applied to the API server response to the URLPath \"/apis/apps/v1/deployments\" will return the total count of deployments across all namespaces.",
                                     "type": "string"
-                                  },
-                                  "service": {
-                                    "description": "Service is an API call to a JSON web service",
-                                    "properties": {
-                                      "caBundle": {
-                                        "description": "CABundle is a PEM encoded CA bundle which will be used to validate the server certificate.",
-                                        "type": "string"
-                                      },
-                                      "data": {
-                                        "description": "Data specifies the POST data sent to the server.",
-                                        "items": {
-                                          "description": "RequestData contains the HTTP POST data",
-                                          "properties": {
-                                            "key": {
-                                              "description": "Key is a unique identifier for the data value",
-                                              "type": "string"
-                                            },
-                                            "value": {
-                                              "description": "Value is the data value",
-                                              "x-kubernetes-preserve-unknown-fields": true
-                                            }
-                                          },
-                                          "required": [
-                                            "key",
-                                            "value"
-                                          ],
-                                          "type": "object",
-                                          "additionalProperties": false
-                                        },
-                                        "type": "array"
-                                      },
-                                      "requestType": {
-                                        "default": "GET",
-                                        "description": "Method is the HTTP request type (GET or POST).",
-                                        "enum": [
-                                          "GET",
-                                          "POST"
-                                        ],
-                                        "type": "string"
-                                      },
-                                      "urlPath": {
-                                        "description": "URL is the JSON web service URL. The typical format is `https://{service}.{namespace}:{port}/{path}`.",
-                                        "type": "string"
-                                      }
-                                    },
-                                    "required": [
-                                      "requestType",
-                                      "urlPath"
-                                    ],
-                                    "type": "object",
-                                    "additionalProperties": false
                                   },
                                   "urlPath": {
                                     "description": "URLPath is the URL path to be used in the HTTP GET request to the Kubernetes API server (e.g. \"/api/v1/namespaces\" or  \"/apis/apps/v1/deployments\"). The format required is the same format used by the `kubectl get --raw` command.",
                                     "type": "string"
                                   }
                                 },
+                                "required": [
+                                  "urlPath"
+                                ],
                                 "type": "object",
                                 "additionalProperties": false
                               },
@@ -2878,51 +2734,6 @@
                 ],
                 "type": "string"
               },
-              "namespaceSelector": {
-                "description": "A label selector is a label query over a set of resources. The result of matchLabels and matchExpressions are ANDed. An empty label selector matches all objects. A null label selector matches no objects.",
-                "properties": {
-                  "matchExpressions": {
-                    "description": "matchExpressions is a list of label selector requirements. The requirements are ANDed.",
-                    "items": {
-                      "description": "A label selector requirement is a selector that contains values, a key, and an operator that relates the key and values.",
-                      "properties": {
-                        "key": {
-                          "description": "key is the label key that the selector applies to.",
-                          "type": "string"
-                        },
-                        "operator": {
-                          "description": "operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists and DoesNotExist.",
-                          "type": "string"
-                        },
-                        "values": {
-                          "description": "values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. This array is replaced during a strategic merge patch.",
-                          "items": {
-                            "type": "string"
-                          },
-                          "type": "array"
-                        }
-                      },
-                      "required": [
-                        "key",
-                        "operator"
-                      ],
-                      "type": "object",
-                      "additionalProperties": false
-                    },
-                    "type": "array"
-                  },
-                  "matchLabels": {
-                    "additionalProperties": {
-                      "type": "string"
-                    },
-                    "description": "matchLabels is a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is \"key\", the operator is \"In\", and the values array contains only \"value\". The requirements are ANDed.",
-                    "type": "object"
-                  }
-                },
-                "type": "object",
-                "x-kubernetes-map-type": "atomic",
-                "additionalProperties": false
-              },
               "namespaces": {
                 "items": {
                   "type": "string"
@@ -2961,68 +2772,20 @@
                       "description": "ContextEntry adds variables and data sources to a rule Context. Either a ConfigMap reference or a APILookup must be provided.",
                       "properties": {
                         "apiCall": {
-                          "description": "APICall is an HTTP request to the Kubernetes API server, or other JSON web service. The data returned is stored in the context with the name for the context entry.",
+                          "description": "APICall defines an HTTP request to the Kubernetes API server. The JSON data retrieved is stored in the context.",
                           "properties": {
                             "jmesPath": {
-                              "description": "JMESPath is an optional JSON Match Expression that can be used to transform the JSON response returned from the server. For example a JMESPath of \"items | length(@)\" applied to the API server response for the URLPath \"/apis/apps/v1/deployments\" will return the total count of deployments across all namespaces.",
+                              "description": "JMESPath is an optional JSON Match Expression that can be used to transform the JSON response returned from the API server. For example a JMESPath of \"items | length(@)\" applied to the API server response to the URLPath \"/apis/apps/v1/deployments\" will return the total count of deployments across all namespaces.",
                               "type": "string"
-                            },
-                            "service": {
-                              "description": "Service is an API call to a JSON web service",
-                              "properties": {
-                                "caBundle": {
-                                  "description": "CABundle is a PEM encoded CA bundle which will be used to validate the server certificate.",
-                                  "type": "string"
-                                },
-                                "data": {
-                                  "description": "Data specifies the POST data sent to the server.",
-                                  "items": {
-                                    "description": "RequestData contains the HTTP POST data",
-                                    "properties": {
-                                      "key": {
-                                        "description": "Key is a unique identifier for the data value",
-                                        "type": "string"
-                                      },
-                                      "value": {
-                                        "description": "Value is the data value",
-                                        "x-kubernetes-preserve-unknown-fields": true
-                                      }
-                                    },
-                                    "required": [
-                                      "key",
-                                      "value"
-                                    ],
-                                    "type": "object",
-                                    "additionalProperties": false
-                                  },
-                                  "type": "array"
-                                },
-                                "requestType": {
-                                  "default": "GET",
-                                  "description": "Method is the HTTP request type (GET or POST).",
-                                  "enum": [
-                                    "GET",
-                                    "POST"
-                                  ],
-                                  "type": "string"
-                                },
-                                "urlPath": {
-                                  "description": "URL is the JSON web service URL. The typical format is `https://{service}.{namespace}:{port}/{path}`.",
-                                  "type": "string"
-                                }
-                              },
-                              "required": [
-                                "requestType",
-                                "urlPath"
-                              ],
-                              "type": "object",
-                              "additionalProperties": false
                             },
                             "urlPath": {
                               "description": "URLPath is the URL path to be used in the HTTP GET request to the Kubernetes API server (e.g. \"/api/v1/namespaces\" or  \"/apis/apps/v1/deployments\"). The format required is the same format used by the `kubectl get --raw` command.",
                               "type": "string"
                             }
                           },
+                          "required": [
+                            "urlPath"
+                          ],
                           "type": "object",
                           "additionalProperties": false
                         },
@@ -4346,7 +4109,7 @@
                       "foreach": {
                         "description": "ForEach applies mutation rules to a list of sub-elements by creating a context for each entry in the list and looping over it to apply the specified logic.",
                         "items": {
-                          "description": "ForEachMutation applies mutation rules to a list of sub-elements by creating a context for each entry in the list and looping over it to apply the specified logic.",
+                          "description": "ForEach applies mutation rules to a list of sub-elements by creating a context for each entry in the list and looping over it to apply the specified logic.",
                           "properties": {
                             "context": {
                               "description": "Context defines variables and data sources that can be used during rule execution.",
@@ -4354,68 +4117,20 @@
                                 "description": "ContextEntry adds variables and data sources to a rule Context. Either a ConfigMap reference or a APILookup must be provided.",
                                 "properties": {
                                   "apiCall": {
-                                    "description": "APICall is an HTTP request to the Kubernetes API server, or other JSON web service. The data returned is stored in the context with the name for the context entry.",
+                                    "description": "APICall defines an HTTP request to the Kubernetes API server. The JSON data retrieved is stored in the context.",
                                     "properties": {
                                       "jmesPath": {
-                                        "description": "JMESPath is an optional JSON Match Expression that can be used to transform the JSON response returned from the server. For example a JMESPath of \"items | length(@)\" applied to the API server response for the URLPath \"/apis/apps/v1/deployments\" will return the total count of deployments across all namespaces.",
+                                        "description": "JMESPath is an optional JSON Match Expression that can be used to transform the JSON response returned from the API server. For example a JMESPath of \"items | length(@)\" applied to the API server response to the URLPath \"/apis/apps/v1/deployments\" will return the total count of deployments across all namespaces.",
                                         "type": "string"
-                                      },
-                                      "service": {
-                                        "description": "Service is an API call to a JSON web service",
-                                        "properties": {
-                                          "caBundle": {
-                                            "description": "CABundle is a PEM encoded CA bundle which will be used to validate the server certificate.",
-                                            "type": "string"
-                                          },
-                                          "data": {
-                                            "description": "Data specifies the POST data sent to the server.",
-                                            "items": {
-                                              "description": "RequestData contains the HTTP POST data",
-                                              "properties": {
-                                                "key": {
-                                                  "description": "Key is a unique identifier for the data value",
-                                                  "type": "string"
-                                                },
-                                                "value": {
-                                                  "description": "Value is the data value",
-                                                  "x-kubernetes-preserve-unknown-fields": true
-                                                }
-                                              },
-                                              "required": [
-                                                "key",
-                                                "value"
-                                              ],
-                                              "type": "object",
-                                              "additionalProperties": false
-                                            },
-                                            "type": "array"
-                                          },
-                                          "requestType": {
-                                            "default": "GET",
-                                            "description": "Method is the HTTP request type (GET or POST).",
-                                            "enum": [
-                                              "GET",
-                                              "POST"
-                                            ],
-                                            "type": "string"
-                                          },
-                                          "urlPath": {
-                                            "description": "URL is the JSON web service URL. The typical format is `https://{service}.{namespace}:{port}/{path}`.",
-                                            "type": "string"
-                                          }
-                                        },
-                                        "required": [
-                                          "requestType",
-                                          "urlPath"
-                                        ],
-                                        "type": "object",
-                                        "additionalProperties": false
                                       },
                                       "urlPath": {
                                         "description": "URLPath is the URL path to be used in the HTTP GET request to the Kubernetes API server (e.g. \"/api/v1/namespaces\" or  \"/apis/apps/v1/deployments\"). The format required is the same format used by the `kubectl get --raw` command.",
                                         "type": "string"
                                       }
                                     },
+                                    "required": [
+                                      "urlPath"
+                                    ],
                                     "type": "object",
                                     "additionalProperties": false
                                   },
@@ -4664,7 +4379,7 @@
                       "foreach": {
                         "description": "ForEach applies validate rules to a list of sub-elements by creating a context for each entry in the list and looping over it to apply the specified logic.",
                         "items": {
-                          "description": "ForEachValidation applies validate rules to a list of sub-elements by creating a context for each entry in the list and looping over it to apply the specified logic.",
+                          "description": "ForEach applies validate rules to a list of sub-elements by creating a context for each entry in the list and looping over it to apply the specified logic.",
                           "properties": {
                             "anyPattern": {
                               "description": "AnyPattern specifies list of validation patterns. At least one of the patterns must be satisfied for the validation rule to succeed.",
@@ -4676,68 +4391,20 @@
                                 "description": "ContextEntry adds variables and data sources to a rule Context. Either a ConfigMap reference or a APILookup must be provided.",
                                 "properties": {
                                   "apiCall": {
-                                    "description": "APICall is an HTTP request to the Kubernetes API server, or other JSON web service. The data returned is stored in the context with the name for the context entry.",
+                                    "description": "APICall defines an HTTP request to the Kubernetes API server. The JSON data retrieved is stored in the context.",
                                     "properties": {
                                       "jmesPath": {
-                                        "description": "JMESPath is an optional JSON Match Expression that can be used to transform the JSON response returned from the server. For example a JMESPath of \"items | length(@)\" applied to the API server response for the URLPath \"/apis/apps/v1/deployments\" will return the total count of deployments across all namespaces.",
+                                        "description": "JMESPath is an optional JSON Match Expression that can be used to transform the JSON response returned from the API server. For example a JMESPath of \"items | length(@)\" applied to the API server response to the URLPath \"/apis/apps/v1/deployments\" will return the total count of deployments across all namespaces.",
                                         "type": "string"
-                                      },
-                                      "service": {
-                                        "description": "Service is an API call to a JSON web service",
-                                        "properties": {
-                                          "caBundle": {
-                                            "description": "CABundle is a PEM encoded CA bundle which will be used to validate the server certificate.",
-                                            "type": "string"
-                                          },
-                                          "data": {
-                                            "description": "Data specifies the POST data sent to the server.",
-                                            "items": {
-                                              "description": "RequestData contains the HTTP POST data",
-                                              "properties": {
-                                                "key": {
-                                                  "description": "Key is a unique identifier for the data value",
-                                                  "type": "string"
-                                                },
-                                                "value": {
-                                                  "description": "Value is the data value",
-                                                  "x-kubernetes-preserve-unknown-fields": true
-                                                }
-                                              },
-                                              "required": [
-                                                "key",
-                                                "value"
-                                              ],
-                                              "type": "object",
-                                              "additionalProperties": false
-                                            },
-                                            "type": "array"
-                                          },
-                                          "requestType": {
-                                            "default": "GET",
-                                            "description": "Method is the HTTP request type (GET or POST).",
-                                            "enum": [
-                                              "GET",
-                                              "POST"
-                                            ],
-                                            "type": "string"
-                                          },
-                                          "urlPath": {
-                                            "description": "URL is the JSON web service URL. The typical format is `https://{service}.{namespace}:{port}/{path}`.",
-                                            "type": "string"
-                                          }
-                                        },
-                                        "required": [
-                                          "requestType",
-                                          "urlPath"
-                                        ],
-                                        "type": "object",
-                                        "additionalProperties": false
                                       },
                                       "urlPath": {
                                         "description": "URLPath is the URL path to be used in the HTTP GET request to the Kubernetes API server (e.g. \"/api/v1/namespaces\" or  \"/apis/apps/v1/deployments\"). The format required is the same format used by the `kubectl get --raw` command.",
                                         "type": "string"
                                       }
                                     },
+                                    "required": [
+                                      "urlPath"
+                                    ],
                                     "type": "object",
                                     "additionalProperties": false
                                   },
