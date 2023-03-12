@@ -1819,6 +1819,25 @@
               },
               "resources": {
                 "properties": {
+                  "claims": {
+                    "items": {
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name"
+                      ],
+                      "type": "object",
+                      "additionalProperties": false
+                    },
+                    "type": "array",
+                    "x-kubernetes-list-map-keys": [
+                      "name"
+                    ],
+                    "x-kubernetes-list-type": "map"
+                  },
                   "limits": {
                     "additionalProperties": {
                       "anyOf": [
@@ -2963,6 +2982,25 @@
               },
               "resources": {
                 "properties": {
+                  "claims": {
+                    "items": {
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name"
+                      ],
+                      "type": "object",
+                      "additionalProperties": false
+                    },
+                    "type": "array",
+                    "x-kubernetes-list-map-keys": [
+                      "name"
+                    ],
+                    "x-kubernetes-list-type": "map"
+                  },
                   "limits": {
                     "additionalProperties": {
                       "anyOf": [
@@ -3555,6 +3593,7 @@
             },
             "maxConcurrency": {
               "format": "int32",
+              "minimum": 1,
               "type": "integer"
             },
             "maxSamples": {
@@ -4411,6 +4450,25 @@
         },
         "resources": {
           "properties": {
+            "claims": {
+              "items": {
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name"
+                ],
+                "type": "object",
+                "additionalProperties": false
+              },
+              "type": "array",
+              "x-kubernetes-list-map-keys": [
+                "name"
+              ],
+              "x-kubernetes-list-type": "map"
+            },
             "limits": {
               "additionalProperties": {
                 "anyOf": [
@@ -4826,6 +4884,9 @@
                             },
                             "name": {
                               "type": "string"
+                            },
+                            "namespace": {
+                              "type": "string"
                             }
                           },
                           "required": [
@@ -4833,11 +4894,29 @@
                             "name"
                           ],
                           "type": "object",
-                          "x-kubernetes-map-type": "atomic",
                           "additionalProperties": false
                         },
                         "resources": {
                           "properties": {
+                            "claims": {
+                              "items": {
+                                "properties": {
+                                  "name": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "name"
+                                ],
+                                "type": "object",
+                                "additionalProperties": false
+                              },
+                              "type": "array",
+                              "x-kubernetes-list-map-keys": [
+                                "name"
+                              ],
+                              "x-kubernetes-list-type": "map"
+                            },
                             "limits": {
                               "additionalProperties": {
                                 "anyOf": [
@@ -5001,6 +5080,9 @@
                         },
                         "name": {
                           "type": "string"
+                        },
+                        "namespace": {
+                          "type": "string"
                         }
                       },
                       "required": [
@@ -5008,11 +5090,29 @@
                         "name"
                       ],
                       "type": "object",
-                      "x-kubernetes-map-type": "atomic",
                       "additionalProperties": false
                     },
                     "resources": {
                       "properties": {
+                        "claims": {
+                          "items": {
+                            "properties": {
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "name"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "type": "array",
+                          "x-kubernetes-list-map-keys": [
+                            "name"
+                          ],
+                          "x-kubernetes-list-type": "map"
+                        },
                         "limits": {
                           "additionalProperties": {
                             "anyOf": [
@@ -5403,6 +5503,25 @@
             },
             "resources": {
               "properties": {
+                "claims": {
+                  "items": {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "name"
+                    ],
+                    "type": "object",
+                    "additionalProperties": false
+                  },
+                  "type": "array",
+                  "x-kubernetes-list-map-keys": [
+                    "name"
+                  ],
+                  "x-kubernetes-list-type": "map"
+                },
                 "limits": {
                   "additionalProperties": {
                     "anyOf": [
@@ -6001,6 +6120,9 @@
                               },
                               "name": {
                                 "type": "string"
+                              },
+                              "namespace": {
+                                "type": "string"
                               }
                             },
                             "required": [
@@ -6008,11 +6130,29 @@
                               "name"
                             ],
                             "type": "object",
-                            "x-kubernetes-map-type": "atomic",
                             "additionalProperties": false
                           },
                           "resources": {
                             "properties": {
+                              "claims": {
+                                "items": {
+                                  "properties": {
+                                    "name": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "name"
+                                  ],
+                                  "type": "object",
+                                  "additionalProperties": false
+                                },
+                                "type": "array",
+                                "x-kubernetes-list-map-keys": [
+                                  "name"
+                                ],
+                                "x-kubernetes-list-type": "map"
+                              },
                               "limits": {
                                 "additionalProperties": {
                                   "anyOf": [
@@ -6821,6 +6961,11 @@
               },
               "type": "object",
               "additionalProperties": false
+            },
+            "maxConnections": {
+              "format": "int32",
+              "minimum": 0,
+              "type": "integer"
             },
             "pageTitle": {
               "type": "string"
