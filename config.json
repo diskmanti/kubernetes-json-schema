@@ -15,6 +15,10 @@
       "https://download.elastic.co/downloads/eck/{version}/crds.yaml"
     ]
   },
+  "external-secrets": {
+    "github_repository": "external-secrets/external-secrets",
+    "asset_name": "external-secrets.yaml"
+  },
   "fluxcd": {
     "github_repository": "fluxcd/flux2",
     "asset_name": "install.yaml"

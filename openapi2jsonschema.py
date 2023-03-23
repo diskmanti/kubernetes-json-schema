@@ -7,10 +7,11 @@ import logging
 import json
 import os
 from typing import Optional
+import re
 import sys
 import urllib.request
 
-from github import Github
+from github import Github, GitRelease
 
 from ruamel.yaml import YAML
 from ruamel.yaml.comments import TaggedScalar
@@ -132,15 +133,27 @@ class CrdsConfig:
    asset_name: Optional[str]
    crds_urls: list[str]
 
+   def get_release(self) -> GitRelease:
+        for release in github.get_repo(self.github_repository).get_releases():
+            if release.draft == True or release.prerelease == True:
+                continue
+
+            if re.search(r'v?\d+.\d+.\d+', release.tag_name):
+                return release
+
+        raise Exception("no release found")
+
    def openapi2jsonschema(self) -> None:
-        last_realease = github.get_repo(self.github_repository).get_latest_release()
+        release = self.get_release()
+        print(self.github_repository)
+        print(release.tag_name)
         if self.asset_name is not None:
-            for asset in last_realease.get_assets():
+            for asset in release.get_assets():
                 if asset.name == self.asset_name:
                     openapi2jsonschema(asset.browser_download_url)
                 
         for url in self.crds_urls:
-            openapi2jsonschema(url.format(version = last_realease.tag_name))
+            openapi2jsonschema(url.format(version = release.tag_name))
 
 
 def load_config() -> dict[str, CrdsConfig]:
