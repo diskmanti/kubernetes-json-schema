@@ -2988,6 +2988,7 @@
           "additionalProperties": false
         },
         "portName": {
+          "default": "web",
           "type": "string"
         },
         "priorityClassName": {
