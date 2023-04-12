@@ -12,7 +12,7 @@
   "eck-operator": {
     "github_repository": "elastic/cloud-on-k8s",
     "urls": [
-      "https://download.elastic.co/downloads/eck/{version}/crds.yaml"
+      "https://download.elastic.co/downloads/eck/{version_without_v}/crds.yaml"
     ]
   },
   "external-secrets": {

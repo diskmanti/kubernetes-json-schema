@@ -17,12 +17,11 @@ from ruamel.yaml import YAML
 from ruamel.yaml.comments import TaggedScalar
 from ruamel.yaml.scalarbool import ScalarBoolean
 
-
 logger = logging.getLogger(__name__)
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 github = Github(os.getenv("GITHUB_TOKEN"))
 
- 
+
 def scalar(obj):
     if obj is None:
         return None
@@ -129,13 +128,13 @@ def openapi2jsonschema(url: str):
 
 @dataclass
 class CrdsConfig:
-   github_repository: str
-   asset_name: Optional[str]
-   crds_urls: list[str]
+    github_repository: str
+    asset_name: Optional[str]
+    crds_urls: list[str]
 
-   def get_release(self) -> GitRelease:
+    def get_release(self) -> GitRelease:
         for release in github.get_repo(self.github_repository).get_releases():
-            if release.draft == True or release.prerelease == True:
+            if release.draft is True or release.prerelease is True:
                 continue
 
             if re.search(r'v?\d+.\d+.\d+', release.tag_name):
@@ -143,17 +142,18 @@ class CrdsConfig:
 
         raise Exception("no release found")
 
-   def openapi2jsonschema(self) -> None:
+    def openapi2jsonschema(self) -> None:
         release = self.get_release()
-        print(self.github_repository)
-        print(release.tag_name)
         if self.asset_name is not None:
             for asset in release.get_assets():
                 if asset.name == self.asset_name:
                     openapi2jsonschema(asset.browser_download_url)
-                
+
         for url in self.crds_urls:
-            openapi2jsonschema(url.format(version = release.tag_name))
+            openapi2jsonschema(url.format(
+                version=release.tag_name,
+                version_without_v=release.tag_name.lstrip("v"),
+            ))
 
 
 def load_config() -> dict[str, CrdsConfig]:
@@ -163,16 +163,16 @@ def load_config() -> dict[str, CrdsConfig]:
             crds_configs[k] = CrdsConfig(
                 github_repository=v.get("github_repository"),
                 asset_name=v.get("asset_name", None),
-                crds_urls= v.get("urls", []),
-            ) 
+                crds_urls=v.get("urls", []),
+            )
 
         return crds_configs
 
 
 if __name__ == '__main__':
     config = load_config()
-    if (len(sys.argv) == 2):
-       config.get(sys.argv[1]).openapi2jsonschema()
+    if len(sys.argv) == 2:
+        config.get(sys.argv[1]).openapi2jsonschema()
     else:
         for crds_config in config.values():
             crds_config.openapi2jsonschema()
