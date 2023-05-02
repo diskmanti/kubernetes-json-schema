@@ -327,6 +327,9 @@
                                     },
                                     "type": "object"
                                   },
+                                  "commonAnnotationsEnvsubst": {
+                                    "type": "boolean"
+                                  },
                                   "commonLabels": {
                                     "additionalProperties": {
                                       "type": "string"
@@ -350,6 +353,36 @@
                                   },
                                   "nameSuffix": {
                                     "type": "string"
+                                  },
+                                  "namespace": {
+                                    "type": "string"
+                                  },
+                                  "replicas": {
+                                    "items": {
+                                      "properties": {
+                                        "count": {
+                                          "anyOf": [
+                                            {
+                                              "type": "integer"
+                                            },
+                                            {
+                                              "type": "string"
+                                            }
+                                          ],
+                                          "x-kubernetes-int-or-string": true
+                                        },
+                                        "name": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "count",
+                                        "name"
+                                      ],
+                                      "type": "object",
+                                      "additionalProperties": false
+                                    },
+                                    "type": "array"
                                   },
                                   "version": {
                                     "type": "string"
@@ -580,6 +613,9 @@
                                       },
                                       "type": "object"
                                     },
+                                    "commonAnnotationsEnvsubst": {
+                                      "type": "boolean"
+                                    },
                                     "commonLabels": {
                                       "additionalProperties": {
                                         "type": "string"
@@ -603,6 +639,36 @@
                                     },
                                     "nameSuffix": {
                                       "type": "string"
+                                    },
+                                    "namespace": {
+                                      "type": "string"
+                                    },
+                                    "replicas": {
+                                      "items": {
+                                        "properties": {
+                                          "count": {
+                                            "anyOf": [
+                                              {
+                                                "type": "integer"
+                                              },
+                                              {
+                                                "type": "string"
+                                              }
+                                            ],
+                                            "x-kubernetes-int-or-string": true
+                                          },
+                                          "name": {
+                                            "type": "string"
+                                          }
+                                        },
+                                        "required": [
+                                          "count",
+                                          "name"
+                                        ],
+                                        "type": "object",
+                                        "additionalProperties": false
+                                      },
+                                      "type": "array"
                                     },
                                     "version": {
                                       "type": "string"
@@ -1090,6 +1156,9 @@
                                     },
                                     "type": "object"
                                   },
+                                  "commonAnnotationsEnvsubst": {
+                                    "type": "boolean"
+                                  },
                                   "commonLabels": {
                                     "additionalProperties": {
                                       "type": "string"
@@ -1113,6 +1182,36 @@
                                   },
                                   "nameSuffix": {
                                     "type": "string"
+                                  },
+                                  "namespace": {
+                                    "type": "string"
+                                  },
+                                  "replicas": {
+                                    "items": {
+                                      "properties": {
+                                        "count": {
+                                          "anyOf": [
+                                            {
+                                              "type": "integer"
+                                            },
+                                            {
+                                              "type": "string"
+                                            }
+                                          ],
+                                          "x-kubernetes-int-or-string": true
+                                        },
+                                        "name": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "count",
+                                        "name"
+                                      ],
+                                      "type": "object",
+                                      "additionalProperties": false
+                                    },
+                                    "type": "array"
                                   },
                                   "version": {
                                     "type": "string"
@@ -1343,6 +1442,9 @@
                                       },
                                       "type": "object"
                                     },
+                                    "commonAnnotationsEnvsubst": {
+                                      "type": "boolean"
+                                    },
                                     "commonLabels": {
                                       "additionalProperties": {
                                         "type": "string"
@@ -1366,6 +1468,36 @@
                                     },
                                     "nameSuffix": {
                                       "type": "string"
+                                    },
+                                    "namespace": {
+                                      "type": "string"
+                                    },
+                                    "replicas": {
+                                      "items": {
+                                        "properties": {
+                                          "count": {
+                                            "anyOf": [
+                                              {
+                                                "type": "integer"
+                                              },
+                                              {
+                                                "type": "string"
+                                              }
+                                            ],
+                                            "x-kubernetes-int-or-string": true
+                                          },
+                                          "name": {
+                                            "type": "string"
+                                          }
+                                        },
+                                        "required": [
+                                          "count",
+                                          "name"
+                                        ],
+                                        "type": "object",
+                                        "additionalProperties": false
+                                      },
+                                      "type": "array"
                                     },
                                     "version": {
                                       "type": "string"
@@ -1859,6 +1991,9 @@
                                     },
                                     "type": "object"
                                   },
+                                  "commonAnnotationsEnvsubst": {
+                                    "type": "boolean"
+                                  },
                                   "commonLabels": {
                                     "additionalProperties": {
                                       "type": "string"
@@ -1882,6 +2017,36 @@
                                   },
                                   "nameSuffix": {
                                     "type": "string"
+                                  },
+                                  "namespace": {
+                                    "type": "string"
+                                  },
+                                  "replicas": {
+                                    "items": {
+                                      "properties": {
+                                        "count": {
+                                          "anyOf": [
+                                            {
+                                              "type": "integer"
+                                            },
+                                            {
+                                              "type": "string"
+                                            }
+                                          ],
+                                          "x-kubernetes-int-or-string": true
+                                        },
+                                        "name": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "count",
+                                        "name"
+                                      ],
+                                      "type": "object",
+                                      "additionalProperties": false
+                                    },
+                                    "type": "array"
                                   },
                                   "version": {
                                     "type": "string"
@@ -2112,6 +2277,9 @@
                                       },
                                       "type": "object"
                                     },
+                                    "commonAnnotationsEnvsubst": {
+                                      "type": "boolean"
+                                    },
                                     "commonLabels": {
                                       "additionalProperties": {
                                         "type": "string"
@@ -2135,6 +2303,36 @@
                                     },
                                     "nameSuffix": {
                                       "type": "string"
+                                    },
+                                    "namespace": {
+                                      "type": "string"
+                                    },
+                                    "replicas": {
+                                      "items": {
+                                        "properties": {
+                                          "count": {
+                                            "anyOf": [
+                                              {
+                                                "type": "integer"
+                                              },
+                                              {
+                                                "type": "string"
+                                              }
+                                            ],
+                                            "x-kubernetes-int-or-string": true
+                                          },
+                                          "name": {
+                                            "type": "string"
+                                          }
+                                        },
+                                        "required": [
+                                          "count",
+                                          "name"
+                                        ],
+                                        "type": "object",
+                                        "additionalProperties": false
+                                      },
+                                      "type": "array"
                                     },
                                     "version": {
                                       "type": "string"
@@ -2321,6 +2519,9 @@
                       "x-kubernetes-preserve-unknown-fields": true
                     },
                     "type": "array"
+                  },
+                  "elementsYaml": {
+                    "type": "string"
                   },
                   "template": {
                     "properties": {
@@ -2586,6 +2787,9 @@
                                     },
                                     "type": "object"
                                   },
+                                  "commonAnnotationsEnvsubst": {
+                                    "type": "boolean"
+                                  },
                                   "commonLabels": {
                                     "additionalProperties": {
                                       "type": "string"
@@ -2609,6 +2813,36 @@
                                   },
                                   "nameSuffix": {
                                     "type": "string"
+                                  },
+                                  "namespace": {
+                                    "type": "string"
+                                  },
+                                  "replicas": {
+                                    "items": {
+                                      "properties": {
+                                        "count": {
+                                          "anyOf": [
+                                            {
+                                              "type": "integer"
+                                            },
+                                            {
+                                              "type": "string"
+                                            }
+                                          ],
+                                          "x-kubernetes-int-or-string": true
+                                        },
+                                        "name": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "count",
+                                        "name"
+                                      ],
+                                      "type": "object",
+                                      "additionalProperties": false
+                                    },
+                                    "type": "array"
                                   },
                                   "version": {
                                     "type": "string"
@@ -2839,6 +3073,9 @@
                                       },
                                       "type": "object"
                                     },
+                                    "commonAnnotationsEnvsubst": {
+                                      "type": "boolean"
+                                    },
                                     "commonLabels": {
                                       "additionalProperties": {
                                         "type": "string"
@@ -2862,6 +3099,36 @@
                                     },
                                     "nameSuffix": {
                                       "type": "string"
+                                    },
+                                    "namespace": {
+                                      "type": "string"
+                                    },
+                                    "replicas": {
+                                      "items": {
+                                        "properties": {
+                                          "count": {
+                                            "anyOf": [
+                                              {
+                                                "type": "integer"
+                                              },
+                                              {
+                                                "type": "string"
+                                              }
+                                            ],
+                                            "x-kubernetes-int-or-string": true
+                                          },
+                                          "name": {
+                                            "type": "string"
+                                          }
+                                        },
+                                        "required": [
+                                          "count",
+                                          "name"
+                                        ],
+                                        "type": "object",
+                                        "additionalProperties": false
+                                      },
+                                      "type": "array"
                                     },
                                     "version": {
                                       "type": "string"
@@ -3358,6 +3625,9 @@
                                               },
                                               "type": "object"
                                             },
+                                            "commonAnnotationsEnvsubst": {
+                                              "type": "boolean"
+                                            },
                                             "commonLabels": {
                                               "additionalProperties": {
                                                 "type": "string"
@@ -3381,6 +3651,36 @@
                                             },
                                             "nameSuffix": {
                                               "type": "string"
+                                            },
+                                            "namespace": {
+                                              "type": "string"
+                                            },
+                                            "replicas": {
+                                              "items": {
+                                                "properties": {
+                                                  "count": {
+                                                    "anyOf": [
+                                                      {
+                                                        "type": "integer"
+                                                      },
+                                                      {
+                                                        "type": "string"
+                                                      }
+                                                    ],
+                                                    "x-kubernetes-int-or-string": true
+                                                  },
+                                                  "name": {
+                                                    "type": "string"
+                                                  }
+                                                },
+                                                "required": [
+                                                  "count",
+                                                  "name"
+                                                ],
+                                                "type": "object",
+                                                "additionalProperties": false
+                                              },
+                                              "type": "array"
                                             },
                                             "version": {
                                               "type": "string"
@@ -3611,6 +3911,9 @@
                                                 },
                                                 "type": "object"
                                               },
+                                              "commonAnnotationsEnvsubst": {
+                                                "type": "boolean"
+                                              },
                                               "commonLabels": {
                                                 "additionalProperties": {
                                                   "type": "string"
@@ -3634,6 +3937,36 @@
                                               },
                                               "nameSuffix": {
                                                 "type": "string"
+                                              },
+                                              "namespace": {
+                                                "type": "string"
+                                              },
+                                              "replicas": {
+                                                "items": {
+                                                  "properties": {
+                                                    "count": {
+                                                      "anyOf": [
+                                                        {
+                                                          "type": "integer"
+                                                        },
+                                                        {
+                                                          "type": "string"
+                                                        }
+                                                      ],
+                                                      "x-kubernetes-int-or-string": true
+                                                    },
+                                                    "name": {
+                                                      "type": "string"
+                                                    }
+                                                  },
+                                                  "required": [
+                                                    "count",
+                                                    "name"
+                                                  ],
+                                                  "type": "object",
+                                                  "additionalProperties": false
+                                                },
+                                                "type": "array"
                                               },
                                               "version": {
                                                 "type": "string"
@@ -4121,6 +4454,9 @@
                                               },
                                               "type": "object"
                                             },
+                                            "commonAnnotationsEnvsubst": {
+                                              "type": "boolean"
+                                            },
                                             "commonLabels": {
                                               "additionalProperties": {
                                                 "type": "string"
@@ -4144,6 +4480,36 @@
                                             },
                                             "nameSuffix": {
                                               "type": "string"
+                                            },
+                                            "namespace": {
+                                              "type": "string"
+                                            },
+                                            "replicas": {
+                                              "items": {
+                                                "properties": {
+                                                  "count": {
+                                                    "anyOf": [
+                                                      {
+                                                        "type": "integer"
+                                                      },
+                                                      {
+                                                        "type": "string"
+                                                      }
+                                                    ],
+                                                    "x-kubernetes-int-or-string": true
+                                                  },
+                                                  "name": {
+                                                    "type": "string"
+                                                  }
+                                                },
+                                                "required": [
+                                                  "count",
+                                                  "name"
+                                                ],
+                                                "type": "object",
+                                                "additionalProperties": false
+                                              },
+                                              "type": "array"
                                             },
                                             "version": {
                                               "type": "string"
@@ -4374,6 +4740,9 @@
                                                 },
                                                 "type": "object"
                                               },
+                                              "commonAnnotationsEnvsubst": {
+                                                "type": "boolean"
+                                              },
                                               "commonLabels": {
                                                 "additionalProperties": {
                                                   "type": "string"
@@ -4397,6 +4766,36 @@
                                               },
                                               "nameSuffix": {
                                                 "type": "string"
+                                              },
+                                              "namespace": {
+                                                "type": "string"
+                                              },
+                                              "replicas": {
+                                                "items": {
+                                                  "properties": {
+                                                    "count": {
+                                                      "anyOf": [
+                                                        {
+                                                          "type": "integer"
+                                                        },
+                                                        {
+                                                          "type": "string"
+                                                        }
+                                                      ],
+                                                      "x-kubernetes-int-or-string": true
+                                                    },
+                                                    "name": {
+                                                      "type": "string"
+                                                    }
+                                                  },
+                                                  "required": [
+                                                    "count",
+                                                    "name"
+                                                  ],
+                                                  "type": "object",
+                                                  "additionalProperties": false
+                                                },
+                                                "type": "array"
                                               },
                                               "version": {
                                                 "type": "string"
@@ -4890,6 +5289,9 @@
                                               },
                                               "type": "object"
                                             },
+                                            "commonAnnotationsEnvsubst": {
+                                              "type": "boolean"
+                                            },
                                             "commonLabels": {
                                               "additionalProperties": {
                                                 "type": "string"
@@ -4913,6 +5315,36 @@
                                             },
                                             "nameSuffix": {
                                               "type": "string"
+                                            },
+                                            "namespace": {
+                                              "type": "string"
+                                            },
+                                            "replicas": {
+                                              "items": {
+                                                "properties": {
+                                                  "count": {
+                                                    "anyOf": [
+                                                      {
+                                                        "type": "integer"
+                                                      },
+                                                      {
+                                                        "type": "string"
+                                                      }
+                                                    ],
+                                                    "x-kubernetes-int-or-string": true
+                                                  },
+                                                  "name": {
+                                                    "type": "string"
+                                                  }
+                                                },
+                                                "required": [
+                                                  "count",
+                                                  "name"
+                                                ],
+                                                "type": "object",
+                                                "additionalProperties": false
+                                              },
+                                              "type": "array"
                                             },
                                             "version": {
                                               "type": "string"
@@ -5143,6 +5575,9 @@
                                                 },
                                                 "type": "object"
                                               },
+                                              "commonAnnotationsEnvsubst": {
+                                                "type": "boolean"
+                                              },
                                               "commonLabels": {
                                                 "additionalProperties": {
                                                   "type": "string"
@@ -5166,6 +5601,36 @@
                                               },
                                               "nameSuffix": {
                                                 "type": "string"
+                                              },
+                                              "namespace": {
+                                                "type": "string"
+                                              },
+                                              "replicas": {
+                                                "items": {
+                                                  "properties": {
+                                                    "count": {
+                                                      "anyOf": [
+                                                        {
+                                                          "type": "integer"
+                                                        },
+                                                        {
+                                                          "type": "string"
+                                                        }
+                                                      ],
+                                                      "x-kubernetes-int-or-string": true
+                                                    },
+                                                    "name": {
+                                                      "type": "string"
+                                                    }
+                                                  },
+                                                  "required": [
+                                                    "count",
+                                                    "name"
+                                                  ],
+                                                  "type": "object",
+                                                  "additionalProperties": false
+                                                },
+                                                "type": "array"
                                               },
                                               "version": {
                                                 "type": "string"
@@ -5352,6 +5817,9 @@
                                 "x-kubernetes-preserve-unknown-fields": true
                               },
                               "type": "array"
+                            },
+                            "elementsYaml": {
+                              "type": "string"
                             },
                             "template": {
                               "properties": {
@@ -5617,6 +6085,9 @@
                                               },
                                               "type": "object"
                                             },
+                                            "commonAnnotationsEnvsubst": {
+                                              "type": "boolean"
+                                            },
                                             "commonLabels": {
                                               "additionalProperties": {
                                                 "type": "string"
@@ -5640,6 +6111,36 @@
                                             },
                                             "nameSuffix": {
                                               "type": "string"
+                                            },
+                                            "namespace": {
+                                              "type": "string"
+                                            },
+                                            "replicas": {
+                                              "items": {
+                                                "properties": {
+                                                  "count": {
+                                                    "anyOf": [
+                                                      {
+                                                        "type": "integer"
+                                                      },
+                                                      {
+                                                        "type": "string"
+                                                      }
+                                                    ],
+                                                    "x-kubernetes-int-or-string": true
+                                                  },
+                                                  "name": {
+                                                    "type": "string"
+                                                  }
+                                                },
+                                                "required": [
+                                                  "count",
+                                                  "name"
+                                                ],
+                                                "type": "object",
+                                                "additionalProperties": false
+                                              },
+                                              "type": "array"
                                             },
                                             "version": {
                                               "type": "string"
@@ -5870,6 +6371,9 @@
                                                 },
                                                 "type": "object"
                                               },
+                                              "commonAnnotationsEnvsubst": {
+                                                "type": "boolean"
+                                              },
                                               "commonLabels": {
                                                 "additionalProperties": {
                                                   "type": "string"
@@ -5893,6 +6397,36 @@
                                               },
                                               "nameSuffix": {
                                                 "type": "string"
+                                              },
+                                              "namespace": {
+                                                "type": "string"
+                                              },
+                                              "replicas": {
+                                                "items": {
+                                                  "properties": {
+                                                    "count": {
+                                                      "anyOf": [
+                                                        {
+                                                          "type": "integer"
+                                                        },
+                                                        {
+                                                          "type": "string"
+                                                        }
+                                                      ],
+                                                      "x-kubernetes-int-or-string": true
+                                                    },
+                                                    "name": {
+                                                      "type": "string"
+                                                    }
+                                                  },
+                                                  "required": [
+                                                    "count",
+                                                    "name"
+                                                  ],
+                                                  "type": "object",
+                                                  "additionalProperties": false
+                                                },
+                                                "type": "array"
                                               },
                                               "version": {
                                                 "type": "string"
@@ -6531,6 +7065,9 @@
                                               },
                                               "type": "object"
                                             },
+                                            "commonAnnotationsEnvsubst": {
+                                              "type": "boolean"
+                                            },
                                             "commonLabels": {
                                               "additionalProperties": {
                                                 "type": "string"
@@ -6554,6 +7091,36 @@
                                             },
                                             "nameSuffix": {
                                               "type": "string"
+                                            },
+                                            "namespace": {
+                                              "type": "string"
+                                            },
+                                            "replicas": {
+                                              "items": {
+                                                "properties": {
+                                                  "count": {
+                                                    "anyOf": [
+                                                      {
+                                                        "type": "integer"
+                                                      },
+                                                      {
+                                                        "type": "string"
+                                                      }
+                                                    ],
+                                                    "x-kubernetes-int-or-string": true
+                                                  },
+                                                  "name": {
+                                                    "type": "string"
+                                                  }
+                                                },
+                                                "required": [
+                                                  "count",
+                                                  "name"
+                                                ],
+                                                "type": "object",
+                                                "additionalProperties": false
+                                              },
+                                              "type": "array"
                                             },
                                             "version": {
                                               "type": "string"
@@ -6784,6 +7351,9 @@
                                                 },
                                                 "type": "object"
                                               },
+                                              "commonAnnotationsEnvsubst": {
+                                                "type": "boolean"
+                                              },
                                               "commonLabels": {
                                                 "additionalProperties": {
                                                   "type": "string"
@@ -6807,6 +7377,36 @@
                                               },
                                               "nameSuffix": {
                                                 "type": "string"
+                                              },
+                                              "namespace": {
+                                                "type": "string"
+                                              },
+                                              "replicas": {
+                                                "items": {
+                                                  "properties": {
+                                                    "count": {
+                                                      "anyOf": [
+                                                        {
+                                                          "type": "integer"
+                                                        },
+                                                        {
+                                                          "type": "string"
+                                                        }
+                                                      ],
+                                                      "x-kubernetes-int-or-string": true
+                                                    },
+                                                    "name": {
+                                                      "type": "string"
+                                                    }
+                                                  },
+                                                  "required": [
+                                                    "count",
+                                                    "name"
+                                                  ],
+                                                  "type": "object",
+                                                  "additionalProperties": false
+                                                },
+                                                "type": "array"
                                               },
                                               "version": {
                                                 "type": "string"
@@ -7520,6 +8120,9 @@
                                               },
                                               "type": "object"
                                             },
+                                            "commonAnnotationsEnvsubst": {
+                                              "type": "boolean"
+                                            },
                                             "commonLabels": {
                                               "additionalProperties": {
                                                 "type": "string"
@@ -7543,6 +8146,36 @@
                                             },
                                             "nameSuffix": {
                                               "type": "string"
+                                            },
+                                            "namespace": {
+                                              "type": "string"
+                                            },
+                                            "replicas": {
+                                              "items": {
+                                                "properties": {
+                                                  "count": {
+                                                    "anyOf": [
+                                                      {
+                                                        "type": "integer"
+                                                      },
+                                                      {
+                                                        "type": "string"
+                                                      }
+                                                    ],
+                                                    "x-kubernetes-int-or-string": true
+                                                  },
+                                                  "name": {
+                                                    "type": "string"
+                                                  }
+                                                },
+                                                "required": [
+                                                  "count",
+                                                  "name"
+                                                ],
+                                                "type": "object",
+                                                "additionalProperties": false
+                                              },
+                                              "type": "array"
                                             },
                                             "version": {
                                               "type": "string"
@@ -7773,6 +8406,9 @@
                                                 },
                                                 "type": "object"
                                               },
+                                              "commonAnnotationsEnvsubst": {
+                                                "type": "boolean"
+                                              },
                                               "commonLabels": {
                                                 "additionalProperties": {
                                                   "type": "string"
@@ -7796,6 +8432,36 @@
                                               },
                                               "nameSuffix": {
                                                 "type": "string"
+                                              },
+                                              "namespace": {
+                                                "type": "string"
+                                              },
+                                              "replicas": {
+                                                "items": {
+                                                  "properties": {
+                                                    "count": {
+                                                      "anyOf": [
+                                                        {
+                                                          "type": "integer"
+                                                        },
+                                                        {
+                                                          "type": "string"
+                                                        }
+                                                      ],
+                                                      "x-kubernetes-int-or-string": true
+                                                    },
+                                                    "name": {
+                                                      "type": "string"
+                                                    }
+                                                  },
+                                                  "required": [
+                                                    "count",
+                                                    "name"
+                                                  ],
+                                                  "type": "object",
+                                                  "additionalProperties": false
+                                                },
+                                                "type": "array"
                                               },
                                               "version": {
                                                 "type": "string"
@@ -8278,6 +8944,9 @@
                                     },
                                     "type": "object"
                                   },
+                                  "commonAnnotationsEnvsubst": {
+                                    "type": "boolean"
+                                  },
                                   "commonLabels": {
                                     "additionalProperties": {
                                       "type": "string"
@@ -8301,6 +8970,36 @@
                                   },
                                   "nameSuffix": {
                                     "type": "string"
+                                  },
+                                  "namespace": {
+                                    "type": "string"
+                                  },
+                                  "replicas": {
+                                    "items": {
+                                      "properties": {
+                                        "count": {
+                                          "anyOf": [
+                                            {
+                                              "type": "integer"
+                                            },
+                                            {
+                                              "type": "string"
+                                            }
+                                          ],
+                                          "x-kubernetes-int-or-string": true
+                                        },
+                                        "name": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "count",
+                                        "name"
+                                      ],
+                                      "type": "object",
+                                      "additionalProperties": false
+                                    },
+                                    "type": "array"
                                   },
                                   "version": {
                                     "type": "string"
@@ -8531,6 +9230,9 @@
                                       },
                                       "type": "object"
                                     },
+                                    "commonAnnotationsEnvsubst": {
+                                      "type": "boolean"
+                                    },
                                     "commonLabels": {
                                       "additionalProperties": {
                                         "type": "string"
@@ -8554,6 +9256,36 @@
                                     },
                                     "nameSuffix": {
                                       "type": "string"
+                                    },
+                                    "namespace": {
+                                      "type": "string"
+                                    },
+                                    "replicas": {
+                                      "items": {
+                                        "properties": {
+                                          "count": {
+                                            "anyOf": [
+                                              {
+                                                "type": "integer"
+                                              },
+                                              {
+                                                "type": "string"
+                                              }
+                                            ],
+                                            "x-kubernetes-int-or-string": true
+                                          },
+                                          "name": {
+                                            "type": "string"
+                                          }
+                                        },
+                                        "required": [
+                                          "count",
+                                          "name"
+                                        ],
+                                        "type": "object",
+                                        "additionalProperties": false
+                                      },
+                                      "type": "array"
                                     },
                                     "version": {
                                       "type": "string"
@@ -9050,6 +9782,9 @@
                                               },
                                               "type": "object"
                                             },
+                                            "commonAnnotationsEnvsubst": {
+                                              "type": "boolean"
+                                            },
                                             "commonLabels": {
                                               "additionalProperties": {
                                                 "type": "string"
@@ -9073,6 +9808,36 @@
                                             },
                                             "nameSuffix": {
                                               "type": "string"
+                                            },
+                                            "namespace": {
+                                              "type": "string"
+                                            },
+                                            "replicas": {
+                                              "items": {
+                                                "properties": {
+                                                  "count": {
+                                                    "anyOf": [
+                                                      {
+                                                        "type": "integer"
+                                                      },
+                                                      {
+                                                        "type": "string"
+                                                      }
+                                                    ],
+                                                    "x-kubernetes-int-or-string": true
+                                                  },
+                                                  "name": {
+                                                    "type": "string"
+                                                  }
+                                                },
+                                                "required": [
+                                                  "count",
+                                                  "name"
+                                                ],
+                                                "type": "object",
+                                                "additionalProperties": false
+                                              },
+                                              "type": "array"
                                             },
                                             "version": {
                                               "type": "string"
@@ -9303,6 +10068,9 @@
                                                 },
                                                 "type": "object"
                                               },
+                                              "commonAnnotationsEnvsubst": {
+                                                "type": "boolean"
+                                              },
                                               "commonLabels": {
                                                 "additionalProperties": {
                                                   "type": "string"
@@ -9326,6 +10094,36 @@
                                               },
                                               "nameSuffix": {
                                                 "type": "string"
+                                              },
+                                              "namespace": {
+                                                "type": "string"
+                                              },
+                                              "replicas": {
+                                                "items": {
+                                                  "properties": {
+                                                    "count": {
+                                                      "anyOf": [
+                                                        {
+                                                          "type": "integer"
+                                                        },
+                                                        {
+                                                          "type": "string"
+                                                        }
+                                                      ],
+                                                      "x-kubernetes-int-or-string": true
+                                                    },
+                                                    "name": {
+                                                      "type": "string"
+                                                    }
+                                                  },
+                                                  "required": [
+                                                    "count",
+                                                    "name"
+                                                  ],
+                                                  "type": "object",
+                                                  "additionalProperties": false
+                                                },
+                                                "type": "array"
                                               },
                                               "version": {
                                                 "type": "string"
@@ -9813,6 +10611,9 @@
                                               },
                                               "type": "object"
                                             },
+                                            "commonAnnotationsEnvsubst": {
+                                              "type": "boolean"
+                                            },
                                             "commonLabels": {
                                               "additionalProperties": {
                                                 "type": "string"
@@ -9836,6 +10637,36 @@
                                             },
                                             "nameSuffix": {
                                               "type": "string"
+                                            },
+                                            "namespace": {
+                                              "type": "string"
+                                            },
+                                            "replicas": {
+                                              "items": {
+                                                "properties": {
+                                                  "count": {
+                                                    "anyOf": [
+                                                      {
+                                                        "type": "integer"
+                                                      },
+                                                      {
+                                                        "type": "string"
+                                                      }
+                                                    ],
+                                                    "x-kubernetes-int-or-string": true
+                                                  },
+                                                  "name": {
+                                                    "type": "string"
+                                                  }
+                                                },
+                                                "required": [
+                                                  "count",
+                                                  "name"
+                                                ],
+                                                "type": "object",
+                                                "additionalProperties": false
+                                              },
+                                              "type": "array"
                                             },
                                             "version": {
                                               "type": "string"
@@ -10066,6 +10897,9 @@
                                                 },
                                                 "type": "object"
                                               },
+                                              "commonAnnotationsEnvsubst": {
+                                                "type": "boolean"
+                                              },
                                               "commonLabels": {
                                                 "additionalProperties": {
                                                   "type": "string"
@@ -10089,6 +10923,36 @@
                                               },
                                               "nameSuffix": {
                                                 "type": "string"
+                                              },
+                                              "namespace": {
+                                                "type": "string"
+                                              },
+                                              "replicas": {
+                                                "items": {
+                                                  "properties": {
+                                                    "count": {
+                                                      "anyOf": [
+                                                        {
+                                                          "type": "integer"
+                                                        },
+                                                        {
+                                                          "type": "string"
+                                                        }
+                                                      ],
+                                                      "x-kubernetes-int-or-string": true
+                                                    },
+                                                    "name": {
+                                                      "type": "string"
+                                                    }
+                                                  },
+                                                  "required": [
+                                                    "count",
+                                                    "name"
+                                                  ],
+                                                  "type": "object",
+                                                  "additionalProperties": false
+                                                },
+                                                "type": "array"
                                               },
                                               "version": {
                                                 "type": "string"
@@ -10582,6 +11446,9 @@
                                               },
                                               "type": "object"
                                             },
+                                            "commonAnnotationsEnvsubst": {
+                                              "type": "boolean"
+                                            },
                                             "commonLabels": {
                                               "additionalProperties": {
                                                 "type": "string"
@@ -10605,6 +11472,36 @@
                                             },
                                             "nameSuffix": {
                                               "type": "string"
+                                            },
+                                            "namespace": {
+                                              "type": "string"
+                                            },
+                                            "replicas": {
+                                              "items": {
+                                                "properties": {
+                                                  "count": {
+                                                    "anyOf": [
+                                                      {
+                                                        "type": "integer"
+                                                      },
+                                                      {
+                                                        "type": "string"
+                                                      }
+                                                    ],
+                                                    "x-kubernetes-int-or-string": true
+                                                  },
+                                                  "name": {
+                                                    "type": "string"
+                                                  }
+                                                },
+                                                "required": [
+                                                  "count",
+                                                  "name"
+                                                ],
+                                                "type": "object",
+                                                "additionalProperties": false
+                                              },
+                                              "type": "array"
                                             },
                                             "version": {
                                               "type": "string"
@@ -10835,6 +11732,9 @@
                                                 },
                                                 "type": "object"
                                               },
+                                              "commonAnnotationsEnvsubst": {
+                                                "type": "boolean"
+                                              },
                                               "commonLabels": {
                                                 "additionalProperties": {
                                                   "type": "string"
@@ -10858,6 +11758,36 @@
                                               },
                                               "nameSuffix": {
                                                 "type": "string"
+                                              },
+                                              "namespace": {
+                                                "type": "string"
+                                              },
+                                              "replicas": {
+                                                "items": {
+                                                  "properties": {
+                                                    "count": {
+                                                      "anyOf": [
+                                                        {
+                                                          "type": "integer"
+                                                        },
+                                                        {
+                                                          "type": "string"
+                                                        }
+                                                      ],
+                                                      "x-kubernetes-int-or-string": true
+                                                    },
+                                                    "name": {
+                                                      "type": "string"
+                                                    }
+                                                  },
+                                                  "required": [
+                                                    "count",
+                                                    "name"
+                                                  ],
+                                                  "type": "object",
+                                                  "additionalProperties": false
+                                                },
+                                                "type": "array"
                                               },
                                               "version": {
                                                 "type": "string"
@@ -11044,6 +11974,9 @@
                                 "x-kubernetes-preserve-unknown-fields": true
                               },
                               "type": "array"
+                            },
+                            "elementsYaml": {
+                              "type": "string"
                             },
                             "template": {
                               "properties": {
@@ -11309,6 +12242,9 @@
                                               },
                                               "type": "object"
                                             },
+                                            "commonAnnotationsEnvsubst": {
+                                              "type": "boolean"
+                                            },
                                             "commonLabels": {
                                               "additionalProperties": {
                                                 "type": "string"
@@ -11332,6 +12268,36 @@
                                             },
                                             "nameSuffix": {
                                               "type": "string"
+                                            },
+                                            "namespace": {
+                                              "type": "string"
+                                            },
+                                            "replicas": {
+                                              "items": {
+                                                "properties": {
+                                                  "count": {
+                                                    "anyOf": [
+                                                      {
+                                                        "type": "integer"
+                                                      },
+                                                      {
+                                                        "type": "string"
+                                                      }
+                                                    ],
+                                                    "x-kubernetes-int-or-string": true
+                                                  },
+                                                  "name": {
+                                                    "type": "string"
+                                                  }
+                                                },
+                                                "required": [
+                                                  "count",
+                                                  "name"
+                                                ],
+                                                "type": "object",
+                                                "additionalProperties": false
+                                              },
+                                              "type": "array"
                                             },
                                             "version": {
                                               "type": "string"
@@ -11562,6 +12528,9 @@
                                                 },
                                                 "type": "object"
                                               },
+                                              "commonAnnotationsEnvsubst": {
+                                                "type": "boolean"
+                                              },
                                               "commonLabels": {
                                                 "additionalProperties": {
                                                   "type": "string"
@@ -11585,6 +12554,36 @@
                                               },
                                               "nameSuffix": {
                                                 "type": "string"
+                                              },
+                                              "namespace": {
+                                                "type": "string"
+                                              },
+                                              "replicas": {
+                                                "items": {
+                                                  "properties": {
+                                                    "count": {
+                                                      "anyOf": [
+                                                        {
+                                                          "type": "integer"
+                                                        },
+                                                        {
+                                                          "type": "string"
+                                                        }
+                                                      ],
+                                                      "x-kubernetes-int-or-string": true
+                                                    },
+                                                    "name": {
+                                                      "type": "string"
+                                                    }
+                                                  },
+                                                  "required": [
+                                                    "count",
+                                                    "name"
+                                                  ],
+                                                  "type": "object",
+                                                  "additionalProperties": false
+                                                },
+                                                "type": "array"
                                               },
                                               "version": {
                                                 "type": "string"
@@ -12223,6 +13222,9 @@
                                               },
                                               "type": "object"
                                             },
+                                            "commonAnnotationsEnvsubst": {
+                                              "type": "boolean"
+                                            },
                                             "commonLabels": {
                                               "additionalProperties": {
                                                 "type": "string"
@@ -12246,6 +13248,36 @@
                                             },
                                             "nameSuffix": {
                                               "type": "string"
+                                            },
+                                            "namespace": {
+                                              "type": "string"
+                                            },
+                                            "replicas": {
+                                              "items": {
+                                                "properties": {
+                                                  "count": {
+                                                    "anyOf": [
+                                                      {
+                                                        "type": "integer"
+                                                      },
+                                                      {
+                                                        "type": "string"
+                                                      }
+                                                    ],
+                                                    "x-kubernetes-int-or-string": true
+                                                  },
+                                                  "name": {
+                                                    "type": "string"
+                                                  }
+                                                },
+                                                "required": [
+                                                  "count",
+                                                  "name"
+                                                ],
+                                                "type": "object",
+                                                "additionalProperties": false
+                                              },
+                                              "type": "array"
                                             },
                                             "version": {
                                               "type": "string"
@@ -12476,6 +13508,9 @@
                                                 },
                                                 "type": "object"
                                               },
+                                              "commonAnnotationsEnvsubst": {
+                                                "type": "boolean"
+                                              },
                                               "commonLabels": {
                                                 "additionalProperties": {
                                                   "type": "string"
@@ -12499,6 +13534,36 @@
                                               },
                                               "nameSuffix": {
                                                 "type": "string"
+                                              },
+                                              "namespace": {
+                                                "type": "string"
+                                              },
+                                              "replicas": {
+                                                "items": {
+                                                  "properties": {
+                                                    "count": {
+                                                      "anyOf": [
+                                                        {
+                                                          "type": "integer"
+                                                        },
+                                                        {
+                                                          "type": "string"
+                                                        }
+                                                      ],
+                                                      "x-kubernetes-int-or-string": true
+                                                    },
+                                                    "name": {
+                                                      "type": "string"
+                                                    }
+                                                  },
+                                                  "required": [
+                                                    "count",
+                                                    "name"
+                                                  ],
+                                                  "type": "object",
+                                                  "additionalProperties": false
+                                                },
+                                                "type": "array"
                                               },
                                               "version": {
                                                 "type": "string"
@@ -13212,6 +14277,9 @@
                                               },
                                               "type": "object"
                                             },
+                                            "commonAnnotationsEnvsubst": {
+                                              "type": "boolean"
+                                            },
                                             "commonLabels": {
                                               "additionalProperties": {
                                                 "type": "string"
@@ -13235,6 +14303,36 @@
                                             },
                                             "nameSuffix": {
                                               "type": "string"
+                                            },
+                                            "namespace": {
+                                              "type": "string"
+                                            },
+                                            "replicas": {
+                                              "items": {
+                                                "properties": {
+                                                  "count": {
+                                                    "anyOf": [
+                                                      {
+                                                        "type": "integer"
+                                                      },
+                                                      {
+                                                        "type": "string"
+                                                      }
+                                                    ],
+                                                    "x-kubernetes-int-or-string": true
+                                                  },
+                                                  "name": {
+                                                    "type": "string"
+                                                  }
+                                                },
+                                                "required": [
+                                                  "count",
+                                                  "name"
+                                                ],
+                                                "type": "object",
+                                                "additionalProperties": false
+                                              },
+                                              "type": "array"
                                             },
                                             "version": {
                                               "type": "string"
@@ -13465,6 +14563,9 @@
                                                 },
                                                 "type": "object"
                                               },
+                                              "commonAnnotationsEnvsubst": {
+                                                "type": "boolean"
+                                              },
                                               "commonLabels": {
                                                 "additionalProperties": {
                                                   "type": "string"
@@ -13488,6 +14589,36 @@
                                               },
                                               "nameSuffix": {
                                                 "type": "string"
+                                              },
+                                              "namespace": {
+                                                "type": "string"
+                                              },
+                                              "replicas": {
+                                                "items": {
+                                                  "properties": {
+                                                    "count": {
+                                                      "anyOf": [
+                                                        {
+                                                          "type": "integer"
+                                                        },
+                                                        {
+                                                          "type": "string"
+                                                        }
+                                                      ],
+                                                      "x-kubernetes-int-or-string": true
+                                                    },
+                                                    "name": {
+                                                      "type": "string"
+                                                    }
+                                                  },
+                                                  "required": [
+                                                    "count",
+                                                    "name"
+                                                  ],
+                                                  "type": "object",
+                                                  "additionalProperties": false
+                                                },
+                                                "type": "array"
                                               },
                                               "version": {
                                                 "type": "string"
@@ -13976,6 +15107,9 @@
                                     },
                                     "type": "object"
                                   },
+                                  "commonAnnotationsEnvsubst": {
+                                    "type": "boolean"
+                                  },
                                   "commonLabels": {
                                     "additionalProperties": {
                                       "type": "string"
@@ -13999,6 +15133,36 @@
                                   },
                                   "nameSuffix": {
                                     "type": "string"
+                                  },
+                                  "namespace": {
+                                    "type": "string"
+                                  },
+                                  "replicas": {
+                                    "items": {
+                                      "properties": {
+                                        "count": {
+                                          "anyOf": [
+                                            {
+                                              "type": "integer"
+                                            },
+                                            {
+                                              "type": "string"
+                                            }
+                                          ],
+                                          "x-kubernetes-int-or-string": true
+                                        },
+                                        "name": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "count",
+                                        "name"
+                                      ],
+                                      "type": "object",
+                                      "additionalProperties": false
+                                    },
+                                    "type": "array"
                                   },
                                   "version": {
                                     "type": "string"
@@ -14229,6 +15393,9 @@
                                       },
                                       "type": "object"
                                     },
+                                    "commonAnnotationsEnvsubst": {
+                                      "type": "boolean"
+                                    },
                                     "commonLabels": {
                                       "additionalProperties": {
                                         "type": "string"
@@ -14252,6 +15419,36 @@
                                     },
                                     "nameSuffix": {
                                       "type": "string"
+                                    },
+                                    "namespace": {
+                                      "type": "string"
+                                    },
+                                    "replicas": {
+                                      "items": {
+                                        "properties": {
+                                          "count": {
+                                            "anyOf": [
+                                              {
+                                                "type": "integer"
+                                              },
+                                              {
+                                                "type": "string"
+                                              }
+                                            ],
+                                            "x-kubernetes-int-or-string": true
+                                          },
+                                          "name": {
+                                            "type": "string"
+                                          }
+                                        },
+                                        "required": [
+                                          "count",
+                                          "name"
+                                        ],
+                                        "type": "object",
+                                        "additionalProperties": false
+                                      },
+                                      "type": "array"
                                     },
                                     "version": {
                                       "type": "string"
@@ -14885,6 +16082,9 @@
                                     },
                                     "type": "object"
                                   },
+                                  "commonAnnotationsEnvsubst": {
+                                    "type": "boolean"
+                                  },
                                   "commonLabels": {
                                     "additionalProperties": {
                                       "type": "string"
@@ -14908,6 +16108,36 @@
                                   },
                                   "nameSuffix": {
                                     "type": "string"
+                                  },
+                                  "namespace": {
+                                    "type": "string"
+                                  },
+                                  "replicas": {
+                                    "items": {
+                                      "properties": {
+                                        "count": {
+                                          "anyOf": [
+                                            {
+                                              "type": "integer"
+                                            },
+                                            {
+                                              "type": "string"
+                                            }
+                                          ],
+                                          "x-kubernetes-int-or-string": true
+                                        },
+                                        "name": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "count",
+                                        "name"
+                                      ],
+                                      "type": "object",
+                                      "additionalProperties": false
+                                    },
+                                    "type": "array"
                                   },
                                   "version": {
                                     "type": "string"
@@ -15138,6 +16368,9 @@
                                       },
                                       "type": "object"
                                     },
+                                    "commonAnnotationsEnvsubst": {
+                                      "type": "boolean"
+                                    },
                                     "commonLabels": {
                                       "additionalProperties": {
                                         "type": "string"
@@ -15161,6 +16394,36 @@
                                     },
                                     "nameSuffix": {
                                       "type": "string"
+                                    },
+                                    "namespace": {
+                                      "type": "string"
+                                    },
+                                    "replicas": {
+                                      "items": {
+                                        "properties": {
+                                          "count": {
+                                            "anyOf": [
+                                              {
+                                                "type": "integer"
+                                              },
+                                              {
+                                                "type": "string"
+                                              }
+                                            ],
+                                            "x-kubernetes-int-or-string": true
+                                          },
+                                          "name": {
+                                            "type": "string"
+                                          }
+                                        },
+                                        "required": [
+                                          "count",
+                                          "name"
+                                        ],
+                                        "type": "object",
+                                        "additionalProperties": false
+                                      },
+                                      "type": "array"
                                     },
                                     "version": {
                                       "type": "string"
@@ -15874,6 +17137,9 @@
                                     },
                                     "type": "object"
                                   },
+                                  "commonAnnotationsEnvsubst": {
+                                    "type": "boolean"
+                                  },
                                   "commonLabels": {
                                     "additionalProperties": {
                                       "type": "string"
@@ -15897,6 +17163,36 @@
                                   },
                                   "nameSuffix": {
                                     "type": "string"
+                                  },
+                                  "namespace": {
+                                    "type": "string"
+                                  },
+                                  "replicas": {
+                                    "items": {
+                                      "properties": {
+                                        "count": {
+                                          "anyOf": [
+                                            {
+                                              "type": "integer"
+                                            },
+                                            {
+                                              "type": "string"
+                                            }
+                                          ],
+                                          "x-kubernetes-int-or-string": true
+                                        },
+                                        "name": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "count",
+                                        "name"
+                                      ],
+                                      "type": "object",
+                                      "additionalProperties": false
+                                    },
+                                    "type": "array"
                                   },
                                   "version": {
                                     "type": "string"
@@ -16127,6 +17423,9 @@
                                       },
                                       "type": "object"
                                     },
+                                    "commonAnnotationsEnvsubst": {
+                                      "type": "boolean"
+                                    },
                                     "commonLabels": {
                                       "additionalProperties": {
                                         "type": "string"
@@ -16150,6 +17449,36 @@
                                     },
                                     "nameSuffix": {
                                       "type": "string"
+                                    },
+                                    "namespace": {
+                                      "type": "string"
+                                    },
+                                    "replicas": {
+                                      "items": {
+                                        "properties": {
+                                          "count": {
+                                            "anyOf": [
+                                              {
+                                                "type": "integer"
+                                              },
+                                              {
+                                                "type": "string"
+                                              }
+                                            ],
+                                            "x-kubernetes-int-or-string": true
+                                          },
+                                          "name": {
+                                            "type": "string"
+                                          }
+                                        },
+                                        "required": [
+                                          "count",
+                                          "name"
+                                        ],
+                                        "type": "object",
+                                        "additionalProperties": false
+                                      },
+                                      "type": "array"
                                     },
                                     "version": {
                                       "type": "string"
@@ -16370,6 +17699,18 @@
         },
         "goTemplate": {
           "type": "boolean"
+        },
+        "preservedFields": {
+          "properties": {
+            "annotations": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object",
+          "additionalProperties": false
         },
         "strategy": {
           "properties": {
@@ -16700,6 +18041,9 @@
                           },
                           "type": "object"
                         },
+                        "commonAnnotationsEnvsubst": {
+                          "type": "boolean"
+                        },
                         "commonLabels": {
                           "additionalProperties": {
                             "type": "string"
@@ -16723,6 +18067,36 @@
                         },
                         "nameSuffix": {
                           "type": "string"
+                        },
+                        "namespace": {
+                          "type": "string"
+                        },
+                        "replicas": {
+                          "items": {
+                            "properties": {
+                              "count": {
+                                "anyOf": [
+                                  {
+                                    "type": "integer"
+                                  },
+                                  {
+                                    "type": "string"
+                                  }
+                                ],
+                                "x-kubernetes-int-or-string": true
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "count",
+                              "name"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "type": "array"
                         },
                         "version": {
                           "type": "string"
@@ -16953,6 +18327,9 @@
                             },
                             "type": "object"
                           },
+                          "commonAnnotationsEnvsubst": {
+                            "type": "boolean"
+                          },
                           "commonLabels": {
                             "additionalProperties": {
                               "type": "string"
@@ -16976,6 +18353,36 @@
                           },
                           "nameSuffix": {
                             "type": "string"
+                          },
+                          "namespace": {
+                            "type": "string"
+                          },
+                          "replicas": {
+                            "items": {
+                              "properties": {
+                                "count": {
+                                  "anyOf": [
+                                    {
+                                      "type": "integer"
+                                    },
+                                    {
+                                      "type": "string"
+                                    }
+                                  ],
+                                  "x-kubernetes-int-or-string": true
+                                },
+                                "name": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "count",
+                                "name"
+                              ],
+                              "type": "object",
+                              "additionalProperties": false
+                            },
+                            "type": "array"
                           },
                           "version": {
                             "type": "string"
