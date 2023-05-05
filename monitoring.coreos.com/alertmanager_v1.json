@@ -1799,6 +1799,26 @@
                 "type": "object",
                 "additionalProperties": false
               },
+              "resizePolicy": {
+                "items": {
+                  "properties": {
+                    "resourceName": {
+                      "type": "string"
+                    },
+                    "restartPolicy": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "resourceName",
+                    "restartPolicy"
+                  ],
+                  "type": "object",
+                  "additionalProperties": false
+                },
+                "type": "array",
+                "x-kubernetes-list-type": "atomic"
+              },
               "resources": {
                 "properties": {
                   "claims": {
@@ -2859,6 +2879,26 @@
                 },
                 "type": "object",
                 "additionalProperties": false
+              },
+              "resizePolicy": {
+                "items": {
+                  "properties": {
+                    "resourceName": {
+                      "type": "string"
+                    },
+                    "restartPolicy": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "resourceName",
+                    "restartPolicy"
+                  ],
+                  "type": "object",
+                  "additionalProperties": false
+                },
+                "type": "array",
+                "x-kubernetes-list-type": "atomic"
               },
               "resources": {
                 "properties": {
@@ -5226,6 +5266,10 @@
         },
         "web": {
           "properties": {
+            "getConcurrency": {
+              "format": "int32",
+              "type": "integer"
+            },
             "httpConfig": {
               "properties": {
                 "headers": {
@@ -5264,6 +5308,10 @@
               },
               "type": "object",
               "additionalProperties": false
+            },
+            "timeout": {
+              "format": "int32",
+              "type": "integer"
             },
             "tlsConfig": {
               "properties": {

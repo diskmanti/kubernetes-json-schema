@@ -1817,6 +1817,26 @@
                 "type": "object",
                 "additionalProperties": false
               },
+              "resizePolicy": {
+                "items": {
+                  "properties": {
+                    "resourceName": {
+                      "type": "string"
+                    },
+                    "restartPolicy": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "resourceName",
+                    "restartPolicy"
+                  ],
+                  "type": "object",
+                  "additionalProperties": false
+                },
+                "type": "array",
+                "x-kubernetes-list-type": "atomic"
+              },
               "resources": {
                 "properties": {
                   "claims": {
@@ -2979,6 +2999,26 @@
                 },
                 "type": "object",
                 "additionalProperties": false
+              },
+              "resizePolicy": {
+                "items": {
+                  "properties": {
+                    "resourceName": {
+                      "type": "string"
+                    },
+                    "restartPolicy": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "resourceName",
+                    "restartPolicy"
+                  ],
+                  "type": "object",
+                  "additionalProperties": false
+                },
+                "type": "array",
+                "x-kubernetes-list-type": "atomic"
               },
               "resources": {
                 "properties": {
@@ -4614,6 +4654,82 @@
             }
           },
           "type": "object",
+          "additionalProperties": false
+        },
+        "scrapeConfigNamespaceSelector": {
+          "properties": {
+            "matchExpressions": {
+              "items": {
+                "properties": {
+                  "key": {
+                    "type": "string"
+                  },
+                  "operator": {
+                    "type": "string"
+                  },
+                  "values": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "key",
+                  "operator"
+                ],
+                "type": "object",
+                "additionalProperties": false
+              },
+              "type": "array"
+            },
+            "matchLabels": {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "type": "object"
+            }
+          },
+          "type": "object",
+          "x-kubernetes-map-type": "atomic",
+          "additionalProperties": false
+        },
+        "scrapeConfigSelector": {
+          "properties": {
+            "matchExpressions": {
+              "items": {
+                "properties": {
+                  "key": {
+                    "type": "string"
+                  },
+                  "operator": {
+                    "type": "string"
+                  },
+                  "values": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "key",
+                  "operator"
+                ],
+                "type": "object",
+                "additionalProperties": false
+              },
+              "type": "array"
+            },
+            "matchLabels": {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "type": "object"
+            }
+          },
+          "type": "object",
+          "x-kubernetes-map-type": "atomic",
           "additionalProperties": false
         },
         "scrapeInterval": {

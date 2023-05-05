@@ -392,6 +392,10 @@
                 "type": "array"
               },
               "scheme": {
+                "enum": [
+                  "http",
+                  "https"
+                ],
                 "type": "string"
               },
               "scrapeTimeout": {

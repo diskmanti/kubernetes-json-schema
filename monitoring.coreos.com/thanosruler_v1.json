@@ -1315,6 +1315,26 @@
                 "type": "object",
                 "additionalProperties": false
               },
+              "resizePolicy": {
+                "items": {
+                  "properties": {
+                    "resourceName": {
+                      "type": "string"
+                    },
+                    "restartPolicy": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "resourceName",
+                    "restartPolicy"
+                  ],
+                  "type": "object",
+                  "additionalProperties": false
+                },
+                "type": "array",
+                "x-kubernetes-list-type": "atomic"
+              },
               "resources": {
                 "properties": {
                   "claims": {
@@ -2544,6 +2564,26 @@
                 },
                 "type": "object",
                 "additionalProperties": false
+              },
+              "resizePolicy": {
+                "items": {
+                  "properties": {
+                    "resourceName": {
+                      "type": "string"
+                    },
+                    "restartPolicy": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "resourceName",
+                    "restartPolicy"
+                  ],
+                  "type": "object",
+                  "additionalProperties": false
+                },
+                "type": "array",
+                "x-kubernetes-list-type": "atomic"
               },
               "resources": {
                 "properties": {
@@ -5045,6 +5085,44 @@
         "availableReplicas": {
           "format": "int32",
           "type": "integer"
+        },
+        "conditions": {
+          "items": {
+            "properties": {
+              "lastTransitionTime": {
+                "format": "date-time",
+                "type": "string"
+              },
+              "message": {
+                "type": "string"
+              },
+              "observedGeneration": {
+                "format": "int64",
+                "type": "integer"
+              },
+              "reason": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "lastTransitionTime",
+              "status",
+              "type"
+            ],
+            "type": "object",
+            "additionalProperties": false
+          },
+          "type": "array",
+          "x-kubernetes-list-map-keys": [
+            "type"
+          ],
+          "x-kubernetes-list-type": "map"
         },
         "paused": {
           "type": "boolean"
