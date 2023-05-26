@@ -19,8 +19,7 @@
                   "HTTP_ROUTE",
                   "CLUSTER",
                   "EXTENSION_CONFIG",
-                  "BOOTSTRAP",
-                  "LISTENER_FILTER"
+                  "BOOTSTRAP"
                 ],
                 "type": "string"
               },
@@ -148,10 +147,6 @@
                         },
                         "type": "object",
                         "additionalProperties": false
-                      },
-                      "listenerFilter": {
-                        "description": "Match a specific listener filter.",
-                        "type": "string"
                       },
                       "name": {
                         "description": "Match a specific listener by its name.",
