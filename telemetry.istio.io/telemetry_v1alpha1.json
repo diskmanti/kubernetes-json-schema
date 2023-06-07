@@ -176,6 +176,10 @@
                   "additionalProperties": false
                 },
                 "type": "array"
+              },
+              "reportingInterval": {
+                "description": "Optional.",
+                "type": "string"
               }
             },
             "type": "object",
