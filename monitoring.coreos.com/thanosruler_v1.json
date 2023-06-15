@@ -3928,6 +3928,37 @@
         "version": {
           "type": "string"
         },
+        "volumeMounts": {
+          "items": {
+            "properties": {
+              "mountPath": {
+                "type": "string"
+              },
+              "mountPropagation": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "readOnly": {
+                "type": "boolean"
+              },
+              "subPath": {
+                "type": "string"
+              },
+              "subPathExpr": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "mountPath",
+              "name"
+            ],
+            "type": "object",
+            "additionalProperties": false
+          },
+          "type": "array"
+        },
         "volumes": {
           "items": {
             "properties": {
