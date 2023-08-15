@@ -1070,6 +1070,83 @@
                   "type": "object",
                   "x-kubernetes-map-type": "atomic",
                   "additionalProperties": false
+                },
+                "smtp": {
+                  "properties": {
+                    "authIdentity": {
+                      "type": "string"
+                    },
+                    "authPassword": {
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "optional": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "key"
+                      ],
+                      "type": "object",
+                      "x-kubernetes-map-type": "atomic",
+                      "additionalProperties": false
+                    },
+                    "authSecret": {
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "optional": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "key"
+                      ],
+                      "type": "object",
+                      "x-kubernetes-map-type": "atomic",
+                      "additionalProperties": false
+                    },
+                    "authUsername": {
+                      "type": "string"
+                    },
+                    "from": {
+                      "type": "string"
+                    },
+                    "hello": {
+                      "type": "string"
+                    },
+                    "requireTLS": {
+                      "type": "boolean"
+                    },
+                    "smartHost": {
+                      "properties": {
+                        "host": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "port": {
+                          "minLength": 1,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "host",
+                        "port"
+                      ],
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  "type": "object",
+                  "additionalProperties": false
                 }
               },
               "type": "object",

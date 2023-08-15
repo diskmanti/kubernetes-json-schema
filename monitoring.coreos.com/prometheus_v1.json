@@ -1166,6 +1166,10 @@
         "baseImage": {
           "type": "string"
         },
+        "bodySizeLimit": {
+          "pattern": "(^0|([0-9]*[.])?[0-9]+((K|M|G|T|E|P)i?)?B)$",
+          "type": "string"
+        },
         "configMaps": {
           "items": {
             "type": "string"
@@ -2265,7 +2269,8 @@
                   "prometheusrules",
                   "servicemonitors",
                   "podmonitors",
-                  "probes"
+                  "probes",
+                  "scrapeconfigs"
                 ],
                 "type": "string"
               }
@@ -3378,6 +3383,18 @@
             "additionalProperties": false
           },
           "type": "array"
+        },
+        "labelLimit": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "labelNameLengthLimit": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "labelValueLengthLimit": {
+          "format": "int64",
+          "type": "integer"
         },
         "listenLocal": {
           "type": "boolean"
@@ -4662,6 +4679,10 @@
           "type": "object",
           "additionalProperties": false
         },
+        "sampleLimit": {
+          "format": "int64",
+          "type": "integer"
+        },
         "scrapeConfigNamespaceSelector": {
           "properties": {
             "matchExpressions": {
@@ -5416,6 +5437,10 @@
         },
         "tag": {
           "type": "string"
+        },
+        "targetLimit": {
+          "format": "int64",
+          "type": "integer"
         },
         "thanos": {
           "properties": {
