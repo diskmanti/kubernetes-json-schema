@@ -12,6 +12,16 @@
       "https://raw.githubusercontent.com/operator-framework/operator-lifecycle-manager/master/deploy/chart/crds/0000_50_olm_00-subscriptions.crd.yaml"
     ]
   },
+  "argocd-operator": {
+    "github_repository": "argoproj-labs/argocd-operator",
+    "urls": [
+      "https://raw.githubusercontent.com/argoproj-labs/argocd-operator/master/deploy/olm-catalog/argocd-operator{version_without_v}/argoproj.io_applications.yaml",
+      "https://raw.githubusercontent.com/argoproj-labs/argocd-operator/master/deploy/olm-catalog/argocd-operator{version_without_v}/argoproj.io_applicationsets.yaml",
+      "https://raw.githubusercontent.com/argoproj-labs/argocd-operator/master/deploy/olm-catalog/argocd-operator{version_without_v}/argoproj.io_appprojects.yaml",
+      "https://raw.githubusercontent.com/argoproj-labs/argocd-operator/master/deploy/olm-catalog/argocd-operator{version_without_v}/argoproj.io_argocdexports.yaml",
+      "https://raw.githubusercontent.com/argoproj-labs/argocd-operator/master/deploy/olm-catalog/argocd-operator{version_without_v}/argoproj.io_argocds.yaml"
+    ]
+  },
   "argo-cd": {
     "github_repository": "argoproj/argo-cd",
     "urls": [
