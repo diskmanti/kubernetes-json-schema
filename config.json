@@ -9,7 +9,7 @@
       "https://raw.githubusercontent.com/operator-framework/operator-lifecycle-manager/master/deploy/chart/crds/0000_50_olm_00-operatorconditions.crd.yaml",
       "https://raw.githubusercontent.com/operator-framework/operator-lifecycle-manager/master/deploy/chart/crds/0000_50_olm_00-operatorgroups.crd.yaml",
       "https://raw.githubusercontent.com/operator-framework/operator-lifecycle-manager/master/deploy/chart/crds/0000_50_olm_00-operators.crd.yaml",
-      "https://raw.githubusercontent.com/operator-framework/operator-lifecycle-manager/master/deploy/chart/crds/0000_50_olm_00-subscriptions.crd.yaml",
+      "https://raw.githubusercontent.com/operator-framework/operator-lifecycle-manager/master/deploy/chart/crds/0000_50_olm_00-subscriptions.crd.yaml"
     ]
   },
   "argo-cd": {
@@ -53,7 +53,7 @@
   "sealed-secrets": {
     "github_repository": "bitnami-labs/sealed-secrets",
     "asset_name": "controller.yaml"
-  }, 
+  },
   "velero": {
     "github_repository": "vmware-tanzu/helm-charts",
     "urls": [
