@@ -295,8 +295,13 @@
                       "type": "array"
                     },
                     "values": {
-                      "description": "Values specifies Helm values to be passed to helm template, typically defined as a block",
+                      "description": "Values specifies Helm values to be passed to helm template, typically defined as a block. ValuesObject takes precedence over Values, so use one or the other.",
                       "type": "string"
+                    },
+                    "valuesObject": {
+                      "description": "ValuesObject specifies Helm values to be passed to helm template, defined as a map. This takes precedence over Values.",
+                      "type": "object",
+                      "x-kubernetes-preserve-unknown-fields": true
                     },
                     "version": {
                       "description": "Version is the Helm version to use for templating (\"3\")",
@@ -639,8 +644,13 @@
                         "type": "array"
                       },
                       "values": {
-                        "description": "Values specifies Helm values to be passed to helm template, typically defined as a block",
+                        "description": "Values specifies Helm values to be passed to helm template, typically defined as a block. ValuesObject takes precedence over Values, so use one or the other.",
                         "type": "string"
+                      },
+                      "valuesObject": {
+                        "description": "ValuesObject specifies Helm values to be passed to helm template, defined as a map. This takes precedence over Values.",
+                        "type": "object",
+                        "x-kubernetes-preserve-unknown-fields": true
                       },
                       "version": {
                         "description": "Version is the Helm version to use for templating (\"3\")",
@@ -1123,8 +1133,13 @@
                   "type": "array"
                 },
                 "values": {
-                  "description": "Values specifies Helm values to be passed to helm template, typically defined as a block",
+                  "description": "Values specifies Helm values to be passed to helm template, typically defined as a block. ValuesObject takes precedence over Values, so use one or the other.",
                   "type": "string"
+                },
+                "valuesObject": {
+                  "description": "ValuesObject specifies Helm values to be passed to helm template, defined as a map. This takes precedence over Values.",
+                  "type": "object",
+                  "x-kubernetes-preserve-unknown-fields": true
                 },
                 "version": {
                   "description": "Version is the Helm version to use for templating (\"3\")",
@@ -1467,8 +1482,13 @@
                     "type": "array"
                   },
                   "values": {
-                    "description": "Values specifies Helm values to be passed to helm template, typically defined as a block",
+                    "description": "Values specifies Helm values to be passed to helm template, typically defined as a block. ValuesObject takes precedence over Values, so use one or the other.",
                     "type": "string"
+                  },
+                  "valuesObject": {
+                    "description": "ValuesObject specifies Helm values to be passed to helm template, defined as a map. This takes precedence over Values.",
+                    "type": "object",
+                    "x-kubernetes-preserve-unknown-fields": true
                   },
                   "version": {
                     "description": "Version is the Helm version to use for templating (\"3\")",
@@ -1777,6 +1797,10 @@
           },
           "type": "array"
         },
+        "controllerNamespace": {
+          "description": "ControllerNamespace indicates the namespace in which the application controller is located",
+          "type": "string"
+        },
         "health": {
           "description": "Health contains information about the application's current health status",
           "properties": {
@@ -1980,8 +2004,13 @@
                         "type": "array"
                       },
                       "values": {
-                        "description": "Values specifies Helm values to be passed to helm template, typically defined as a block",
+                        "description": "Values specifies Helm values to be passed to helm template, typically defined as a block. ValuesObject takes precedence over Values, so use one or the other.",
                         "type": "string"
+                      },
+                      "valuesObject": {
+                        "description": "ValuesObject specifies Helm values to be passed to helm template, defined as a map. This takes precedence over Values.",
+                        "type": "object",
+                        "x-kubernetes-preserve-unknown-fields": true
                       },
                       "version": {
                         "description": "Version is the Helm version to use for templating (\"3\")",
@@ -2324,8 +2353,13 @@
                           "type": "array"
                         },
                         "values": {
-                          "description": "Values specifies Helm values to be passed to helm template, typically defined as a block",
+                          "description": "Values specifies Helm values to be passed to helm template, typically defined as a block. ValuesObject takes precedence over Values, so use one or the other.",
                           "type": "string"
+                        },
+                        "valuesObject": {
+                          "description": "ValuesObject specifies Helm values to be passed to helm template, defined as a map. This takes precedence over Values.",
+                          "type": "object",
+                          "x-kubernetes-preserve-unknown-fields": true
                         },
                         "version": {
                           "description": "Version is the Helm version to use for templating (\"3\")",
@@ -2821,8 +2855,13 @@
                               "type": "array"
                             },
                             "values": {
-                              "description": "Values specifies Helm values to be passed to helm template, typically defined as a block",
+                              "description": "Values specifies Helm values to be passed to helm template, typically defined as a block. ValuesObject takes precedence over Values, so use one or the other.",
                               "type": "string"
+                            },
+                            "valuesObject": {
+                              "description": "ValuesObject specifies Helm values to be passed to helm template, defined as a map. This takes precedence over Values.",
+                              "type": "object",
+                              "x-kubernetes-preserve-unknown-fields": true
                             },
                             "version": {
                               "description": "Version is the Helm version to use for templating (\"3\")",
@@ -3165,8 +3204,13 @@
                                 "type": "array"
                               },
                               "values": {
-                                "description": "Values specifies Helm values to be passed to helm template, typically defined as a block",
+                                "description": "Values specifies Helm values to be passed to helm template, typically defined as a block. ValuesObject takes precedence over Values, so use one or the other.",
                                 "type": "string"
+                              },
+                              "valuesObject": {
+                                "description": "ValuesObject specifies Helm values to be passed to helm template, defined as a map. This takes precedence over Values.",
+                                "type": "object",
+                                "x-kubernetes-preserve-unknown-fields": true
                               },
                               "version": {
                                 "description": "Version is the Helm version to use for templating (\"3\")",
@@ -3658,8 +3702,13 @@
                           "type": "array"
                         },
                         "values": {
-                          "description": "Values specifies Helm values to be passed to helm template, typically defined as a block",
+                          "description": "Values specifies Helm values to be passed to helm template, typically defined as a block. ValuesObject takes precedence over Values, so use one or the other.",
                           "type": "string"
+                        },
+                        "valuesObject": {
+                          "description": "ValuesObject specifies Helm values to be passed to helm template, defined as a map. This takes precedence over Values.",
+                          "type": "object",
+                          "x-kubernetes-preserve-unknown-fields": true
                         },
                         "version": {
                           "description": "Version is the Helm version to use for templating (\"3\")",
@@ -4002,8 +4051,13 @@
                             "type": "array"
                           },
                           "values": {
-                            "description": "Values specifies Helm values to be passed to helm template, typically defined as a block",
+                            "description": "Values specifies Helm values to be passed to helm template, typically defined as a block. ValuesObject takes precedence over Values, so use one or the other.",
                             "type": "string"
+                          },
+                          "valuesObject": {
+                            "description": "ValuesObject specifies Helm values to be passed to helm template, defined as a map. This takes precedence over Values.",
+                            "type": "object",
+                            "x-kubernetes-preserve-unknown-fields": true
                           },
                           "version": {
                             "description": "Version is the Helm version to use for templating (\"3\")",
@@ -4327,6 +4381,51 @@
                   "type": "object",
                   "additionalProperties": false
                 },
+                "ignoreDifferences": {
+                  "description": "IgnoreDifferences is a reference to the application's ignored differences used for comparison",
+                  "items": {
+                    "description": "ResourceIgnoreDifferences contains resource filter and list of json paths which should be ignored during comparison with live state.",
+                    "properties": {
+                      "group": {
+                        "type": "string"
+                      },
+                      "jqPathExpressions": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "jsonPointers": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "kind": {
+                        "type": "string"
+                      },
+                      "managedFieldsManagers": {
+                        "description": "ManagedFieldsManagers is a list of trusted managers. Fields mutated by those managers will take precedence over the desired state defined in the SCM and won't be displayed in diffs",
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "namespace": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "kind"
+                    ],
+                    "type": "object",
+                    "additionalProperties": false
+                  },
+                  "type": "array"
+                },
                 "source": {
                   "description": "Source is a reference to the application's source used for comparison",
                   "properties": {
@@ -4484,8 +4583,13 @@
                           "type": "array"
                         },
                         "values": {
-                          "description": "Values specifies Helm values to be passed to helm template, typically defined as a block",
+                          "description": "Values specifies Helm values to be passed to helm template, typically defined as a block. ValuesObject takes precedence over Values, so use one or the other.",
                           "type": "string"
+                        },
+                        "valuesObject": {
+                          "description": "ValuesObject specifies Helm values to be passed to helm template, defined as a map. This takes precedence over Values.",
+                          "type": "object",
+                          "x-kubernetes-preserve-unknown-fields": true
                         },
                         "version": {
                           "description": "Version is the Helm version to use for templating (\"3\")",
@@ -4828,8 +4932,13 @@
                             "type": "array"
                           },
                           "values": {
-                            "description": "Values specifies Helm values to be passed to helm template, typically defined as a block",
+                            "description": "Values specifies Helm values to be passed to helm template, typically defined as a block. ValuesObject takes precedence over Values, so use one or the other.",
                             "type": "string"
+                          },
+                          "valuesObject": {
+                            "description": "ValuesObject specifies Helm values to be passed to helm template, defined as a map. This takes precedence over Values.",
+                            "type": "object",
+                            "x-kubernetes-preserve-unknown-fields": true
                           },
                           "version": {
                             "description": "Version is the Helm version to use for templating (\"3\")",
