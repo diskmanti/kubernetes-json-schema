@@ -1,4 +1,19 @@
 {
+  "olm": {
+    "github_repository": "operator-framework/operator-lifecycle-manager",
+    "urls": [
+      "https://raw.githubusercontent.com/operator-framework/operator-lifecycle-manager/master/deploy/chart/crds/0000_50_olm_00-catalogsources.crd.yaml",
+      "https://raw.githubusercontent.com/operator-framework/operator-lifecycle-manager/master/deploy/chart/crds/0000_50_olm_00-clusterserviceversions.crd.yaml",
+      "https://raw.githubusercontent.com/operator-framework/operator-lifecycle-manager/master/deploy/chart/crds/0000_50_olm_00-installplans.crd.yaml",
+      "https://raw.githubusercontent.com/operator-framework/operator-lifecycle-manager/master/deploy/chart/crds/0000_50_olm_00-olmconfigs.crd.yaml",
+      "https://raw.githubusercontent.com/operator-framework/operator-lifecycle-manager/master/deploy/chart/crds/0000_50_olm_00-operatorconditions.crd.yaml",
+      "https://raw.githubusercontent.com/operator-framework/operator-lifecycle-manager/master/deploy/chart/crds/0000_50_olm_00-operatorgroups.crd.yaml",
+      "https://raw.githubusercontent.com/operator-framework/operator-lifecycle-manager/master/deploy/chart/crds/0000_50_olm_00-operators.crd.yaml",
+      "https://raw.githubusercontent.com/operator-framework/operator-lifecycle-manager/master/deploy/chart/crds/0000_50_olm_00-subscriptions.crd.yaml",
+    ]
+
+",
+  },
   "argo-cd": {
     "github_repository": "argoproj/argo-cd",
     "urls": [
