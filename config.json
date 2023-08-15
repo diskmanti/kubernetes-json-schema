@@ -11,8 +11,6 @@
       "https://raw.githubusercontent.com/operator-framework/operator-lifecycle-manager/master/deploy/chart/crds/0000_50_olm_00-operators.crd.yaml",
       "https://raw.githubusercontent.com/operator-framework/operator-lifecycle-manager/master/deploy/chart/crds/0000_50_olm_00-subscriptions.crd.yaml",
     ]
-
-",
   },
   "argo-cd": {
     "github_repository": "argoproj/argo-cd",
