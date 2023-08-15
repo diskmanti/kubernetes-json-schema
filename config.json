@@ -2,7 +2,10 @@
   "grafana-operator": {
     "github_repository": "grafana-operator/grafana-operator",
     "url": [
-      "https://raw.githubusercontent.com/grafana-operator/grafana-operator/master/deploy/kustomize/base/crds.yaml"
+      "https://raw.githubusercontent.com/grafana-operator/grafana-operator/master/deploy/helm/grafana-operator/crds/grafana.integreatly.org_grafanadashboards.yaml",
+      "https://raw.githubusercontent.com/grafana-operator/grafana-operator/master/deploy/helm/grafana-operator/crds/grafana.integreatly.org_grafanadatasources.yaml",
+      "https://raw.githubusercontent.com/grafana-operator/grafana-operator/master/deploy/helm/grafana-operator/crds/grafana.integreatly.org_grafanafolders.yaml",
+      "https://raw.githubusercontent.com/grafana-operator/grafana-operator/master/deploy/helm/grafana-operator/crds/grafana.integreatly.org_grafanas.yaml"
     ]
   },
   "olm": {
