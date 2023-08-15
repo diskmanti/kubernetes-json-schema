@@ -1,4 +1,10 @@
 {
+  "grafana-operator": {
+    "github_repository": "grafana-operator/grafana-operator",
+    "url": [
+      "https://raw.githubusercontent.com/grafana-operator/grafana-operator/master/deploy/kustomize/base/crds.yaml"
+    ]
+  },
   "olm": {
     "github_repository": "operator-framework/operator-lifecycle-manager",
     "urls": [
