@@ -8,5 +8,5 @@ Running Kubernetes schema validation checks helps apply the **"shift-left approa
 ### Kubeconform
 
 ```
-kubeconform -schema-location default -schema-location 'https://raw.githubusercontent.com/philippe-vandermoere/philippe-vandermoere/kubernetes-json-schema/main/{{.Group}}/{{.ResourceKind}}_{{.ResourceAPIVersion}}.json' [MANIFEST]
+kubeconform -schema-location default -schema-location 'https://raw.githubusercontent.com/diskmanti/diskmanti/kubernetes-json-schema/main/{{.Group}}/{{.ResourceKind}}_{{.ResourceAPIVersion}}.json' [MANIFEST]
 ```
