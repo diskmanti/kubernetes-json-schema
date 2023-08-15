@@ -15,11 +15,11 @@
   "argocd-operator": {
     "github_repository": "argoproj-labs/argocd-operator",
     "urls": [
-      "https://raw.githubusercontent.com/argoproj-labs/argocd-operator/master/deploy/olm-catalog/argocd-operator{version_without_v}/argoproj.io_applications.yaml",
-      "https://raw.githubusercontent.com/argoproj-labs/argocd-operator/master/deploy/olm-catalog/argocd-operator{version_without_v}/argoproj.io_applicationsets.yaml",
-      "https://raw.githubusercontent.com/argoproj-labs/argocd-operator/master/deploy/olm-catalog/argocd-operator{version_without_v}/argoproj.io_appprojects.yaml",
-      "https://raw.githubusercontent.com/argoproj-labs/argocd-operator/master/deploy/olm-catalog/argocd-operator{version_without_v}/argoproj.io_argocdexports.yaml",
-      "https://raw.githubusercontent.com/argoproj-labs/argocd-operator/master/deploy/olm-catalog/argocd-operator{version_without_v}/argoproj.io_argocds.yaml"
+      "https://raw.githubusercontent.com/argoproj-labs/argocd-operator/master/config/crd/bases//argoproj.io_applications.yaml",
+      "https://raw.githubusercontent.com/argoproj-labs/argocd-operator/master/config/crd/bases//argoproj.io_applicationsets.yaml",
+      "https://raw.githubusercontent.com/argoproj-labs/argocd-operator/master/config/crd/bases//argoproj.io_appprojects.yaml",
+      "https://raw.githubusercontent.com/argoproj-labs/argocd-operator/master/config/crd/bases//argoproj.io_argocdexports.yaml",
+      "https://raw.githubusercontent.com/argoproj-labs/argocd-operator/master/config/crd/bases//argoproj.io_argocds.yaml"
     ]
   },
   "argo-cd": {
