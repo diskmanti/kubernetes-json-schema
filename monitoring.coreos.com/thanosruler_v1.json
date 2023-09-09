@@ -1390,6 +1390,9 @@
                 "type": "object",
                 "additionalProperties": false
               },
+              "restartPolicy": {
+                "type": "string"
+              },
               "securityContext": {
                 "properties": {
                   "allowPrivilegeEscalation": {
@@ -2641,6 +2644,9 @@
                 "type": "object",
                 "additionalProperties": false
               },
+              "restartPolicy": {
+                "type": "string"
+              },
               "securityContext": {
                 "properties": {
                   "allowPrivilegeEscalation": {
@@ -3719,6 +3725,13 @@
                       },
                       "type": "array"
                     },
+                    "allocatedResourceStatuses": {
+                      "additionalProperties": {
+                        "type": "string"
+                      },
+                      "type": "object",
+                      "x-kubernetes-map-type": "granular"
+                    },
                     "allocatedResources": {
                       "additionalProperties": {
                         "anyOf": [
@@ -3783,9 +3796,6 @@
                       "type": "array"
                     },
                     "phase": {
-                      "type": "string"
-                    },
-                    "resizeStatus": {
                       "type": "string"
                     }
                   },

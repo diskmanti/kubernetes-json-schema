@@ -523,6 +523,10 @@
         "jobLabel": {
           "type": "string"
         },
+        "keepDroppedTargets": {
+          "format": "int64",
+          "type": "integer"
+        },
         "labelLimit": {
           "format": "int64",
           "type": "integer"
