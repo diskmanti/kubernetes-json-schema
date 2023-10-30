@@ -855,6 +855,49 @@
                 "type": "object",
                 "additionalProperties": false
               },
+              "mirrors": {
+                "items": {
+                  "properties": {
+                    "destination": {
+                      "properties": {
+                        "host": {
+                          "description": "The name of a service from the service registry.",
+                          "type": "string"
+                        },
+                        "port": {
+                          "description": "Specifies the port on the host that is being addressed.",
+                          "properties": {
+                            "number": {
+                              "type": "integer"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "subset": {
+                          "description": "The name of a subset within the service.",
+                          "type": "string"
+                        }
+                      },
+                      "type": "object",
+                      "additionalProperties": false
+                    },
+                    "percentage": {
+                      "properties": {
+                        "value": {
+                          "format": "double",
+                          "type": "number"
+                        }
+                      },
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  "type": "object",
+                  "additionalProperties": false
+                },
+                "type": "array"
+              },
               "name": {
                 "description": "The name assigned to the route for debugging purposes.",
                 "type": "string"
@@ -952,6 +995,21 @@
                   },
                   "uri": {
                     "type": "string"
+                  },
+                  "uriRegexRewrite": {
+                    "description": "rewrite the path portion of the URI with the specified regex.",
+                    "properties": {
+                      "match": {
+                        "description": "RE2 style regex-based match (https://github.com/google/re2/wiki/Syntax).",
+                        "type": "string"
+                      },
+                      "rewrite": {
+                        "description": "The string that should replace into matching portions of original URI.",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
                   }
                 },
                 "type": "object",
