@@ -30,6 +30,10 @@
               "description": "CSISnapshotTimeout specifies the time used to wait for CSI VolumeSnapshot status turns to ReadyToUse during creation, before returning error as timeout. The default value is 10 minute.",
               "type": "string"
             },
+            "datamover": {
+              "description": "DataMover specifies the data mover to be used by the backup. If DataMover is \"\" or \"velero\", the built-in data mover will be used.",
+              "type": "string"
+            },
             "defaultVolumesToFsBackup": {
               "description": "DefaultVolumesToFsBackup specifies whether pod volume file system backup should be used for all volumes by default.",
               "nullable": true,
@@ -155,6 +159,7 @@
                           }
                         },
                         "type": "object",
+                        "x-kubernetes-map-type": "atomic",
                         "additionalProperties": false
                       },
                       "name": {
@@ -355,6 +360,7 @@
                 }
               },
               "type": "object",
+              "x-kubernetes-map-type": "atomic",
               "additionalProperties": false
             },
             "metadata": {
@@ -413,6 +419,7 @@
                   }
                 },
                 "type": "object",
+                "x-kubernetes-map-type": "atomic",
                 "additionalProperties": false
               },
               "nullable": true,
@@ -447,7 +454,13 @@
                 "name"
               ],
               "type": "object",
+              "x-kubernetes-map-type": "atomic",
               "additionalProperties": false
+            },
+            "snapshotMoveData": {
+              "description": "SnapshotMoveData specifies whether snapshot data should be moved",
+              "nullable": true,
+              "type": "boolean"
             },
             "snapshotVolumes": {
               "description": "SnapshotVolumes specifies whether to take snapshots of any PV's referenced in the set of objects included in the Backup.",
