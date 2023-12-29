@@ -297,6 +297,10 @@
             "namespace": {
               "description": "Namespace specifies resource namespace.",
               "type": "string"
+            },
+            "uid": {
+              "description": "UID specifies the resource uid.",
+              "type": "string"
             }
           },
           "type": "object",
@@ -343,6 +347,10 @@
               "namespace": {
                 "description": "Namespace specifies resource namespace.",
                 "type": "string"
+              },
+              "uid": {
+                "description": "UID specifies the resource uid.",
+                "type": "string"
               }
             },
             "type": "object",
@@ -351,12 +359,15 @@
           "type": "array"
         },
         "handler": {
-          "description": "Handler represents the instance ID that handles the UR Deprecated",
+          "description": "Deprecated",
           "type": "string"
         },
         "message": {
           "description": "Specifies request status message.",
           "type": "string"
+        },
+        "retryCount": {
+          "type": "integer"
         },
         "state": {
           "description": "State represents state of the update request.",
