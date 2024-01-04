@@ -94,7 +94,7 @@
               "tls": {
                 "properties": {
                   "caCertificates": {
-                    "description": "REQUIRED if mode is `MUTUAL` or `OPTIONAL_MUTUAL`.",
+                    "description": "REQUIRED if mode is `MUTUAL`.",
                     "type": "string"
                   },
                   "cipherSuites": {
@@ -138,8 +138,7 @@
                       "SIMPLE",
                       "MUTUAL",
                       "AUTO_PASSTHROUGH",
-                      "ISTIO_MUTUAL",
-                      "OPTIONAL_MUTUAL"
+                      "ISTIO_MUTUAL"
                     ],
                     "type": "string"
                   },
