@@ -513,6 +513,9 @@
                 },
                 "type": "object",
                 "additionalProperties": false
+              },
+              "trackTimestampsStaleness": {
+                "type": "boolean"
               }
             },
             "type": "object",
@@ -614,7 +617,6 @@
         }
       },
       "required": [
-        "endpoints",
         "selector"
       ],
       "type": "object",

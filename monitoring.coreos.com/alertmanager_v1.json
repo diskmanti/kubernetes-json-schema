@@ -1220,6 +1220,9 @@
           "pattern": "^(0|(([0-9]+)h)?(([0-9]+)m)?(([0-9]+)s)?(([0-9]+)ms)?)$",
           "type": "string"
         },
+        "clusterLabel": {
+          "type": "string"
+        },
         "clusterPeerTimeout": {
           "pattern": "^(0|(([0-9]+)h)?(([0-9]+)m)?(([0-9]+)s)?(([0-9]+)ms)?)$",
           "type": "string"
