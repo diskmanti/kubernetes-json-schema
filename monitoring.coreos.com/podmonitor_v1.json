@@ -535,6 +535,9 @@
                 },
                 "type": "object",
                 "additionalProperties": false
+              },
+              "trackTimestampsStaleness": {
+                "type": "boolean"
               }
             },
             "type": "object",
@@ -596,7 +599,6 @@
         }
       },
       "required": [
-        "podMetricsEndpoints",
         "selector"
       ],
       "type": "object",

@@ -780,6 +780,59 @@
                   "scheme": {
                     "type": "string"
                   },
+                  "sigv4": {
+                    "properties": {
+                      "accessKey": {
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "optional": {
+                            "type": "boolean"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "x-kubernetes-map-type": "atomic",
+                        "additionalProperties": false
+                      },
+                      "profile": {
+                        "type": "string"
+                      },
+                      "region": {
+                        "type": "string"
+                      },
+                      "roleArn": {
+                        "type": "string"
+                      },
+                      "secretKey": {
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "optional": {
+                            "type": "boolean"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "x-kubernetes-map-type": "atomic",
+                        "additionalProperties": false
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  },
                   "timeout": {
                     "pattern": "^(0|(([0-9]+)y)?(([0-9]+)w)?(([0-9]+)d)?(([0-9]+)h)?(([0-9]+)m)?(([0-9]+)s)?(([0-9]+)ms)?)$",
                     "type": "string"
@@ -3431,6 +3484,11 @@
           ],
           "type": "string"
         },
+        "maximumStartupDurationSeconds": {
+          "format": "int32",
+          "minimum": 60,
+          "type": "integer"
+        },
         "minReadySeconds": {
           "format": "int32",
           "type": "integer"
@@ -3449,6 +3507,18 @@
         },
         "paused": {
           "type": "boolean"
+        },
+        "persistentVolumeClaimRetentionPolicy": {
+          "properties": {
+            "whenDeleted": {
+              "type": "string"
+            },
+            "whenScaled": {
+              "type": "string"
+            }
+          },
+          "type": "object",
+          "additionalProperties": false
         },
         "podMetadata": {
           "properties": {
@@ -3681,6 +3751,13 @@
           "additionalProperties": false
         },
         "queryLogFile": {
+          "type": "string"
+        },
+        "reloadStrategy": {
+          "enum": [
+            "HTTP",
+            "ProcessSignal"
+          ],
           "type": "string"
         },
         "remoteRead": {
@@ -4062,6 +4139,71 @@
                 "type": "object",
                 "additionalProperties": false
               },
+              "azureAd": {
+                "properties": {
+                  "cloud": {
+                    "enum": [
+                      "AzureChina",
+                      "AzureGovernment",
+                      "AzurePublic"
+                    ],
+                    "type": "string"
+                  },
+                  "managedIdentity": {
+                    "properties": {
+                      "clientId": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "clientId"
+                    ],
+                    "type": "object",
+                    "additionalProperties": false
+                  },
+                  "oauth": {
+                    "properties": {
+                      "clientId": {
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "clientSecret": {
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "optional": {
+                            "type": "boolean"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "x-kubernetes-map-type": "atomic",
+                        "additionalProperties": false
+                      },
+                      "tenantId": {
+                        "minLength": 1,
+                        "pattern": "^[0-9a-zA-Z-.]+$",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "clientId",
+                      "clientSecret",
+                      "tenantId"
+                    ],
+                    "type": "object",
+                    "additionalProperties": false
+                  }
+                },
+                "type": "object",
+                "additionalProperties": false
+              },
               "basicAuth": {
                 "properties": {
                   "password": {
@@ -4111,6 +4253,9 @@
               },
               "bearerTokenFile": {
                 "type": "string"
+              },
+              "enableHTTP2": {
+                "type": "boolean"
               },
               "headers": {
                 "additionalProperties": {
@@ -5833,6 +5978,13 @@
         "topologySpreadConstraints": {
           "items": {
             "properties": {
+              "additionalLabelSelectors": {
+                "enum": [
+                  "OnResource",
+                  "OnShard"
+                ],
+                "type": "string"
+              },
               "labelSelector": {
                 "properties": {
                   "matchExpressions": {
@@ -7532,6 +7684,9 @@
           "format": "int32",
           "type": "integer"
         },
+        "selector": {
+          "type": "string"
+        },
         "shardStatuses": {
           "items": {
             "properties": {
@@ -7570,6 +7725,10 @@
             "shardID"
           ],
           "x-kubernetes-list-type": "map"
+        },
+        "shards": {
+          "format": "int32",
+          "type": "integer"
         },
         "unavailableReplicas": {
           "format": "int32",
