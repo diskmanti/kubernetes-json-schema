@@ -67,12 +67,6 @@
               "type": "string"
             }
           },
-          "required": [
-            "access",
-            "name",
-            "type",
-            "url"
-          ],
           "type": "object",
           "additionalProperties": false
         },
