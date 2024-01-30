@@ -32,7 +32,8 @@
                 "RestoreResourceList",
                 "RestoreItemOperations",
                 "CSIBackupVolumeSnapshots",
-                "CSIBackupVolumeSnapshotContents"
+                "CSIBackupVolumeSnapshotContents",
+                "BackupVolumeInfos"
               ],
               "type": "string"
             },

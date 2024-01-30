@@ -69,6 +69,14 @@
           "description": "Tags are a map of key-value pairs that should be applied to the volume backup as tags.",
           "type": "object"
         },
+        "uploaderSettings": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "UploaderSettings are a map of key-value pairs that should be applied to the uploader configuration.",
+          "nullable": true,
+          "type": "object"
+        },
         "uploaderType": {
           "description": "UploaderType is the type of the uploader to handle the data transfer.",
           "enum": [
