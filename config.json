@@ -61,7 +61,6 @@
   "kyverno": {
     "github_repository": "kyverno/kyverno",
     "asset_name": "install.yaml"
-    ]
   },
   "prometheus-operator": {
     "github_repository": "prometheus-operator/prometheus-operator",
