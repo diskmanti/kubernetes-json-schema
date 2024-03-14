@@ -45,6 +45,7 @@
                   "properties": {
                     "name": {
                       "description": "Required.",
+                      "minLength": 1,
                       "type": "string"
                     }
                   },
@@ -76,7 +77,7 @@
                       "type": "boolean"
                     },
                     "match": {
-                      "description": "Match allows provides the scope of the override.",
+                      "description": "Match allows providing the scope of the override.",
                       "oneOf": [
                         {
                           "not": {
@@ -108,10 +109,11 @@
                       "properties": {
                         "customMetric": {
                           "description": "Allows free-form specification of a metric.",
+                          "minLength": 1,
                           "type": "string"
                         },
                         "metric": {
-                          "description": "One of the well-known Istio Standard Metrics.",
+                          "description": "One of the well-known [Istio Standard Metrics](https://istio.io/latest/docs/reference/config/metrics/).",
                           "enum": [
                             "ALL_METRICS",
                             "REQUEST_COUNT",
@@ -128,7 +130,7 @@
                           "type": "string"
                         },
                         "mode": {
-                          "description": "Controls which mode of metrics generation is selected: CLIENT and/or SERVER.",
+                          "description": "Controls which mode of metrics generation is selected: `CLIENT`, `SERVER`, or `CLIENT_AND_SERVER`.",
                           "enum": [
                             "CLIENT_AND_SERVER",
                             "CLIENT",
@@ -157,6 +159,16 @@
                           }
                         },
                         "type": "object",
+                        "x-kubernetes-validations": [
+                          {
+                            "message": "value must be set when operation is UPSERT",
+                            "rule": "((has(self.operation) ? self.operation : '') == 'UPSERT') ? self.value != '' : true"
+                          },
+                          {
+                            "message": "value must not be set when operation is REMOVE",
+                            "rule": "((has(self.operation) ? self.operation : '') == 'REMOVE') ? !has(self.value) : true"
+                          }
+                        ],
                         "additionalProperties": false
                       },
                       "description": "Optional.",
@@ -174,6 +186,7 @@
                   "properties": {
                     "name": {
                       "description": "Required.",
+                      "minLength": 1,
                       "type": "string"
                     }
                   },
@@ -286,9 +299,13 @@
                         },
                         "name": {
                           "description": "Name of the environment variable from which to extract the tag value.",
+                          "minLength": 1,
                           "type": "string"
                         }
                       },
+                      "required": [
+                        "name"
+                      ],
                       "type": "object",
                       "additionalProperties": false
                     },
@@ -301,9 +318,13 @@
                         },
                         "name": {
                           "description": "Name of the header from which to extract the tag value.",
+                          "minLength": 1,
                           "type": "string"
                         }
                       },
+                      "required": [
+                        "name"
+                      ],
                       "type": "object",
                       "additionalProperties": false
                     },
@@ -312,9 +333,13 @@
                       "properties": {
                         "value": {
                           "description": "The tag value to use.",
+                          "minLength": 1,
                           "type": "string"
                         }
                       },
+                      "required": [
+                        "value"
+                      ],
                       "type": "object",
                       "additionalProperties": false
                     }
@@ -352,6 +377,7 @@
                   "properties": {
                     "name": {
                       "description": "Required.",
+                      "minLength": 1,
                       "type": "string"
                     }
                   },
@@ -365,6 +391,8 @@
               },
               "randomSamplingPercentage": {
                 "description": "Controls the rate at which traffic will be selected for tracing if no prior sampling decision has been made.",
+                "maximum": 100,
+                "minimum": 0,
                 "nullable": true,
                 "type": "number"
               },

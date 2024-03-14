@@ -60,6 +60,11 @@
                             "description": "The idle timeout for upstream connection pool connections.",
                             "type": "string"
                           },
+                          "maxConcurrentStreams": {
+                            "description": "The maximum number of concurrent streams allowed for a peer on one HTTP/2 connection.",
+                            "format": "int32",
+                            "type": "integer"
+                          },
                           "maxRequestsPerConnection": {
                             "description": "Maximum number of requests per connection to a backend.",
                             "format": "int32",
@@ -83,6 +88,10 @@
                         "properties": {
                           "connectTimeout": {
                             "description": "TCP connection timeout.",
+                            "type": "string"
+                          },
+                          "idleTimeout": {
+                            "description": "The idle timeout for TCP connections.",
                             "type": "string"
                           },
                           "maxConnectionDuration": {
@@ -455,6 +464,11 @@
                                   "description": "The idle timeout for upstream connection pool connections.",
                                   "type": "string"
                                 },
+                                "maxConcurrentStreams": {
+                                  "description": "The maximum number of concurrent streams allowed for a peer on one HTTP/2 connection.",
+                                  "format": "int32",
+                                  "type": "integer"
+                                },
                                 "maxRequestsPerConnection": {
                                   "description": "Maximum number of requests per connection to a backend.",
                                   "format": "int32",
@@ -478,6 +492,10 @@
                               "properties": {
                                 "connectTimeout": {
                                   "description": "TCP connection timeout.",
+                                  "type": "string"
+                                },
+                                "idleTimeout": {
+                                  "description": "The idle timeout for TCP connections.",
                                   "type": "string"
                                 },
                                 "maxConnectionDuration": {
@@ -883,6 +901,21 @@
                     },
                     "type": "array"
                   },
+                  "proxyProtocol": {
+                    "description": "The upstream PROXY protocol settings.",
+                    "properties": {
+                      "version": {
+                        "description": "The PROXY protocol version to use.",
+                        "enum": [
+                          "V1",
+                          "V2"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  },
                   "tls": {
                     "description": "TLS related settings for connections to the upstream service.",
                     "properties": {
@@ -999,6 +1032,11 @@
                       "description": "The idle timeout for upstream connection pool connections.",
                       "type": "string"
                     },
+                    "maxConcurrentStreams": {
+                      "description": "The maximum number of concurrent streams allowed for a peer on one HTTP/2 connection.",
+                      "format": "int32",
+                      "type": "integer"
+                    },
                     "maxRequestsPerConnection": {
                       "description": "Maximum number of requests per connection to a backend.",
                       "format": "int32",
@@ -1022,6 +1060,10 @@
                   "properties": {
                     "connectTimeout": {
                       "description": "TCP connection timeout.",
+                      "type": "string"
+                    },
+                    "idleTimeout": {
+                      "description": "The idle timeout for TCP connections.",
                       "type": "string"
                     },
                     "maxConnectionDuration": {
@@ -1394,6 +1436,11 @@
                             "description": "The idle timeout for upstream connection pool connections.",
                             "type": "string"
                           },
+                          "maxConcurrentStreams": {
+                            "description": "The maximum number of concurrent streams allowed for a peer on one HTTP/2 connection.",
+                            "format": "int32",
+                            "type": "integer"
+                          },
                           "maxRequestsPerConnection": {
                             "description": "Maximum number of requests per connection to a backend.",
                             "format": "int32",
@@ -1417,6 +1464,10 @@
                         "properties": {
                           "connectTimeout": {
                             "description": "TCP connection timeout.",
+                            "type": "string"
+                          },
+                          "idleTimeout": {
+                            "description": "The idle timeout for TCP connections.",
                             "type": "string"
                           },
                           "maxConnectionDuration": {
@@ -1821,6 +1872,21 @@
                 "additionalProperties": false
               },
               "type": "array"
+            },
+            "proxyProtocol": {
+              "description": "The upstream PROXY protocol settings.",
+              "properties": {
+                "version": {
+                  "description": "The PROXY protocol version to use.",
+                  "enum": [
+                    "V1",
+                    "V2"
+                  ],
+                  "type": "string"
+                }
+              },
+              "type": "object",
+              "additionalProperties": false
             },
             "tls": {
               "description": "TLS related settings for connections to the upstream service.",
