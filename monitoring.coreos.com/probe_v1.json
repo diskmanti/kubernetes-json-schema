@@ -308,6 +308,23 @@
           "format": "int64",
           "type": "integer"
         },
+        "scrapeClass": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "scrapeProtocols": {
+          "items": {
+            "enum": [
+              "PrometheusProto",
+              "OpenMetricsText0.0.1",
+              "OpenMetricsText1.0.0",
+              "PrometheusText0.0.4"
+            ],
+            "type": "string"
+          },
+          "type": "array",
+          "x-kubernetes-list-type": "set"
+        },
         "scrapeTimeout": {
           "pattern": "^(0|(([0-9]+)y)?(([0-9]+)w)?(([0-9]+)d)?(([0-9]+)h)?(([0-9]+)m)?(([0-9]+)s)?(([0-9]+)ms)?)$",
           "type": "string"

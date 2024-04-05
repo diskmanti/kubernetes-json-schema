@@ -20,6 +20,10 @@
           "type": "object",
           "additionalProperties": false
         },
+        "bodySizeLimit": {
+          "pattern": "(^0|([0-9]*[.])?[0-9]+((K|M|G|T|E|P)i?)?B)$",
+          "type": "string"
+        },
         "jobLabel": {
           "type": "string"
         },
@@ -554,6 +558,23 @@
         "sampleLimit": {
           "format": "int64",
           "type": "integer"
+        },
+        "scrapeClass": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "scrapeProtocols": {
+          "items": {
+            "enum": [
+              "PrometheusProto",
+              "OpenMetricsText0.0.1",
+              "OpenMetricsText1.0.0",
+              "PrometheusText0.0.4"
+            ],
+            "type": "string"
+          },
+          "type": "array",
+          "x-kubernetes-list-type": "set"
         },
         "selector": {
           "properties": {
