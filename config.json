@@ -60,7 +60,11 @@
   },
   "kyverno": {
     "github_repository": "kyverno/kyverno",
-    "asset_name": "install.yaml"
+    "asset_name": "install.yaml",
+    "urls": [
+      "https://raw.githubusercontent.com/kyverno/chainsaw/main/.schemas/json/configuration-chainsaw-v1alpha1.json",
+      "https://raw.githubusercontent.com/kyverno/chainsaw/main/.schemas/json/test-chainsaw-v1alpha1.json"
+    ]
   },
   "prometheus-operator": {
     "github_repository": "prometheus-operator/prometheus-operator",
@@ -70,6 +74,7 @@
     "github_repository": "bitnami-labs/sealed-secrets",
     "asset_name": "controller.yaml"
   },
+  
   "velero": {
     "github_repository": "vmware-tanzu/helm-charts",
     "urls": [
