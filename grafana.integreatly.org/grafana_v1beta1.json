@@ -7668,6 +7668,10 @@
           },
           "type": "object",
           "additionalProperties": false
+        },
+        "version": {
+          "description": "Version specifies the version of Grafana to use for this deployment. It follows the same format as the docker.io/grafana/grafana tags",
+          "type": "string"
         }
       },
       "type": "object",
@@ -7704,6 +7708,9 @@
           "type": "string"
         },
         "stageStatus": {
+          "type": "string"
+        },
+        "version": {
           "type": "string"
         }
       },
