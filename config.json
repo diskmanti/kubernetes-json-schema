@@ -89,5 +89,21 @@
       "https://raw.githubusercontent.com/vmware-tanzu/helm-charts/{version}/charts/velero/crds/serverstatusrequests.yaml",
       "https://raw.githubusercontent.com/vmware-tanzu/helm-charts/{version}/charts/velero/crds/volumesnapshotlocations.yaml"
     ]
-  }
+  },
+  "kubevela" {
+    "github_repository": "kubevela/kubevela",
+    "url": [
+      "https://raw.githubusercontent.com/kubevela/kubevela/89177805558583b60daefd6db4374837765a2cc1/charts/vela-core/crds/core.oam.dev_applicationrevisions.yaml",
+      "https://raw.githubusercontent.com/kubevela/kubevela/89177805558583b60daefd6db4374837765a2cc1/charts/vela-core/crds/core.oam.dev_applications.yaml",
+      "https://raw.githubusercontent.com/kubevela/kubevela/89177805558583b60daefd6db4374837765a2cc1/charts/vela-core/crds/core.oam.dev_componentdefinitions.yaml",
+      "https://raw.githubusercontent.com/kubevela/kubevela/89177805558583b60daefd6db4374837765a2cc1/charts/vela-core/crds/core.oam.dev_definitionrevisions.yaml",
+      "https://raw.githubusercontent.com/kubevela/kubevela/89177805558583b60daefd6db4374837765a2cc1/charts/vela-core/crds/core.oam.dev_policies.yaml",
+      "https://raw.githubusercontent.com/kubevela/kubevela/89177805558583b60daefd6db4374837765a2cc1/charts/vela-core/crds/core.oam.dev_policydefinitions.yaml",
+      "https://raw.githubusercontent.com/kubevela/kubevela/89177805558583b60daefd6db4374837765a2cc1/charts/vela-core/crds/core.oam.dev_resourcetrackers.yaml",
+      "https://raw.githubusercontent.com/kubevela/kubevela/89177805558583b60daefd6db4374837765a2cc1/charts/vela-core/crds/core.oam.dev_traitdefinitions.yaml",
+      "https://raw.githubusercontent.com/kubevela/kubevela/89177805558583b60daefd6db4374837765a2cc1/charts/vela-core/crds/core.oam.dev_workflows.yaml",
+      "https://raw.githubusercontent.com/kubevela/kubevela/89177805558583b60daefd6db4374837765a2cc1/charts/vela-core/crds/core.oam.dev_workflowstepdefinitions.yaml",
+      "https://raw.githubusercontent.com/kubevela/kubevela/89177805558583b60daefd6db4374837765a2cc1/charts/vela-core/crds/core.oam.dev_worloaddefinitions.yaml"
+    ]
+  },
 }
