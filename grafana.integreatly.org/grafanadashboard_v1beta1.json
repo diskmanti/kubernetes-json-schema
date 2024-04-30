@@ -1,37 +1,28 @@
 {
-  "description": "GrafanaDashboard is the Schema for the grafanadashboards API",
   "properties": {
     "apiVersion": {
-      "description": "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
       "type": "string"
     },
     "kind": {
-      "description": "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
       "type": "string"
     },
     "metadata": {
       "type": "object"
     },
     "spec": {
-      "description": "GrafanaDashboardSpec defines the desired state of GrafanaDashboard",
       "properties": {
         "allowCrossNamespaceImport": {
-          "description": "allow to import this resources from an operator in a different namespace",
           "type": "boolean"
         },
         "configMapRef": {
-          "description": "dashboard from configmap",
           "properties": {
             "key": {
-              "description": "The key to select.",
               "type": "string"
             },
             "name": {
-              "description": "Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names TODO: Add other useful fields. apiVersion, kind, uid?",
               "type": "string"
             },
             "optional": {
-              "description": "Specify whether the ConfigMap or its key must be defined",
               "type": "boolean"
             }
           },
@@ -43,11 +34,9 @@
           "additionalProperties": false
         },
         "contentCacheDuration": {
-          "description": "Cache duration for dashboards fetched from URLs",
           "type": "string"
         },
         "datasources": {
-          "description": "maps required data sources to existing ones",
           "items": {
             "properties": {
               "datasourceName": {
@@ -67,22 +56,17 @@
           "type": "array"
         },
         "envFrom": {
-          "description": "environments variables from secrets or config maps",
           "items": {
             "properties": {
               "configMapKeyRef": {
-                "description": "Selects a key of a ConfigMap.",
                 "properties": {
                   "key": {
-                    "description": "The key to select.",
                     "type": "string"
                   },
                   "name": {
-                    "description": "Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names TODO: Add other useful fields. apiVersion, kind, uid?",
                     "type": "string"
                   },
                   "optional": {
-                    "description": "Specify whether the ConfigMap or its key must be defined",
                     "type": "boolean"
                   }
                 },
@@ -94,18 +78,14 @@
                 "additionalProperties": false
               },
               "secretKeyRef": {
-                "description": "Selects a key of a Secret.",
                 "properties": {
                   "key": {
-                    "description": "The key of the secret to select from.  Must be a valid secret key.",
                     "type": "string"
                   },
                   "name": {
-                    "description": "Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names TODO: Add other useful fields. apiVersion, kind, uid?",
                     "type": "string"
                   },
                   "optional": {
-                    "description": "Specify whether the Secret or its key must be defined",
                     "type": "boolean"
                   }
                 },
@@ -123,32 +103,25 @@
           "type": "array"
         },
         "envs": {
-          "description": "environments variables as a map",
           "items": {
             "properties": {
               "name": {
                 "type": "string"
               },
               "value": {
-                "description": "Inline evn value",
                 "type": "string"
               },
               "valueFrom": {
-                "description": "Reference on value source, might be the reference on a secret or config map",
                 "properties": {
                   "configMapKeyRef": {
-                    "description": "Selects a key of a ConfigMap.",
                     "properties": {
                       "key": {
-                        "description": "The key to select.",
                         "type": "string"
                       },
                       "name": {
-                        "description": "Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names TODO: Add other useful fields. apiVersion, kind, uid?",
                         "type": "string"
                       },
                       "optional": {
-                        "description": "Specify whether the ConfigMap or its key must be defined",
                         "type": "boolean"
                       }
                     },
@@ -160,18 +133,14 @@
                     "additionalProperties": false
                   },
                   "secretKeyRef": {
-                    "description": "Selects a key of a Secret.",
                     "properties": {
                       "key": {
-                        "description": "The key of the secret to select from.  Must be a valid secret key.",
                         "type": "string"
                       },
                       "name": {
-                        "description": "Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names TODO: Add other useful fields. apiVersion, kind, uid?",
                         "type": "string"
                       },
                       "optional": {
-                        "description": "Specify whether the Secret or its key must be defined",
                         "type": "boolean"
                       }
                     },
@@ -196,11 +165,9 @@
           "type": "array"
         },
         "folder": {
-          "description": "folder assignment for dashboard",
           "type": "string"
         },
         "grafanaCom": {
-          "description": "grafana.com/dashboards",
           "properties": {
             "id": {
               "type": "integer"
@@ -216,28 +183,21 @@
           "additionalProperties": false
         },
         "gzipJson": {
-          "description": "GzipJson the dashboard's JSON compressed with Gzip. Base64-encoded when in YAML.",
           "format": "byte",
           "type": "string"
         },
         "instanceSelector": {
-          "description": "selects Grafanas for import",
           "properties": {
             "matchExpressions": {
-              "description": "matchExpressions is a list of label selector requirements. The requirements are ANDed.",
               "items": {
-                "description": "A label selector requirement is a selector that contains values, a key, and an operator that relates the key and values.",
                 "properties": {
                   "key": {
-                    "description": "key is the label key that the selector applies to.",
                     "type": "string"
                   },
                   "operator": {
-                    "description": "operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists and DoesNotExist.",
                     "type": "string"
                   },
                   "values": {
-                    "description": "values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. This array is replaced during a strategic merge patch.",
                     "items": {
                       "type": "string"
                     },
@@ -257,7 +217,6 @@
               "additionalProperties": {
                 "type": "string"
               },
-              "description": "matchLabels is a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is \"key\", the operator is \"In\", and the values array contains only \"value\". The requirements are ANDed.",
               "type": "object"
             }
           },
@@ -266,15 +225,12 @@
           "additionalProperties": false
         },
         "json": {
-          "description": "dashboard json",
           "type": "string"
         },
         "jsonnet": {
-          "description": "Jsonnet",
           "type": "string"
         },
         "jsonnetLib": {
-          "description": "Jsonnet project build",
           "properties": {
             "fileName": {
               "type": "string"
@@ -298,7 +254,6 @@
           "additionalProperties": false
         },
         "plugins": {
-          "description": "plugins",
           "items": {
             "properties": {
               "name": {
@@ -318,11 +273,12 @@
           "type": "array"
         },
         "resyncPeriod": {
-          "description": "how often the dashboard is refreshed, defaults to 5m if not set",
+          "default": "5m",
+          "format": "duration",
+          "pattern": "^([0-9]+(\\.[0-9]+)?(ns|us|\u00b5s|ms|s|m|h))+$",
           "type": "string"
         },
         "url": {
-          "description": "dashboard url",
           "type": "string"
         }
       },
@@ -333,10 +289,8 @@
       "additionalProperties": false
     },
     "status": {
-      "description": "GrafanaDashboardStatus defines the observed state of GrafanaDashboard",
       "properties": {
         "NoMatchingInstances": {
-          "description": "The dashboard instanceSelector can't find matching grafana instances",
           "type": "boolean"
         },
         "contentCache": {
@@ -354,7 +308,6 @@
           "type": "string"
         },
         "lastResync": {
-          "description": "Last time the dashboard was resynced",
           "format": "date-time",
           "type": "string"
         },
