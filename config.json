@@ -73,8 +73,7 @@
   "sealed-secrets": {
     "github_repository": "bitnami-labs/sealed-secrets",
     "asset_name": "controller.yaml"
-  },
-  
+  },  
   "velero": {
     "github_repository": "vmware-tanzu/helm-charts",
     "urls": [
@@ -89,8 +88,7 @@
       "https://raw.githubusercontent.com/vmware-tanzu/helm-charts/{version}/charts/velero/crds/serverstatusrequests.yaml",
       "https://raw.githubusercontent.com/vmware-tanzu/helm-charts/{version}/charts/velero/crds/volumesnapshotlocations.yaml"
     ]
-  },
-  
+  },  
   "kubevela": {
     "github_repository": "kubevela/kubevela",
     "url": [
