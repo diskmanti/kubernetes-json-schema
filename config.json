@@ -92,7 +92,17 @@
   "kubevela": {
     "github_repository": "kubevela/kubevela",
     "urls": [
-      "https://raw.githubusercontent.com/kubevela/kubevela/master/charts/vela-core/crds/core.oam.dev_applicationrevisions.yaml"
+      "https://raw.githubusercontent.com/kubevela/kubevela/master/charts/vela-core/crds/core.oam.dev_applicationrevisions.yaml",
+      "https://raw.githubusercontent.com/kubevela/kubevela/master/charts/vela-core/crds/core.oam.dev_applications.yaml",
+      "https://raw.githubusercontent.com/kubevela/kubevela/master/charts/vela-core/crds/core.oam.dev_componentdefinitions.yaml",
+      "https://raw.githubusercontent.com/kubevela/kubevela/master/charts/vela-core/crds/core.oam.dev_definitionrevisions.yaml",
+      "https://raw.githubusercontent.com/kubevela/kubevela/master/charts/vela-core/crds/core.oam.dev_policies.yaml",
+      "https://raw.githubusercontent.com/kubevela/kubevela/master/charts/vela-core/crds/core.oam.dev_policydefinitions.yaml",
+      "https://raw.githubusercontent.com/kubevela/kubevela/master/charts/vela-core/crds/core.oam.dev_resourcetrackers.yaml",
+      "https://raw.githubusercontent.com/kubevela/kubevela/master/charts/vela-core/crds/core.oam.dev_traitdefinitions.yaml",
+      "https://raw.githubusercontent.com/kubevela/kubevela/master/charts/vela-core/crds/core.oam.dev_workflows.yaml",
+      "https://raw.githubusercontent.com/kubevela/kubevela/master/charts/vela-core/crds/core.oam.dev_workflowstepdefinitions.yaml",
+      "https://raw.githubusercontent.com/kubevela/kubevela/master/charts/vela-core/crds/core.oam.dev_workloaddefinitions.yaml"
     ]
   },
   "cloudtty": {
