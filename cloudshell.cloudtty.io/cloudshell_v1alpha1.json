@@ -1,0 +1,264 @@
+{
+  "description": "CloudShell is the Schema for the cloudshells API",
+  "properties": {
+    "apiVersion": {
+      "description": "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
+      "type": "string"
+    },
+    "kind": {
+      "description": "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "spec": {
+      "description": "Spec defines the desired behavior of the cloudshell.",
+      "properties": {
+        "cleanup": {
+          "description": "Cleanup specified whether to delete cloudshell resources when corresponding job status is completed.",
+          "type": "boolean"
+        },
+        "commandAction": {
+          "type": "string"
+        },
+        "env": {
+          "description": "List of environment variables to set in the container. Cannot be updated.",
+          "items": {
+            "description": "EnvVar represents an environment variable present in a Container.",
+            "properties": {
+              "name": {
+                "description": "Name of the environment variable. Must be a C_IDENTIFIER.",
+                "type": "string"
+              },
+              "value": {
+                "description": "Variable references $(VAR_NAME) are expanded using the previously defined environment variables in the container and any service environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. Double $$ are reduced to a single $, which allows for escaping the $(VAR_NAME) syntax: i.e. \"$$(VAR_NAME)\" will produce the string literal \"$(VAR_NAME)\". Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to \"\".",
+                "type": "string"
+              },
+              "valueFrom": {
+                "description": "Source for the environment variable's value. Cannot be used if value is not empty.",
+                "properties": {
+                  "configMapKeyRef": {
+                    "description": "Selects a key of a ConfigMap.",
+                    "properties": {
+                      "key": {
+                        "description": "The key to select.",
+                        "type": "string"
+                      },
+                      "name": {
+                        "description": "Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names TODO: Add other useful fields. apiVersion, kind, uid?",
+                        "type": "string"
+                      },
+                      "optional": {
+                        "description": "Specify whether the ConfigMap or its key must be defined",
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "key"
+                    ],
+                    "type": "object",
+                    "x-kubernetes-map-type": "atomic",
+                    "additionalProperties": false
+                  },
+                  "fieldRef": {
+                    "description": "Selects a field of the pod: supports metadata.name, metadata.namespace, `metadata.labels['<KEY>']`, `metadata.annotations['<KEY>']`, spec.nodeName, spec.serviceAccountName, status.hostIP, status.podIP, status.podIPs.",
+                    "properties": {
+                      "apiVersion": {
+                        "description": "Version of the schema the FieldPath is written in terms of, defaults to \"v1\".",
+                        "type": "string"
+                      },
+                      "fieldPath": {
+                        "description": "Path of the field to select in the specified API version.",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "fieldPath"
+                    ],
+                    "type": "object",
+                    "x-kubernetes-map-type": "atomic",
+                    "additionalProperties": false
+                  },
+                  "resourceFieldRef": {
+                    "description": "Selects a resource of the container: only resources limits and requests (limits.cpu, limits.memory, limits.ephemeral-storage, requests.cpu, requests.memory and requests.ephemeral-storage) are currently supported.",
+                    "properties": {
+                      "containerName": {
+                        "description": "Container name: required for volumes, optional for env vars",
+                        "type": "string"
+                      },
+                      "divisor": {
+                        "anyOf": [
+                          {
+                            "type": "integer"
+                          },
+                          {
+                            "type": "string"
+                          }
+                        ],
+                        "description": "Specifies the output format of the exposed resources, defaults to \"1\"",
+                        "pattern": "^(\\+|-)?(([0-9]+(\\.[0-9]*)?)|(\\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\\+|-)?(([0-9]+(\\.[0-9]*)?)|(\\.[0-9]+))))?$",
+                        "x-kubernetes-int-or-string": true
+                      },
+                      "resource": {
+                        "description": "Required: resource to select",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "resource"
+                    ],
+                    "type": "object",
+                    "x-kubernetes-map-type": "atomic",
+                    "additionalProperties": false
+                  },
+                  "secretKeyRef": {
+                    "description": "Selects a key of a secret in the pod's namespace",
+                    "properties": {
+                      "key": {
+                        "description": "The key of the secret to select from.  Must be a valid secret key.",
+                        "type": "string"
+                      },
+                      "name": {
+                        "description": "Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names TODO: Add other useful fields. apiVersion, kind, uid?",
+                        "type": "string"
+                      },
+                      "optional": {
+                        "description": "Specify whether the Secret or its key must be defined",
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "key"
+                    ],
+                    "type": "object",
+                    "x-kubernetes-map-type": "atomic",
+                    "additionalProperties": false
+                  }
+                },
+                "type": "object",
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "type": "object",
+            "additionalProperties": false
+          },
+          "type": "array"
+        },
+        "exposureMode": {
+          "description": "ExposeMode describes how to access ttyd service, either ClusterIP, NodePort, Ingress or VirtualService.",
+          "enum": [
+            "ClusterIP",
+            "NodePort",
+            "Ingress",
+            "VirtualService"
+          ],
+          "type": "string"
+        },
+        "image": {
+          "description": "Image defines the image to cloudshell, we can customize an image. Note: the image must be built on top of the officially available base image. Please see: https://github.com/cloudtty/cloudtty#how-to-build-custom-cloudshell-image",
+          "type": "string"
+        },
+        "ingressConfig": {
+          "description": "Specifies a port number range 30000-32767 when using nodeport mode, if not specified, kubernetes default random rule is used. NodePort int32 `json:\"NodePort,omitempty\"` IngressConfig specifies necessary parameters to create ingress.",
+          "properties": {
+            "ingressClassName": {
+              "description": "IngressClassName specifies a ingress controller to ingress, it must be fill when the cluster have multiple ingress controller service.",
+              "type": "string"
+            },
+            "ingressName": {
+              "description": "IngressName specifies a name to ingress, if it's empty, default \"cloudshell-ingress\".",
+              "type": "string"
+            },
+            "namespace": {
+              "description": "Namespace specifies a namespace that the virtualService will be created in it. if it's empty, default the cloudshell namespace.",
+              "type": "string"
+            }
+          },
+          "type": "object",
+          "additionalProperties": false
+        },
+        "once": {
+          "description": "accept only one client and exit on disconnection",
+          "type": "boolean"
+        },
+        "pathPrefix": {
+          "description": "PathPrefix specified a path prefix to access url, if not, the default path is used.",
+          "type": "string"
+        },
+        "pathSuffix": {
+          "description": "PathSuffix specified a path suffix to access url, if not, the default path is used.",
+          "type": "string"
+        },
+        "secretRef": {
+          "description": "SecretRef represents the secret contains mandatory credentials to access the target cluster. The secret should hold credentials as follows: - secret.data.token - secret.data.caBundle The field is alpha phase, paleas open the featuregate AllowSecretStoreKubeconfig to use it.",
+          "properties": {
+            "name": {
+              "description": "Name is the name of resource being referenced.",
+              "type": "string"
+            }
+          },
+          "type": "object",
+          "additionalProperties": false
+        },
+        "ttlSecondsAfterStarted": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "urlArg": {
+          "description": "UrlArg allow client to send command line arguments in URL (eg: http://localhost:7681?arg=foo&arg=bar)",
+          "type": "boolean"
+        },
+        "virtualServiceConfig": {
+          "description": "VirtualServiceConfig specifies some of the parameters necessary to create the virtaulService.",
+          "properties": {
+            "export_to": {
+              "description": "The value \".\" is reserved and defines an export to the same namespace that the virtual service is declared in. Similarly the value \"*\" is reserved and defines an export to all namespaces.",
+              "type": "string"
+            },
+            "gateway": {
+              "description": "Gateway must be specified and the gateway already exists in the cluster.",
+              "type": "string"
+            },
+            "namespace": {
+              "description": "Namespace specifies a namespace that the virtualService will be created in it. if it's empty, default the cloudshell namespace.",
+              "type": "string"
+            },
+            "virtualServiceName": {
+              "description": "VirtualServiceName specifies a name to virtualService, if it's empty, default \"cloudshell-VirtualService\"",
+              "type": "string"
+            }
+          },
+          "type": "object",
+          "additionalProperties": false
+        }
+      },
+      "type": "object",
+      "additionalProperties": false
+    },
+    "status": {
+      "description": "Most recently observed status of the cloudshell.",
+      "properties": {
+        "accessUrl": {
+          "type": "string"
+        },
+        "lastScheduleTime": {
+          "description": "Information when was the last time the pod was successfully scheduled.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "phase": {
+          "description": "INSERT ADDITIONAL STATUS FIELD - define observed state of cluster Important: Run \"make\" to regenerate code after modifying this file",
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "additionalProperties": false
+}
