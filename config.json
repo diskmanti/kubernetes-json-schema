@@ -94,5 +94,11 @@
     "urls": [
       "https://raw.githubusercontent.com/kubevela/kubevela/master/charts/vela-core/crds/core.oam.dev_applicationrevisions.yaml"
     ]
+  },
+  "cloudtty": {
+    "github_repository": "cloudtty/cloudtty",
+    "urls": [
+      "https://raw.githubusercontent.com/cloudtty/cloudtty/main/charts/cloudtty/_crds/cloudshell.cloudtty.io_cloudshells.yaml"
+    ]
   }
 }
