@@ -91,7 +91,7 @@
   },  
   "kubevela": {
     "github_repository": "kubevela/kubevela",
-    "url": [
+    "urls": [
       "https://raw.githubusercontent.com/kubevela/kubevela/master/charts/vela-core/crds/core.oam.dev_applicationrevisions.yaml"
     ]
   }
