@@ -53,8 +53,9 @@ jobs:
       #     github-token: ${{ secrets.GITHUB_TOKEN }}
       #     number: 1
       #     repo: juliangruber/approve-pull-request-action # optional
-      - name: Auto approve
-        id: autoApprove   
-        uses: juliangruber/approve-pull-request-action@v2
+      - name: Enable Pull Request Automerge
+        if: steps.createPR.outputs.pull-request-operation == 'created'
+        uses: peter-evans/enable-pull-request-automerge@v2
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}        
+          token: ${{ secrets.MY_GITHUB_TOKEN }}
+          pull-request-number: ${{ steps.createPR.outputs.pull-request-number }}  
