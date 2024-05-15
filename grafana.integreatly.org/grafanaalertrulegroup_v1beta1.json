@@ -35,7 +35,8 @@
                     "items": {
                       "type": "string"
                     },
-                    "type": "array"
+                    "type": "array",
+                    "x-kubernetes-list-type": "atomic"
                   }
                 },
                 "required": [
@@ -45,7 +46,8 @@
                 "type": "object",
                 "additionalProperties": false
               },
-              "type": "array"
+              "type": "array",
+              "x-kubernetes-list-type": "atomic"
             },
             "matchLabels": {
               "additionalProperties": {
@@ -56,6 +58,12 @@
           },
           "type": "object",
           "x-kubernetes-map-type": "atomic",
+          "x-kubernetes-validations": [
+            {
+              "message": "Value is immutable",
+              "rule": "self == oldSelf"
+            }
+          ],
           "additionalProperties": false
         },
         "interval": {
@@ -120,7 +128,8 @@
                 "enum": [
                   "OK",
                   "Alerting",
-                  "Error"
+                  "Error",
+                  "KeepLast"
                 ],
                 "type": "string"
               },
@@ -142,7 +151,8 @@
                 "enum": [
                   "Alerting",
                   "NoData",
-                  "OK"
+                  "OK",
+                  "KeepLast"
                 ],
                 "type": "string"
               },
