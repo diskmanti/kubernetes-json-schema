@@ -90,7 +90,7 @@
                       "description": "APICall is an HTTP request to the Kubernetes API server, or other JSON web service.\nThe data returned is stored in the context with the name for the context entry.",
                       "properties": {
                         "data": {
-                          "description": "The data object specifies the POST data sent to the server.\nOnly applicable when the method field is set to POST.",
+                          "description": "Data specifies the POST data sent to the server.",
                           "items": {
                             "description": "RequestData contains the HTTP POST data",
                             "properties": {
@@ -126,7 +126,7 @@
                           "type": "string"
                         },
                         "service": {
-                          "description": "Service is an API call to a JSON web service.\nThis is used for non-Kubernetes API server calls.\nIt's mutually exclusive with the URLPath field.",
+                          "description": "Service is an API call to a JSON web service",
                           "properties": {
                             "caBundle": {
                               "description": "CABundle is a PEM encoded CA bundle which will be used to validate\nthe server certificate.",
@@ -144,7 +144,7 @@
                           "additionalProperties": false
                         },
                         "urlPath": {
-                          "description": "URLPath is the URL path to be used in the HTTP GET or POST request to the\nKubernetes API server (e.g. \"/api/v1/namespaces\" or  \"/apis/apps/v1/deployments\").\nThe format required is the same format used by the `kubectl get --raw` command.\nSee https://kyverno.io/docs/writing-policies/external-data-sources/#variables-from-kubernetes-api-server-calls\nfor details.\nIt's mutually exclusive with the Service field.",
+                          "description": "URLPath is the URL path to be used in the HTTP GET or POST request to the\nKubernetes API server (e.g. \"/api/v1/namespaces\" or  \"/apis/apps/v1/deployments\").\nThe format required is the same format used by the `kubectl get --raw` command.\nSee https://kyverno.io/docs/writing-policies/external-data-sources/#variables-from-kubernetes-api-server-calls\nfor details.",
                           "type": "string"
                         }
                       },
@@ -166,21 +166,6 @@
                       "required": [
                         "name"
                       ],
-                      "type": "object",
-                      "additionalProperties": false
-                    },
-                    "globalReference": {
-                      "description": "GlobalContextEntryReference is a reference to a cached global context entry.",
-                      "properties": {
-                        "jmesPath": {
-                          "description": "JMESPath is an optional JSON Match Expression that can be used to\ntransform the JSON response returned from the server. For example\na JMESPath of \"items | length(@)\" applied to the API server response\nfor the URLPath \"/apis/apps/v1/deployments\" will return the total count\nof deployments across all namespaces.",
-                          "type": "string"
-                        },
-                        "name": {
-                          "description": "Name of the global context entry",
-                          "type": "string"
-                        }
-                      },
                       "type": "object",
                       "additionalProperties": false
                     },
@@ -961,10 +946,6 @@
                     "description": "Namespace specifies resource namespace.",
                     "type": "string"
                   },
-                  "orphanDownstreamOnPolicyDelete": {
-                    "description": "OrphanDownstreamOnPolicyDelete controls whether generated resources should be deleted when the rule that generated\nthem is deleted with synchronization enabled. This option is only applicable to generate rules of the data type.\nSee https://kyverno.io/docs/writing-policies/generate/#data-examples.\nDefaults to \"false\" if not specified.",
-                    "type": "boolean"
-                  },
                   "synchronize": {
                     "description": "Synchronize controls if generated resources should be kept in-sync with their source resource.\nIf Synchronize is set to \"true\" changes to generated resources will be overwritten with resource\ndata from Data or the resource specified in the Clone declaration.\nOptional. Defaults to \"false\" if not specified.",
                     "type": "boolean"
@@ -1626,7 +1607,7 @@
                                 "description": "APICall is an HTTP request to the Kubernetes API server, or other JSON web service.\nThe data returned is stored in the context with the name for the context entry.",
                                 "properties": {
                                   "data": {
-                                    "description": "The data object specifies the POST data sent to the server.\nOnly applicable when the method field is set to POST.",
+                                    "description": "Data specifies the POST data sent to the server.",
                                     "items": {
                                       "description": "RequestData contains the HTTP POST data",
                                       "properties": {
@@ -1662,7 +1643,7 @@
                                     "type": "string"
                                   },
                                   "service": {
-                                    "description": "Service is an API call to a JSON web service.\nThis is used for non-Kubernetes API server calls.\nIt's mutually exclusive with the URLPath field.",
+                                    "description": "Service is an API call to a JSON web service",
                                     "properties": {
                                       "caBundle": {
                                         "description": "CABundle is a PEM encoded CA bundle which will be used to validate\nthe server certificate.",
@@ -1680,7 +1661,7 @@
                                     "additionalProperties": false
                                   },
                                   "urlPath": {
-                                    "description": "URLPath is the URL path to be used in the HTTP GET or POST request to the\nKubernetes API server (e.g. \"/api/v1/namespaces\" or  \"/apis/apps/v1/deployments\").\nThe format required is the same format used by the `kubectl get --raw` command.\nSee https://kyverno.io/docs/writing-policies/external-data-sources/#variables-from-kubernetes-api-server-calls\nfor details.\nIt's mutually exclusive with the Service field.",
+                                    "description": "URLPath is the URL path to be used in the HTTP GET or POST request to the\nKubernetes API server (e.g. \"/api/v1/namespaces\" or  \"/apis/apps/v1/deployments\").\nThe format required is the same format used by the `kubectl get --raw` command.\nSee https://kyverno.io/docs/writing-policies/external-data-sources/#variables-from-kubernetes-api-server-calls\nfor details.",
                                     "type": "string"
                                   }
                                 },
@@ -1702,21 +1683,6 @@
                                 "required": [
                                   "name"
                                 ],
-                                "type": "object",
-                                "additionalProperties": false
-                              },
-                              "globalReference": {
-                                "description": "GlobalContextEntryReference is a reference to a cached global context entry.",
-                                "properties": {
-                                  "jmesPath": {
-                                    "description": "JMESPath is an optional JSON Match Expression that can be used to\ntransform the JSON response returned from the server. For example\na JMESPath of \"items | length(@)\" applied to the API server response\nfor the URLPath \"/apis/apps/v1/deployments\" will return the total count\nof deployments across all namespaces.",
-                                    "type": "string"
-                                  },
-                                  "name": {
-                                    "description": "Name of the global context entry",
-                                    "type": "string"
-                                  }
-                                },
                                 "type": "object",
                                 "additionalProperties": false
                               },
@@ -1954,7 +1920,7 @@
                                 "description": "APICall is an HTTP request to the Kubernetes API server, or other JSON web service.\nThe data returned is stored in the context with the name for the context entry.",
                                 "properties": {
                                   "data": {
-                                    "description": "The data object specifies the POST data sent to the server.\nOnly applicable when the method field is set to POST.",
+                                    "description": "Data specifies the POST data sent to the server.",
                                     "items": {
                                       "description": "RequestData contains the HTTP POST data",
                                       "properties": {
@@ -1990,7 +1956,7 @@
                                     "type": "string"
                                   },
                                   "service": {
-                                    "description": "Service is an API call to a JSON web service.\nThis is used for non-Kubernetes API server calls.\nIt's mutually exclusive with the URLPath field.",
+                                    "description": "Service is an API call to a JSON web service",
                                     "properties": {
                                       "caBundle": {
                                         "description": "CABundle is a PEM encoded CA bundle which will be used to validate\nthe server certificate.",
@@ -2008,7 +1974,7 @@
                                     "additionalProperties": false
                                   },
                                   "urlPath": {
-                                    "description": "URLPath is the URL path to be used in the HTTP GET or POST request to the\nKubernetes API server (e.g. \"/api/v1/namespaces\" or  \"/apis/apps/v1/deployments\").\nThe format required is the same format used by the `kubectl get --raw` command.\nSee https://kyverno.io/docs/writing-policies/external-data-sources/#variables-from-kubernetes-api-server-calls\nfor details.\nIt's mutually exclusive with the Service field.",
+                                    "description": "URLPath is the URL path to be used in the HTTP GET or POST request to the\nKubernetes API server (e.g. \"/api/v1/namespaces\" or  \"/apis/apps/v1/deployments\").\nThe format required is the same format used by the `kubectl get --raw` command.\nSee https://kyverno.io/docs/writing-policies/external-data-sources/#variables-from-kubernetes-api-server-calls\nfor details.",
                                     "type": "string"
                                   }
                                 },
@@ -2030,21 +1996,6 @@
                                 "required": [
                                   "name"
                                 ],
-                                "type": "object",
-                                "additionalProperties": false
-                              },
-                              "globalReference": {
-                                "description": "GlobalContextEntryReference is a reference to a cached global context entry.",
-                                "properties": {
-                                  "jmesPath": {
-                                    "description": "JMESPath is an optional JSON Match Expression that can be used to\ntransform the JSON response returned from the server. For example\na JMESPath of \"items | length(@)\" applied to the API server response\nfor the URLPath \"/apis/apps/v1/deployments\" will return the total count\nof deployments across all namespaces.",
-                                    "type": "string"
-                                  },
-                                  "name": {
-                                    "description": "Name of the global context entry",
-                                    "type": "string"
-                                  }
-                                },
                                 "type": "object",
                                 "additionalProperties": false
                               },
@@ -2372,7 +2323,7 @@
                                 "description": "APICall is an HTTP request to the Kubernetes API server, or other JSON web service.\nThe data returned is stored in the context with the name for the context entry.",
                                 "properties": {
                                   "data": {
-                                    "description": "The data object specifies the POST data sent to the server.\nOnly applicable when the method field is set to POST.",
+                                    "description": "Data specifies the POST data sent to the server.",
                                     "items": {
                                       "description": "RequestData contains the HTTP POST data",
                                       "properties": {
@@ -2408,7 +2359,7 @@
                                     "type": "string"
                                   },
                                   "service": {
-                                    "description": "Service is an API call to a JSON web service.\nThis is used for non-Kubernetes API server calls.\nIt's mutually exclusive with the URLPath field.",
+                                    "description": "Service is an API call to a JSON web service",
                                     "properties": {
                                       "caBundle": {
                                         "description": "CABundle is a PEM encoded CA bundle which will be used to validate\nthe server certificate.",
@@ -2426,7 +2377,7 @@
                                     "additionalProperties": false
                                   },
                                   "urlPath": {
-                                    "description": "URLPath is the URL path to be used in the HTTP GET or POST request to the\nKubernetes API server (e.g. \"/api/v1/namespaces\" or  \"/apis/apps/v1/deployments\").\nThe format required is the same format used by the `kubectl get --raw` command.\nSee https://kyverno.io/docs/writing-policies/external-data-sources/#variables-from-kubernetes-api-server-calls\nfor details.\nIt's mutually exclusive with the Service field.",
+                                    "description": "URLPath is the URL path to be used in the HTTP GET or POST request to the\nKubernetes API server (e.g. \"/api/v1/namespaces\" or  \"/apis/apps/v1/deployments\").\nThe format required is the same format used by the `kubectl get --raw` command.\nSee https://kyverno.io/docs/writing-policies/external-data-sources/#variables-from-kubernetes-api-server-calls\nfor details.",
                                     "type": "string"
                                   }
                                 },
@@ -2448,21 +2399,6 @@
                                 "required": [
                                   "name"
                                 ],
-                                "type": "object",
-                                "additionalProperties": false
-                              },
-                              "globalReference": {
-                                "description": "GlobalContextEntryReference is a reference to a cached global context entry.",
-                                "properties": {
-                                  "jmesPath": {
-                                    "description": "JMESPath is an optional JSON Match Expression that can be used to\ntransform the JSON response returned from the server. For example\na JMESPath of \"items | length(@)\" applied to the API server response\nfor the URLPath \"/apis/apps/v1/deployments\" will return the total count\nof deployments across all namespaces.",
-                                    "type": "string"
-                                  },
-                                  "name": {
-                                    "description": "Name of the global context entry",
-                                    "type": "string"
-                                  }
-                                },
                                 "type": "object",
                                 "additionalProperties": false
                               },
@@ -2750,6 +2686,9 @@
                                             "type": "string"
                                           }
                                         },
+                                        "required": [
+                                          "url"
+                                        ],
                                         "type": "object",
                                         "additionalProperties": false
                                       }
@@ -2802,6 +2741,9 @@
                                             "type": "string"
                                           }
                                         },
+                                        "required": [
+                                          "url"
+                                        ],
                                         "type": "object",
                                         "additionalProperties": false
                                       },
@@ -2859,6 +2801,9 @@
                                             "type": "string"
                                           }
                                         },
+                                        "required": [
+                                          "url"
+                                        ],
                                         "type": "object",
                                         "additionalProperties": false
                                       },
@@ -3010,17 +2955,6 @@
                                 "type": "string"
                               },
                               "type": "array"
-                            },
-                            "restrictedField": {
-                              "description": "RestrictedField selects the field for the given Pod Security Standard control.\nWhen not set, all restricted fields for the control are selected.",
-                              "type": "string"
-                            },
-                            "values": {
-                              "description": "Values defines the allowed values that can be excluded.",
-                              "items": {
-                                "type": "string"
-                              },
-                              "type": "array"
                             }
                           },
                           "required": [
@@ -3041,7 +2975,7 @@
                         "type": "string"
                       },
                       "version": {
-                        "description": "Version defines the Pod Security Standard versions that Kubernetes supports.\nAllowed values are v1.19, v1.20, v1.21, v1.22, v1.23, v1.24, v1.25, v1.26, v1.27, v1.28, v1.29, latest. Defaults to latest.",
+                        "description": "Version defines the Pod Security Standard versions that Kubernetes supports.\nAllowed values are v1.19, v1.20, v1.21, v1.22, v1.23, v1.24, v1.25, v1.26, latest. Defaults to latest.",
                         "enum": [
                           "v1.19",
                           "v1.20",
@@ -3051,9 +2985,6 @@
                           "v1.24",
                           "v1.25",
                           "v1.26",
-                          "v1.27",
-                          "v1.28",
-                          "v1.29",
                           "latest"
                         ],
                         "type": "string"
@@ -3156,6 +3087,9 @@
                                                 "type": "string"
                                               }
                                             },
+                                            "required": [
+                                              "url"
+                                            ],
                                             "type": "object",
                                             "additionalProperties": false
                                           }
@@ -3208,6 +3142,9 @@
                                                 "type": "string"
                                               }
                                             },
+                                            "required": [
+                                              "url"
+                                            ],
                                             "type": "object",
                                             "additionalProperties": false
                                           },
@@ -3265,6 +3202,9 @@
                                                 "type": "string"
                                               }
                                             },
+                                            "required": [
+                                              "url"
+                                            ],
                                             "type": "object",
                                             "additionalProperties": false
                                           },
@@ -3493,6 +3433,9 @@
                                           "type": "string"
                                         }
                                       },
+                                      "required": [
+                                        "url"
+                                      ],
                                       "type": "object",
                                       "additionalProperties": false
                                     }
@@ -3545,6 +3488,9 @@
                                           "type": "string"
                                         }
                                       },
+                                      "required": [
+                                        "url"
+                                      ],
                                       "type": "object",
                                       "additionalProperties": false
                                     },
@@ -3602,6 +3548,9 @@
                                           "type": "string"
                                         }
                                       },
+                                      "required": [
+                                        "url"
+                                      ],
                                       "type": "object",
                                       "additionalProperties": false
                                     },
@@ -3719,13 +3668,6 @@
                       "description": "Deprecated. Use KeylessAttestor instead.",
                       "type": "string"
                     },
-                    "skipImageReferences": {
-                      "description": "SkipImageReferences is a list of matching image reference patterns that should be skipped.\nAt least one pattern in the list must match the image for the rule to be skipped. Each image reference\nconsists of a registry address (defaults to docker.io), repository, image, and tag (defaults to latest).\nWildcards ('*' and '?') are allowed. See: https://kubernetes.io/docs/concepts/containers/images.",
-                      "items": {
-                        "type": "string"
-                      },
-                      "type": "array"
-                    },
                     "subject": {
                       "description": "Deprecated. Use KeylessAttestor instead.",
                       "type": "string"
@@ -3764,7 +3706,7 @@
           "type": "array"
         },
         "schemaValidation": {
-          "description": "Deprecated.",
+          "description": "SchemaValidation skips validation checks for policies as well as patched resources.\nOptional. The default value is set to \"true\", it must be set to \"false\" to disable the validation checks.",
           "type": "boolean"
         },
         "useServerSideApply": {
@@ -3853,36 +3795,6 @@
           },
           "type": "array"
         },
-        "webhookConfiguration": {
-          "description": "WebhookConfiguration specifies the custom configuration for Kubernetes admission webhookconfiguration.\nRequires Kubernetes 1.27 or later.",
-          "properties": {
-            "matchConditions": {
-              "description": "MatchCondition configures admission webhook matchConditions.",
-              "items": {
-                "description": "MatchCondition represents a condition which must by fulfilled for a request to be sent to a webhook.",
-                "properties": {
-                  "expression": {
-                    "description": "Expression represents the expression which will be evaluated by CEL. Must evaluate to bool.\nCEL expressions have access to the contents of the AdmissionRequest and Authorizer, organized into CEL variables:\n\n\n'object' - The object from the incoming request. The value is null for DELETE requests.\n'oldObject' - The existing object. The value is null for CREATE requests.\n'request' - Attributes of the admission request(/pkg/apis/admission/types.go#AdmissionRequest).\n'authorizer' - A CEL Authorizer. May be used to perform authorization checks for the principal (user or service account) of the request.\n  See https://pkg.go.dev/k8s.io/apiserver/pkg/cel/library#Authz\n'authorizer.requestResource' - A CEL ResourceCheck constructed from the 'authorizer' and configured with the\n  request resource.\nDocumentation on CEL: https://kubernetes.io/docs/reference/using-api/cel/\n\n\nRequired.",
-                    "type": "string"
-                  },
-                  "name": {
-                    "description": "Name is an identifier for this match condition, used for strategic merging of MatchConditions,\nas well as providing an identifier for logging purposes. A good name should be descriptive of\nthe associated expression.\nName must be a qualified name consisting of alphanumeric characters, '-', '_' or '.', and\nmust start and end with an alphanumeric character (e.g. 'MyName',  or 'my.name',  or\n'123-abc', regex used for validation is '([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9]') with an\noptional DNS subdomain prefix and '/' (e.g. 'example.com/MyName')\n\n\nRequired.",
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "expression",
-                  "name"
-                ],
-                "type": "object",
-                "additionalProperties": false
-              },
-              "type": "array"
-            }
-          },
-          "type": "object",
-          "additionalProperties": false
-        },
         "webhookTimeoutSeconds": {
           "description": "WebhookTimeoutSeconds specifies the maximum time in seconds allowed to apply this policy.\nAfter the configured time expires, the admission request may fail, or may simply ignore the policy results,\nbased on the failure policy. The default timeout is 10s, the value must be between 1 and 30 seconds.",
           "format": "int32",
@@ -3935,7 +3847,7 @@
                           "description": "APICall is an HTTP request to the Kubernetes API server, or other JSON web service.\nThe data returned is stored in the context with the name for the context entry.",
                           "properties": {
                             "data": {
-                              "description": "The data object specifies the POST data sent to the server.\nOnly applicable when the method field is set to POST.",
+                              "description": "Data specifies the POST data sent to the server.",
                               "items": {
                                 "description": "RequestData contains the HTTP POST data",
                                 "properties": {
@@ -3971,7 +3883,7 @@
                               "type": "string"
                             },
                             "service": {
-                              "description": "Service is an API call to a JSON web service.\nThis is used for non-Kubernetes API server calls.\nIt's mutually exclusive with the URLPath field.",
+                              "description": "Service is an API call to a JSON web service",
                               "properties": {
                                 "caBundle": {
                                   "description": "CABundle is a PEM encoded CA bundle which will be used to validate\nthe server certificate.",
@@ -3989,7 +3901,7 @@
                               "additionalProperties": false
                             },
                             "urlPath": {
-                              "description": "URLPath is the URL path to be used in the HTTP GET or POST request to the\nKubernetes API server (e.g. \"/api/v1/namespaces\" or  \"/apis/apps/v1/deployments\").\nThe format required is the same format used by the `kubectl get --raw` command.\nSee https://kyverno.io/docs/writing-policies/external-data-sources/#variables-from-kubernetes-api-server-calls\nfor details.\nIt's mutually exclusive with the Service field.",
+                              "description": "URLPath is the URL path to be used in the HTTP GET or POST request to the\nKubernetes API server (e.g. \"/api/v1/namespaces\" or  \"/apis/apps/v1/deployments\").\nThe format required is the same format used by the `kubectl get --raw` command.\nSee https://kyverno.io/docs/writing-policies/external-data-sources/#variables-from-kubernetes-api-server-calls\nfor details.",
                               "type": "string"
                             }
                           },
@@ -4011,21 +3923,6 @@
                           "required": [
                             "name"
                           ],
-                          "type": "object",
-                          "additionalProperties": false
-                        },
-                        "globalReference": {
-                          "description": "GlobalContextEntryReference is a reference to a cached global context entry.",
-                          "properties": {
-                            "jmesPath": {
-                              "description": "JMESPath is an optional JSON Match Expression that can be used to\ntransform the JSON response returned from the server. For example\na JMESPath of \"items | length(@)\" applied to the API server response\nfor the URLPath \"/apis/apps/v1/deployments\" will return the total count\nof deployments across all namespaces.",
-                              "type": "string"
-                            },
-                            "name": {
-                              "description": "Name of the global context entry",
-                              "type": "string"
-                            }
-                          },
                           "type": "object",
                           "additionalProperties": false
                         },
@@ -4806,10 +4703,6 @@
                         "description": "Namespace specifies resource namespace.",
                         "type": "string"
                       },
-                      "orphanDownstreamOnPolicyDelete": {
-                        "description": "OrphanDownstreamOnPolicyDelete controls whether generated resources should be deleted when the rule that generated\nthem is deleted with synchronization enabled. This option is only applicable to generate rules of the data type.\nSee https://kyverno.io/docs/writing-policies/generate/#data-examples.\nDefaults to \"false\" if not specified.",
-                        "type": "boolean"
-                      },
                       "synchronize": {
                         "description": "Synchronize controls if generated resources should be kept in-sync with their source resource.\nIf Synchronize is set to \"true\" changes to generated resources will be overwritten with resource\ndata from Data or the resource specified in the Clone declaration.\nOptional. Defaults to \"false\" if not specified.",
                         "type": "boolean"
@@ -5471,7 +5364,7 @@
                                     "description": "APICall is an HTTP request to the Kubernetes API server, or other JSON web service.\nThe data returned is stored in the context with the name for the context entry.",
                                     "properties": {
                                       "data": {
-                                        "description": "The data object specifies the POST data sent to the server.\nOnly applicable when the method field is set to POST.",
+                                        "description": "Data specifies the POST data sent to the server.",
                                         "items": {
                                           "description": "RequestData contains the HTTP POST data",
                                           "properties": {
@@ -5507,7 +5400,7 @@
                                         "type": "string"
                                       },
                                       "service": {
-                                        "description": "Service is an API call to a JSON web service.\nThis is used for non-Kubernetes API server calls.\nIt's mutually exclusive with the URLPath field.",
+                                        "description": "Service is an API call to a JSON web service",
                                         "properties": {
                                           "caBundle": {
                                             "description": "CABundle is a PEM encoded CA bundle which will be used to validate\nthe server certificate.",
@@ -5525,7 +5418,7 @@
                                         "additionalProperties": false
                                       },
                                       "urlPath": {
-                                        "description": "URLPath is the URL path to be used in the HTTP GET or POST request to the\nKubernetes API server (e.g. \"/api/v1/namespaces\" or  \"/apis/apps/v1/deployments\").\nThe format required is the same format used by the `kubectl get --raw` command.\nSee https://kyverno.io/docs/writing-policies/external-data-sources/#variables-from-kubernetes-api-server-calls\nfor details.\nIt's mutually exclusive with the Service field.",
+                                        "description": "URLPath is the URL path to be used in the HTTP GET or POST request to the\nKubernetes API server (e.g. \"/api/v1/namespaces\" or  \"/apis/apps/v1/deployments\").\nThe format required is the same format used by the `kubectl get --raw` command.\nSee https://kyverno.io/docs/writing-policies/external-data-sources/#variables-from-kubernetes-api-server-calls\nfor details.",
                                         "type": "string"
                                       }
                                     },
@@ -5547,21 +5440,6 @@
                                     "required": [
                                       "name"
                                     ],
-                                    "type": "object",
-                                    "additionalProperties": false
-                                  },
-                                  "globalReference": {
-                                    "description": "GlobalContextEntryReference is a reference to a cached global context entry.",
-                                    "properties": {
-                                      "jmesPath": {
-                                        "description": "JMESPath is an optional JSON Match Expression that can be used to\ntransform the JSON response returned from the server. For example\na JMESPath of \"items | length(@)\" applied to the API server response\nfor the URLPath \"/apis/apps/v1/deployments\" will return the total count\nof deployments across all namespaces.",
-                                        "type": "string"
-                                      },
-                                      "name": {
-                                        "description": "Name of the global context entry",
-                                        "type": "string"
-                                      }
-                                    },
                                     "type": "object",
                                     "additionalProperties": false
                                   },
@@ -5799,7 +5677,7 @@
                                     "description": "APICall is an HTTP request to the Kubernetes API server, or other JSON web service.\nThe data returned is stored in the context with the name for the context entry.",
                                     "properties": {
                                       "data": {
-                                        "description": "The data object specifies the POST data sent to the server.\nOnly applicable when the method field is set to POST.",
+                                        "description": "Data specifies the POST data sent to the server.",
                                         "items": {
                                           "description": "RequestData contains the HTTP POST data",
                                           "properties": {
@@ -5835,7 +5713,7 @@
                                         "type": "string"
                                       },
                                       "service": {
-                                        "description": "Service is an API call to a JSON web service.\nThis is used for non-Kubernetes API server calls.\nIt's mutually exclusive with the URLPath field.",
+                                        "description": "Service is an API call to a JSON web service",
                                         "properties": {
                                           "caBundle": {
                                             "description": "CABundle is a PEM encoded CA bundle which will be used to validate\nthe server certificate.",
@@ -5853,7 +5731,7 @@
                                         "additionalProperties": false
                                       },
                                       "urlPath": {
-                                        "description": "URLPath is the URL path to be used in the HTTP GET or POST request to the\nKubernetes API server (e.g. \"/api/v1/namespaces\" or  \"/apis/apps/v1/deployments\").\nThe format required is the same format used by the `kubectl get --raw` command.\nSee https://kyverno.io/docs/writing-policies/external-data-sources/#variables-from-kubernetes-api-server-calls\nfor details.\nIt's mutually exclusive with the Service field.",
+                                        "description": "URLPath is the URL path to be used in the HTTP GET or POST request to the\nKubernetes API server (e.g. \"/api/v1/namespaces\" or  \"/apis/apps/v1/deployments\").\nThe format required is the same format used by the `kubectl get --raw` command.\nSee https://kyverno.io/docs/writing-policies/external-data-sources/#variables-from-kubernetes-api-server-calls\nfor details.",
                                         "type": "string"
                                       }
                                     },
@@ -5875,21 +5753,6 @@
                                     "required": [
                                       "name"
                                     ],
-                                    "type": "object",
-                                    "additionalProperties": false
-                                  },
-                                  "globalReference": {
-                                    "description": "GlobalContextEntryReference is a reference to a cached global context entry.",
-                                    "properties": {
-                                      "jmesPath": {
-                                        "description": "JMESPath is an optional JSON Match Expression that can be used to\ntransform the JSON response returned from the server. For example\na JMESPath of \"items | length(@)\" applied to the API server response\nfor the URLPath \"/apis/apps/v1/deployments\" will return the total count\nof deployments across all namespaces.",
-                                        "type": "string"
-                                      },
-                                      "name": {
-                                        "description": "Name of the global context entry",
-                                        "type": "string"
-                                      }
-                                    },
                                     "type": "object",
                                     "additionalProperties": false
                                   },
@@ -6217,7 +6080,7 @@
                                     "description": "APICall is an HTTP request to the Kubernetes API server, or other JSON web service.\nThe data returned is stored in the context with the name for the context entry.",
                                     "properties": {
                                       "data": {
-                                        "description": "The data object specifies the POST data sent to the server.\nOnly applicable when the method field is set to POST.",
+                                        "description": "Data specifies the POST data sent to the server.",
                                         "items": {
                                           "description": "RequestData contains the HTTP POST data",
                                           "properties": {
@@ -6253,7 +6116,7 @@
                                         "type": "string"
                                       },
                                       "service": {
-                                        "description": "Service is an API call to a JSON web service.\nThis is used for non-Kubernetes API server calls.\nIt's mutually exclusive with the URLPath field.",
+                                        "description": "Service is an API call to a JSON web service",
                                         "properties": {
                                           "caBundle": {
                                             "description": "CABundle is a PEM encoded CA bundle which will be used to validate\nthe server certificate.",
@@ -6271,7 +6134,7 @@
                                         "additionalProperties": false
                                       },
                                       "urlPath": {
-                                        "description": "URLPath is the URL path to be used in the HTTP GET or POST request to the\nKubernetes API server (e.g. \"/api/v1/namespaces\" or  \"/apis/apps/v1/deployments\").\nThe format required is the same format used by the `kubectl get --raw` command.\nSee https://kyverno.io/docs/writing-policies/external-data-sources/#variables-from-kubernetes-api-server-calls\nfor details.\nIt's mutually exclusive with the Service field.",
+                                        "description": "URLPath is the URL path to be used in the HTTP GET or POST request to the\nKubernetes API server (e.g. \"/api/v1/namespaces\" or  \"/apis/apps/v1/deployments\").\nThe format required is the same format used by the `kubectl get --raw` command.\nSee https://kyverno.io/docs/writing-policies/external-data-sources/#variables-from-kubernetes-api-server-calls\nfor details.",
                                         "type": "string"
                                       }
                                     },
@@ -6293,21 +6156,6 @@
                                     "required": [
                                       "name"
                                     ],
-                                    "type": "object",
-                                    "additionalProperties": false
-                                  },
-                                  "globalReference": {
-                                    "description": "GlobalContextEntryReference is a reference to a cached global context entry.",
-                                    "properties": {
-                                      "jmesPath": {
-                                        "description": "JMESPath is an optional JSON Match Expression that can be used to\ntransform the JSON response returned from the server. For example\na JMESPath of \"items | length(@)\" applied to the API server response\nfor the URLPath \"/apis/apps/v1/deployments\" will return the total count\nof deployments across all namespaces.",
-                                        "type": "string"
-                                      },
-                                      "name": {
-                                        "description": "Name of the global context entry",
-                                        "type": "string"
-                                      }
-                                    },
                                     "type": "object",
                                     "additionalProperties": false
                                   },
@@ -6595,6 +6443,9 @@
                                                 "type": "string"
                                               }
                                             },
+                                            "required": [
+                                              "url"
+                                            ],
                                             "type": "object",
                                             "additionalProperties": false
                                           }
@@ -6647,6 +6498,9 @@
                                                 "type": "string"
                                               }
                                             },
+                                            "required": [
+                                              "url"
+                                            ],
                                             "type": "object",
                                             "additionalProperties": false
                                           },
@@ -6704,6 +6558,9 @@
                                                 "type": "string"
                                               }
                                             },
+                                            "required": [
+                                              "url"
+                                            ],
                                             "type": "object",
                                             "additionalProperties": false
                                           },
@@ -6855,17 +6712,6 @@
                                     "type": "string"
                                   },
                                   "type": "array"
-                                },
-                                "restrictedField": {
-                                  "description": "RestrictedField selects the field for the given Pod Security Standard control.\nWhen not set, all restricted fields for the control are selected.",
-                                  "type": "string"
-                                },
-                                "values": {
-                                  "description": "Values defines the allowed values that can be excluded.",
-                                  "items": {
-                                    "type": "string"
-                                  },
-                                  "type": "array"
                                 }
                               },
                               "required": [
@@ -6886,7 +6732,7 @@
                             "type": "string"
                           },
                           "version": {
-                            "description": "Version defines the Pod Security Standard versions that Kubernetes supports.\nAllowed values are v1.19, v1.20, v1.21, v1.22, v1.23, v1.24, v1.25, v1.26, v1.27, v1.28, v1.29, latest. Defaults to latest.",
+                            "description": "Version defines the Pod Security Standard versions that Kubernetes supports.\nAllowed values are v1.19, v1.20, v1.21, v1.22, v1.23, v1.24, v1.25, v1.26, latest. Defaults to latest.",
                             "enum": [
                               "v1.19",
                               "v1.20",
@@ -6896,9 +6742,6 @@
                               "v1.24",
                               "v1.25",
                               "v1.26",
-                              "v1.27",
-                              "v1.28",
-                              "v1.29",
                               "latest"
                             ],
                             "type": "string"
@@ -7001,6 +6844,9 @@
                                                     "type": "string"
                                                   }
                                                 },
+                                                "required": [
+                                                  "url"
+                                                ],
                                                 "type": "object",
                                                 "additionalProperties": false
                                               }
@@ -7053,6 +6899,9 @@
                                                     "type": "string"
                                                   }
                                                 },
+                                                "required": [
+                                                  "url"
+                                                ],
                                                 "type": "object",
                                                 "additionalProperties": false
                                               },
@@ -7110,6 +6959,9 @@
                                                     "type": "string"
                                                   }
                                                 },
+                                                "required": [
+                                                  "url"
+                                                ],
                                                 "type": "object",
                                                 "additionalProperties": false
                                               },
@@ -7338,6 +7190,9 @@
                                               "type": "string"
                                             }
                                           },
+                                          "required": [
+                                            "url"
+                                          ],
                                           "type": "object",
                                           "additionalProperties": false
                                         }
@@ -7390,6 +7245,9 @@
                                               "type": "string"
                                             }
                                           },
+                                          "required": [
+                                            "url"
+                                          ],
                                           "type": "object",
                                           "additionalProperties": false
                                         },
@@ -7447,6 +7305,9 @@
                                               "type": "string"
                                             }
                                           },
+                                          "required": [
+                                            "url"
+                                          ],
                                           "type": "object",
                                           "additionalProperties": false
                                         },
@@ -7563,13 +7424,6 @@
                         "roots": {
                           "description": "Deprecated. Use KeylessAttestor instead.",
                           "type": "string"
-                        },
-                        "skipImageReferences": {
-                          "description": "SkipImageReferences is a list of matching image reference patterns that should be skipped.\nAt least one pattern in the list must match the image for the rule to be skipped. Each image reference\nconsists of a registry address (defaults to docker.io), repository, image, and tag (defaults to latest).\nWildcards ('*' and '?') are allowed. See: https://kubernetes.io/docs/concepts/containers/images.",
-                          "items": {
-                            "type": "string"
-                          },
-                          "type": "array"
                         },
                         "subject": {
                           "description": "Deprecated. Use KeylessAttestor instead.",

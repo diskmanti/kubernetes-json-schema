@@ -115,7 +115,7 @@
                 "description": "APICall is an HTTP request to the Kubernetes API server, or other JSON web service.\nThe data returned is stored in the context with the name for the context entry.",
                 "properties": {
                   "data": {
-                    "description": "The data object specifies the POST data sent to the server.\nOnly applicable when the method field is set to POST.",
+                    "description": "Data specifies the POST data sent to the server.",
                     "items": {
                       "description": "RequestData contains the HTTP POST data",
                       "properties": {
@@ -151,7 +151,7 @@
                     "type": "string"
                   },
                   "service": {
-                    "description": "Service is an API call to a JSON web service.\nThis is used for non-Kubernetes API server calls.\nIt's mutually exclusive with the URLPath field.",
+                    "description": "Service is an API call to a JSON web service",
                     "properties": {
                       "caBundle": {
                         "description": "CABundle is a PEM encoded CA bundle which will be used to validate\nthe server certificate.",
@@ -169,7 +169,7 @@
                     "additionalProperties": false
                   },
                   "urlPath": {
-                    "description": "URLPath is the URL path to be used in the HTTP GET or POST request to the\nKubernetes API server (e.g. \"/api/v1/namespaces\" or  \"/apis/apps/v1/deployments\").\nThe format required is the same format used by the `kubectl get --raw` command.\nSee https://kyverno.io/docs/writing-policies/external-data-sources/#variables-from-kubernetes-api-server-calls\nfor details.\nIt's mutually exclusive with the Service field.",
+                    "description": "URLPath is the URL path to be used in the HTTP GET or POST request to the\nKubernetes API server (e.g. \"/api/v1/namespaces\" or  \"/apis/apps/v1/deployments\").\nThe format required is the same format used by the `kubectl get --raw` command.\nSee https://kyverno.io/docs/writing-policies/external-data-sources/#variables-from-kubernetes-api-server-calls\nfor details.",
                     "type": "string"
                   }
                 },
@@ -191,21 +191,6 @@
                 "required": [
                   "name"
                 ],
-                "type": "object",
-                "additionalProperties": false
-              },
-              "globalReference": {
-                "description": "GlobalContextEntryReference is a reference to a cached global context entry.",
-                "properties": {
-                  "jmesPath": {
-                    "description": "JMESPath is an optional JSON Match Expression that can be used to\ntransform the JSON response returned from the server. For example\na JMESPath of \"items | length(@)\" applied to the API server response\nfor the URLPath \"/apis/apps/v1/deployments\" will return the total count\nof deployments across all namespaces.",
-                    "type": "string"
-                  },
-                  "name": {
-                    "description": "Name of the global context entry",
-                    "type": "string"
-                  }
-                },
                 "type": "object",
                 "additionalProperties": false
               },
