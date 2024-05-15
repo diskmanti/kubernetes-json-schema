@@ -54,9 +54,7 @@ jobs:
       #     number: 1
       #     repo: juliangruber/approve-pull-request-action # optional
       - name: Auto approve
-        id: autoApprove
-        if: steps.createPR.outputs.pull-request-operation == 'created'
+        id: autoApprove   
         uses: juliangruber/approve-pull-request-action@v2
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          number: ${{ steps.createPR.outputs.pull-request-number }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}        
