@@ -55,7 +55,7 @@ jobs:
       #     repo: juliangruber/approve-pull-request-action # optional
       - name: Enable Pull Request Automerge
         if: steps.createPR.outputs.pull-request-operation == 'created'
-        uses: peter-evans/enable-pull-request-automerge@v2
+        uses: peter-evans/enable-pull-request-automerge@v3
         with:
           token: ${{ secrets.MY_GITHUB_TOKEN }}
           pull-request-number: ${{ steps.createPR.outputs.pull-request-number }}  
