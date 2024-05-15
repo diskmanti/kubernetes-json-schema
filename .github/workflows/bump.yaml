@@ -40,6 +40,7 @@ jobs:
       - name: generate jsonschema
         run: ./openapi2jsonschema.py ${{ matrix.crds_name }}
       - name: Create Pull Request
+        id: createPR
         uses: peter-evans/create-pull-request@v6
         with:
           title: 'build(deps): upgrade CRDS ${{ matrix.crds_name }}'
@@ -54,8 +55,8 @@ jobs:
       #     repo: juliangruber/approve-pull-request-action # optional
       - name: Auto approve
         id: autoApprove
-        if: steps.createAutoPR.outputs.pull-request-operation == 'created'
+        if: steps.createPR.outputs.pull-request-operation == 'created'
         uses: juliangruber/approve-pull-request-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          number: ${{ steps.createAutoPR.outputs.pull-request-number }}
+          number: ${{ steps.createPR.outputs.pull-request-number }}
