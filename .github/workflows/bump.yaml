@@ -46,9 +46,16 @@ jobs:
           commit-message: 'build(deps): upgrade CRDS ${{ matrix.crds_name }}'
           branch: 'bump-${{ matrix.crds_name }}'
           delete-branch: true
-      - name: Approve Pull Request
-        uses: juliangruber/approve-pull-request-action@v2.0.0
+      # - name: Approve Pull Request
+      #   uses: juliangruber/approve-pull-request-action@v2.0.0
+      #   with:
+      #     github-token: ${{ secrets.GITHUB_TOKEN }}
+      #     number: 1
+      #     repo: juliangruber/approve-pull-request-action # optional
+      - name: Auto approve
+        id: autoApprove
+        if: steps.createAutoPR.outputs.pull-request-operation == 'created'
+        uses: juliangruber/approve-pull-request-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          number: 1
-          repo: juliangruber/approve-pull-request-action # optional
+          number: ${{ steps.createAutoPR.outputs.pull-request-number }}
