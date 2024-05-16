@@ -5,6 +5,15 @@
       "https://raw.githubusercontent.com/grafana-operator/grafana-operator/master/deploy/kustomize/base/crds.yaml"
     ]
   },
+  "loki-operator": {
+    "github_repository": "grafana/loki",
+    "urls": [
+      "https://raw.githubusercontent.com/grafana/loki/main/operator/bundle/community/manifests/loki.grafana.com_alertingrules.yaml",
+      "https://raw.githubusercontent.com/grafana/loki/main/operator/bundle/community/manifests/loki.grafana.com_lokistacks.yaml",
+      "https://raw.githubusercontent.com/grafana/loki/main/operator/bundle/community/manifests/loki.grafana.com_recordingrules.yaml",
+      "https://raw.githubusercontent.com/grafana/loki/main/operator/bundle/community/manifests/loki.grafana.com_rulerconfigs.yaml"
+    ]
+  },
   "olm": {
     "github_repository": "operator-framework/operator-lifecycle-manager",
     "urls": [
