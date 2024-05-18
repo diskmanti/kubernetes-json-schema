@@ -361,6 +361,9 @@
                                     },
                                     "type": "array"
                                   },
+                                  "labelWithoutSelector": {
+                                    "type": "boolean"
+                                  },
                                   "namePrefix": {
                                     "type": "string"
                                   },
@@ -704,6 +707,9 @@
                                         "type": "string"
                                       },
                                       "type": "array"
+                                    },
+                                    "labelWithoutSelector": {
+                                      "type": "boolean"
                                     },
                                     "namePrefix": {
                                       "type": "string"
@@ -1306,6 +1312,9 @@
                                     },
                                     "type": "array"
                                   },
+                                  "labelWithoutSelector": {
+                                    "type": "boolean"
+                                  },
                                   "namePrefix": {
                                     "type": "string"
                                   },
@@ -1649,6 +1658,9 @@
                                         "type": "string"
                                       },
                                       "type": "array"
+                                    },
+                                    "labelWithoutSelector": {
+                                      "type": "boolean"
                                     },
                                     "namePrefix": {
                                       "type": "string"
@@ -2257,6 +2269,9 @@
                                     },
                                     "type": "array"
                                   },
+                                  "labelWithoutSelector": {
+                                    "type": "boolean"
+                                  },
                                   "namePrefix": {
                                     "type": "string"
                                   },
@@ -2600,6 +2615,9 @@
                                         "type": "string"
                                       },
                                       "type": "array"
+                                    },
+                                    "labelWithoutSelector": {
+                                      "type": "boolean"
                                     },
                                     "namePrefix": {
                                       "type": "string"
@@ -3175,6 +3193,9 @@
                                     },
                                     "type": "array"
                                   },
+                                  "labelWithoutSelector": {
+                                    "type": "boolean"
+                                  },
                                   "namePrefix": {
                                     "type": "string"
                                   },
@@ -3518,6 +3539,9 @@
                                         "type": "string"
                                       },
                                       "type": "array"
+                                    },
+                                    "labelWithoutSelector": {
+                                      "type": "boolean"
                                     },
                                     "namePrefix": {
                                       "type": "string"
@@ -4126,6 +4150,9 @@
                                               },
                                               "type": "array"
                                             },
+                                            "labelWithoutSelector": {
+                                              "type": "boolean"
+                                            },
                                             "namePrefix": {
                                               "type": "string"
                                             },
@@ -4469,6 +4496,9 @@
                                                   "type": "string"
                                                 },
                                                 "type": "array"
+                                              },
+                                              "labelWithoutSelector": {
+                                                "type": "boolean"
                                               },
                                               "namePrefix": {
                                                 "type": "string"
@@ -5071,6 +5101,9 @@
                                               },
                                               "type": "array"
                                             },
+                                            "labelWithoutSelector": {
+                                              "type": "boolean"
+                                            },
                                             "namePrefix": {
                                               "type": "string"
                                             },
@@ -5414,6 +5447,9 @@
                                                   "type": "string"
                                                 },
                                                 "type": "array"
+                                              },
+                                              "labelWithoutSelector": {
+                                                "type": "boolean"
                                               },
                                               "namePrefix": {
                                                 "type": "string"
@@ -6022,6 +6058,9 @@
                                               },
                                               "type": "array"
                                             },
+                                            "labelWithoutSelector": {
+                                              "type": "boolean"
+                                            },
                                             "namePrefix": {
                                               "type": "string"
                                             },
@@ -6365,6 +6404,9 @@
                                                   "type": "string"
                                                 },
                                                 "type": "array"
+                                              },
+                                              "labelWithoutSelector": {
+                                                "type": "boolean"
                                               },
                                               "namePrefix": {
                                                 "type": "string"
@@ -6940,6 +6982,9 @@
                                               },
                                               "type": "array"
                                             },
+                                            "labelWithoutSelector": {
+                                              "type": "boolean"
+                                            },
                                             "namePrefix": {
                                               "type": "string"
                                             },
@@ -7283,6 +7328,9 @@
                                                   "type": "string"
                                                 },
                                                 "type": "array"
+                                              },
+                                              "labelWithoutSelector": {
+                                                "type": "boolean"
                                               },
                                               "namePrefix": {
                                                 "type": "string"
@@ -7873,6 +7921,9 @@
                                               },
                                               "type": "array"
                                             },
+                                            "labelWithoutSelector": {
+                                              "type": "boolean"
+                                            },
                                             "namePrefix": {
                                               "type": "string"
                                             },
@@ -8216,6 +8267,9 @@
                                                   "type": "string"
                                                 },
                                                 "type": "array"
+                                              },
+                                              "labelWithoutSelector": {
+                                                "type": "boolean"
                                               },
                                               "namePrefix": {
                                                 "type": "string"
@@ -9093,6 +9147,9 @@
                                               },
                                               "type": "array"
                                             },
+                                            "labelWithoutSelector": {
+                                              "type": "boolean"
+                                            },
                                             "namePrefix": {
                                               "type": "string"
                                             },
@@ -9436,6 +9493,9 @@
                                                   "type": "string"
                                                 },
                                                 "type": "array"
+                                              },
+                                              "labelWithoutSelector": {
+                                                "type": "boolean"
                                               },
                                               "namePrefix": {
                                                 "type": "string"
@@ -10306,6 +10366,9 @@
                                               },
                                               "type": "array"
                                             },
+                                            "labelWithoutSelector": {
+                                              "type": "boolean"
+                                            },
                                             "namePrefix": {
                                               "type": "string"
                                             },
@@ -10649,6 +10712,9 @@
                                                   "type": "string"
                                                 },
                                                 "type": "array"
+                                              },
+                                              "labelWithoutSelector": {
+                                                "type": "boolean"
                                               },
                                               "namePrefix": {
                                                 "type": "string"
@@ -11252,6 +11318,9 @@
                                     },
                                     "type": "array"
                                   },
+                                  "labelWithoutSelector": {
+                                    "type": "boolean"
+                                  },
                                   "namePrefix": {
                                     "type": "string"
                                   },
@@ -11595,6 +11664,9 @@
                                         "type": "string"
                                       },
                                       "type": "array"
+                                    },
+                                    "labelWithoutSelector": {
+                                      "type": "boolean"
                                     },
                                     "namePrefix": {
                                       "type": "string"
@@ -12206,6 +12278,9 @@
                                               },
                                               "type": "array"
                                             },
+                                            "labelWithoutSelector": {
+                                              "type": "boolean"
+                                            },
                                             "namePrefix": {
                                               "type": "string"
                                             },
@@ -12549,6 +12624,9 @@
                                                   "type": "string"
                                                 },
                                                 "type": "array"
+                                              },
+                                              "labelWithoutSelector": {
+                                                "type": "boolean"
                                               },
                                               "namePrefix": {
                                                 "type": "string"
@@ -13151,6 +13229,9 @@
                                               },
                                               "type": "array"
                                             },
+                                            "labelWithoutSelector": {
+                                              "type": "boolean"
+                                            },
                                             "namePrefix": {
                                               "type": "string"
                                             },
@@ -13494,6 +13575,9 @@
                                                   "type": "string"
                                                 },
                                                 "type": "array"
+                                              },
+                                              "labelWithoutSelector": {
+                                                "type": "boolean"
                                               },
                                               "namePrefix": {
                                                 "type": "string"
@@ -14102,6 +14186,9 @@
                                               },
                                               "type": "array"
                                             },
+                                            "labelWithoutSelector": {
+                                              "type": "boolean"
+                                            },
                                             "namePrefix": {
                                               "type": "string"
                                             },
@@ -14445,6 +14532,9 @@
                                                   "type": "string"
                                                 },
                                                 "type": "array"
+                                              },
+                                              "labelWithoutSelector": {
+                                                "type": "boolean"
                                               },
                                               "namePrefix": {
                                                 "type": "string"
@@ -15020,6 +15110,9 @@
                                               },
                                               "type": "array"
                                             },
+                                            "labelWithoutSelector": {
+                                              "type": "boolean"
+                                            },
                                             "namePrefix": {
                                               "type": "string"
                                             },
@@ -15363,6 +15456,9 @@
                                                   "type": "string"
                                                 },
                                                 "type": "array"
+                                              },
+                                              "labelWithoutSelector": {
+                                                "type": "boolean"
                                               },
                                               "namePrefix": {
                                                 "type": "string"
@@ -15953,6 +16049,9 @@
                                               },
                                               "type": "array"
                                             },
+                                            "labelWithoutSelector": {
+                                              "type": "boolean"
+                                            },
                                             "namePrefix": {
                                               "type": "string"
                                             },
@@ -16296,6 +16395,9 @@
                                                   "type": "string"
                                                 },
                                                 "type": "array"
+                                              },
+                                              "labelWithoutSelector": {
+                                                "type": "boolean"
                                               },
                                               "namePrefix": {
                                                 "type": "string"
@@ -17173,6 +17275,9 @@
                                               },
                                               "type": "array"
                                             },
+                                            "labelWithoutSelector": {
+                                              "type": "boolean"
+                                            },
                                             "namePrefix": {
                                               "type": "string"
                                             },
@@ -17516,6 +17621,9 @@
                                                   "type": "string"
                                                 },
                                                 "type": "array"
+                                              },
+                                              "labelWithoutSelector": {
+                                                "type": "boolean"
                                               },
                                               "namePrefix": {
                                                 "type": "string"
@@ -18386,6 +18494,9 @@
                                               },
                                               "type": "array"
                                             },
+                                            "labelWithoutSelector": {
+                                              "type": "boolean"
+                                            },
                                             "namePrefix": {
                                               "type": "string"
                                             },
@@ -18729,6 +18840,9 @@
                                                   "type": "string"
                                                 },
                                                 "type": "array"
+                                              },
+                                              "labelWithoutSelector": {
+                                                "type": "boolean"
                                               },
                                               "namePrefix": {
                                                 "type": "string"
@@ -19338,6 +19452,9 @@
                                     },
                                     "type": "array"
                                   },
+                                  "labelWithoutSelector": {
+                                    "type": "boolean"
+                                  },
                                   "namePrefix": {
                                     "type": "string"
                                   },
@@ -19681,6 +19798,9 @@
                                         "type": "string"
                                       },
                                       "type": "array"
+                                    },
+                                    "labelWithoutSelector": {
+                                      "type": "boolean"
                                     },
                                     "namePrefix": {
                                       "type": "string"
@@ -20269,6 +20389,9 @@
                                     },
                                     "type": "array"
                                   },
+                                  "labelWithoutSelector": {
+                                    "type": "boolean"
+                                  },
                                   "namePrefix": {
                                     "type": "string"
                                   },
@@ -20612,6 +20735,9 @@
                                         "type": "string"
                                       },
                                       "type": "array"
+                                    },
+                                    "labelWithoutSelector": {
+                                      "type": "boolean"
                                     },
                                     "namePrefix": {
                                       "type": "string"
@@ -21489,6 +21615,9 @@
                                     },
                                     "type": "array"
                                   },
+                                  "labelWithoutSelector": {
+                                    "type": "boolean"
+                                  },
                                   "namePrefix": {
                                     "type": "string"
                                   },
@@ -21832,6 +21961,9 @@
                                         "type": "string"
                                       },
                                       "type": "array"
+                                    },
+                                    "labelWithoutSelector": {
+                                      "type": "boolean"
                                     },
                                     "namePrefix": {
                                       "type": "string"
@@ -22702,6 +22834,9 @@
                                     },
                                     "type": "array"
                                   },
+                                  "labelWithoutSelector": {
+                                    "type": "boolean"
+                                  },
                                   "namePrefix": {
                                     "type": "string"
                                   },
@@ -23045,6 +23180,9 @@
                                         "type": "string"
                                       },
                                       "type": "array"
+                                    },
+                                    "labelWithoutSelector": {
+                                      "type": "boolean"
                                     },
                                     "namePrefix": {
                                       "type": "string"
@@ -23773,6 +23911,9 @@
                           },
                           "type": "array"
                         },
+                        "labelWithoutSelector": {
+                          "type": "boolean"
+                        },
                         "namePrefix": {
                           "type": "string"
                         },
@@ -24116,6 +24257,9 @@
                               "type": "string"
                             },
                             "type": "array"
+                          },
+                          "labelWithoutSelector": {
+                            "type": "boolean"
                           },
                           "namePrefix": {
                             "type": "string"
