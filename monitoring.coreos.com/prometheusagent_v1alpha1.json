@@ -919,6 +919,9 @@
           "type": "object",
           "additionalProperties": false
         },
+        "automountServiceAccountToken": {
+          "type": "boolean"
+        },
         "bodySizeLimit": {
           "pattern": "(^0|([0-9]*[.])?[0-9]+((K|M|G|T|E|P)i?)?B)$",
           "type": "string"
@@ -1984,9 +1987,11 @@
         },
         "enableFeatures": {
           "items": {
+            "minLength": 1,
             "type": "string"
           },
-          "type": "array"
+          "type": "array",
+          "x-kubernetes-list-type": "set"
         },
         "enableRemoteWriteReceiver": {
           "type": "boolean"
@@ -3539,6 +3544,16 @@
                       "clientSecret",
                       "tenantId"
                     ],
+                    "type": "object",
+                    "additionalProperties": false
+                  },
+                  "sdk": {
+                    "properties": {
+                      "tenantId": {
+                        "pattern": "^[0-9a-zA-Z-.]+$",
+                        "type": "string"
+                      }
+                    },
                     "type": "object",
                     "additionalProperties": false
                   }
