@@ -732,6 +732,66 @@
             "alertmanagers": {
               "items": {
                 "properties": {
+                  "alertRelabelings": {
+                    "items": {
+                      "properties": {
+                        "action": {
+                          "default": "replace",
+                          "enum": [
+                            "replace",
+                            "Replace",
+                            "keep",
+                            "Keep",
+                            "drop",
+                            "Drop",
+                            "hashmod",
+                            "HashMod",
+                            "labelmap",
+                            "LabelMap",
+                            "labeldrop",
+                            "LabelDrop",
+                            "labelkeep",
+                            "LabelKeep",
+                            "lowercase",
+                            "Lowercase",
+                            "uppercase",
+                            "Uppercase",
+                            "keepequal",
+                            "KeepEqual",
+                            "dropequal",
+                            "DropEqual"
+                          ],
+                          "type": "string"
+                        },
+                        "modulus": {
+                          "format": "int64",
+                          "type": "integer"
+                        },
+                        "regex": {
+                          "type": "string"
+                        },
+                        "replacement": {
+                          "type": "string"
+                        },
+                        "separator": {
+                          "type": "string"
+                        },
+                        "sourceLabels": {
+                          "items": {
+                            "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        "targetLabel": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object",
+                      "additionalProperties": false
+                    },
+                    "type": "array"
+                  },
                   "apiVersion": {
                     "type": "string"
                   },
@@ -832,6 +892,66 @@
                       }
                     ],
                     "x-kubernetes-int-or-string": true
+                  },
+                  "relabelings": {
+                    "items": {
+                      "properties": {
+                        "action": {
+                          "default": "replace",
+                          "enum": [
+                            "replace",
+                            "Replace",
+                            "keep",
+                            "Keep",
+                            "drop",
+                            "Drop",
+                            "hashmod",
+                            "HashMod",
+                            "labelmap",
+                            "LabelMap",
+                            "labeldrop",
+                            "LabelDrop",
+                            "labelkeep",
+                            "LabelKeep",
+                            "lowercase",
+                            "Lowercase",
+                            "uppercase",
+                            "Uppercase",
+                            "keepequal",
+                            "KeepEqual",
+                            "dropequal",
+                            "DropEqual"
+                          ],
+                          "type": "string"
+                        },
+                        "modulus": {
+                          "format": "int64",
+                          "type": "integer"
+                        },
+                        "regex": {
+                          "type": "string"
+                        },
+                        "replacement": {
+                          "type": "string"
+                        },
+                        "separator": {
+                          "type": "string"
+                        },
+                        "sourceLabels": {
+                          "items": {
+                            "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$",
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        "targetLabel": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object",
+                      "additionalProperties": false
+                    },
+                    "type": "array"
                   },
                   "scheme": {
                     "type": "string"
@@ -1271,6 +1391,9 @@
           },
           "type": "object",
           "additionalProperties": false
+        },
+        "automountServiceAccountToken": {
+          "type": "boolean"
         },
         "baseImage": {
           "type": "string"
@@ -2346,9 +2469,11 @@
         },
         "enableFeatures": {
           "items": {
+            "minLength": 1,
             "type": "string"
           },
-          "type": "array"
+          "type": "array",
+          "x-kubernetes-list-type": "set"
         },
         "enableRemoteWriteReceiver": {
           "type": "boolean"
@@ -4305,6 +4430,16 @@
                       "clientSecret",
                       "tenantId"
                     ],
+                    "type": "object",
+                    "additionalProperties": false
+                  },
+                  "sdk": {
+                    "properties": {
+                      "tenantId": {
+                        "pattern": "^[0-9a-zA-Z-.]+$",
+                        "type": "string"
+                      }
+                    },
                     "type": "object",
                     "additionalProperties": false
                   }
