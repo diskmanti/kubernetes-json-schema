@@ -2,7 +2,7 @@
   "grafana-operator": {
     "github_repository": "grafana-operator/grafana-operator",
     "urls": [
-      "https://raw.githubusercontent.com/grafana-operator/grafana-operator/master/deploy/kustomize/base/crds.yaml"
+      "https://raw.githubusercontent.com/grafana/grafana-operator/master/config/crd/kustomization.yaml"
     ]
   },
   "loki-operator": {
