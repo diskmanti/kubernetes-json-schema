@@ -6464,6 +6464,10 @@
             "keycloak": {
               "description": "Keycloak contains the configuration for Argo CD keycloak authentication",
               "properties": {
+                "host": {
+                  "description": "Host is the hostname to use for Ingress/Route resources.",
+                  "type": "string"
+                },
                 "image": {
                   "description": "Image is the Keycloak container image.",
                   "type": "string"
