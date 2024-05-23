@@ -355,10 +355,6 @@
                       },
                       "type": "array"
                     },
-                    "labelWithoutSelector": {
-                      "description": "LabelWithoutSelector specifies whether to apply common labels to resource selectors or not",
-                      "type": "boolean"
-                    },
                     "namePrefix": {
                       "description": "NamePrefix is a prefix appended to resources for Kustomize apps",
                       "type": "string"
@@ -763,10 +759,6 @@
                           "type": "string"
                         },
                         "type": "array"
-                      },
-                      "labelWithoutSelector": {
-                        "description": "LabelWithoutSelector specifies whether to apply common labels to resource selectors or not",
-                        "type": "boolean"
                       },
                       "namePrefix": {
                         "description": "NamePrefix is a prefix appended to resources for Kustomize apps",
@@ -1313,10 +1305,6 @@
                   },
                   "type": "array"
                 },
-                "labelWithoutSelector": {
-                  "description": "LabelWithoutSelector specifies whether to apply common labels to resource selectors or not",
-                  "type": "boolean"
-                },
                 "namePrefix": {
                   "description": "NamePrefix is a prefix appended to resources for Kustomize apps",
                   "type": "string"
@@ -1722,10 +1710,6 @@
                     },
                     "type": "array"
                   },
-                  "labelWithoutSelector": {
-                    "description": "LabelWithoutSelector specifies whether to apply common labels to resource selectors or not",
-                    "type": "boolean"
-                  },
                   "namePrefix": {
                     "description": "NamePrefix is a prefix appended to resources for Kustomize apps",
                     "type": "string"
@@ -2076,21 +2060,6 @@
                 "format": "int64",
                 "type": "integer"
               },
-              "initiatedBy": {
-                "description": "InitiatedBy contains information about who initiated the operations",
-                "properties": {
-                  "automated": {
-                    "description": "Automated is set to true if operation was initiated automatically by the application controller.",
-                    "type": "boolean"
-                  },
-                  "username": {
-                    "description": "Username contains the name of a user who started operation",
-                    "type": "string"
-                  }
-                },
-                "type": "object",
-                "additionalProperties": false
-              },
               "revision": {
                 "description": "Revision holds the revision the sync was performed against",
                 "type": "string"
@@ -2318,10 +2287,6 @@
                           "type": "string"
                         },
                         "type": "array"
-                      },
-                      "labelWithoutSelector": {
-                        "description": "LabelWithoutSelector specifies whether to apply common labels to resource selectors or not",
-                        "type": "boolean"
                       },
                       "namePrefix": {
                         "description": "NamePrefix is a prefix appended to resources for Kustomize apps",
@@ -2727,10 +2692,6 @@
                             "type": "string"
                           },
                           "type": "array"
-                        },
-                        "labelWithoutSelector": {
-                          "description": "LabelWithoutSelector specifies whether to apply common labels to resource selectors or not",
-                          "type": "boolean"
                         },
                         "namePrefix": {
                           "description": "NamePrefix is a prefix appended to resources for Kustomize apps",
@@ -3290,10 +3251,6 @@
                               },
                               "type": "array"
                             },
-                            "labelWithoutSelector": {
-                              "description": "LabelWithoutSelector specifies whether to apply common labels to resource selectors or not",
-                              "type": "boolean"
-                            },
                             "namePrefix": {
                               "description": "NamePrefix is a prefix appended to resources for Kustomize apps",
                               "type": "string"
@@ -3698,10 +3655,6 @@
                                   "type": "string"
                                 },
                                 "type": "array"
-                              },
-                              "labelWithoutSelector": {
-                                "description": "LabelWithoutSelector specifies whether to apply common labels to resource selectors or not",
-                                "type": "boolean"
                               },
                               "namePrefix": {
                                 "description": "NamePrefix is a prefix appended to resources for Kustomize apps",
@@ -4257,10 +4210,6 @@
                           },
                           "type": "array"
                         },
-                        "labelWithoutSelector": {
-                          "description": "LabelWithoutSelector specifies whether to apply common labels to resource selectors or not",
-                          "type": "boolean"
-                        },
                         "namePrefix": {
                           "description": "NamePrefix is a prefix appended to resources for Kustomize apps",
                           "type": "string"
@@ -4665,10 +4614,6 @@
                               "type": "string"
                             },
                             "type": "array"
-                          },
-                          "labelWithoutSelector": {
-                            "description": "LabelWithoutSelector specifies whether to apply common labels to resource selectors or not",
-                            "type": "boolean"
                           },
                           "namePrefix": {
                             "description": "NamePrefix is a prefix appended to resources for Kustomize apps",
@@ -5258,10 +5203,6 @@
                           },
                           "type": "array"
                         },
-                        "labelWithoutSelector": {
-                          "description": "LabelWithoutSelector specifies whether to apply common labels to resource selectors or not",
-                          "type": "boolean"
-                        },
                         "namePrefix": {
                           "description": "NamePrefix is a prefix appended to resources for Kustomize apps",
                           "type": "string"
@@ -5666,10 +5607,6 @@
                               "type": "string"
                             },
                             "type": "array"
-                          },
-                          "labelWithoutSelector": {
-                            "description": "LabelWithoutSelector specifies whether to apply common labels to resource selectors or not",
-                            "type": "boolean"
                           },
                           "namePrefix": {
                             "description": "NamePrefix is a prefix appended to resources for Kustomize apps",
