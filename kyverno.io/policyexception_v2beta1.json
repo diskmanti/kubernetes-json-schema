@@ -19,6 +19,97 @@
           "description": "Background controls if exceptions are applied to existing policies during a background scan.\nOptional. Default value is \"true\". The value must be set to \"false\" if the policy rule\nuses variables that are only available in the admission review request (e.g. user name).",
           "type": "boolean"
         },
+        "conditions": {
+          "description": "Conditions are used to determine if a resource applies to the exception by evaluating a\nset of conditions. The declaration can contain nested `any` or `all` statements.",
+          "properties": {
+            "all": {
+              "description": "AllConditions enable variable-based conditional rule execution. This is useful for\nfiner control of when an rule is applied. A condition can reference object data\nusing JMESPath notation.\nHere, all of the conditions need to pass.",
+              "items": {
+                "properties": {
+                  "key": {
+                    "description": "Key is the context entry (using JMESPath) for conditional rule evaluation.",
+                    "x-kubernetes-preserve-unknown-fields": true
+                  },
+                  "message": {
+                    "description": "Message is an optional display message",
+                    "type": "string"
+                  },
+                  "operator": {
+                    "description": "Operator is the conditional operation to perform. Valid operators are:\nEquals, NotEquals, In, AnyIn, AllIn, NotIn, AnyNotIn, AllNotIn, GreaterThanOrEquals,\nGreaterThan, LessThanOrEquals, LessThan, DurationGreaterThanOrEquals, DurationGreaterThan,\nDurationLessThanOrEquals, DurationLessThan",
+                    "enum": [
+                      "Equals",
+                      "NotEquals",
+                      "AnyIn",
+                      "AllIn",
+                      "AnyNotIn",
+                      "AllNotIn",
+                      "GreaterThanOrEquals",
+                      "GreaterThan",
+                      "LessThanOrEquals",
+                      "LessThan",
+                      "DurationGreaterThanOrEquals",
+                      "DurationGreaterThan",
+                      "DurationLessThanOrEquals",
+                      "DurationLessThan"
+                    ],
+                    "type": "string"
+                  },
+                  "value": {
+                    "description": "Value is the conditional value, or set of values. The values can be fixed set\nor can be variables declared using JMESPath.",
+                    "x-kubernetes-preserve-unknown-fields": true
+                  }
+                },
+                "type": "object",
+                "additionalProperties": false
+              },
+              "type": "array"
+            },
+            "any": {
+              "description": "AnyConditions enable variable-based conditional rule execution. This is useful for\nfiner control of when an rule is applied. A condition can reference object data\nusing JMESPath notation.\nHere, at least one of the conditions need to pass.",
+              "items": {
+                "properties": {
+                  "key": {
+                    "description": "Key is the context entry (using JMESPath) for conditional rule evaluation.",
+                    "x-kubernetes-preserve-unknown-fields": true
+                  },
+                  "message": {
+                    "description": "Message is an optional display message",
+                    "type": "string"
+                  },
+                  "operator": {
+                    "description": "Operator is the conditional operation to perform. Valid operators are:\nEquals, NotEquals, In, AnyIn, AllIn, NotIn, AnyNotIn, AllNotIn, GreaterThanOrEquals,\nGreaterThan, LessThanOrEquals, LessThan, DurationGreaterThanOrEquals, DurationGreaterThan,\nDurationLessThanOrEquals, DurationLessThan",
+                    "enum": [
+                      "Equals",
+                      "NotEquals",
+                      "AnyIn",
+                      "AllIn",
+                      "AnyNotIn",
+                      "AllNotIn",
+                      "GreaterThanOrEquals",
+                      "GreaterThan",
+                      "LessThanOrEquals",
+                      "LessThan",
+                      "DurationGreaterThanOrEquals",
+                      "DurationGreaterThan",
+                      "DurationLessThanOrEquals",
+                      "DurationLessThan"
+                    ],
+                    "type": "string"
+                  },
+                  "value": {
+                    "description": "Value is the conditional value, or set of values. The values can be fixed set\nor can be variables declared using JMESPath.",
+                    "x-kubernetes-preserve-unknown-fields": true
+                  }
+                },
+                "type": "object",
+                "additionalProperties": false
+              },
+              "type": "array"
+            }
+          },
+          "type": "object",
+          "additionalProperties": false
+        },
         "exceptions": {
           "description": "Exceptions is a list policy/rules to be excluded",
           "items": {
@@ -451,6 +542,59 @@
           },
           "type": "object",
           "additionalProperties": false
+        },
+        "podSecurity": {
+          "description": "PodSecurity specifies the Pod Security Standard controls to be excluded.\nApplicable only to policies that have validate.podSecurity subrule.",
+          "items": {
+            "description": "PodSecurityStandard specifies the Pod Security Standard controls to be excluded.",
+            "properties": {
+              "controlName": {
+                "description": "ControlName specifies the name of the Pod Security Standard control.\nSee: https://kubernetes.io/docs/concepts/security/pod-security-standards/",
+                "enum": [
+                  "HostProcess",
+                  "Host Namespaces",
+                  "Privileged Containers",
+                  "Capabilities",
+                  "HostPath Volumes",
+                  "Host Ports",
+                  "AppArmor",
+                  "SELinux",
+                  "/proc Mount Type",
+                  "Seccomp",
+                  "Sysctls",
+                  "Volume Types",
+                  "Privilege Escalation",
+                  "Running as Non-root",
+                  "Running as Non-root user"
+                ],
+                "type": "string"
+              },
+              "images": {
+                "description": "Images selects matching containers and applies the container level PSS.\nEach image is the image name consisting of the registry address, repository, image, and tag.\nEmpty list matches no containers, PSS checks are applied at the pod level only.\nWildcards ('*' and '?') are allowed. See: https://kubernetes.io/docs/concepts/containers/images.",
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "restrictedField": {
+                "description": "RestrictedField selects the field for the given Pod Security Standard control.\nWhen not set, all restricted fields for the control are selected.",
+                "type": "string"
+              },
+              "values": {
+                "description": "Values defines the allowed values that can be excluded.",
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            },
+            "required": [
+              "controlName"
+            ],
+            "type": "object",
+            "additionalProperties": false
+          },
+          "type": "array"
         }
       },
       "required": [
