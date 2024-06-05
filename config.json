@@ -14,6 +14,12 @@
       "https://raw.githubusercontent.com/grafana/loki/main/operator/bundle/community/manifests/loki.grafana.com_rulerconfigs.yaml"
     ]
   },
+  "cannary-checker": {
+    "github_repository": "flanksource/cannary-checker",
+    "urls": [
+      "https://raw.githubusercontent.com/flanksource/canary-checker/master/config/deploy/crd.yaml"
+    ]
+  },
   "olm": {
     "github_repository": "operator-framework/operator-lifecycle-manager",
     "urls": [
