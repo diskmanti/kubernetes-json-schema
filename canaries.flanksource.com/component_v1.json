@@ -1,0 +1,535 @@
+{
+  "properties": {
+    "apiVersion": {
+      "description": "APIVersion defines the versioned schema of this representation of an object.\nServers should convert recognized schemas to the latest internal value, and\nmay reject unrecognized values.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
+      "type": "string"
+    },
+    "kind": {
+      "description": "Kind is a string value representing the REST resource this object represents.\nServers may infer this from the endpoint the client submits requests to.\nCannot be updated.\nIn CamelCase.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "spec": {
+      "properties": {
+        "checks": {
+          "items": {
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "components": {
+          "description": "Create new child components",
+          "items": {
+            "type": "object"
+          },
+          "type": "array",
+          "x-kubernetes-preserve-unknown-fields": true
+        },
+        "configs": {
+          "description": "Lookup and associate config items with this component",
+          "items": {
+            "description": "ConfigQuery is used to look up and associate\nconfig items with a component.",
+            "properties": {
+              "agent": {
+                "description": "Agent can be the agent id or the name of the agent.\n Additionally, the special \"self\" value can be used to select resources without an agent.",
+                "type": "string"
+              },
+              "cache": {
+                "description": "Cache directives\n 'no-cache' (should not fetch from cache but can be cached)\n 'no-store' (should not cache)\n 'max-age=X' (cache for X duration)",
+                "type": "string"
+              },
+              "class": {
+                "description": "Deprecated. Use `fieldSelector (config_class=)`",
+                "type": "string"
+              },
+              "external_id": {
+                "description": "Deprecated. Use `fieldSelector (external_id=)`",
+                "type": "string"
+              },
+              "fieldSelector": {
+                "type": "string"
+              },
+              "id": {
+                "type": "string"
+              },
+              "labelSelector": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "namespace": {
+                "type": "string"
+              },
+              "statuses": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "tagSelector": {
+                "type": "string"
+              },
+              "tags": {
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "description": "Deprecated. Use `labelSelector`",
+                "type": "object"
+              },
+              "type": {
+                "description": "Deprecated. Use `types`",
+                "type": "string"
+              },
+              "types": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            },
+            "type": "object",
+            "additionalProperties": false
+          },
+          "type": "array"
+        },
+        "externalID": {
+          "type": "string"
+        },
+        "forEach": {
+          "description": "Only applies when using lookup, when specified the components and properties\nspecified under ForEach will be templated using the components returned by the lookup\n${.properties} can be used to reference the properties of the component\n${.component} can be used to reference the component itself",
+          "type": "object",
+          "x-kubernetes-preserve-unknown-fields": true
+        },
+        "hidden": {
+          "description": "If set to true, do not display in UI",
+          "type": "boolean"
+        },
+        "icon": {
+          "type": "string"
+        },
+        "id": {
+          "properties": {
+            "expr": {
+              "type": "string"
+            },
+            "javascript": {
+              "type": "string"
+            },
+            "jsonPath": {
+              "type": "string"
+            },
+            "template": {
+              "type": "string"
+            }
+          },
+          "type": "object",
+          "additionalProperties": false
+        },
+        "labels": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "lifecycle": {
+          "description": "The lifecycle state of the component e.g. production, staging, dev, etc.",
+          "type": "string"
+        },
+        "logs": {
+          "description": "Logs is a list of logs selector for apm-hub.",
+          "items": {
+            "properties": {
+              "labels": {
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "type": "object"
+              },
+              "name": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              }
+            },
+            "type": "object",
+            "additionalProperties": false
+          },
+          "type": "array"
+        },
+        "lookup": {
+          "description": "Lookup component definitions from an external source, use the\nforEach property to iterate over the results to further enrich each component.",
+          "type": "object",
+          "x-kubernetes-preserve-unknown-fields": true
+        },
+        "name": {
+          "type": "string"
+        },
+        "namespace": {
+          "type": "string"
+        },
+        "order": {
+          "type": "integer"
+        },
+        "owner": {
+          "type": "string"
+        },
+        "parentLookup": {
+          "description": "Reference to populate parent_id",
+          "properties": {
+            "externalID": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "namespace": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            }
+          },
+          "type": "object",
+          "additionalProperties": false
+        },
+        "properties": {
+          "items": {
+            "properties": {
+              "color": {
+                "type": "string"
+              },
+              "configLookup": {
+                "properties": {
+                  "config": {
+                    "description": "Lookup a config by it",
+                    "properties": {
+                      "agent": {
+                        "description": "Agent can be the agent id or the name of the agent.\n Additionally, the special \"self\" value can be used to select resources without an agent.",
+                        "type": "string"
+                      },
+                      "cache": {
+                        "description": "Cache directives\n 'no-cache' (should not fetch from cache but can be cached)\n 'no-store' (should not cache)\n 'max-age=X' (cache for X duration)",
+                        "type": "string"
+                      },
+                      "class": {
+                        "description": "Deprecated. Use `fieldSelector (config_class=)`",
+                        "type": "string"
+                      },
+                      "external_id": {
+                        "description": "Deprecated. Use `fieldSelector (external_id=)`",
+                        "type": "string"
+                      },
+                      "fieldSelector": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "labelSelector": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "namespace": {
+                        "type": "string"
+                      },
+                      "statuses": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "tagSelector": {
+                        "type": "string"
+                      },
+                      "tags": {
+                        "additionalProperties": {
+                          "type": "string"
+                        },
+                        "description": "Deprecated. Use `labelSelector`",
+                        "type": "object"
+                      },
+                      "type": {
+                        "description": "Deprecated. Use `types`",
+                        "type": "string"
+                      },
+                      "types": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  },
+                  "display": {
+                    "description": "Apply transformations to the value",
+                    "properties": {
+                      "expr": {
+                        "type": "string"
+                      },
+                      "javascript": {
+                        "type": "string"
+                      },
+                      "jsonPath": {
+                        "type": "string"
+                      },
+                      "template": {
+                        "type": "string"
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  },
+                  "field": {
+                    "description": "A JSONPath expression to lookup the value in the config",
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "string"
+                  }
+                },
+                "type": "object",
+                "additionalProperties": false
+              },
+              "headline": {
+                "type": "boolean"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              },
+              "lastTransition": {
+                "type": "string"
+              },
+              "links": {
+                "items": {
+                  "properties": {
+                    "icon": {
+                      "type": "string"
+                    },
+                    "label": {
+                      "type": "string"
+                    },
+                    "text": {
+                      "type": "string"
+                    },
+                    "tooltip": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "description": "e.g. documentation, support, playbook",
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object",
+                  "additionalProperties": false
+                },
+                "type": "array"
+              },
+              "lookup": {
+                "description": "CanarySpec defines the desired state of Canary",
+                "type": "object",
+                "x-kubernetes-preserve-unknown-fields": true
+              },
+              "max": {
+                "format": "int64",
+                "type": "integer"
+              },
+              "min": {
+                "format": "int64",
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "order": {
+                "type": "integer"
+              },
+              "status": {
+                "type": "string"
+              },
+              "summary": {
+                "properties": {
+                  "expr": {
+                    "type": "string"
+                  },
+                  "javascript": {
+                    "type": "string"
+                  },
+                  "jsonPath": {
+                    "type": "string"
+                  },
+                  "template": {
+                    "type": "string"
+                  }
+                },
+                "type": "object",
+                "additionalProperties": false
+              },
+              "text": {
+                "type": "string"
+              },
+              "tooltip": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "unit": {
+                "description": "e.g. milliseconds, bytes, millicores, epoch etc.",
+                "type": "string"
+              },
+              "value": {
+                "format": "int64",
+                "type": "integer"
+              }
+            },
+            "type": "object",
+            "additionalProperties": false
+          },
+          "type": "array",
+          "x-kubernetes-preserve-unknown-fields": true
+        },
+        "relationships": {
+          "items": {
+            "properties": {
+              "ref": {
+                "type": "string"
+              },
+              "type": {
+                "description": "The type of relationship, e.g. dependsOn, subcomponentOf, providesApis, consumesApis",
+                "type": "string"
+              }
+            },
+            "type": "object",
+            "additionalProperties": false
+          },
+          "type": "array"
+        },
+        "selectors": {
+          "description": "Lookup and associcate other components with this component",
+          "items": {
+            "properties": {
+              "agent": {
+                "description": "Agent can be the agent id or the name of the agent.\n Additionally, the special \"self\" value can be used to select resources without an agent.",
+                "type": "string"
+              },
+              "cache": {
+                "description": "Cache directives\n 'no-cache' (should not fetch from cache but can be cached)\n 'no-store' (should not cache)\n 'max-age=X' (cache for X duration)",
+                "type": "string"
+              },
+              "fieldSelector": {
+                "type": "string"
+              },
+              "id": {
+                "type": "string"
+              },
+              "labelSelector": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "namespace": {
+                "type": "string"
+              },
+              "statuses": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "tagSelector": {
+                "type": "string"
+              },
+              "types": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            },
+            "type": "object",
+            "additionalProperties": false
+          },
+          "type": "array"
+        },
+        "summary": {
+          "properties": {
+            "checks": {
+              "additionalProperties": {
+                "type": "integer"
+              },
+              "type": "object"
+            },
+            "healthy": {
+              "type": "integer"
+            },
+            "incidents": {
+              "additionalProperties": {
+                "additionalProperties": {
+                  "type": "integer"
+                },
+                "type": "object"
+              },
+              "type": "object"
+            },
+            "info": {
+              "type": "integer"
+            },
+            "insights": {
+              "additionalProperties": {
+                "additionalProperties": {
+                  "type": "integer"
+                },
+                "type": "object"
+              },
+              "type": "object"
+            },
+            "unhealthy": {
+              "type": "integer"
+            },
+            "warning": {
+              "type": "integer"
+            }
+          },
+          "type": "object",
+          "additionalProperties": false
+        },
+        "tooltip": {
+          "type": "string"
+        },
+        "type": {
+          "description": "The type of component, e.g. service, API, website, library, database, etc.",
+          "type": "string"
+        },
+        "additionalProperties": false
+      },
+      "type": "object",
+      "additionalProperties": false
+    },
+    "status": {
+      "properties": {
+        "status": {
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "additionalProperties": false
+}
