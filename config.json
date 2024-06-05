@@ -15,7 +15,7 @@
     ]
   },
   "cannary-checker": {
-    "github_repository": "flanksource/cannary-checker",
+    "github_repository": "flanksource/canary-checker",
     "urls": [
       "https://raw.githubusercontent.com/flanksource/canary-checker/master/config/deploy/crd.yaml"
     ]
