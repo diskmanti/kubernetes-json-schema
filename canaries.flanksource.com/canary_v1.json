@@ -24,6 +24,74 @@
                 },
                 "type": "array"
               },
+              "bearer": {
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  },
+                  "valueFrom": {
+                    "properties": {
+                      "configMapKeyRef": {
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "helmRef": {
+                        "properties": {
+                          "key": {
+                            "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "secretKeyRef": {
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "serviceAccount": {
+                        "description": "ServiceAccount specifies the service account whose token should be fetched",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  }
+                },
+                "type": "object",
+                "additionalProperties": false
+              },
               "connection": {
                 "description": "Connection name e.g. connection://http/google",
                 "type": "string"
@@ -126,6 +194,163 @@
               "namespace": {
                 "description": "Namespace to insert the check into, if different to the namespace the canary is defined, e.g.",
                 "type": "string"
+              },
+              "oauth": {
+                "properties": {
+                  "clientID": {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      },
+                      "valueFrom": {
+                        "properties": {
+                          "configMapKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "helmRef": {
+                            "properties": {
+                              "key": {
+                                "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "secretKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "serviceAccount": {
+                            "description": "ServiceAccount specifies the service account whose token should be fetched",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "additionalProperties": false
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  },
+                  "clientSecret": {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      },
+                      "valueFrom": {
+                        "properties": {
+                          "configMapKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "helmRef": {
+                            "properties": {
+                              "key": {
+                                "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "secretKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "serviceAccount": {
+                            "description": "ServiceAccount specifies the service account whose token should be fetched",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "additionalProperties": false
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  },
+                  "params": {
+                    "additionalProperties": {
+                      "type": "string"
+                    },
+                    "type": "object"
+                  },
+                  "scope": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "tokenURL": {
+                    "type": "string"
+                  }
+                },
+                "type": "object",
+                "additionalProperties": false
               },
               "password": {
                 "properties": {
@@ -3300,6 +3525,74 @@
         "elasticsearch": {
           "items": {
             "properties": {
+              "bearer": {
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  },
+                  "valueFrom": {
+                    "properties": {
+                      "configMapKeyRef": {
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "helmRef": {
+                        "properties": {
+                          "key": {
+                            "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "secretKeyRef": {
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "serviceAccount": {
+                        "description": "ServiceAccount specifies the service account whose token should be fetched",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  }
+                },
+                "type": "object",
+                "additionalProperties": false
+              },
               "connection": {
                 "description": "Connection name e.g. connection://http/google",
                 "type": "string"
@@ -3387,6 +3680,163 @@
               "namespace": {
                 "description": "Namespace to insert the check into, if different to the namespace the canary is defined, e.g.",
                 "type": "string"
+              },
+              "oauth": {
+                "properties": {
+                  "clientID": {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      },
+                      "valueFrom": {
+                        "properties": {
+                          "configMapKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "helmRef": {
+                            "properties": {
+                              "key": {
+                                "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "secretKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "serviceAccount": {
+                            "description": "ServiceAccount specifies the service account whose token should be fetched",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "additionalProperties": false
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  },
+                  "clientSecret": {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      },
+                      "valueFrom": {
+                        "properties": {
+                          "configMapKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "helmRef": {
+                            "properties": {
+                              "key": {
+                                "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "secretKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "serviceAccount": {
+                            "description": "ServiceAccount specifies the service account whose token should be fetched",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "additionalProperties": false
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  },
+                  "params": {
+                    "additionalProperties": {
+                      "type": "string"
+                    },
+                    "type": "object"
+                  },
+                  "scope": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "tokenURL": {
+                    "type": "string"
+                  }
+                },
+                "type": "object",
+                "additionalProperties": false
               },
               "password": {
                 "properties": {
@@ -5033,12 +5483,237 @@
               },
               "sftpConnection": {
                 "properties": {
+                  "bearer": {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      },
+                      "valueFrom": {
+                        "properties": {
+                          "configMapKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "helmRef": {
+                            "properties": {
+                              "key": {
+                                "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "secretKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "serviceAccount": {
+                            "description": "ServiceAccount specifies the service account whose token should be fetched",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "additionalProperties": false
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  },
                   "connection": {
                     "description": "ConnectionName of the connection. It'll be used to populate the connection fields.",
                     "type": "string"
                   },
                   "host": {
                     "type": "string"
+                  },
+                  "oauth": {
+                    "properties": {
+                      "clientID": {
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          },
+                          "valueFrom": {
+                            "properties": {
+                              "configMapKeyRef": {
+                                "properties": {
+                                  "key": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "key"
+                                ],
+                                "type": "object",
+                                "additionalProperties": false
+                              },
+                              "helmRef": {
+                                "properties": {
+                                  "key": {
+                                    "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "key"
+                                ],
+                                "type": "object",
+                                "additionalProperties": false
+                              },
+                              "secretKeyRef": {
+                                "properties": {
+                                  "key": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "key"
+                                ],
+                                "type": "object",
+                                "additionalProperties": false
+                              },
+                              "serviceAccount": {
+                                "description": "ServiceAccount specifies the service account whose token should be fetched",
+                                "type": "string"
+                              }
+                            },
+                            "type": "object",
+                            "additionalProperties": false
+                          }
+                        },
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "clientSecret": {
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          },
+                          "valueFrom": {
+                            "properties": {
+                              "configMapKeyRef": {
+                                "properties": {
+                                  "key": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "key"
+                                ],
+                                "type": "object",
+                                "additionalProperties": false
+                              },
+                              "helmRef": {
+                                "properties": {
+                                  "key": {
+                                    "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "key"
+                                ],
+                                "type": "object",
+                                "additionalProperties": false
+                              },
+                              "secretKeyRef": {
+                                "properties": {
+                                  "key": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "key"
+                                ],
+                                "type": "object",
+                                "additionalProperties": false
+                              },
+                              "serviceAccount": {
+                                "description": "ServiceAccount specifies the service account whose token should be fetched",
+                                "type": "string"
+                              }
+                            },
+                            "type": "object",
+                            "additionalProperties": false
+                          }
+                        },
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "params": {
+                        "additionalProperties": {
+                          "type": "string"
+                        },
+                        "type": "object"
+                      },
+                      "scope": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "tokenURL": {
+                        "type": "string"
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
                   },
                   "password": {
                     "properties": {
@@ -5189,6 +5864,74 @@
               },
               "smbConnection": {
                 "properties": {
+                  "bearer": {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      },
+                      "valueFrom": {
+                        "properties": {
+                          "configMapKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "helmRef": {
+                            "properties": {
+                              "key": {
+                                "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "secretKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "serviceAccount": {
+                            "description": "ServiceAccount specifies the service account whose token should be fetched",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "additionalProperties": false
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  },
                   "connection": {
                     "description": "ConnectionName of the connection. It'll be used to populate the connection fields.",
                     "type": "string"
@@ -5196,6 +5939,163 @@
                   "domain": {
                     "description": "Domain...",
                     "type": "string"
+                  },
+                  "oauth": {
+                    "properties": {
+                      "clientID": {
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          },
+                          "valueFrom": {
+                            "properties": {
+                              "configMapKeyRef": {
+                                "properties": {
+                                  "key": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "key"
+                                ],
+                                "type": "object",
+                                "additionalProperties": false
+                              },
+                              "helmRef": {
+                                "properties": {
+                                  "key": {
+                                    "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "key"
+                                ],
+                                "type": "object",
+                                "additionalProperties": false
+                              },
+                              "secretKeyRef": {
+                                "properties": {
+                                  "key": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "key"
+                                ],
+                                "type": "object",
+                                "additionalProperties": false
+                              },
+                              "serviceAccount": {
+                                "description": "ServiceAccount specifies the service account whose token should be fetched",
+                                "type": "string"
+                              }
+                            },
+                            "type": "object",
+                            "additionalProperties": false
+                          }
+                        },
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "clientSecret": {
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          },
+                          "valueFrom": {
+                            "properties": {
+                              "configMapKeyRef": {
+                                "properties": {
+                                  "key": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "key"
+                                ],
+                                "type": "object",
+                                "additionalProperties": false
+                              },
+                              "helmRef": {
+                                "properties": {
+                                  "key": {
+                                    "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "key"
+                                ],
+                                "type": "object",
+                                "additionalProperties": false
+                              },
+                              "secretKeyRef": {
+                                "properties": {
+                                  "key": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "key"
+                                ],
+                                "type": "object",
+                                "additionalProperties": false
+                              },
+                              "serviceAccount": {
+                                "description": "ServiceAccount specifies the service account whose token should be fetched",
+                                "type": "string"
+                              }
+                            },
+                            "type": "object",
+                            "additionalProperties": false
+                          }
+                        },
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "params": {
+                        "additionalProperties": {
+                          "type": "string"
+                        },
+                        "type": "object"
+                      },
+                      "scope": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "tokenURL": {
+                        "type": "string"
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
                   },
                   "password": {
                     "properties": {
@@ -6115,6 +7015,74 @@
         "http": {
           "items": {
             "properties": {
+              "bearer": {
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  },
+                  "valueFrom": {
+                    "properties": {
+                      "configMapKeyRef": {
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "helmRef": {
+                        "properties": {
+                          "key": {
+                            "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "secretKeyRef": {
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "serviceAccount": {
+                        "description": "ServiceAccount specifies the service account whose token should be fetched",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  }
+                },
+                "type": "object",
+                "additionalProperties": false
+              },
               "body": {
                 "description": "Request Body Contents",
                 "type": "string"
@@ -6368,6 +7336,163 @@
                 "description": "NTLM when set to true will do authentication using NTLM v2 protocol",
                 "type": "boolean"
               },
+              "oauth": {
+                "properties": {
+                  "clientID": {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      },
+                      "valueFrom": {
+                        "properties": {
+                          "configMapKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "helmRef": {
+                            "properties": {
+                              "key": {
+                                "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "secretKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "serviceAccount": {
+                            "description": "ServiceAccount specifies the service account whose token should be fetched",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "additionalProperties": false
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  },
+                  "clientSecret": {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      },
+                      "valueFrom": {
+                        "properties": {
+                          "configMapKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "helmRef": {
+                            "properties": {
+                              "key": {
+                                "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "secretKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "serviceAccount": {
+                            "description": "ServiceAccount specifies the service account whose token should be fetched",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "additionalProperties": false
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  },
+                  "params": {
+                    "additionalProperties": {
+                      "type": "string"
+                    },
+                    "type": "object"
+                  },
+                  "scope": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "tokenURL": {
+                    "type": "string"
+                  }
+                },
+                "type": "object",
+                "additionalProperties": false
+              },
               "oauth2": {
                 "description": "Oauth2 Configuration. The client ID & Client secret should go to username & password respectively.",
                 "properties": {
@@ -6511,6 +7636,229 @@
               "thresholdMillis": {
                 "description": "Maximum duration in milliseconds for the HTTP request. It will fail the check if it takes longer.",
                 "type": "integer"
+              },
+              "tlsConfig": {
+                "description": "TLS Config",
+                "properties": {
+                  "ca": {
+                    "description": "PEM encoded certificate of the CA to verify the server certificate",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      },
+                      "valueFrom": {
+                        "properties": {
+                          "configMapKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "helmRef": {
+                            "properties": {
+                              "key": {
+                                "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "secretKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "serviceAccount": {
+                            "description": "ServiceAccount specifies the service account whose token should be fetched",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "additionalProperties": false
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  },
+                  "cert": {
+                    "description": "PEM encoded client certificate",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      },
+                      "valueFrom": {
+                        "properties": {
+                          "configMapKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "helmRef": {
+                            "properties": {
+                              "key": {
+                                "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "secretKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "serviceAccount": {
+                            "description": "ServiceAccount specifies the service account whose token should be fetched",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "additionalProperties": false
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  },
+                  "handshakeTimeout": {
+                    "description": "HandshakeTimeout defaults to 10 seconds",
+                    "format": "int64",
+                    "type": "integer"
+                  },
+                  "insecureSkipVerify": {
+                    "description": "InsecureSkipVerify controls whether a client verifies the server's\ncertificate chain and host name",
+                    "type": "boolean"
+                  },
+                  "key": {
+                    "description": "PEM encoded client private key",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      },
+                      "valueFrom": {
+                        "properties": {
+                          "configMapKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "helmRef": {
+                            "properties": {
+                              "key": {
+                                "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "secretKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "serviceAccount": {
+                            "description": "ServiceAccount specifies the service account whose token should be fetched",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "additionalProperties": false
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  }
+                },
+                "type": "object",
+                "additionalProperties": false
               },
               "transform": {
                 "properties": {
@@ -7577,6 +8925,74 @@
         "ldap": {
           "items": {
             "properties": {
+              "bearer": {
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  },
+                  "valueFrom": {
+                    "properties": {
+                      "configMapKeyRef": {
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "helmRef": {
+                        "properties": {
+                          "key": {
+                            "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "secretKeyRef": {
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "serviceAccount": {
+                        "description": "ServiceAccount specifies the service account whose token should be fetched",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  }
+                },
+                "type": "object",
+                "additionalProperties": false
+              },
               "bindDN": {
                 "type": "string"
               },
@@ -7646,6 +9062,163 @@
               "namespace": {
                 "description": "Namespace to insert the check into, if different to the namespace the canary is defined, e.g.",
                 "type": "string"
+              },
+              "oauth": {
+                "properties": {
+                  "clientID": {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      },
+                      "valueFrom": {
+                        "properties": {
+                          "configMapKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "helmRef": {
+                            "properties": {
+                              "key": {
+                                "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "secretKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "serviceAccount": {
+                            "description": "ServiceAccount specifies the service account whose token should be fetched",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "additionalProperties": false
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  },
+                  "clientSecret": {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      },
+                      "valueFrom": {
+                        "properties": {
+                          "configMapKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "helmRef": {
+                            "properties": {
+                              "key": {
+                                "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "secretKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "serviceAccount": {
+                            "description": "ServiceAccount specifies the service account whose token should be fetched",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "additionalProperties": false
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  },
+                  "params": {
+                    "additionalProperties": {
+                      "type": "string"
+                    },
+                    "type": "object"
+                  },
+                  "scope": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "tokenURL": {
+                    "type": "string"
+                  }
+                },
+                "type": "object",
+                "additionalProperties": false
               },
               "password": {
                 "properties": {
@@ -7810,6 +9383,74 @@
         "mongodb": {
           "items": {
             "properties": {
+              "bearer": {
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  },
+                  "valueFrom": {
+                    "properties": {
+                      "configMapKeyRef": {
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "helmRef": {
+                        "properties": {
+                          "key": {
+                            "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "secretKeyRef": {
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "serviceAccount": {
+                        "description": "ServiceAccount specifies the service account whose token should be fetched",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  }
+                },
+                "type": "object",
+                "additionalProperties": false
+              },
               "connection": {
                 "description": "Connection name e.g. connection://http/google",
                 "type": "string"
@@ -7876,6 +9517,163 @@
               "namespace": {
                 "description": "Namespace to insert the check into, if different to the namespace the canary is defined, e.g.",
                 "type": "string"
+              },
+              "oauth": {
+                "properties": {
+                  "clientID": {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      },
+                      "valueFrom": {
+                        "properties": {
+                          "configMapKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "helmRef": {
+                            "properties": {
+                              "key": {
+                                "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "secretKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "serviceAccount": {
+                            "description": "ServiceAccount specifies the service account whose token should be fetched",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "additionalProperties": false
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  },
+                  "clientSecret": {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      },
+                      "valueFrom": {
+                        "properties": {
+                          "configMapKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "helmRef": {
+                            "properties": {
+                              "key": {
+                                "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "secretKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "serviceAccount": {
+                            "description": "ServiceAccount specifies the service account whose token should be fetched",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "additionalProperties": false
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  },
+                  "params": {
+                    "additionalProperties": {
+                      "type": "string"
+                    },
+                    "type": "object"
+                  },
+                  "scope": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "tokenURL": {
+                    "type": "string"
+                  }
+                },
+                "type": "object",
+                "additionalProperties": false
               },
               "password": {
                 "properties": {
@@ -8033,6 +9831,74 @@
         "mssql": {
           "items": {
             "properties": {
+              "bearer": {
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  },
+                  "valueFrom": {
+                    "properties": {
+                      "configMapKeyRef": {
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "helmRef": {
+                        "properties": {
+                          "key": {
+                            "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "secretKeyRef": {
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "serviceAccount": {
+                        "description": "ServiceAccount specifies the service account whose token should be fetched",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  }
+                },
+                "type": "object",
+                "additionalProperties": false
+              },
               "connection": {
                 "description": "Connection name e.g. connection://http/google",
                 "type": "string"
@@ -8117,6 +9983,163 @@
               "namespace": {
                 "description": "Namespace to insert the check into, if different to the namespace the canary is defined, e.g.",
                 "type": "string"
+              },
+              "oauth": {
+                "properties": {
+                  "clientID": {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      },
+                      "valueFrom": {
+                        "properties": {
+                          "configMapKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "helmRef": {
+                            "properties": {
+                              "key": {
+                                "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "secretKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "serviceAccount": {
+                            "description": "ServiceAccount specifies the service account whose token should be fetched",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "additionalProperties": false
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  },
+                  "clientSecret": {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      },
+                      "valueFrom": {
+                        "properties": {
+                          "configMapKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "helmRef": {
+                            "properties": {
+                              "key": {
+                                "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "secretKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "serviceAccount": {
+                            "description": "ServiceAccount specifies the service account whose token should be fetched",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "additionalProperties": false
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  },
+                  "params": {
+                    "additionalProperties": {
+                      "type": "string"
+                    },
+                    "type": "object"
+                  },
+                  "scope": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "tokenURL": {
+                    "type": "string"
+                  }
+                },
+                "type": "object",
+                "additionalProperties": false
               },
               "password": {
                 "properties": {
@@ -8317,6 +10340,74 @@
         "mysql": {
           "items": {
             "properties": {
+              "bearer": {
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  },
+                  "valueFrom": {
+                    "properties": {
+                      "configMapKeyRef": {
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "helmRef": {
+                        "properties": {
+                          "key": {
+                            "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "secretKeyRef": {
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "serviceAccount": {
+                        "description": "ServiceAccount specifies the service account whose token should be fetched",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  }
+                },
+                "type": "object",
+                "additionalProperties": false
+              },
               "connection": {
                 "description": "Connection name e.g. connection://http/google",
                 "type": "string"
@@ -8401,6 +10492,163 @@
               "namespace": {
                 "description": "Namespace to insert the check into, if different to the namespace the canary is defined, e.g.",
                 "type": "string"
+              },
+              "oauth": {
+                "properties": {
+                  "clientID": {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      },
+                      "valueFrom": {
+                        "properties": {
+                          "configMapKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "helmRef": {
+                            "properties": {
+                              "key": {
+                                "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "secretKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "serviceAccount": {
+                            "description": "ServiceAccount specifies the service account whose token should be fetched",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "additionalProperties": false
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  },
+                  "clientSecret": {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      },
+                      "valueFrom": {
+                        "properties": {
+                          "configMapKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "helmRef": {
+                            "properties": {
+                              "key": {
+                                "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "secretKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "serviceAccount": {
+                            "description": "ServiceAccount specifies the service account whose token should be fetched",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "additionalProperties": false
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  },
+                  "params": {
+                    "additionalProperties": {
+                      "type": "string"
+                    },
+                    "type": "object"
+                  },
+                  "scope": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "tokenURL": {
+                    "type": "string"
+                  }
+                },
+                "type": "object",
+                "additionalProperties": false
               },
               "password": {
                 "properties": {
@@ -8753,6 +11001,74 @@
         "opensearch": {
           "items": {
             "properties": {
+              "bearer": {
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  },
+                  "valueFrom": {
+                    "properties": {
+                      "configMapKeyRef": {
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "helmRef": {
+                        "properties": {
+                          "key": {
+                            "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "secretKeyRef": {
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "serviceAccount": {
+                        "description": "ServiceAccount specifies the service account whose token should be fetched",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  }
+                },
+                "type": "object",
+                "additionalProperties": false
+              },
               "connection": {
                 "description": "Connection name e.g. connection://http/google",
                 "type": "string"
@@ -8840,6 +11156,163 @@
               "namespace": {
                 "description": "Namespace to insert the check into, if different to the namespace the canary is defined, e.g.",
                 "type": "string"
+              },
+              "oauth": {
+                "properties": {
+                  "clientID": {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      },
+                      "valueFrom": {
+                        "properties": {
+                          "configMapKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "helmRef": {
+                            "properties": {
+                              "key": {
+                                "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "secretKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "serviceAccount": {
+                            "description": "ServiceAccount specifies the service account whose token should be fetched",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "additionalProperties": false
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  },
+                  "clientSecret": {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      },
+                      "valueFrom": {
+                        "properties": {
+                          "configMapKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "helmRef": {
+                            "properties": {
+                              "key": {
+                                "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "secretKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "serviceAccount": {
+                            "description": "ServiceAccount specifies the service account whose token should be fetched",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "additionalProperties": false
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  },
+                  "params": {
+                    "additionalProperties": {
+                      "type": "string"
+                    },
+                    "type": "object"
+                  },
+                  "scope": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "tokenURL": {
+                    "type": "string"
+                  }
+                },
+                "type": "object",
+                "additionalProperties": false
               },
               "password": {
                 "properties": {
@@ -9186,6 +11659,74 @@
         "postgres": {
           "items": {
             "properties": {
+              "bearer": {
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  },
+                  "valueFrom": {
+                    "properties": {
+                      "configMapKeyRef": {
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "helmRef": {
+                        "properties": {
+                          "key": {
+                            "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "secretKeyRef": {
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "serviceAccount": {
+                        "description": "ServiceAccount specifies the service account whose token should be fetched",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  }
+                },
+                "type": "object",
+                "additionalProperties": false
+              },
               "connection": {
                 "description": "Connection name e.g. connection://http/google",
                 "type": "string"
@@ -9270,6 +11811,163 @@
               "namespace": {
                 "description": "Namespace to insert the check into, if different to the namespace the canary is defined, e.g.",
                 "type": "string"
+              },
+              "oauth": {
+                "properties": {
+                  "clientID": {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      },
+                      "valueFrom": {
+                        "properties": {
+                          "configMapKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "helmRef": {
+                            "properties": {
+                              "key": {
+                                "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "secretKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "serviceAccount": {
+                            "description": "ServiceAccount specifies the service account whose token should be fetched",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "additionalProperties": false
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  },
+                  "clientSecret": {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      },
+                      "valueFrom": {
+                        "properties": {
+                          "configMapKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "helmRef": {
+                            "properties": {
+                              "key": {
+                                "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "secretKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "serviceAccount": {
+                            "description": "ServiceAccount specifies the service account whose token should be fetched",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "additionalProperties": false
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  },
+                  "params": {
+                    "additionalProperties": {
+                      "type": "string"
+                    },
+                    "type": "object"
+                  },
+                  "scope": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "tokenURL": {
+                    "type": "string"
+                  }
+                },
+                "type": "object",
+                "additionalProperties": false
               },
               "password": {
                 "properties": {
@@ -9470,6 +12168,74 @@
         "prometheus": {
           "items": {
             "properties": {
+              "bearer": {
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  },
+                  "valueFrom": {
+                    "properties": {
+                      "configMapKeyRef": {
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "helmRef": {
+                        "properties": {
+                          "key": {
+                            "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "secretKeyRef": {
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "serviceAccount": {
+                        "description": "ServiceAccount specifies the service account whose token should be fetched",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  }
+                },
+                "type": "object",
+                "additionalProperties": false
+              },
               "connection": {
                 "description": "Connection name e.g. connection://http/google",
                 "type": "string"
@@ -9558,6 +12324,163 @@
               "namespace": {
                 "description": "Namespace to insert the check into, if different to the namespace the canary is defined, e.g.",
                 "type": "string"
+              },
+              "oauth": {
+                "properties": {
+                  "clientID": {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      },
+                      "valueFrom": {
+                        "properties": {
+                          "configMapKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "helmRef": {
+                            "properties": {
+                              "key": {
+                                "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "secretKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "serviceAccount": {
+                            "description": "ServiceAccount specifies the service account whose token should be fetched",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "additionalProperties": false
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  },
+                  "clientSecret": {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      },
+                      "valueFrom": {
+                        "properties": {
+                          "configMapKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "helmRef": {
+                            "properties": {
+                              "key": {
+                                "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "secretKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "serviceAccount": {
+                            "description": "ServiceAccount specifies the service account whose token should be fetched",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "additionalProperties": false
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  },
+                  "params": {
+                    "additionalProperties": {
+                      "type": "string"
+                    },
+                    "type": "object"
+                  },
+                  "scope": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "tokenURL": {
+                    "type": "string"
+                  }
+                },
+                "type": "object",
+                "additionalProperties": false
               },
               "password": {
                 "properties": {
@@ -9760,6 +12683,74 @@
                 "description": "Deprecated: Use url instead",
                 "type": "string"
               },
+              "bearer": {
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  },
+                  "valueFrom": {
+                    "properties": {
+                      "configMapKeyRef": {
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "helmRef": {
+                        "properties": {
+                          "key": {
+                            "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "secretKeyRef": {
+                        "properties": {
+                          "key": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "key"
+                        ],
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "serviceAccount": {
+                        "description": "ServiceAccount specifies the service account whose token should be fetched",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  }
+                },
+                "type": "object",
+                "additionalProperties": false
+              },
               "connection": {
                 "description": "Connection name e.g. connection://http/google",
                 "type": "string"
@@ -9829,6 +12820,163 @@
               "namespace": {
                 "description": "Namespace to insert the check into, if different to the namespace the canary is defined, e.g.",
                 "type": "string"
+              },
+              "oauth": {
+                "properties": {
+                  "clientID": {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      },
+                      "valueFrom": {
+                        "properties": {
+                          "configMapKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "helmRef": {
+                            "properties": {
+                              "key": {
+                                "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "secretKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "serviceAccount": {
+                            "description": "ServiceAccount specifies the service account whose token should be fetched",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "additionalProperties": false
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  },
+                  "clientSecret": {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      },
+                      "valueFrom": {
+                        "properties": {
+                          "configMapKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "helmRef": {
+                            "properties": {
+                              "key": {
+                                "description": "Key is a JSONPath expression used to fetch the key from the merged JSON.",
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "secretKeyRef": {
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "key"
+                            ],
+                            "type": "object",
+                            "additionalProperties": false
+                          },
+                          "serviceAccount": {
+                            "description": "ServiceAccount specifies the service account whose token should be fetched",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "additionalProperties": false
+                      }
+                    },
+                    "type": "object",
+                    "additionalProperties": false
+                  },
+                  "params": {
+                    "additionalProperties": {
+                      "type": "string"
+                    },
+                    "type": "object"
+                  },
+                  "scope": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "tokenURL": {
+                    "type": "string"
+                  }
+                },
+                "type": "object",
+                "additionalProperties": false
               },
               "password": {
                 "properties": {
