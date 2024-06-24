@@ -5,6 +5,12 @@
       "https://raw.githubusercontent.com/grafana/grafana-operator/master/config/crd/kustomization.yaml"
     ]
   },
+  "argo-workflows": {
+    "github_repository": "argoproj/argo-workflows",
+    "urls": [
+      "https://raw.githubusercontent.com/argoproj/argo-workflows/main/manifests/base/crds/full/kustomization.yaml"
+    ]
+  },
   "loki-operator": {
     "github_repository": "grafana/loki",
     "urls": [
