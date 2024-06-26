@@ -645,8 +645,62 @@
           },
           "type": "array"
         },
-        "groupByTag": {
-          "type": "string"
+        "groupBy": {
+          "description": "Specify the catalog tag (& optionally the tag selector) to group\nthe topology.",
+          "properties": {
+            "selector": {
+              "properties": {
+                "agent": {
+                  "description": "Agent can be the agent id or the name of the agent.\n Additionally, the special \"self\" value can be used to select resources without an agent.",
+                  "type": "string"
+                },
+                "cache": {
+                  "description": "Cache directives\n 'no-cache' (should not fetch from cache but can be cached)\n 'no-store' (should not cache)\n 'max-age=X' (cache for X duration)",
+                  "type": "string"
+                },
+                "fieldSelector": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "labelSelector": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "namespace": {
+                  "type": "string"
+                },
+                "statuses": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "tagSelector": {
+                  "type": "string"
+                },
+                "types": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object",
+              "additionalProperties": false
+            },
+            "tag": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "tag"
+          ],
+          "type": "object",
+          "additionalProperties": false
         },
         "icon": {
           "type": "string"
