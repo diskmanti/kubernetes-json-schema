@@ -138,7 +138,7 @@
   "oadp-operator": {
     "github_repository": "openshift/oadp-operator",
     "url": [
-      "https://raw.githubusercontent.com/openshift/oadp-operator/master/config/crd/kustomization.yaml"
+      "https://raw.githubusercontent.com/openshift/oadp-operator/master/config/default/kustomization.yaml"
     ]
   },
   "cloudtty": {
