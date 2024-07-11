@@ -12,7 +12,7 @@
                 "type": "string"
               },
               "captureMode": {
-                "description": "When the bind address is an IP, the captureMode option dictates how traffic to the listener is expected to be captured (or not).\n\nValid Options: DEFAULT, IPTABLES, NONE",
+                "description": "When the bind address is an IP, the captureMode option dictates how traffic to the listener is expected to be captured (or not).",
                 "enum": [
                   "DEFAULT",
                   "IPTABLES",
@@ -36,8 +36,6 @@
                   },
                   "number": {
                     "description": "A valid non-negative integer port number.",
-                    "maximum": 4294967295,
-                    "minimum": 0,
                     "type": "integer"
                   },
                   "protocol": {
@@ -45,8 +43,6 @@
                     "type": "string"
                   },
                   "targetPort": {
-                    "maximum": 4294967295,
-                    "minimum": 0,
                     "type": "integer"
                   }
                 },
@@ -69,7 +65,7 @@
               "description": "HTTP connection pool settings.",
               "properties": {
                 "h2UpgradePolicy": {
-                  "description": "Specify if http1.1 connection should be upgraded to http2 for the associated destination.\n\nValid Options: DEFAULT, DO_NOT_UPGRADE, UPGRADE",
+                  "description": "Specify if http1.1 connection should be upgraded to http2 for the associated destination.",
                   "enum": [
                     "DEFAULT",
                     "DO_NOT_UPGRADE",
@@ -90,11 +86,6 @@
                 "idleTimeout": {
                   "description": "The idle timeout for upstream connection pool connections.",
                   "type": "string"
-                },
-                "maxConcurrentStreams": {
-                  "description": "The maximum number of concurrent streams allowed for a peer on one HTTP/2 connection.",
-                  "format": "int32",
-                  "type": "integer"
                 },
                 "maxRequestsPerConnection": {
                   "description": "Maximum number of requests per connection to a backend.",
@@ -121,10 +112,6 @@
                   "description": "TCP connection timeout.",
                   "type": "string"
                 },
-                "idleTimeout": {
-                  "description": "The idle timeout for TCP connections.",
-                  "type": "string"
-                },
                 "maxConnectionDuration": {
                   "description": "The maximum duration of a connection.",
                   "type": "string"
@@ -143,8 +130,6 @@
                     },
                     "probes": {
                       "description": "Maximum number of keepalive probes to send without response before deciding the connection is dead.",
-                      "maximum": 4294967295,
-                      "minimum": 0,
                       "type": "integer"
                     },
                     "time": {
@@ -172,7 +157,7 @@
                 "type": "string"
               },
               "captureMode": {
-                "description": "The captureMode option dictates how traffic to the listener is expected to be captured (or not).\n\nValid Options: DEFAULT, IPTABLES, NONE",
+                "description": "The captureMode option dictates how traffic to the listener is expected to be captured (or not).",
                 "enum": [
                   "DEFAULT",
                   "IPTABLES",
@@ -187,7 +172,7 @@
                     "description": "HTTP connection pool settings.",
                     "properties": {
                       "h2UpgradePolicy": {
-                        "description": "Specify if http1.1 connection should be upgraded to http2 for the associated destination.\n\nValid Options: DEFAULT, DO_NOT_UPGRADE, UPGRADE",
+                        "description": "Specify if http1.1 connection should be upgraded to http2 for the associated destination.",
                         "enum": [
                           "DEFAULT",
                           "DO_NOT_UPGRADE",
@@ -208,11 +193,6 @@
                       "idleTimeout": {
                         "description": "The idle timeout for upstream connection pool connections.",
                         "type": "string"
-                      },
-                      "maxConcurrentStreams": {
-                        "description": "The maximum number of concurrent streams allowed for a peer on one HTTP/2 connection.",
-                        "format": "int32",
-                        "type": "integer"
                       },
                       "maxRequestsPerConnection": {
                         "description": "Maximum number of requests per connection to a backend.",
@@ -239,10 +219,6 @@
                         "description": "TCP connection timeout.",
                         "type": "string"
                       },
-                      "idleTimeout": {
-                        "description": "The idle timeout for TCP connections.",
-                        "type": "string"
-                      },
                       "maxConnectionDuration": {
                         "description": "The maximum duration of a connection.",
                         "type": "string"
@@ -261,8 +237,6 @@
                           },
                           "probes": {
                             "description": "Maximum number of keepalive probes to send without response before deciding the connection is dead.",
-                            "maximum": 4294967295,
-                            "minimum": 0,
                             "type": "integer"
                           },
                           "time": {
@@ -294,8 +268,6 @@
                   },
                   "number": {
                     "description": "A valid non-negative integer port number.",
-                    "maximum": 4294967295,
-                    "minimum": 0,
                     "type": "integer"
                   },
                   "protocol": {
@@ -303,8 +275,6 @@
                     "type": "string"
                   },
                   "targetPort": {
-                    "maximum": 4294967295,
-                    "minimum": 0,
                     "type": "integer"
                   }
                 },
@@ -316,10 +286,6 @@
                 "properties": {
                   "caCertificates": {
                     "description": "REQUIRED if mode is `MUTUAL` or `OPTIONAL_MUTUAL`.",
-                    "type": "string"
-                  },
-                  "caCrl": {
-                    "description": "OPTIONAL: The path to the file containing the certificate revocation list (CRL) to use in verifying a presented client side certificate.",
                     "type": "string"
                   },
                   "cipherSuites": {
@@ -338,7 +304,7 @@
                     "type": "boolean"
                   },
                   "maxProtocolVersion": {
-                    "description": "Optional: Maximum TLS protocol version.\n\nValid Options: TLS_AUTO, TLSV1_0, TLSV1_1, TLSV1_2, TLSV1_3",
+                    "description": "Optional: Maximum TLS protocol version.",
                     "enum": [
                       "TLS_AUTO",
                       "TLSV1_0",
@@ -349,7 +315,7 @@
                     "type": "string"
                   },
                   "minProtocolVersion": {
-                    "description": "Optional: Minimum TLS protocol version.\n\nValid Options: TLS_AUTO, TLSV1_0, TLSV1_1, TLSV1_2, TLSV1_3",
+                    "description": "Optional: Minimum TLS protocol version.",
                     "enum": [
                       "TLS_AUTO",
                       "TLSV1_0",
@@ -360,7 +326,7 @@
                     "type": "string"
                   },
                   "mode": {
-                    "description": "Optional: Indicates whether connections to this port should be secured using TLS.\n\nValid Options: PASSTHROUGH, SIMPLE, MUTUAL, AUTO_PASSTHROUGH, ISTIO_MUTUAL, OPTIONAL_MUTUAL",
+                    "description": "Optional: Indicates whether connections to this port should be secured using TLS.",
                     "enum": [
                       "PASSTHROUGH",
                       "SIMPLE",
@@ -426,8 +392,6 @@
                   "description": "Specifies the port on the host that is being addressed.",
                   "properties": {
                     "number": {
-                      "maximum": 4294967295,
-                      "minimum": 0,
                       "type": "integer"
                     }
                   },
@@ -446,7 +410,6 @@
               "additionalProperties": false
             },
             "mode": {
-              "description": "\n\nValid Options: REGISTRY_ONLY, ALLOW_ANY",
               "enum": [
                 "REGISTRY_ONLY",
                 "ALLOW_ANY"

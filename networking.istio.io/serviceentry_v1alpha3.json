@@ -35,8 +35,6 @@
               },
               "ports": {
                 "additionalProperties": {
-                  "maximum": 4294967295,
-                  "minimum": 0,
                   "type": "integer"
                 },
                 "description": "Set of ports associated with the endpoint.",
@@ -48,8 +46,6 @@
               },
               "weight": {
                 "description": "The load balancing weight associated with the endpoint.",
-                "maximum": 4294967295,
-                "minimum": 0,
                 "type": "integer"
               }
             },
@@ -73,7 +69,7 @@
           "type": "array"
         },
         "location": {
-          "description": "Specify whether the service should be considered external to the mesh or part of the mesh.\n\nValid Options: MESH_EXTERNAL, MESH_INTERNAL",
+          "description": "Specify whether the service should be considered external to the mesh or part of the mesh.",
           "enum": [
             "MESH_EXTERNAL",
             "MESH_INTERNAL"
@@ -90,8 +86,6 @@
               },
               "number": {
                 "description": "A valid non-negative integer port number.",
-                "maximum": 4294967295,
-                "minimum": 0,
                 "type": "integer"
               },
               "protocol": {
@@ -100,8 +94,6 @@
               },
               "targetPort": {
                 "description": "The port number on the endpoint where the traffic will be received.",
-                "maximum": 4294967295,
-                "minimum": 0,
                 "type": "integer"
               }
             },
@@ -115,7 +107,7 @@
           "type": "array"
         },
         "resolution": {
-          "description": "Service resolution mode for the hosts.\n\nValid Options: NONE, STATIC, DNS, DNS_ROUND_ROBIN",
+          "description": "Service resolution mode for the hosts.",
           "enum": [
             "NONE",
             "STATIC",

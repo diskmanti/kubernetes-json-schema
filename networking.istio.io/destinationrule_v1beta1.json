@@ -38,7 +38,7 @@
                         "description": "HTTP connection pool settings.",
                         "properties": {
                           "h2UpgradePolicy": {
-                            "description": "Specify if http1.1 connection should be upgraded to http2 for the associated destination.\n\nValid Options: DEFAULT, DO_NOT_UPGRADE, UPGRADE",
+                            "description": "Specify if http1.1 connection should be upgraded to http2 for the associated destination.",
                             "enum": [
                               "DEFAULT",
                               "DO_NOT_UPGRADE",
@@ -59,11 +59,6 @@
                           "idleTimeout": {
                             "description": "The idle timeout for upstream connection pool connections.",
                             "type": "string"
-                          },
-                          "maxConcurrentStreams": {
-                            "description": "The maximum number of concurrent streams allowed for a peer on one HTTP/2 connection.",
-                            "format": "int32",
-                            "type": "integer"
                           },
                           "maxRequestsPerConnection": {
                             "description": "Maximum number of requests per connection to a backend.",
@@ -90,10 +85,6 @@
                             "description": "TCP connection timeout.",
                             "type": "string"
                           },
-                          "idleTimeout": {
-                            "description": "The idle timeout for TCP connections.",
-                            "type": "string"
-                          },
                           "maxConnectionDuration": {
                             "description": "The maximum duration of a connection.",
                             "type": "string"
@@ -112,8 +103,6 @@
                               },
                               "probes": {
                                 "description": "Maximum number of keepalive probes to send without response before deciding the connection is dead.",
-                                "maximum": 4294967295,
-                                "minimum": 0,
                                 "type": "integer"
                               },
                               "time": {
@@ -282,7 +271,6 @@
                             "properties": {
                               "tableSize": {
                                 "description": "The table size for Maglev hashing.",
-                                "minimum": 0,
                                 "type": "integer"
                               }
                             },
@@ -291,7 +279,6 @@
                           },
                           "minimumRingSize": {
                             "description": "Deprecated.",
-                            "minimum": 0,
                             "type": "integer"
                           },
                           "ringHash": {
@@ -299,7 +286,6 @@
                             "properties": {
                               "minimumRingSize": {
                                 "description": "The minimum number of virtual nodes to use for the hash ring.",
-                                "minimum": 0,
                                 "type": "integer"
                               }
                             },
@@ -326,8 +312,6 @@
                                 },
                                 "to": {
                                   "additionalProperties": {
-                                    "maximum": 4294967295,
-                                    "minimum": 0,
                                     "type": "integer"
                                   },
                                   "description": "Map of upstream localities to traffic distribution weights.",
@@ -374,7 +358,6 @@
                         "additionalProperties": false
                       },
                       "simple": {
-                        "description": "\n\nValid Options: LEAST_CONN, RANDOM, PASSTHROUGH, ROUND_ROBIN, LEAST_REQUEST",
                         "enum": [
                           "UNSPECIFIED",
                           "LEAST_CONN",
@@ -401,8 +384,6 @@
                       },
                       "consecutive5xxErrors": {
                         "description": "Number of 5xx errors before a host is ejected from the connection pool.",
-                        "maximum": 4294967295,
-                        "minimum": 0,
                         "nullable": true,
                         "type": "integer"
                       },
@@ -412,15 +393,11 @@
                       },
                       "consecutiveGatewayErrors": {
                         "description": "Number of gateway errors before a host is ejected from the connection pool.",
-                        "maximum": 4294967295,
-                        "minimum": 0,
                         "nullable": true,
                         "type": "integer"
                       },
                       "consecutiveLocalOriginFailures": {
                         "description": "The number of consecutive locally originated failures before ejection occurs.",
-                        "maximum": 4294967295,
-                        "minimum": 0,
                         "nullable": true,
                         "type": "integer"
                       },
@@ -456,7 +433,7 @@
                               "description": "HTTP connection pool settings.",
                               "properties": {
                                 "h2UpgradePolicy": {
-                                  "description": "Specify if http1.1 connection should be upgraded to http2 for the associated destination.\n\nValid Options: DEFAULT, DO_NOT_UPGRADE, UPGRADE",
+                                  "description": "Specify if http1.1 connection should be upgraded to http2 for the associated destination.",
                                   "enum": [
                                     "DEFAULT",
                                     "DO_NOT_UPGRADE",
@@ -477,11 +454,6 @@
                                 "idleTimeout": {
                                   "description": "The idle timeout for upstream connection pool connections.",
                                   "type": "string"
-                                },
-                                "maxConcurrentStreams": {
-                                  "description": "The maximum number of concurrent streams allowed for a peer on one HTTP/2 connection.",
-                                  "format": "int32",
-                                  "type": "integer"
                                 },
                                 "maxRequestsPerConnection": {
                                   "description": "Maximum number of requests per connection to a backend.",
@@ -508,10 +480,6 @@
                                   "description": "TCP connection timeout.",
                                   "type": "string"
                                 },
-                                "idleTimeout": {
-                                  "description": "The idle timeout for TCP connections.",
-                                  "type": "string"
-                                },
                                 "maxConnectionDuration": {
                                   "description": "The maximum duration of a connection.",
                                   "type": "string"
@@ -530,8 +498,6 @@
                                     },
                                     "probes": {
                                       "description": "Maximum number of keepalive probes to send without response before deciding the connection is dead.",
-                                      "maximum": 4294967295,
-                                      "minimum": 0,
                                       "type": "integer"
                                     },
                                     "time": {
@@ -700,7 +666,6 @@
                                   "properties": {
                                     "tableSize": {
                                       "description": "The table size for Maglev hashing.",
-                                      "minimum": 0,
                                       "type": "integer"
                                     }
                                   },
@@ -709,7 +674,6 @@
                                 },
                                 "minimumRingSize": {
                                   "description": "Deprecated.",
-                                  "minimum": 0,
                                   "type": "integer"
                                 },
                                 "ringHash": {
@@ -717,7 +681,6 @@
                                   "properties": {
                                     "minimumRingSize": {
                                       "description": "The minimum number of virtual nodes to use for the hash ring.",
-                                      "minimum": 0,
                                       "type": "integer"
                                     }
                                   },
@@ -744,8 +707,6 @@
                                       },
                                       "to": {
                                         "additionalProperties": {
-                                          "maximum": 4294967295,
-                                          "minimum": 0,
                                           "type": "integer"
                                         },
                                         "description": "Map of upstream localities to traffic distribution weights.",
@@ -792,7 +753,6 @@
                               "additionalProperties": false
                             },
                             "simple": {
-                              "description": "\n\nValid Options: LEAST_CONN, RANDOM, PASSTHROUGH, ROUND_ROBIN, LEAST_REQUEST",
                               "enum": [
                                 "UNSPECIFIED",
                                 "LEAST_CONN",
@@ -819,8 +779,6 @@
                             },
                             "consecutive5xxErrors": {
                               "description": "Number of 5xx errors before a host is ejected from the connection pool.",
-                              "maximum": 4294967295,
-                              "minimum": 0,
                               "nullable": true,
                               "type": "integer"
                             },
@@ -830,15 +788,11 @@
                             },
                             "consecutiveGatewayErrors": {
                               "description": "Number of gateway errors before a host is ejected from the connection pool.",
-                              "maximum": 4294967295,
-                              "minimum": 0,
                               "nullable": true,
                               "type": "integer"
                             },
                             "consecutiveLocalOriginFailures": {
                               "description": "The number of consecutive locally originated failures before ejection occurs.",
-                              "maximum": 4294967295,
-                              "minimum": 0,
                               "nullable": true,
                               "type": "integer"
                             },
@@ -868,8 +822,6 @@
                           "description": "Specifies the number of a port on the destination service on which this policy is being applied.",
                           "properties": {
                             "number": {
-                              "maximum": 4294967295,
-                              "minimum": 0,
                               "type": "integer"
                             }
                           },
@@ -881,10 +833,6 @@
                           "properties": {
                             "caCertificates": {
                               "description": "OPTIONAL: The path to the file containing certificate authority certificates to use in verifying a presented server certificate.",
-                              "type": "string"
-                            },
-                            "caCrl": {
-                              "description": "OPTIONAL: The path to the file containing the certificate revocation list (CRL) to use in verifying a presented server certificate.",
                               "type": "string"
                             },
                             "clientCertificate": {
@@ -901,7 +849,7 @@
                               "type": "boolean"
                             },
                             "mode": {
-                              "description": "Indicates whether connections to this port should be secured using TLS.\n\nValid Options: DISABLE, SIMPLE, MUTUAL, ISTIO_MUTUAL",
+                              "description": "Indicates whether connections to this port should be secured using TLS.",
                               "enum": [
                                 "DISABLE",
                                 "SIMPLE",
@@ -935,30 +883,11 @@
                     },
                     "type": "array"
                   },
-                  "proxyProtocol": {
-                    "description": "The upstream PROXY protocol settings.",
-                    "properties": {
-                      "version": {
-                        "description": "The PROXY protocol version to use.\n\nValid Options: V1, V2",
-                        "enum": [
-                          "V1",
-                          "V2"
-                        ],
-                        "type": "string"
-                      }
-                    },
-                    "type": "object",
-                    "additionalProperties": false
-                  },
                   "tls": {
                     "description": "TLS related settings for connections to the upstream service.",
                     "properties": {
                       "caCertificates": {
                         "description": "OPTIONAL: The path to the file containing certificate authority certificates to use in verifying a presented server certificate.",
-                        "type": "string"
-                      },
-                      "caCrl": {
-                        "description": "OPTIONAL: The path to the file containing the certificate revocation list (CRL) to use in verifying a presented server certificate.",
                         "type": "string"
                       },
                       "clientCertificate": {
@@ -975,7 +904,7 @@
                         "type": "boolean"
                       },
                       "mode": {
-                        "description": "Indicates whether connections to this port should be secured using TLS.\n\nValid Options: DISABLE, SIMPLE, MUTUAL, ISTIO_MUTUAL",
+                        "description": "Indicates whether connections to this port should be secured using TLS.",
                         "enum": [
                           "DISABLE",
                           "SIMPLE",
@@ -1016,8 +945,6 @@
                       },
                       "targetPort": {
                         "description": "Specifies a port to which the downstream connection is tunneled.",
-                        "maximum": 4294967295,
-                        "minimum": 0,
                         "type": "integer"
                       }
                     },
@@ -1050,7 +977,7 @@
                   "description": "HTTP connection pool settings.",
                   "properties": {
                     "h2UpgradePolicy": {
-                      "description": "Specify if http1.1 connection should be upgraded to http2 for the associated destination.\n\nValid Options: DEFAULT, DO_NOT_UPGRADE, UPGRADE",
+                      "description": "Specify if http1.1 connection should be upgraded to http2 for the associated destination.",
                       "enum": [
                         "DEFAULT",
                         "DO_NOT_UPGRADE",
@@ -1071,11 +998,6 @@
                     "idleTimeout": {
                       "description": "The idle timeout for upstream connection pool connections.",
                       "type": "string"
-                    },
-                    "maxConcurrentStreams": {
-                      "description": "The maximum number of concurrent streams allowed for a peer on one HTTP/2 connection.",
-                      "format": "int32",
-                      "type": "integer"
                     },
                     "maxRequestsPerConnection": {
                       "description": "Maximum number of requests per connection to a backend.",
@@ -1102,10 +1024,6 @@
                       "description": "TCP connection timeout.",
                       "type": "string"
                     },
-                    "idleTimeout": {
-                      "description": "The idle timeout for TCP connections.",
-                      "type": "string"
-                    },
                     "maxConnectionDuration": {
                       "description": "The maximum duration of a connection.",
                       "type": "string"
@@ -1124,8 +1042,6 @@
                         },
                         "probes": {
                           "description": "Maximum number of keepalive probes to send without response before deciding the connection is dead.",
-                          "maximum": 4294967295,
-                          "minimum": 0,
                           "type": "integer"
                         },
                         "time": {
@@ -1294,7 +1210,6 @@
                       "properties": {
                         "tableSize": {
                           "description": "The table size for Maglev hashing.",
-                          "minimum": 0,
                           "type": "integer"
                         }
                       },
@@ -1303,7 +1218,6 @@
                     },
                     "minimumRingSize": {
                       "description": "Deprecated.",
-                      "minimum": 0,
                       "type": "integer"
                     },
                     "ringHash": {
@@ -1311,7 +1225,6 @@
                       "properties": {
                         "minimumRingSize": {
                           "description": "The minimum number of virtual nodes to use for the hash ring.",
-                          "minimum": 0,
                           "type": "integer"
                         }
                       },
@@ -1338,8 +1251,6 @@
                           },
                           "to": {
                             "additionalProperties": {
-                              "maximum": 4294967295,
-                              "minimum": 0,
                               "type": "integer"
                             },
                             "description": "Map of upstream localities to traffic distribution weights.",
@@ -1386,7 +1297,6 @@
                   "additionalProperties": false
                 },
                 "simple": {
-                  "description": "\n\nValid Options: LEAST_CONN, RANDOM, PASSTHROUGH, ROUND_ROBIN, LEAST_REQUEST",
                   "enum": [
                     "UNSPECIFIED",
                     "LEAST_CONN",
@@ -1413,8 +1323,6 @@
                 },
                 "consecutive5xxErrors": {
                   "description": "Number of 5xx errors before a host is ejected from the connection pool.",
-                  "maximum": 4294967295,
-                  "minimum": 0,
                   "nullable": true,
                   "type": "integer"
                 },
@@ -1424,15 +1332,11 @@
                 },
                 "consecutiveGatewayErrors": {
                   "description": "Number of gateway errors before a host is ejected from the connection pool.",
-                  "maximum": 4294967295,
-                  "minimum": 0,
                   "nullable": true,
                   "type": "integer"
                 },
                 "consecutiveLocalOriginFailures": {
                   "description": "The number of consecutive locally originated failures before ejection occurs.",
-                  "maximum": 4294967295,
-                  "minimum": 0,
                   "nullable": true,
                   "type": "integer"
                 },
@@ -1468,7 +1372,7 @@
                         "description": "HTTP connection pool settings.",
                         "properties": {
                           "h2UpgradePolicy": {
-                            "description": "Specify if http1.1 connection should be upgraded to http2 for the associated destination.\n\nValid Options: DEFAULT, DO_NOT_UPGRADE, UPGRADE",
+                            "description": "Specify if http1.1 connection should be upgraded to http2 for the associated destination.",
                             "enum": [
                               "DEFAULT",
                               "DO_NOT_UPGRADE",
@@ -1489,11 +1393,6 @@
                           "idleTimeout": {
                             "description": "The idle timeout for upstream connection pool connections.",
                             "type": "string"
-                          },
-                          "maxConcurrentStreams": {
-                            "description": "The maximum number of concurrent streams allowed for a peer on one HTTP/2 connection.",
-                            "format": "int32",
-                            "type": "integer"
                           },
                           "maxRequestsPerConnection": {
                             "description": "Maximum number of requests per connection to a backend.",
@@ -1520,10 +1419,6 @@
                             "description": "TCP connection timeout.",
                             "type": "string"
                           },
-                          "idleTimeout": {
-                            "description": "The idle timeout for TCP connections.",
-                            "type": "string"
-                          },
                           "maxConnectionDuration": {
                             "description": "The maximum duration of a connection.",
                             "type": "string"
@@ -1542,8 +1437,6 @@
                               },
                               "probes": {
                                 "description": "Maximum number of keepalive probes to send without response before deciding the connection is dead.",
-                                "maximum": 4294967295,
-                                "minimum": 0,
                                 "type": "integer"
                               },
                               "time": {
@@ -1712,7 +1605,6 @@
                             "properties": {
                               "tableSize": {
                                 "description": "The table size for Maglev hashing.",
-                                "minimum": 0,
                                 "type": "integer"
                               }
                             },
@@ -1721,7 +1613,6 @@
                           },
                           "minimumRingSize": {
                             "description": "Deprecated.",
-                            "minimum": 0,
                             "type": "integer"
                           },
                           "ringHash": {
@@ -1729,7 +1620,6 @@
                             "properties": {
                               "minimumRingSize": {
                                 "description": "The minimum number of virtual nodes to use for the hash ring.",
-                                "minimum": 0,
                                 "type": "integer"
                               }
                             },
@@ -1756,8 +1646,6 @@
                                 },
                                 "to": {
                                   "additionalProperties": {
-                                    "maximum": 4294967295,
-                                    "minimum": 0,
                                     "type": "integer"
                                   },
                                   "description": "Map of upstream localities to traffic distribution weights.",
@@ -1804,7 +1692,6 @@
                         "additionalProperties": false
                       },
                       "simple": {
-                        "description": "\n\nValid Options: LEAST_CONN, RANDOM, PASSTHROUGH, ROUND_ROBIN, LEAST_REQUEST",
                         "enum": [
                           "UNSPECIFIED",
                           "LEAST_CONN",
@@ -1831,8 +1718,6 @@
                       },
                       "consecutive5xxErrors": {
                         "description": "Number of 5xx errors before a host is ejected from the connection pool.",
-                        "maximum": 4294967295,
-                        "minimum": 0,
                         "nullable": true,
                         "type": "integer"
                       },
@@ -1842,15 +1727,11 @@
                       },
                       "consecutiveGatewayErrors": {
                         "description": "Number of gateway errors before a host is ejected from the connection pool.",
-                        "maximum": 4294967295,
-                        "minimum": 0,
                         "nullable": true,
                         "type": "integer"
                       },
                       "consecutiveLocalOriginFailures": {
                         "description": "The number of consecutive locally originated failures before ejection occurs.",
-                        "maximum": 4294967295,
-                        "minimum": 0,
                         "nullable": true,
                         "type": "integer"
                       },
@@ -1880,8 +1761,6 @@
                     "description": "Specifies the number of a port on the destination service on which this policy is being applied.",
                     "properties": {
                       "number": {
-                        "maximum": 4294967295,
-                        "minimum": 0,
                         "type": "integer"
                       }
                     },
@@ -1893,10 +1772,6 @@
                     "properties": {
                       "caCertificates": {
                         "description": "OPTIONAL: The path to the file containing certificate authority certificates to use in verifying a presented server certificate.",
-                        "type": "string"
-                      },
-                      "caCrl": {
-                        "description": "OPTIONAL: The path to the file containing the certificate revocation list (CRL) to use in verifying a presented server certificate.",
                         "type": "string"
                       },
                       "clientCertificate": {
@@ -1913,7 +1788,7 @@
                         "type": "boolean"
                       },
                       "mode": {
-                        "description": "Indicates whether connections to this port should be secured using TLS.\n\nValid Options: DISABLE, SIMPLE, MUTUAL, ISTIO_MUTUAL",
+                        "description": "Indicates whether connections to this port should be secured using TLS.",
                         "enum": [
                           "DISABLE",
                           "SIMPLE",
@@ -1947,30 +1822,11 @@
               },
               "type": "array"
             },
-            "proxyProtocol": {
-              "description": "The upstream PROXY protocol settings.",
-              "properties": {
-                "version": {
-                  "description": "The PROXY protocol version to use.\n\nValid Options: V1, V2",
-                  "enum": [
-                    "V1",
-                    "V2"
-                  ],
-                  "type": "string"
-                }
-              },
-              "type": "object",
-              "additionalProperties": false
-            },
             "tls": {
               "description": "TLS related settings for connections to the upstream service.",
               "properties": {
                 "caCertificates": {
                   "description": "OPTIONAL: The path to the file containing certificate authority certificates to use in verifying a presented server certificate.",
-                  "type": "string"
-                },
-                "caCrl": {
-                  "description": "OPTIONAL: The path to the file containing the certificate revocation list (CRL) to use in verifying a presented server certificate.",
                   "type": "string"
                 },
                 "clientCertificate": {
@@ -1987,7 +1843,7 @@
                   "type": "boolean"
                 },
                 "mode": {
-                  "description": "Indicates whether connections to this port should be secured using TLS.\n\nValid Options: DISABLE, SIMPLE, MUTUAL, ISTIO_MUTUAL",
+                  "description": "Indicates whether connections to this port should be secured using TLS.",
                   "enum": [
                     "DISABLE",
                     "SIMPLE",
@@ -2028,8 +1884,6 @@
                 },
                 "targetPort": {
                   "description": "Specifies a port to which the downstream connection is tunneled.",
-                  "maximum": 4294967295,
-                  "minimum": 0,
                   "type": "integer"
                 }
               },
