@@ -135,6 +135,12 @@
       "https://raw.githubusercontent.com/ansible/awx-operator/devel/config/crd/bases/awx.ansible.com_awxs.yaml"
     ]
   },
+  "oadp-operator": {
+    "github_repository": "openshift/oadp-operator",
+    "url": [
+      "https://github.com/openshift/oadp-operator/blob/ea7ccc4263fcda63070b587d49c800fc63c428b7/config/crd/kustomization.yaml"
+    ]
+  },
   "cloudtty": {
     "github_repository": "cloudtty/cloudtty",
     "urls": [
