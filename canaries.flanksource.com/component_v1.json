@@ -12,6 +12,7 @@
       "type": "object"
     },
     "spec": {
+      "description": "ComponentSpec defines the specification for a component.",
       "properties": {
         "checks": {
           "items": {
@@ -466,7 +467,12 @@
           },
           "type": "array"
         },
+        "statusExpr": {
+          "description": "statusExpr allows defining a cel expression to evaluate the status of a component\nbased on the summary and the related config",
+          "type": "string"
+        },
         "summary": {
+          "description": "Summary is the health, incidents, insights & check summary",
           "properties": {
             "checks": {
               "additionalProperties": {
