@@ -64,6 +64,9 @@
               "namespace": {
                 "type": "string"
               },
+              "scope": {
+                "type": "string"
+              },
               "statuses": {
                 "items": {
                   "type": "string"
@@ -237,6 +240,9 @@
                         "type": "string"
                       },
                       "namespace": {
+                        "type": "string"
+                      },
+                      "scope": {
                         "type": "string"
                       },
                       "statuses": {
@@ -444,6 +450,9 @@
                 "type": "string"
               },
               "namespace": {
+                "type": "string"
+              },
+              "scope": {
                 "type": "string"
               },
               "statuses": {

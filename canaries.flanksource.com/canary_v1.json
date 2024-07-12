@@ -254,6 +254,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -351,6 +366,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -739,6 +769,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -836,6 +881,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -1301,6 +1361,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -1398,6 +1473,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -1863,6 +1953,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -1960,6 +2065,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -2209,6 +2329,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -2320,6 +2455,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -2370,6 +2520,9 @@
                       "type": "string"
                     },
                     "namespace": {
+                      "type": "string"
+                    },
+                    "scope": {
                       "type": "string"
                     },
                     "statuses": {
@@ -2676,6 +2829,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -2773,6 +2941,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -3282,6 +3465,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -3379,6 +3577,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -3564,6 +3777,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -3661,6 +3889,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -3961,6 +4204,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -4058,6 +4316,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -4290,6 +4563,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -4387,6 +4675,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -4726,6 +5029,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -4823,6 +5141,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -5147,6 +5480,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -5244,6 +5592,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -5515,6 +5878,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -5612,6 +5990,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -5925,6 +6318,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -6022,6 +6430,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -7176,6 +7599,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -7273,6 +7711,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -7889,6 +8342,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -7986,6 +8454,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -8604,6 +9087,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -8701,6 +9199,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -9082,6 +9595,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -9179,6 +9707,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -9545,6 +10088,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -9642,6 +10200,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -10100,6 +10673,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -10197,6 +10785,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -10752,6 +11355,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -10849,6 +11467,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -11124,6 +11757,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -11221,6 +11869,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -11447,6 +12110,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -11544,6 +12222,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -11891,6 +12584,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -11988,6 +12696,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -12335,6 +13058,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -12432,6 +13170,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -12756,6 +13509,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -12853,6 +13621,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -13393,6 +14176,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -13490,6 +14288,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -13873,6 +14686,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -13970,6 +14798,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -14328,6 +15171,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -14425,6 +15283,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -14704,6 +15577,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -14801,6 +15689,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -15148,6 +16051,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -15245,6 +16163,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -15526,6 +16459,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -15623,6 +16571,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -16235,6 +17198,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -16332,6 +17310,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -16919,6 +17912,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -17016,6 +18024,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -17428,6 +18451,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -17525,6 +18563,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -17870,6 +18923,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -17967,6 +19035,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -18299,6 +19382,21 @@
                           "type": "object",
                           "additionalProperties": false
                         },
+                        "scope": {
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
                         "type": {
                           "description": "Lookup offers different ways to specify a lookup value",
                           "properties": {
@@ -18396,6 +19494,21 @@
                         },
                         "namespace": {
                           "description": "Lookup offers different ways to specify a lookup value",
+                          "properties": {
+                            "expr": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        },
+                        "scope": {
                           "properties": {
                             "expr": {
                               "type": "string"
@@ -18628,6 +19741,21 @@
                         "type": "object",
                         "additionalProperties": false
                       },
+                      "scope": {
+                        "properties": {
+                          "expr": {
+                            "type": "string"
+                          },
+                          "label": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "additionalProperties": false
+                      },
                       "type": {
                         "description": "Lookup offers different ways to specify a lookup value",
                         "properties": {
@@ -18725,6 +19853,21 @@
                       },
                       "namespace": {
                         "description": "Lookup offers different ways to specify a lookup value",
+                        "properties": {
+                          "expr": {
+                            "type": "string"
+                          },
+                          "label": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "additionalProperties": false
+                      },
+                      "scope": {
                         "properties": {
                           "expr": {
                             "type": "string"
