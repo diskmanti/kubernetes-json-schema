@@ -7,7 +7,7 @@
           "description": "Mutual TLS settings for workload.",
           "properties": {
             "mode": {
-              "description": "Defines the mTLS mode used for peer authentication.",
+              "description": "Defines the mTLS mode used for peer authentication.\n\nValid Options: DISABLE, PERMISSIVE, STRICT",
               "enum": [
                 "UNSET",
                 "DISABLE",
@@ -24,7 +24,7 @@
           "additionalProperties": {
             "properties": {
               "mode": {
-                "description": "Defines the mTLS mode used for peer authentication.",
+                "description": "Defines the mTLS mode used for peer authentication.\n\nValid Options: DISABLE, PERMISSIVE, STRICT",
                 "enum": [
                   "UNSET",
                   "DISABLE",
@@ -41,7 +41,7 @@
           "type": "object"
         },
         "selector": {
-          "description": "The selector determines the workloads to apply the ChannelAuthentication on.",
+          "description": "The selector determines the workloads to apply the PeerAuthentication on.",
           "properties": {
             "matchLabels": {
               "additionalProperties": {
