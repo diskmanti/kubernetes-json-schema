@@ -15,6 +15,10 @@
     "spec": {
       "description": "ArgoCDSpec defines the desired state of ArgoCD",
       "properties": {
+        "aggregatedClusterRoles": {
+          "description": "AggregatedClusterRoles will allow users to have aggregated ClusterRoles for a cluster scoped instance.",
+          "type": "boolean"
+        },
         "applicationInstanceLabelKey": {
           "description": "ApplicationInstanceLabelKey is the key name where Argo CD injects the app name as a tracking label.",
           "type": "string"
