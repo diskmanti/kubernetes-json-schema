@@ -10306,7 +10306,7 @@
                 "type": "string"
               },
               "env": {
-                "description": "EnvVars are the environment variables that are accesible to templated body",
+                "description": "EnvVars are the environment variables that are accessible to templated body",
                 "items": {
                   "properties": {
                     "name": {
@@ -20097,6 +20097,9 @@
         "replicas": {
           "description": "Replicas keep track of the number of replicas",
           "type": "integer"
+        },
+        "selector": {
+          "type": "string"
         },
         "status": {
           "type": "string"
