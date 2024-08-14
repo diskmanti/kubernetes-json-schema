@@ -2513,6 +2513,9 @@
                     "id": {
                       "type": "string"
                     },
+                    "includeDeleted": {
+                      "type": "boolean"
+                    },
                     "labelSelector": {
                       "type": "string"
                     },
@@ -2523,6 +2526,10 @@
                       "type": "string"
                     },
                     "scope": {
+                      "type": "string"
+                    },
+                    "search": {
+                      "description": "Search query that applies to the resource name, tag & labels.",
                       "type": "string"
                     },
                     "statuses": {
@@ -16829,6 +16836,9 @@
                 "description": "Description for the check",
                 "type": "string"
               },
+              "digest": {
+                "type": "boolean"
+              },
               "display": {
                 "properties": {
                   "expr": {
@@ -16876,6 +16886,12 @@
               "namespace": {
                 "description": "Namespace to insert the check into, if different to the namespace the canary is defined, e.g.",
                 "type": "string"
+              },
+              "ntlm": {
+                "type": "boolean"
+              },
+              "ntlmv2": {
+                "type": "boolean"
               },
               "oauth": {
                 "properties": {
