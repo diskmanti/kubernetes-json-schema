@@ -58,7 +58,13 @@
                           },
                           "idleTimeout": {
                             "description": "The idle timeout for upstream connection pool connections.",
-                            "type": "string"
+                            "type": "string",
+                            "x-kubernetes-validations": [
+                              {
+                                "message": "must be a valid duration greater than 1ms",
+                                "rule": "duration(self) >= duration('1ms')"
+                              }
+                            ]
                           },
                           "maxConcurrentStreams": {
                             "description": "The maximum number of concurrent streams allowed for a peer on one HTTP/2 connection.",
@@ -88,15 +94,33 @@
                         "properties": {
                           "connectTimeout": {
                             "description": "TCP connection timeout.",
-                            "type": "string"
+                            "type": "string",
+                            "x-kubernetes-validations": [
+                              {
+                                "message": "must be a valid duration greater than 1ms",
+                                "rule": "duration(self) >= duration('1ms')"
+                              }
+                            ]
                           },
                           "idleTimeout": {
                             "description": "The idle timeout for TCP connections.",
-                            "type": "string"
+                            "type": "string",
+                            "x-kubernetes-validations": [
+                              {
+                                "message": "must be a valid duration greater than 1ms",
+                                "rule": "duration(self) >= duration('1ms')"
+                              }
+                            ]
                           },
                           "maxConnectionDuration": {
                             "description": "The maximum duration of a connection.",
-                            "type": "string"
+                            "type": "string",
+                            "x-kubernetes-validations": [
+                              {
+                                "message": "must be a valid duration greater than 1ms",
+                                "rule": "duration(self) >= duration('1ms')"
+                              }
+                            ]
                           },
                           "maxConnections": {
                             "description": "Maximum number of HTTP1 /TCP connections to a destination host.",
@@ -108,7 +132,13 @@
                             "properties": {
                               "interval": {
                                 "description": "The time duration between keep-alive probes.",
-                                "type": "string"
+                                "type": "string",
+                                "x-kubernetes-validations": [
+                                  {
+                                    "message": "must be a valid duration greater than 1ms",
+                                    "rule": "duration(self) >= duration('1ms')"
+                                  }
+                                ]
                               },
                               "probes": {
                                 "description": "Maximum number of keepalive probes to send without response before deciding the connection is dead.",
@@ -118,7 +148,13 @@
                               },
                               "time": {
                                 "description": "The time duration a connection needs to be idle before keep-alive probes start being sent.",
-                                "type": "string"
+                                "type": "string",
+                                "x-kubernetes-validations": [
+                                  {
+                                    "message": "must be a valid duration greater than 1ms",
+                                    "rule": "duration(self) >= duration('1ms')"
+                                  }
+                                ]
                               }
                             },
                             "type": "object",
@@ -387,7 +423,13 @@
                       },
                       "warmupDurationSecs": {
                         "description": "Represents the warmup duration of Service.",
-                        "type": "string"
+                        "type": "string",
+                        "x-kubernetes-validations": [
+                          {
+                            "message": "must be a valid duration greater than 1ms",
+                            "rule": "duration(self) >= duration('1ms')"
+                          }
+                        ]
                       }
                     },
                     "type": "object",
@@ -397,7 +439,13 @@
                     "properties": {
                       "baseEjectionTime": {
                         "description": "Minimum ejection duration.",
-                        "type": "string"
+                        "type": "string",
+                        "x-kubernetes-validations": [
+                          {
+                            "message": "must be a valid duration greater than 1ms",
+                            "rule": "duration(self) >= duration('1ms')"
+                          }
+                        ]
                       },
                       "consecutive5xxErrors": {
                         "description": "Number of 5xx errors before a host is ejected from the connection pool.",
@@ -426,7 +474,13 @@
                       },
                       "interval": {
                         "description": "Time interval between ejection sweep analysis.",
-                        "type": "string"
+                        "type": "string",
+                        "x-kubernetes-validations": [
+                          {
+                            "message": "must be a valid duration greater than 1ms",
+                            "rule": "duration(self) >= duration('1ms')"
+                          }
+                        ]
                       },
                       "maxEjectionPercent": {
                         "description": "Maximum % of hosts in the load balancing pool for the upstream service that can be ejected.",
@@ -476,7 +530,13 @@
                                 },
                                 "idleTimeout": {
                                   "description": "The idle timeout for upstream connection pool connections.",
-                                  "type": "string"
+                                  "type": "string",
+                                  "x-kubernetes-validations": [
+                                    {
+                                      "message": "must be a valid duration greater than 1ms",
+                                      "rule": "duration(self) >= duration('1ms')"
+                                    }
+                                  ]
                                 },
                                 "maxConcurrentStreams": {
                                   "description": "The maximum number of concurrent streams allowed for a peer on one HTTP/2 connection.",
@@ -506,15 +566,33 @@
                               "properties": {
                                 "connectTimeout": {
                                   "description": "TCP connection timeout.",
-                                  "type": "string"
+                                  "type": "string",
+                                  "x-kubernetes-validations": [
+                                    {
+                                      "message": "must be a valid duration greater than 1ms",
+                                      "rule": "duration(self) >= duration('1ms')"
+                                    }
+                                  ]
                                 },
                                 "idleTimeout": {
                                   "description": "The idle timeout for TCP connections.",
-                                  "type": "string"
+                                  "type": "string",
+                                  "x-kubernetes-validations": [
+                                    {
+                                      "message": "must be a valid duration greater than 1ms",
+                                      "rule": "duration(self) >= duration('1ms')"
+                                    }
+                                  ]
                                 },
                                 "maxConnectionDuration": {
                                   "description": "The maximum duration of a connection.",
-                                  "type": "string"
+                                  "type": "string",
+                                  "x-kubernetes-validations": [
+                                    {
+                                      "message": "must be a valid duration greater than 1ms",
+                                      "rule": "duration(self) >= duration('1ms')"
+                                    }
+                                  ]
                                 },
                                 "maxConnections": {
                                   "description": "Maximum number of HTTP1 /TCP connections to a destination host.",
@@ -526,7 +604,13 @@
                                   "properties": {
                                     "interval": {
                                       "description": "The time duration between keep-alive probes.",
-                                      "type": "string"
+                                      "type": "string",
+                                      "x-kubernetes-validations": [
+                                        {
+                                          "message": "must be a valid duration greater than 1ms",
+                                          "rule": "duration(self) >= duration('1ms')"
+                                        }
+                                      ]
                                     },
                                     "probes": {
                                       "description": "Maximum number of keepalive probes to send without response before deciding the connection is dead.",
@@ -536,7 +620,13 @@
                                     },
                                     "time": {
                                       "description": "The time duration a connection needs to be idle before keep-alive probes start being sent.",
-                                      "type": "string"
+                                      "type": "string",
+                                      "x-kubernetes-validations": [
+                                        {
+                                          "message": "must be a valid duration greater than 1ms",
+                                          "rule": "duration(self) >= duration('1ms')"
+                                        }
+                                      ]
                                     }
                                   },
                                   "type": "object",
@@ -805,7 +895,13 @@
                             },
                             "warmupDurationSecs": {
                               "description": "Represents the warmup duration of Service.",
-                              "type": "string"
+                              "type": "string",
+                              "x-kubernetes-validations": [
+                                {
+                                  "message": "must be a valid duration greater than 1ms",
+                                  "rule": "duration(self) >= duration('1ms')"
+                                }
+                              ]
                             }
                           },
                           "type": "object",
@@ -815,7 +911,13 @@
                           "properties": {
                             "baseEjectionTime": {
                               "description": "Minimum ejection duration.",
-                              "type": "string"
+                              "type": "string",
+                              "x-kubernetes-validations": [
+                                {
+                                  "message": "must be a valid duration greater than 1ms",
+                                  "rule": "duration(self) >= duration('1ms')"
+                                }
+                              ]
                             },
                             "consecutive5xxErrors": {
                               "description": "Number of 5xx errors before a host is ejected from the connection pool.",
@@ -844,7 +946,13 @@
                             },
                             "interval": {
                               "description": "Time interval between ejection sweep analysis.",
-                              "type": "string"
+                              "type": "string",
+                              "x-kubernetes-validations": [
+                                {
+                                  "message": "must be a valid duration greater than 1ms",
+                                  "rule": "duration(self) >= duration('1ms')"
+                                }
+                              ]
                             },
                             "maxEjectionPercent": {
                               "description": "Maximum % of hosts in the load balancing pool for the upstream service that can be ejected.",
@@ -933,6 +1041,7 @@
                       "type": "object",
                       "additionalProperties": false
                     },
+                    "maxItems": 4096,
                     "type": "array"
                   },
                   "proxyProtocol": {
@@ -1070,7 +1179,13 @@
                     },
                     "idleTimeout": {
                       "description": "The idle timeout for upstream connection pool connections.",
-                      "type": "string"
+                      "type": "string",
+                      "x-kubernetes-validations": [
+                        {
+                          "message": "must be a valid duration greater than 1ms",
+                          "rule": "duration(self) >= duration('1ms')"
+                        }
+                      ]
                     },
                     "maxConcurrentStreams": {
                       "description": "The maximum number of concurrent streams allowed for a peer on one HTTP/2 connection.",
@@ -1100,15 +1215,33 @@
                   "properties": {
                     "connectTimeout": {
                       "description": "TCP connection timeout.",
-                      "type": "string"
+                      "type": "string",
+                      "x-kubernetes-validations": [
+                        {
+                          "message": "must be a valid duration greater than 1ms",
+                          "rule": "duration(self) >= duration('1ms')"
+                        }
+                      ]
                     },
                     "idleTimeout": {
                       "description": "The idle timeout for TCP connections.",
-                      "type": "string"
+                      "type": "string",
+                      "x-kubernetes-validations": [
+                        {
+                          "message": "must be a valid duration greater than 1ms",
+                          "rule": "duration(self) >= duration('1ms')"
+                        }
+                      ]
                     },
                     "maxConnectionDuration": {
                       "description": "The maximum duration of a connection.",
-                      "type": "string"
+                      "type": "string",
+                      "x-kubernetes-validations": [
+                        {
+                          "message": "must be a valid duration greater than 1ms",
+                          "rule": "duration(self) >= duration('1ms')"
+                        }
+                      ]
                     },
                     "maxConnections": {
                       "description": "Maximum number of HTTP1 /TCP connections to a destination host.",
@@ -1120,7 +1253,13 @@
                       "properties": {
                         "interval": {
                           "description": "The time duration between keep-alive probes.",
-                          "type": "string"
+                          "type": "string",
+                          "x-kubernetes-validations": [
+                            {
+                              "message": "must be a valid duration greater than 1ms",
+                              "rule": "duration(self) >= duration('1ms')"
+                            }
+                          ]
                         },
                         "probes": {
                           "description": "Maximum number of keepalive probes to send without response before deciding the connection is dead.",
@@ -1130,7 +1269,13 @@
                         },
                         "time": {
                           "description": "The time duration a connection needs to be idle before keep-alive probes start being sent.",
-                          "type": "string"
+                          "type": "string",
+                          "x-kubernetes-validations": [
+                            {
+                              "message": "must be a valid duration greater than 1ms",
+                              "rule": "duration(self) >= duration('1ms')"
+                            }
+                          ]
                         }
                       },
                       "type": "object",
@@ -1399,7 +1544,13 @@
                 },
                 "warmupDurationSecs": {
                   "description": "Represents the warmup duration of Service.",
-                  "type": "string"
+                  "type": "string",
+                  "x-kubernetes-validations": [
+                    {
+                      "message": "must be a valid duration greater than 1ms",
+                      "rule": "duration(self) >= duration('1ms')"
+                    }
+                  ]
                 }
               },
               "type": "object",
@@ -1409,7 +1560,13 @@
               "properties": {
                 "baseEjectionTime": {
                   "description": "Minimum ejection duration.",
-                  "type": "string"
+                  "type": "string",
+                  "x-kubernetes-validations": [
+                    {
+                      "message": "must be a valid duration greater than 1ms",
+                      "rule": "duration(self) >= duration('1ms')"
+                    }
+                  ]
                 },
                 "consecutive5xxErrors": {
                   "description": "Number of 5xx errors before a host is ejected from the connection pool.",
@@ -1438,7 +1595,13 @@
                 },
                 "interval": {
                   "description": "Time interval between ejection sweep analysis.",
-                  "type": "string"
+                  "type": "string",
+                  "x-kubernetes-validations": [
+                    {
+                      "message": "must be a valid duration greater than 1ms",
+                      "rule": "duration(self) >= duration('1ms')"
+                    }
+                  ]
                 },
                 "maxEjectionPercent": {
                   "description": "Maximum % of hosts in the load balancing pool for the upstream service that can be ejected.",
@@ -1488,7 +1651,13 @@
                           },
                           "idleTimeout": {
                             "description": "The idle timeout for upstream connection pool connections.",
-                            "type": "string"
+                            "type": "string",
+                            "x-kubernetes-validations": [
+                              {
+                                "message": "must be a valid duration greater than 1ms",
+                                "rule": "duration(self) >= duration('1ms')"
+                              }
+                            ]
                           },
                           "maxConcurrentStreams": {
                             "description": "The maximum number of concurrent streams allowed for a peer on one HTTP/2 connection.",
@@ -1518,15 +1687,33 @@
                         "properties": {
                           "connectTimeout": {
                             "description": "TCP connection timeout.",
-                            "type": "string"
+                            "type": "string",
+                            "x-kubernetes-validations": [
+                              {
+                                "message": "must be a valid duration greater than 1ms",
+                                "rule": "duration(self) >= duration('1ms')"
+                              }
+                            ]
                           },
                           "idleTimeout": {
                             "description": "The idle timeout for TCP connections.",
-                            "type": "string"
+                            "type": "string",
+                            "x-kubernetes-validations": [
+                              {
+                                "message": "must be a valid duration greater than 1ms",
+                                "rule": "duration(self) >= duration('1ms')"
+                              }
+                            ]
                           },
                           "maxConnectionDuration": {
                             "description": "The maximum duration of a connection.",
-                            "type": "string"
+                            "type": "string",
+                            "x-kubernetes-validations": [
+                              {
+                                "message": "must be a valid duration greater than 1ms",
+                                "rule": "duration(self) >= duration('1ms')"
+                              }
+                            ]
                           },
                           "maxConnections": {
                             "description": "Maximum number of HTTP1 /TCP connections to a destination host.",
@@ -1538,7 +1725,13 @@
                             "properties": {
                               "interval": {
                                 "description": "The time duration between keep-alive probes.",
-                                "type": "string"
+                                "type": "string",
+                                "x-kubernetes-validations": [
+                                  {
+                                    "message": "must be a valid duration greater than 1ms",
+                                    "rule": "duration(self) >= duration('1ms')"
+                                  }
+                                ]
                               },
                               "probes": {
                                 "description": "Maximum number of keepalive probes to send without response before deciding the connection is dead.",
@@ -1548,7 +1741,13 @@
                               },
                               "time": {
                                 "description": "The time duration a connection needs to be idle before keep-alive probes start being sent.",
-                                "type": "string"
+                                "type": "string",
+                                "x-kubernetes-validations": [
+                                  {
+                                    "message": "must be a valid duration greater than 1ms",
+                                    "rule": "duration(self) >= duration('1ms')"
+                                  }
+                                ]
                               }
                             },
                             "type": "object",
@@ -1817,7 +2016,13 @@
                       },
                       "warmupDurationSecs": {
                         "description": "Represents the warmup duration of Service.",
-                        "type": "string"
+                        "type": "string",
+                        "x-kubernetes-validations": [
+                          {
+                            "message": "must be a valid duration greater than 1ms",
+                            "rule": "duration(self) >= duration('1ms')"
+                          }
+                        ]
                       }
                     },
                     "type": "object",
@@ -1827,7 +2032,13 @@
                     "properties": {
                       "baseEjectionTime": {
                         "description": "Minimum ejection duration.",
-                        "type": "string"
+                        "type": "string",
+                        "x-kubernetes-validations": [
+                          {
+                            "message": "must be a valid duration greater than 1ms",
+                            "rule": "duration(self) >= duration('1ms')"
+                          }
+                        ]
                       },
                       "consecutive5xxErrors": {
                         "description": "Number of 5xx errors before a host is ejected from the connection pool.",
@@ -1856,7 +2067,13 @@
                       },
                       "interval": {
                         "description": "Time interval between ejection sweep analysis.",
-                        "type": "string"
+                        "type": "string",
+                        "x-kubernetes-validations": [
+                          {
+                            "message": "must be a valid duration greater than 1ms",
+                            "rule": "duration(self) >= duration('1ms')"
+                          }
+                        ]
                       },
                       "maxEjectionPercent": {
                         "description": "Maximum % of hosts in the load balancing pool for the upstream service that can be ejected.",
@@ -1945,6 +2162,7 @@
                 "type": "object",
                 "additionalProperties": false
               },
+              "maxItems": 4096,
               "type": "array"
             },
             "proxyProtocol": {
@@ -2049,10 +2267,28 @@
           "properties": {
             "matchLabels": {
               "additionalProperties": {
-                "type": "string"
+                "maxLength": 63,
+                "type": "string",
+                "x-kubernetes-validations": [
+                  {
+                    "message": "wildcard not allowed in label value match",
+                    "rule": "!self.contains('*')"
+                  }
+                ]
               },
               "description": "One or more labels that indicate a specific set of pods/VMs on which a policy should be applied.",
-              "type": "object"
+              "maxProperties": 4096,
+              "type": "object",
+              "x-kubernetes-validations": [
+                {
+                  "message": "wildcard not allowed in label key match",
+                  "rule": "self.all(key, !key.contains('*'))"
+                },
+                {
+                  "message": "key must not be empty",
+                  "rule": "self.all(key, key.size() != 0)"
+                }
+              ]
             }
           },
           "type": "object",
