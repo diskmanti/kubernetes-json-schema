@@ -2038,6 +2038,24 @@
               "x-kubernetes-map-type": "atomic",
               "additionalProperties": false
             },
+            "maxVersion": {
+              "enum": [
+                "TLS10",
+                "TLS11",
+                "TLS12",
+                "TLS13"
+              ],
+              "type": "string"
+            },
+            "minVersion": {
+              "enum": [
+                "TLS10",
+                "TLS11",
+                "TLS12",
+                "TLS13"
+              ],
+              "type": "string"
+            },
             "serverName": {
               "type": "string"
             }
