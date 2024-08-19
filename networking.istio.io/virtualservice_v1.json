@@ -105,7 +105,7 @@
                           "type": "string"
                         },
                         "regex": {
-                          "description": "RE2 style regex-based match (https://github.com/google/re2/wiki/Syntax).",
+                          "description": "[RE2 style regex-based match](https://github.com/google/re2/wiki/Syntax).",
                           "type": "string"
                         }
                       },
@@ -123,6 +123,21 @@
                   },
                   "maxAge": {
                     "description": "Specifies how long the results of a preflight request can be cached.",
+                    "type": "string",
+                    "x-kubernetes-validations": [
+                      {
+                        "message": "must be a valid duration greater than 1ms",
+                        "rule": "duration(self) >= duration('1ms')"
+                      }
+                    ]
+                  },
+                  "unmatchedPreflights": {
+                    "description": "Indicates whether preflight requests not matching the configured allowed origin shouldn't be forwarded to the upstream.\n\nValid Options: FORWARD, IGNORE",
+                    "enum": [
+                      "UNSPECIFIED",
+                      "FORWARD",
+                      "IGNORE"
+                    ],
                     "type": "string"
                   }
                 },
@@ -306,11 +321,23 @@
                     ],
                     "properties": {
                       "exponentialDelay": {
-                        "type": "string"
+                        "type": "string",
+                        "x-kubernetes-validations": [
+                          {
+                            "message": "must be a valid duration greater than 1ms",
+                            "rule": "duration(self) >= duration('1ms')"
+                          }
+                        ]
                       },
                       "fixedDelay": {
                         "description": "Add a fixed delay before forwarding the request.",
-                        "type": "string"
+                        "type": "string",
+                        "x-kubernetes-validations": [
+                          {
+                            "message": "must be a valid duration greater than 1ms",
+                            "rule": "duration(self) >= duration('1ms')"
+                          }
+                        ]
                       },
                       "percent": {
                         "description": "Percentage of requests on which the delay will be injected (0-100).",
@@ -395,7 +422,7 @@
                 "items": {
                   "properties": {
                     "authority": {
-                      "description": "HTTP Authority values are case-sensitive and formatted as follows: - `exact: \"value\"` for exact string match - `prefix: \"value\"` for prefix-based match - `regex: \"value\"` for RE2 style regex-based match (https://github.com/google/re2/wiki/Syntax).",
+                      "description": "HTTP Authority values are case-sensitive and formatted as follows: - `exact: \"value\"` for exact string match - `prefix: \"value\"` for prefix-based match - `regex: \"value\"` for [RE2 style regex-based match](https://github.com/google/re2/wiki/Syntax).",
                       "oneOf": [
                         {
                           "not": {
@@ -442,7 +469,7 @@
                           "type": "string"
                         },
                         "regex": {
-                          "description": "RE2 style regex-based match (https://github.com/google/re2/wiki/Syntax).",
+                          "description": "[RE2 style regex-based match](https://github.com/google/re2/wiki/Syntax).",
                           "type": "string"
                         }
                       },
@@ -504,7 +531,7 @@
                             "type": "string"
                           },
                           "regex": {
-                            "description": "RE2 style regex-based match (https://github.com/google/re2/wiki/Syntax).",
+                            "description": "[RE2 style regex-based match](https://github.com/google/re2/wiki/Syntax).",
                             "type": "string"
                           }
                         },
@@ -519,7 +546,7 @@
                       "type": "boolean"
                     },
                     "method": {
-                      "description": "HTTP Method values are case-sensitive and formatted as follows: - `exact: \"value\"` for exact string match - `prefix: \"value\"` for prefix-based match - `regex: \"value\"` for RE2 style regex-based match (https://github.com/google/re2/wiki/Syntax).",
+                      "description": "HTTP Method values are case-sensitive and formatted as follows: - `exact: \"value\"` for exact string match - `prefix: \"value\"` for prefix-based match - `regex: \"value\"` for [RE2 style regex-based match](https://github.com/google/re2/wiki/Syntax).",
                       "oneOf": [
                         {
                           "not": {
@@ -566,7 +593,7 @@
                           "type": "string"
                         },
                         "regex": {
-                          "description": "RE2 style regex-based match (https://github.com/google/re2/wiki/Syntax).",
+                          "description": "[RE2 style regex-based match](https://github.com/google/re2/wiki/Syntax).",
                           "type": "string"
                         }
                       },
@@ -631,7 +658,7 @@
                             "type": "string"
                           },
                           "regex": {
-                            "description": "RE2 style regex-based match (https://github.com/google/re2/wiki/Syntax).",
+                            "description": "[RE2 style regex-based match](https://github.com/google/re2/wiki/Syntax).",
                             "type": "string"
                           }
                         },
@@ -642,7 +669,7 @@
                       "type": "object"
                     },
                     "scheme": {
-                      "description": "URI Scheme values are case-sensitive and formatted as follows: - `exact: \"value\"` for exact string match - `prefix: \"value\"` for prefix-based match - `regex: \"value\"` for RE2 style regex-based match (https://github.com/google/re2/wiki/Syntax).",
+                      "description": "URI Scheme values are case-sensitive and formatted as follows: - `exact: \"value\"` for exact string match - `prefix: \"value\"` for prefix-based match - `regex: \"value\"` for [RE2 style regex-based match](https://github.com/google/re2/wiki/Syntax).",
                       "oneOf": [
                         {
                           "not": {
@@ -689,7 +716,7 @@
                           "type": "string"
                         },
                         "regex": {
-                          "description": "RE2 style regex-based match (https://github.com/google/re2/wiki/Syntax).",
+                          "description": "[RE2 style regex-based match](https://github.com/google/re2/wiki/Syntax).",
                           "type": "string"
                         }
                       },
@@ -712,7 +739,7 @@
                       "type": "string"
                     },
                     "uri": {
-                      "description": "URI to match values are case-sensitive and formatted as follows: - `exact: \"value\"` for exact string match - `prefix: \"value\"` for prefix-based match - `regex: \"value\"` for RE2 style regex-based match (https://github.com/google/re2/wiki/Syntax).",
+                      "description": "URI to match values are case-sensitive and formatted as follows: - `exact: \"value\"` for exact string match - `prefix: \"value\"` for prefix-based match - `regex: \"value\"` for [RE2 style regex-based match](https://github.com/google/re2/wiki/Syntax).",
                       "oneOf": [
                         {
                           "not": {
@@ -759,7 +786,7 @@
                           "type": "string"
                         },
                         "regex": {
-                          "description": "RE2 style regex-based match (https://github.com/google/re2/wiki/Syntax).",
+                          "description": "[RE2 style regex-based match](https://github.com/google/re2/wiki/Syntax).",
                           "type": "string"
                         }
                       },
@@ -814,7 +841,7 @@
                             "type": "string"
                           },
                           "regex": {
-                            "description": "RE2 style regex-based match (https://github.com/google/re2/wiki/Syntax).",
+                            "description": "[RE2 style regex-based match](https://github.com/google/re2/wiki/Syntax).",
                             "type": "string"
                           }
                         },
@@ -1018,7 +1045,13 @@
                   },
                   "perTryTimeout": {
                     "description": "Timeout per attempt for a given request, including the initial call and any retries.",
-                    "type": "string"
+                    "type": "string",
+                    "x-kubernetes-validations": [
+                      {
+                        "message": "must be a valid duration greater than 1ms",
+                        "rule": "duration(self) >= duration('1ms')"
+                      }
+                    ]
                   },
                   "retryOn": {
                     "description": "Specifies the conditions under which retry takes place.",
@@ -1048,7 +1081,7 @@
                     "description": "rewrite the path portion of the URI with the specified regex.",
                     "properties": {
                       "match": {
-                        "description": "RE2 style regex-based match (https://github.com/google/re2/wiki/Syntax).",
+                        "description": "[RE2 style regex-based match](https://github.com/google/re2/wiki/Syntax).",
                         "type": "string"
                       },
                       "rewrite": {
@@ -1167,7 +1200,13 @@
               },
               "timeout": {
                 "description": "Timeout for HTTP requests, default is disabled.",
-                "type": "string"
+                "type": "string",
+                "x-kubernetes-validations": [
+                  {
+                    "message": "must be a valid duration greater than 1ms",
+                    "rule": "duration(self) >= duration('1ms')"
+                  }
+                ]
               }
             },
             "type": "object",
