@@ -10,7 +10,6 @@
               "audiences": {
                 "description": "The list of JWT [audiences](https://tools.ietf.org/html/rfc7519#section-4.1.3) that are allowed to access.",
                 "items": {
-                  "minLength": 1,
                   "type": "string"
                 },
                 "type": "array"
@@ -22,7 +21,6 @@
               "fromCookies": {
                 "description": "List of cookie names from which JWT is expected.",
                 "items": {
-                  "minLength": 1,
                   "type": "string"
                 },
                 "type": "array"
@@ -33,7 +31,6 @@
                   "properties": {
                     "name": {
                       "description": "The HTTP header name.",
-                      "minLength": 1,
                       "type": "string"
                     },
                     "prefix": {
@@ -52,14 +49,12 @@
               "fromParams": {
                 "description": "List of query parameters from which JWT is expected.",
                 "items": {
-                  "minLength": 1,
                   "type": "string"
                 },
                 "type": "array"
               },
               "issuer": {
                 "description": "Identifies the issuer that issued the JWT.",
-                "minLength": 1,
                 "type": "string"
               },
               "jwks": {
@@ -68,27 +63,11 @@
               },
               "jwks_uri": {
                 "description": "URL of the provider's public key set to validate signature of the JWT.",
-                "maxLength": 2048,
-                "minLength": 1,
-                "type": "string",
-                "x-kubernetes-validations": [
-                  {
-                    "message": "url must have scheme http:// or https://",
-                    "rule": "url(self).getScheme() in ['http', 'https']"
-                  }
-                ]
+                "type": "string"
               },
               "jwksUri": {
                 "description": "URL of the provider's public key set to validate signature of the JWT.",
-                "maxLength": 2048,
-                "minLength": 1,
-                "type": "string",
-                "x-kubernetes-validations": [
-                  {
-                    "message": "url must have scheme http:// or https://",
-                    "rule": "url(self).getScheme() in ['http', 'https']"
-                  }
-                ]
+                "type": "string"
               },
               "outputClaimToHeaders": {
                 "description": "This field specifies a list of operations to copy the claim to HTTP headers on a successfully verified token.",
@@ -96,20 +75,13 @@
                   "properties": {
                     "claim": {
                       "description": "The name of the claim to be copied from.",
-                      "minLength": 1,
                       "type": "string"
                     },
                     "header": {
                       "description": "The name of the header to be created.",
-                      "minLength": 1,
-                      "pattern": "^[-_A-Za-z0-9]+$",
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "header",
-                    "claim"
-                  ],
                   "type": "object",
                   "additionalProperties": false
                 },
@@ -121,28 +93,15 @@
               },
               "timeout": {
                 "description": "The maximum amount of time that the resolver, determined by the PILOT_JWT_ENABLE_REMOTE_JWKS environment variable, will spend waiting for the JWKS to be fetched.",
-                "type": "string",
-                "x-kubernetes-validations": [
-                  {
-                    "message": "must be a valid duration greater than 1ms",
-                    "rule": "duration(self) >= duration('1ms')"
-                  }
-                ]
+                "type": "string"
               }
             },
             "required": [
               "issuer"
             ],
             "type": "object",
-            "x-kubernetes-validations": [
-              {
-                "message": "only one of jwks or jwksUri can be set",
-                "rule": "(has(self.jwksUri)?1:0)+(has(self.jwks_uri)?1:0)+(has(self.jwks)?1:0)<=1"
-              }
-            ],
             "additionalProperties": false
           },
-          "maxItems": 4096,
           "type": "array"
         },
         "selector": {
@@ -150,28 +109,10 @@
           "properties": {
             "matchLabels": {
               "additionalProperties": {
-                "maxLength": 63,
-                "type": "string",
-                "x-kubernetes-validations": [
-                  {
-                    "message": "wildcard not allowed in label value match",
-                    "rule": "!self.contains('*')"
-                  }
-                ]
+                "type": "string"
               },
               "description": "One or more labels that indicate a specific set of pods/VMs on which a policy should be applied.",
-              "maxProperties": 4096,
-              "type": "object",
-              "x-kubernetes-validations": [
-                {
-                  "message": "wildcard not allowed in label key match",
-                  "rule": "self.all(key, !key.contains('*'))"
-                },
-                {
-                  "message": "key must not be empty",
-                  "rule": "self.all(key, key.size() != 0)"
-                }
-              ]
+              "type": "object"
             }
           },
           "type": "object",
@@ -181,45 +122,22 @@
           "properties": {
             "group": {
               "description": "group is the group of the target resource.",
-              "maxLength": 253,
-              "pattern": "^$|^[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*$",
               "type": "string"
             },
             "kind": {
               "description": "kind is kind of the target resource.",
-              "maxLength": 63,
-              "minLength": 1,
-              "pattern": "^[a-zA-Z]([-a-zA-Z0-9]*[a-zA-Z0-9])?$",
               "type": "string"
             },
             "name": {
               "description": "name is the name of the target resource.",
-              "maxLength": 253,
-              "minLength": 1,
               "type": "string"
             },
             "namespace": {
               "description": "namespace is the namespace of the referent.",
-              "type": "string",
-              "x-kubernetes-validations": [
-                {
-                  "message": "cross namespace referencing is not currently supported",
-                  "rule": "self.size() == 0"
-                }
-              ]
+              "type": "string"
             }
           },
-          "required": [
-            "kind",
-            "name"
-          ],
           "type": "object",
-          "x-kubernetes-validations": [
-            {
-              "message": "Support kinds are core/Service and gateway.networking.k8s.io/Gateway",
-              "rule": "[self.group, self.kind] in [['core','Service'], ['','Service'], ['gateway.networking.k8s.io','Gateway']]"
-            }
-          ],
           "additionalProperties": false
         },
         "targetRefs": {
@@ -228,57 +146,28 @@
             "properties": {
               "group": {
                 "description": "group is the group of the target resource.",
-                "maxLength": 253,
-                "pattern": "^$|^[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*$",
                 "type": "string"
               },
               "kind": {
                 "description": "kind is kind of the target resource.",
-                "maxLength": 63,
-                "minLength": 1,
-                "pattern": "^[a-zA-Z]([-a-zA-Z0-9]*[a-zA-Z0-9])?$",
                 "type": "string"
               },
               "name": {
                 "description": "name is the name of the target resource.",
-                "maxLength": 253,
-                "minLength": 1,
                 "type": "string"
               },
               "namespace": {
                 "description": "namespace is the namespace of the referent.",
-                "type": "string",
-                "x-kubernetes-validations": [
-                  {
-                    "message": "cross namespace referencing is not currently supported",
-                    "rule": "self.size() == 0"
-                  }
-                ]
+                "type": "string"
               }
             },
-            "required": [
-              "kind",
-              "name"
-            ],
             "type": "object",
-            "x-kubernetes-validations": [
-              {
-                "message": "Support kinds are core/Service and gateway.networking.k8s.io/Gateway",
-                "rule": "[self.group, self.kind] in [['core','Service'], ['','Service'], ['gateway.networking.k8s.io','Gateway']]"
-              }
-            ],
             "additionalProperties": false
           },
           "type": "array"
         }
       },
       "type": "object",
-      "x-kubernetes-validations": [
-        {
-          "message": "only one of targetRefs or workloadSelector can be set",
-          "rule": "(has(self.selector)?1:0)+(has(self.targetRef)?1:0)+(has(self.targetRefs)?1:0)<=1"
-        }
-      ],
       "additionalProperties": false
     },
     "status": {
