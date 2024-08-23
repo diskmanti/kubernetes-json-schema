@@ -616,6 +616,9 @@
               "aggregatorName": {
                 "type": "string"
               },
+              "assumeRole": {
+                "type": "string"
+              },
               "connection": {
                 "description": "ConnectionName of the connection. It'll be used to populate the endpoint, accessKey and secretKey.",
                 "type": "string"
@@ -1196,6 +1199,9 @@
                 },
                 "type": "object",
                 "additionalProperties": false
+              },
+              "assumeRole": {
+                "type": "string"
               },
               "complianceTypes": {
                 "description": "Filters the results by compliance. The allowed values are INSUFFICIENT_DATA, NON_COMPLIANT, NOT_APPLICABLE, COMPLIANT",
@@ -2685,6 +2691,9 @@
                   "type": "string"
                 },
                 "type": "array"
+              },
+              "assumeRole": {
+                "type": "string"
               },
               "connection": {
                 "description": "ConnectionName of the connection. It'll be used to populate the endpoint, accessKey and secretKey.",
@@ -7007,6 +7016,9 @@
                         "type": "object",
                         "additionalProperties": false
                       },
+                      "assumeRole": {
+                        "type": "string"
+                      },
                       "connection": {
                         "description": "ConnectionName of the connection. It'll be used to populate the endpoint, accessKey and secretKey.",
                         "type": "string"
@@ -7903,6 +7915,9 @@
                     },
                     "type": "object",
                     "additionalProperties": false
+                  },
+                  "assumeRole": {
+                    "type": "string"
                   },
                   "bucket": {
                     "type": "string"
@@ -18796,6 +18811,9 @@
                 },
                 "type": "object",
                 "additionalProperties": false
+              },
+              "assumeRole": {
+                "type": "string"
               },
               "bucket": {
                 "type": "string"
