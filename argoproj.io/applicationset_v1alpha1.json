@@ -57,7 +57,6 @@
                       }
                     },
                     "type": "object",
-                    "x-kubernetes-map-type": "atomic",
                     "additionalProperties": false
                   },
                   "name": {
@@ -1016,7 +1015,6 @@
                       }
                     },
                     "type": "object",
-                    "x-kubernetes-map-type": "atomic",
                     "additionalProperties": false
                   },
                   "template": {
@@ -3848,7 +3846,6 @@
                                 }
                               },
                               "type": "object",
-                              "x-kubernetes-map-type": "atomic",
                               "additionalProperties": false
                             },
                             "name": {
@@ -4807,7 +4804,6 @@
                                 }
                               },
                               "type": "object",
-                              "x-kubernetes-map-type": "atomic",
                               "additionalProperties": false
                             },
                             "template": {
@@ -11019,7 +11015,6 @@
                             }
                           },
                           "type": "object",
-                          "x-kubernetes-map-type": "atomic",
                           "additionalProperties": false
                         }
                       },
@@ -11979,7 +11974,6 @@
                                 }
                               },
                               "type": "object",
-                              "x-kubernetes-map-type": "atomic",
                               "additionalProperties": false
                             },
                             "name": {
@@ -12938,7 +12932,6 @@
                                 }
                               },
                               "type": "object",
-                              "x-kubernetes-map-type": "atomic",
                               "additionalProperties": false
                             },
                             "template": {
@@ -19150,7 +19143,6 @@
                             }
                           },
                           "type": "object",
-                          "x-kubernetes-map-type": "atomic",
                           "additionalProperties": false
                         }
                       },
@@ -23491,7 +23483,6 @@
                   }
                 },
                 "type": "object",
-                "x-kubernetes-map-type": "atomic",
                 "additionalProperties": false
               }
             },
@@ -24555,20 +24546,13 @@
               },
               "step": {
                 "type": "string"
-              },
-              "targetRevisions": {
-                "items": {
-                  "type": "string"
-                },
-                "type": "array"
               }
             },
             "required": [
               "application",
               "message",
               "status",
-              "step",
-              "targetRevisions"
+              "step"
             ],
             "type": "object",
             "additionalProperties": false
@@ -24601,55 +24585,6 @@
               "status",
               "type"
             ],
-            "type": "object",
-            "additionalProperties": false
-          },
-          "type": "array"
-        },
-        "resources": {
-          "items": {
-            "properties": {
-              "group": {
-                "type": "string"
-              },
-              "health": {
-                "properties": {
-                  "message": {
-                    "type": "string"
-                  },
-                  "status": {
-                    "type": "string"
-                  }
-                },
-                "type": "object",
-                "additionalProperties": false
-              },
-              "hook": {
-                "type": "boolean"
-              },
-              "kind": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "namespace": {
-                "type": "string"
-              },
-              "requiresPruning": {
-                "type": "boolean"
-              },
-              "status": {
-                "type": "string"
-              },
-              "syncWave": {
-                "format": "int64",
-                "type": "integer"
-              },
-              "version": {
-                "type": "string"
-              }
-            },
             "type": "object",
             "additionalProperties": false
           },
