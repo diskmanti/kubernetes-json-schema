@@ -889,6 +889,9 @@
                     "followRedirects": {
                       "type": "boolean"
                     },
+                    "noProxy": {
+                      "type": "string"
+                    },
                     "oauth2": {
                       "properties": {
                         "clientId": {
@@ -1161,7 +1164,38 @@
                       "type": "object",
                       "additionalProperties": false
                     },
-                    "proxyURL": {
+                    "proxyConnectHeader": {
+                      "additionalProperties": {
+                        "items": {
+                          "properties": {
+                            "key": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "default": "",
+                              "type": "string"
+                            },
+                            "optional": {
+                              "type": "boolean"
+                            }
+                          },
+                          "required": [
+                            "key"
+                          ],
+                          "type": "object",
+                          "x-kubernetes-map-type": "atomic",
+                          "additionalProperties": false
+                        },
+                        "type": "array"
+                      },
+                      "type": "object",
+                      "x-kubernetes-map-type": "atomic"
+                    },
+                    "proxyFromEnvironment": {
+                      "type": "boolean"
+                    },
+                    "proxyUrl": {
+                      "pattern": "^http(s)?://.+$",
                       "type": "string"
                     },
                     "tlsConfig": {
@@ -1966,6 +2000,7 @@
                         "type": "integer"
                       },
                       "service": {
+                        "default": "",
                         "type": "string"
                       }
                     },
@@ -2135,6 +2170,7 @@
                         "type": "integer"
                       },
                       "service": {
+                        "default": "",
                         "type": "string"
                       }
                     },
@@ -2266,6 +2302,9 @@
                     "items": {
                       "properties": {
                         "name": {
+                          "type": "string"
+                        },
+                        "request": {
                           "type": "string"
                         }
                       },
@@ -2459,6 +2498,7 @@
                         "type": "integer"
                       },
                       "service": {
+                        "default": "",
                         "type": "string"
                       }
                     },
@@ -3132,6 +3172,7 @@
                         "type": "integer"
                       },
                       "service": {
+                        "default": "",
                         "type": "string"
                       }
                     },
@@ -3301,6 +3342,7 @@
                         "type": "integer"
                       },
                       "service": {
+                        "default": "",
                         "type": "string"
                       }
                     },
@@ -3432,6 +3474,9 @@
                     "items": {
                       "properties": {
                         "name": {
+                          "type": "string"
+                        },
+                        "request": {
                           "type": "string"
                         }
                       },
@@ -3625,6 +3670,7 @@
                         "type": "integer"
                       },
                       "service": {
+                        "default": "",
                         "type": "string"
                       }
                     },
@@ -3891,6 +3937,9 @@
                 "properties": {
                   "name": {
                     "type": "string"
+                  },
+                  "request": {
+                    "type": "string"
                   }
                 },
                 "required": [
@@ -4028,6 +4077,9 @@
               },
               "type": "array",
               "x-kubernetes-list-type": "atomic"
+            },
+            "supplementalGroupsPolicy": {
+              "type": "string"
             },
             "sysctls": {
               "items": {
@@ -4735,12 +4787,14 @@
                     "type": "string"
                   },
                   "fsType": {
+                    "default": "ext4",
                     "type": "string"
                   },
                   "kind": {
                     "type": "string"
                   },
                   "readOnly": {
+                    "default": false,
                     "type": "boolean"
                   }
                 },
@@ -5322,6 +5376,18 @@
                 "type": "object",
                 "additionalProperties": false
               },
+              "image": {
+                "properties": {
+                  "pullPolicy": {
+                    "type": "string"
+                  },
+                  "reference": {
+                    "type": "string"
+                  }
+                },
+                "type": "object",
+                "additionalProperties": false
+              },
               "iscsi": {
                 "properties": {
                   "chapAuthDiscovery": {
@@ -5340,6 +5406,7 @@
                     "type": "string"
                   },
                   "iscsiInterface": {
+                    "default": "default",
                     "type": "string"
                   },
                   "lun": {
@@ -5732,6 +5799,7 @@
                     "type": "string"
                   },
                   "keyring": {
+                    "default": "/etc/ceph/keyring",
                     "type": "string"
                   },
                   "monitors": {
@@ -5742,6 +5810,7 @@
                     "x-kubernetes-list-type": "atomic"
                   },
                   "pool": {
+                    "default": "rbd",
                     "type": "string"
                   },
                   "readOnly": {
@@ -5759,6 +5828,7 @@
                     "additionalProperties": false
                   },
                   "user": {
+                    "default": "admin",
                     "type": "string"
                   }
                 },
@@ -5772,6 +5842,7 @@
               "scaleIO": {
                 "properties": {
                   "fsType": {
+                    "default": "xfs",
                     "type": "string"
                   },
                   "gateway": {
@@ -5798,6 +5869,7 @@
                     "type": "boolean"
                   },
                   "storageMode": {
+                    "default": "ThinProvisioned",
                     "type": "string"
                   },
                   "storagePool": {
@@ -6014,6 +6086,9 @@
                   "type": "object",
                   "additionalProperties": false
                 },
+                "certFile": {
+                  "type": "string"
+                },
                 "cipherSuites": {
                   "items": {
                     "type": "string"
@@ -6069,11 +6144,17 @@
                 "clientAuthType": {
                   "type": "string"
                 },
+                "clientCAFile": {
+                  "type": "string"
+                },
                 "curvePreferences": {
                   "items": {
                     "type": "string"
                   },
                   "type": "array"
+                },
+                "keyFile": {
+                  "type": "string"
                 },
                 "keySecret": {
                   "properties": {
@@ -6105,10 +6186,6 @@
                   "type": "boolean"
                 }
               },
-              "required": [
-                "cert",
-                "keySecret"
-              ],
               "type": "object",
               "additionalProperties": false
             }
