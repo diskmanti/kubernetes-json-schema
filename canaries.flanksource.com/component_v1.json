@@ -28,6 +28,9 @@
           "type": "array",
           "x-kubernetes-preserve-unknown-fields": true
         },
+        "configID": {
+          "type": "string"
+        },
         "configs": {
           "description": "Lookup and associate config items with this component",
           "items": {
@@ -61,6 +64,9 @@
               "labelSelector": {
                 "type": "string"
               },
+              "limit": {
+                "type": "integer"
+              },
               "name": {
                 "type": "string"
               },
@@ -75,6 +81,7 @@
                 "type": "string"
               },
               "statuses": {
+                "description": "StringArray represents a one-dimensional array of the PostgreSQL character types.",
                 "items": {
                   "type": "string"
                 },
@@ -95,6 +102,7 @@
                 "type": "string"
               },
               "types": {
+                "description": "StringArray represents a one-dimensional array of the PostgreSQL character types.",
                 "items": {
                   "type": "string"
                 },
@@ -115,6 +123,10 @@
           "x-kubernetes-preserve-unknown-fields": true
         },
         "health": {
+          "type": "string"
+        },
+        "healthExpr": {
+          "description": "healthExpr allows defining a cel expression to evaluate the health of a component\nbased on the summary.",
           "type": "string"
         },
         "hidden": {
@@ -249,6 +261,9 @@
                       "labelSelector": {
                         "type": "string"
                       },
+                      "limit": {
+                        "type": "integer"
+                      },
                       "name": {
                         "type": "string"
                       },
@@ -263,6 +278,7 @@
                         "type": "string"
                       },
                       "statuses": {
+                        "description": "StringArray represents a one-dimensional array of the PostgreSQL character types.",
                         "items": {
                           "type": "string"
                         },
@@ -283,6 +299,7 @@
                         "type": "string"
                       },
                       "types": {
+                        "description": "StringArray represents a one-dimensional array of the PostgreSQL character types.",
                         "items": {
                           "type": "string"
                         },
@@ -466,6 +483,9 @@
               "labelSelector": {
                 "type": "string"
               },
+              "limit": {
+                "type": "integer"
+              },
               "name": {
                 "type": "string"
               },
@@ -480,6 +500,7 @@
                 "type": "string"
               },
               "statuses": {
+                "description": "StringArray represents a one-dimensional array of the PostgreSQL character types.",
                 "items": {
                   "type": "string"
                 },
@@ -489,6 +510,7 @@
                 "type": "string"
               },
               "types": {
+                "description": "StringArray represents a one-dimensional array of the PostgreSQL character types.",
                 "items": {
                   "type": "string"
                 },
@@ -501,7 +523,7 @@
           "type": "array"
         },
         "statusExpr": {
-          "description": "statusExpr allows defining a cel expression to evaluate the status of a component\nbased on the summary and the related config",
+          "description": "statusExpr allows defining a cel expression to evaluate the status of a component\nbased on the summary.",
           "type": "string"
         },
         "summary": {
