@@ -2525,6 +2525,9 @@
                     "labelSelector": {
                       "type": "string"
                     },
+                    "limit": {
+                      "type": "integer"
+                    },
                     "name": {
                       "type": "string"
                     },
@@ -2539,6 +2542,7 @@
                       "type": "string"
                     },
                     "statuses": {
+                      "description": "StringArray represents a one-dimensional array of the PostgreSQL character types.",
                       "items": {
                         "type": "string"
                       },
@@ -2548,6 +2552,7 @@
                       "type": "string"
                     },
                     "types": {
+                      "description": "StringArray represents a one-dimensional array of the PostgreSQL character types.",
                       "items": {
                         "type": "string"
                       },
@@ -4080,6 +4085,10 @@
                       },
                       "endpoint": {
                         "type": "string"
+                      },
+                      "skipTLSVerify": {
+                        "description": "Skip TLS verify",
+                        "type": "boolean"
                       }
                     },
                     "type": "object",
@@ -7397,6 +7406,10 @@
                       },
                       "endpoint": {
                         "type": "string"
+                      },
+                      "skipTLSVerify": {
+                        "description": "Skip TLS verify",
+                        "type": "boolean"
                       }
                     },
                     "type": "object",
@@ -8209,6 +8222,10 @@
                   },
                   "endpoint": {
                     "type": "string"
+                  },
+                  "skipTLSVerify": {
+                    "description": "Skip TLS verify",
+                    "type": "boolean"
                   }
                 },
                 "type": "object",
@@ -8681,9 +8698,6 @@
                     "additionalProperties": false
                   }
                 },
-                "required": [
-                  "host"
-                ],
                 "type": "object",
                 "additionalProperties": false
               },
@@ -8694,7 +8708,6 @@
                     "type": "string"
                   },
                   "domain": {
-                    "description": "Domain...",
                     "type": "string"
                   },
                   "password": {
@@ -8768,6 +8781,9 @@
                   "port": {
                     "description": "Port on which smb server is running. Defaults to 445",
                     "type": "integer"
+                  },
+                  "share": {
+                    "type": "string"
                   },
                   "username": {
                     "properties": {
