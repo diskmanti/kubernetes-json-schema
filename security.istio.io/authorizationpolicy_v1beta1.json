@@ -22,7 +22,7 @@
       ],
       "properties": {
         "action": {
-          "description": "Optional.\n\nValid Options: ALLOW, DENY, AUDIT, CUSTOM",
+          "description": "Optional.",
           "enum": [
             "ALLOW",
             "DENY",
@@ -258,6 +258,7 @@
           "additionalProperties": false
         },
         "targetRef": {
+          "description": "Optional.",
           "properties": {
             "group": {
               "description": "group is the group of the target resource.",
@@ -278,32 +279,6 @@
           },
           "type": "object",
           "additionalProperties": false
-        },
-        "targetRefs": {
-          "description": "Optional.",
-          "items": {
-            "properties": {
-              "group": {
-                "description": "group is the group of the target resource.",
-                "type": "string"
-              },
-              "kind": {
-                "description": "kind is kind of the target resource.",
-                "type": "string"
-              },
-              "name": {
-                "description": "name is the name of the target resource.",
-                "type": "string"
-              },
-              "namespace": {
-                "description": "namespace is the namespace of the referent.",
-                "type": "string"
-              }
-            },
-            "type": "object",
-            "additionalProperties": false
-          },
-          "type": "array"
         }
       },
       "type": "object",
