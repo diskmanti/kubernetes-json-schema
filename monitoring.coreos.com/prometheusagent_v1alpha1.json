@@ -1409,6 +1409,7 @@
                         "type": "integer"
                       },
                       "service": {
+                        "default": "",
                         "type": "string"
                       }
                     },
@@ -1578,6 +1579,7 @@
                         "type": "integer"
                       },
                       "service": {
+                        "default": "",
                         "type": "string"
                       }
                     },
@@ -1709,6 +1711,9 @@
                     "items": {
                       "properties": {
                         "name": {
+                          "type": "string"
+                        },
+                        "request": {
                           "type": "string"
                         }
                       },
@@ -1902,6 +1907,7 @@
                         "type": "integer"
                       },
                       "service": {
+                        "default": "",
                         "type": "string"
                       }
                     },
@@ -2657,6 +2663,7 @@
                         "type": "integer"
                       },
                       "service": {
+                        "default": "",
                         "type": "string"
                       }
                     },
@@ -2826,6 +2833,7 @@
                         "type": "integer"
                       },
                       "service": {
+                        "default": "",
                         "type": "string"
                       }
                     },
@@ -2957,6 +2965,9 @@
                     "items": {
                       "properties": {
                         "name": {
+                          "type": "string"
+                        },
+                        "request": {
                           "type": "string"
                         }
                       },
@@ -3150,6 +3161,7 @@
                         "type": "integer"
                       },
                       "service": {
+                        "default": "",
                         "type": "string"
                       }
                     },
@@ -3401,6 +3413,21 @@
             "type": "string"
           },
           "type": "object"
+        },
+        "otlp": {
+          "properties": {
+            "promoteResourceAttributes": {
+              "items": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array",
+              "x-kubernetes-list-type": "set"
+            }
+          },
+          "type": "object",
+          "additionalProperties": false
         },
         "overrideHonorLabels": {
           "type": "boolean"
@@ -4469,6 +4496,9 @@
                 "properties": {
                   "name": {
                     "type": "string"
+                  },
+                  "request": {
+                    "type": "string"
                   }
                 },
                 "required": [
@@ -5011,6 +5041,9 @@
               },
               "type": "array",
               "x-kubernetes-list-type": "atomic"
+            },
+            "supplementalGroupsPolicy": {
+              "type": "string"
             },
             "sysctls": {
               "items": {
@@ -5942,6 +5975,16 @@
           "type": "object",
           "additionalProperties": false
         },
+        "tsdb": {
+          "properties": {
+            "outOfOrderTimeWindow": {
+              "pattern": "^(0|(([0-9]+)y)?(([0-9]+)w)?(([0-9]+)d)?(([0-9]+)h)?(([0-9]+)m)?(([0-9]+)s)?(([0-9]+)ms)?)$",
+              "type": "string"
+            }
+          },
+          "type": "object",
+          "additionalProperties": false
+        },
         "version": {
           "type": "string"
         },
@@ -6016,12 +6059,14 @@
                     "type": "string"
                   },
                   "fsType": {
+                    "default": "ext4",
                     "type": "string"
                   },
                   "kind": {
                     "type": "string"
                   },
                   "readOnly": {
+                    "default": false,
                     "type": "boolean"
                   }
                 },
@@ -6603,6 +6648,18 @@
                 "type": "object",
                 "additionalProperties": false
               },
+              "image": {
+                "properties": {
+                  "pullPolicy": {
+                    "type": "string"
+                  },
+                  "reference": {
+                    "type": "string"
+                  }
+                },
+                "type": "object",
+                "additionalProperties": false
+              },
               "iscsi": {
                 "properties": {
                   "chapAuthDiscovery": {
@@ -6621,6 +6678,7 @@
                     "type": "string"
                   },
                   "iscsiInterface": {
+                    "default": "default",
                     "type": "string"
                   },
                   "lun": {
@@ -7013,6 +7071,7 @@
                     "type": "string"
                   },
                   "keyring": {
+                    "default": "/etc/ceph/keyring",
                     "type": "string"
                   },
                   "monitors": {
@@ -7023,6 +7082,7 @@
                     "x-kubernetes-list-type": "atomic"
                   },
                   "pool": {
+                    "default": "rbd",
                     "type": "string"
                   },
                   "readOnly": {
@@ -7040,6 +7100,7 @@
                     "additionalProperties": false
                   },
                   "user": {
+                    "default": "admin",
                     "type": "string"
                   }
                 },
@@ -7053,6 +7114,7 @@
               "scaleIO": {
                 "properties": {
                   "fsType": {
+                    "default": "xfs",
                     "type": "string"
                   },
                   "gateway": {
@@ -7079,6 +7141,7 @@
                     "type": "boolean"
                   },
                   "storageMode": {
+                    "default": "ThinProvisioned",
                     "type": "string"
                   },
                   "storagePool": {
@@ -7298,6 +7361,9 @@
                   "type": "object",
                   "additionalProperties": false
                 },
+                "certFile": {
+                  "type": "string"
+                },
                 "cipherSuites": {
                   "items": {
                     "type": "string"
@@ -7353,11 +7419,17 @@
                 "clientAuthType": {
                   "type": "string"
                 },
+                "clientCAFile": {
+                  "type": "string"
+                },
                 "curvePreferences": {
                   "items": {
                     "type": "string"
                   },
                   "type": "array"
+                },
+                "keyFile": {
+                  "type": "string"
                 },
                 "keySecret": {
                   "properties": {
@@ -7389,10 +7461,6 @@
                   "type": "boolean"
                 }
               },
-              "required": [
-                "cert",
-                "keySecret"
-              ],
               "type": "object",
               "additionalProperties": false
             }
