@@ -1,5 +1,5 @@
 {
-  "description": "HelmChart is the Schema for the helmcharts API.",
+  "description": "Bucket is the Schema for the buckets API.",
   "properties": {
     "apiVersion": {
       "description": "APIVersion defines the versioned schema of this representation of an object.\nServers should convert recognized schemas to the latest internal value, and\nmay reject unrecognized values.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
@@ -13,138 +13,122 @@
       "type": "object"
     },
     "spec": {
-      "description": "HelmChartSpec specifies the desired state of a Helm chart.",
+      "description": "BucketSpec specifies the required configuration to produce an Artifact for\nan object storage bucket.",
       "properties": {
-        "accessFrom": {
-          "description": "AccessFrom specifies an Access Control List for allowing cross-namespace\nreferences to this object.\nNOTE: Not implemented, provisional as of https://github.com/fluxcd/flux2/pull/2092",
+        "bucketName": {
+          "description": "BucketName is the name of the object storage bucket.",
+          "type": "string"
+        },
+        "certSecretRef": {
+          "description": "CertSecretRef can be given the name of a Secret containing\neither or both of\n\n- a PEM-encoded client certificate (`tls.crt`) and private\nkey (`tls.key`);\n- a PEM-encoded CA certificate (`ca.crt`)\n\nand whichever are supplied, will be used for connecting to the\nbucket. The client cert and key are useful if you are\nauthenticating with a certificate; the CA cert is useful if\nyou are using a self-signed server certificate. The Secret must\nbe of type `Opaque` or `kubernetes.io/tls`.\n\nThis field is only supported for the `generic` provider.",
           "properties": {
-            "namespaceSelectors": {
-              "description": "NamespaceSelectors is the list of namespace selectors to which this ACL applies.\nItems in this list are evaluated using a logical OR operation.",
-              "items": {
-                "description": "NamespaceSelector selects the namespaces to which this ACL applies.\nAn empty map of MatchLabels matches all namespaces in a cluster.",
-                "properties": {
-                  "matchLabels": {
-                    "additionalProperties": {
-                      "type": "string"
-                    },
-                    "description": "MatchLabels is a map of {key,value} pairs. A single {key,value} in the matchLabels\nmap is equivalent to an element of matchExpressions, whose key field is \"key\", the\noperator is \"In\", and the values array contains only \"value\". The requirements are ANDed.",
-                    "type": "object"
-                  }
-                },
-                "type": "object",
-                "additionalProperties": false
-              },
-              "type": "array"
-            }
-          },
-          "required": [
-            "namespaceSelectors"
-          ],
-          "type": "object",
-          "additionalProperties": false
-        },
-        "chart": {
-          "description": "Chart is the name or path the Helm chart is available at in the\nSourceRef.",
-          "type": "string"
-        },
-        "ignoreMissingValuesFiles": {
-          "description": "IgnoreMissingValuesFiles controls whether to silently ignore missing values\nfiles rather than failing.",
-          "type": "boolean"
-        },
-        "interval": {
-          "description": "Interval at which the HelmChart SourceRef is checked for updates.\nThis interval is approximate and may be subject to jitter to ensure\nefficient use of resources.",
-          "pattern": "^([0-9]+(\\.[0-9]+)?(ms|s|m|h))+$",
-          "type": "string"
-        },
-        "reconcileStrategy": {
-          "default": "ChartVersion",
-          "description": "ReconcileStrategy determines what enables the creation of a new artifact.\nValid values are ('ChartVersion', 'Revision').\nSee the documentation of the values for an explanation on their behavior.\nDefaults to ChartVersion when omitted.",
-          "enum": [
-            "ChartVersion",
-            "Revision"
-          ],
-          "type": "string"
-        },
-        "sourceRef": {
-          "description": "SourceRef is the reference to the Source the chart is available at.",
-          "properties": {
-            "apiVersion": {
-              "description": "APIVersion of the referent.",
-              "type": "string"
-            },
-            "kind": {
-              "description": "Kind of the referent, valid values are ('HelmRepository', 'GitRepository',\n'Bucket').",
-              "enum": [
-                "HelmRepository",
-                "GitRepository",
-                "Bucket"
-              ],
-              "type": "string"
-            },
             "name": {
               "description": "Name of the referent.",
               "type": "string"
             }
           },
           "required": [
-            "kind",
             "name"
           ],
           "type": "object",
           "additionalProperties": false
         },
-        "suspend": {
-          "description": "Suspend tells the controller to suspend the reconciliation of this\nsource.",
-          "type": "boolean"
-        },
-        "valuesFile": {
-          "description": "ValuesFile is an alternative values file to use as the default chart\nvalues, expected to be a relative path in the SourceRef. Deprecated in\nfavor of ValuesFiles, for backwards compatibility the file specified here\nis merged before the ValuesFiles items. Ignored when omitted.",
+        "endpoint": {
+          "description": "Endpoint is the object storage address the BucketName is located at.",
           "type": "string"
         },
-        "valuesFiles": {
-          "description": "ValuesFiles is an alternative list of values files to use as the chart\nvalues (values.yaml is not included by default), expected to be a\nrelative path in the SourceRef.\nValues files are merged in the order of this list with the last file\noverriding the first. Ignored when omitted.",
-          "items": {
-            "type": "string"
-          },
-          "type": "array"
+        "ignore": {
+          "description": "Ignore overrides the set of excluded patterns in the .sourceignore format\n(which is the same as .gitignore). If not provided, a default will be used,\nconsult the documentation for your version to find out what those are.",
+          "type": "string"
         },
-        "verify": {
-          "description": "Verify contains the secret name containing the trusted public keys\nused to verify the signature and specifies which provider to use to check\nwhether OCI image is authentic.\nThis field is only supported when using HelmRepository source with spec.type 'oci'.\nChart dependencies, which are not bundled in the umbrella chart artifact, are not verified.",
+        "insecure": {
+          "description": "Insecure allows connecting to a non-TLS HTTP Endpoint.",
+          "type": "boolean"
+        },
+        "interval": {
+          "description": "Interval at which the Bucket Endpoint is checked for updates.\nThis interval is approximate and may be subject to jitter to ensure\nefficient use of resources.",
+          "pattern": "^([0-9]+(\\.[0-9]+)?(ms|s|m|h))+$",
+          "type": "string"
+        },
+        "prefix": {
+          "description": "Prefix to use for server-side filtering of files in the Bucket.",
+          "type": "string"
+        },
+        "provider": {
+          "default": "generic",
+          "description": "Provider of the object storage bucket.\nDefaults to 'generic', which expects an S3 (API) compatible object\nstorage.",
+          "enum": [
+            "generic",
+            "aws",
+            "gcp",
+            "azure"
+          ],
+          "type": "string"
+        },
+        "proxySecretRef": {
+          "description": "ProxySecretRef specifies the Secret containing the proxy configuration\nto use while communicating with the Bucket server.",
           "properties": {
-            "matchOIDCIdentity": {
-              "description": "MatchOIDCIdentity specifies the identity matching criteria to use\nwhile verifying an OCI artifact which was signed using Cosign keyless\nsigning. The artifact's identity is deemed to be verified if any of the\nspecified matchers match against the identity.",
-              "items": {
-                "description": "OIDCIdentityMatch specifies options for verifying the certificate identity,\ni.e. the issuer and the subject of the certificate.",
-                "properties": {
-                  "issuer": {
-                    "description": "Issuer specifies the regex pattern to match against to verify\nthe OIDC issuer in the Fulcio certificate. The pattern must be a\nvalid Go regular expression.",
-                    "type": "string"
-                  },
-                  "subject": {
-                    "description": "Subject specifies the regex pattern to match against to verify\nthe identity subject in the Fulcio certificate. The pattern must\nbe a valid Go regular expression.",
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "issuer",
-                  "subject"
-                ],
-                "type": "object",
-                "additionalProperties": false
+            "name": {
+              "description": "Name of the referent.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "type": "object",
+          "additionalProperties": false
+        },
+        "region": {
+          "description": "Region of the Endpoint where the BucketName is located in.",
+          "type": "string"
+        },
+        "secretRef": {
+          "description": "SecretRef specifies the Secret containing authentication credentials\nfor the Bucket.",
+          "properties": {
+            "name": {
+              "description": "Name of the referent.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "type": "object",
+          "additionalProperties": false
+        },
+        "sts": {
+          "description": "STS specifies the required configuration to use a Security Token\nService for fetching temporary credentials to authenticate in a\nBucket provider.\n\nThis field is only supported for the `aws` and `generic` providers.",
+          "properties": {
+            "certSecretRef": {
+              "description": "CertSecretRef can be given the name of a Secret containing\neither or both of\n\n- a PEM-encoded client certificate (`tls.crt`) and private\nkey (`tls.key`);\n- a PEM-encoded CA certificate (`ca.crt`)\n\nand whichever are supplied, will be used for connecting to the\nSTS endpoint. The client cert and key are useful if you are\nauthenticating with a certificate; the CA cert is useful if\nyou are using a self-signed server certificate. The Secret must\nbe of type `Opaque` or `kubernetes.io/tls`.\n\nThis field is only supported for the `ldap` provider.",
+              "properties": {
+                "name": {
+                  "description": "Name of the referent.",
+                  "type": "string"
+                }
               },
-              "type": "array"
+              "required": [
+                "name"
+              ],
+              "type": "object",
+              "additionalProperties": false
+            },
+            "endpoint": {
+              "description": "Endpoint is the HTTP/S endpoint of the Security Token Service from\nwhere temporary credentials will be fetched.",
+              "pattern": "^(http|https)://.*$",
+              "type": "string"
             },
             "provider": {
-              "default": "cosign",
-              "description": "Provider specifies the technology used to sign the OCI Artifact.",
+              "description": "Provider of the Security Token Service.",
               "enum": [
-                "cosign",
-                "notation"
+                "aws",
+                "ldap"
               ],
               "type": "string"
             },
             "secretRef": {
-              "description": "SecretRef specifies the Kubernetes Secret containing the\ntrusted public keys.",
+              "description": "SecretRef specifies the Secret containing authentication credentials\nfor the STS endpoint. This Secret must contain the fields `username`\nand `password` and is supported only for the `ldap` provider.",
               "properties": {
                 "name": {
                   "description": "Name of the referent.",
@@ -159,33 +143,61 @@
             }
           },
           "required": [
+            "endpoint",
             "provider"
           ],
           "type": "object",
           "additionalProperties": false
         },
-        "version": {
-          "default": "*",
-          "description": "Version is the chart version semver expression, ignored for charts from\nGitRepository and Bucket sources. Defaults to latest when omitted.",
+        "suspend": {
+          "description": "Suspend tells the controller to suspend the reconciliation of this\nBucket.",
+          "type": "boolean"
+        },
+        "timeout": {
+          "default": "60s",
+          "description": "Timeout for fetch operations, defaults to 60s.",
+          "pattern": "^([0-9]+(\\.[0-9]+)?(ms|s|m))+$",
           "type": "string"
         }
       },
       "required": [
-        "chart",
-        "interval",
-        "sourceRef"
+        "bucketName",
+        "endpoint",
+        "interval"
       ],
       "type": "object",
+      "x-kubernetes-validations": [
+        {
+          "message": "STS configuration is only supported for the 'aws' and 'generic' Bucket providers",
+          "rule": "self.provider == 'aws' || self.provider == 'generic' || !has(self.sts)"
+        },
+        {
+          "message": "'aws' is the only supported STS provider for the 'aws' Bucket provider",
+          "rule": "self.provider != 'aws' || !has(self.sts) || self.sts.provider == 'aws'"
+        },
+        {
+          "message": "'ldap' is the only supported STS provider for the 'generic' Bucket provider",
+          "rule": "self.provider != 'generic' || !has(self.sts) || self.sts.provider == 'ldap'"
+        },
+        {
+          "message": "spec.sts.secretRef is not required for the 'aws' STS provider",
+          "rule": "!has(self.sts) || self.sts.provider != 'aws' || !has(self.sts.secretRef)"
+        },
+        {
+          "message": "spec.sts.certSecretRef is not required for the 'aws' STS provider",
+          "rule": "!has(self.sts) || self.sts.provider != 'aws' || !has(self.sts.certSecretRef)"
+        }
+      ],
       "additionalProperties": false
     },
     "status": {
       "default": {
         "observedGeneration": -1
       },
-      "description": "HelmChartStatus records the observed state of the HelmChart.",
+      "description": "BucketStatus records the observed state of a Bucket.",
       "properties": {
         "artifact": {
-          "description": "Artifact represents the output of the last successful reconciliation.",
+          "description": "Artifact represents the last successful Bucket reconciliation.",
           "properties": {
             "digest": {
               "description": "Digest is the digest of the file in the form of '<algorithm>:<checksum>'.",
@@ -232,7 +244,7 @@
           "additionalProperties": false
         },
         "conditions": {
-          "description": "Conditions holds the conditions for the HelmChart.",
+          "description": "Conditions holds the conditions for the Bucket.",
           "items": {
             "description": "Condition contains details for one aspect of the current state of this API Resource.",
             "properties": {
@@ -291,25 +303,14 @@
           "description": "LastHandledReconcileAt holds the value of the most recent\nreconcile request value, so a change of the annotation value\ncan be detected.",
           "type": "string"
         },
-        "observedChartName": {
-          "description": "ObservedChartName is the last observed chart name as specified by the\nresolved chart reference.",
-          "type": "string"
-        },
         "observedGeneration": {
-          "description": "ObservedGeneration is the last observed generation of the HelmChart\nobject.",
+          "description": "ObservedGeneration is the last observed generation of the Bucket object.",
           "format": "int64",
           "type": "integer"
         },
-        "observedSourceArtifactRevision": {
-          "description": "ObservedSourceArtifactRevision is the last observed Artifact.Revision\nof the HelmChartSpec.SourceRef.",
+        "observedIgnore": {
+          "description": "ObservedIgnore is the observed exclusion patterns used for constructing\nthe source artifact.",
           "type": "string"
-        },
-        "observedValuesFiles": {
-          "description": "ObservedValuesFiles are the observed value files of the last successful\nreconciliation.\nIt matches the chart in the last successfully reconciled artifact.",
-          "items": {
-            "type": "string"
-          },
-          "type": "array"
         },
         "url": {
           "description": "URL is the dynamic fetch link for the latest Artifact.\nIt is provided on a \"best effort\" basis, and using the precise\nBucketStatus.Artifact data is recommended.",
