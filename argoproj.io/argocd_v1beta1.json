@@ -9973,6 +9973,10 @@
               "type": "object",
               "additionalProperties": false
             },
+            "enableRolloutsUI": {
+              "description": "EnableRolloutsUI will add the Argo Rollouts UI extension in ArgoCD Dashboard.",
+              "type": "boolean"
+            },
             "enabled": {
               "description": "Enabled is the flag to enable ArgoCD Server during ArgoCD installation. (optional, default `true`)",
               "type": "boolean"
