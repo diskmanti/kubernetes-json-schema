@@ -3046,6 +3046,10 @@
           "description": "URL of the image used for the deployed instance",
           "type": "string"
         },
+        "upgradedFrom": {
+          "description": "Last gated version",
+          "type": "string"
+        },
         "conditions": {
           "description": "The resulting conditions when a Service Telemetry is instantiated",
           "items": {
