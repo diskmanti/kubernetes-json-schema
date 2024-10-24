@@ -82,7 +82,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -662,7 +672,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -1260,7 +1280,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -1778,7 +1808,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -2231,7 +2271,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -2743,7 +2793,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -3382,7 +3442,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -3691,7 +3761,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -4125,7 +4205,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -4472,7 +4562,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -4950,7 +5050,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -5401,7 +5511,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -5799,7 +5919,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -6168,7 +6298,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -7527,7 +7667,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -8257,7 +8407,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -8953,7 +9113,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -9525,7 +9695,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -10019,7 +10199,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -10509,7 +10699,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -11282,7 +11482,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -11679,7 +11889,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -12044,7 +12264,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -12499,7 +12729,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -12992,7 +13232,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -13375,7 +13625,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -13831,7 +14091,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -14039,7 +14309,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -14549,7 +14829,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -15073,7 +15363,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -15440,7 +15740,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -15971,7 +16281,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -16322,7 +16642,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -16906,7 +17236,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -17787,7 +18127,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -18326,7 +18676,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -18863,7 +19223,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
@@ -19329,7 +19699,17 @@
               "metrics": {
                 "description": "Metrics to expose from check.\nhttps://canarychecker.io/concepts/metrics-exporter",
                 "items": {
-                  "type": "object"
+                  "type": "object",
+                  "additionalProperties": true,
+                  "properties": {
+                    "labels": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": true
+                      }
+                    }
+                  }
                 },
                 "type": "array"
               },
