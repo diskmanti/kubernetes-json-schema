@@ -782,6 +782,7 @@
           "description": "Size defines one of the support Loki deployment scale out sizes.",
           "enum": [
             "1x.demo",
+            "1x.pico",
             "1x.extra-small",
             "1x.small",
             "1x.medium"
