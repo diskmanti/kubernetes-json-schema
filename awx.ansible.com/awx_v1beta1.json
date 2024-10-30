@@ -2999,6 +2999,11 @@
           "description": "Enable metrics utility shipping to Red Hat Hybrid Cloud Console",
           "type": "boolean",
           "default": false
+        },
+        "public_base_url": {
+          "description": "Public base URL",
+          "type": "string",
+          "default": ""
         }
       },
       "type": "object",
