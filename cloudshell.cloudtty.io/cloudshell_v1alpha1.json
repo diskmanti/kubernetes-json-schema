@@ -204,6 +204,11 @@
           "type": "object",
           "additionalProperties": false
         },
+        "serverBufferSize": {
+          "description": "ServerBufferSize specified service buffer size.",
+          "format": "int64",
+          "type": "integer"
+        },
         "ttlSecondsAfterStarted": {
           "format": "int64",
           "type": "integer"
