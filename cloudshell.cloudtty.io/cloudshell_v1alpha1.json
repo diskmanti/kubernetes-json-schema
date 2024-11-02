@@ -23,7 +23,7 @@
           "type": "string"
         },
         "env": {
-          "description": "List of environment variables to set in the container. Cannot be updated.",
+          "description": "List of environment variables to set in the container. If it begins with \"TTYD\", that means it's a parameter configured for ttyd, eg: TTYD_SERVER_BUFFER_SIZE. Cannot be updated.",
           "items": {
             "description": "EnvVar represents an environment variable present in a Container.",
             "properties": {
