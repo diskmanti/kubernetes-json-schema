@@ -58,6 +58,22 @@
           "type": "object",
           "additionalProperties": false
         },
+        "nativeHistogramBucketLimit": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "nativeHistogramMinBucketFactor": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "pattern": "^(\\+|-)?(([0-9]+(\\.[0-9]*)?)|(\\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\\+|-)?(([0-9]+(\\.[0-9]*)?)|(\\.[0-9]+))))?$",
+          "x-kubernetes-int-or-string": true
+        },
         "podMetricsEndpoints": {
           "items": {
             "properties": {
@@ -771,6 +787,9 @@
         "scrapeClass": {
           "minLength": 1,
           "type": "string"
+        },
+        "scrapeClassicHistograms": {
+          "type": "boolean"
         },
         "scrapeProtocols": {
           "items": {

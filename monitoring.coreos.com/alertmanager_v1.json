@@ -2692,6 +2692,60 @@
           },
           "type": "array"
         },
+        "dnsConfig": {
+          "properties": {
+            "nameservers": {
+              "items": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "type": "array",
+              "x-kubernetes-list-type": "set"
+            },
+            "options": {
+              "items": {
+                "properties": {
+                  "name": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name"
+                ],
+                "type": "object",
+                "additionalProperties": false
+              },
+              "type": "array",
+              "x-kubernetes-list-map-keys": [
+                "name"
+              ],
+              "x-kubernetes-list-type": "map"
+            },
+            "searches": {
+              "items": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "type": "array",
+              "x-kubernetes-list-type": "set"
+            }
+          },
+          "type": "object",
+          "additionalProperties": false
+        },
+        "dnsPolicy": {
+          "enum": [
+            "ClusterFirstWithHostNet",
+            "ClusterFirst",
+            "Default",
+            "None"
+          ],
+          "type": "string"
+        },
         "enableFeatures": {
           "items": {
             "type": "string"
