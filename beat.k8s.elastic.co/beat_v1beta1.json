@@ -43,7 +43,7 @@
               "description": "DaemonSetUpdateStrategy is a struct used to control the update strategy for a DaemonSet.",
               "properties": {
                 "rollingUpdate": {
-                  "description": "Rolling update config params. Present only if type = \"RollingUpdate\".\n---\nTODO: Update this to follow our convention for oneOf, whatever we decide it\nto be. Same as Deployment `strategy.rollingUpdate`.\nSee https://github.com/kubernetes/kubernetes/issues/35345",
+                  "description": "Rolling update config params. Present only if type = \"RollingUpdate\".",
                   "properties": {
                     "maxSurge": {
                       "anyOf": [
@@ -101,7 +101,7 @@
               "description": "DeploymentStrategy describes how to replace existing pods with new ones.",
               "properties": {
                 "rollingUpdate": {
-                  "description": "Rolling update config params. Present only if DeploymentStrategyType =\nRollingUpdate.\n---\nTODO: Update this to follow our convention for oneOf, whatever we decide it\nto be.",
+                  "description": "Rolling update config params. Present only if DeploymentStrategyType =\nRollingUpdate.",
                   "properties": {
                     "maxSurge": {
                       "anyOf": [
