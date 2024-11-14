@@ -73,12 +73,6 @@
     "github_repository": "fluxcd/flux2",
     "asset_name": "install.yaml"
   },
-  "istio": {
-    "github_repository": "istio/istio",
-    "urls": [
-      "https://raw.githubusercontent.com/istio/istio/{version}/manifests/charts/base/crds/crd-all.gen.yaml"
-    ]
-  },
   "kyverno": {
     "github_repository": "kyverno/kyverno",
     "asset_name": "install.yaml",
