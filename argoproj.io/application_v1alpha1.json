@@ -85,6 +85,11 @@
         "sync": {
           "description": "Sync contains parameters for the operation",
           "properties": {
+            "autoHealAttemptsCount": {
+              "description": "SelfHealAttemptsCount contains the number of auto-heal attempts",
+              "format": "int64",
+              "type": "integer"
+            },
             "dryRun": {
               "description": "DryRun specifies to perform a `kubectl apply --dry-run` without actually performing the sync",
               "type": "boolean"
@@ -3020,6 +3025,11 @@
                 "sync": {
                   "description": "Sync contains parameters for the operation",
                   "properties": {
+                    "autoHealAttemptsCount": {
+                      "description": "SelfHealAttemptsCount contains the number of auto-heal attempts",
+                      "format": "int64",
+                      "type": "integer"
+                    },
                     "dryRun": {
                       "description": "DryRun specifies to perform a `kubectl apply --dry-run` without actually performing the sync",
                       "type": "boolean"
