@@ -135,6 +135,12 @@
       "https://raw.githubusercontent.com/openshift/oadp-operator/refs/heads/master/config/crd/kustomization.yaml"
     ]
   },
+  "group-sync-operator": {
+    "github_repository": "redhat-cop/group-sync-operator",
+    "urls": [
+      "https://raw.githubusercontent.com/redhat-cop/group-sync-operator/refs/heads/main/config/crd/kustomization.yaml"
+    ]
+  },
   "cloudtty": {
     "github_repository": "cloudtty/cloudtty",
     "urls": [
