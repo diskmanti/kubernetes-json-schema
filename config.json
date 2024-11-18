@@ -138,7 +138,7 @@
   "group-sync-operator": {
     "github_repository": "redhat-cop/group-sync-operator",
     "urls": [
-      "https://raw.githubusercontent.com/redhat-cop/group-sync-operator/refs/heads/main/config/crd/kustomization.yaml"
+      "https://raw.githubusercontent.com/redhat-cop/group-sync-operator/refs/heads/main/config/crd/bases/redhatcop.redhat.io_groupsyncs.yaml"
     ]
   },
   "cloudtty": {
