@@ -81,7 +81,7 @@
                 "type": "string"
               },
               "statuses": {
-                "description": "StringArray represents a one-dimensional array of the PostgreSQL character types.",
+                "description": "Statuses filter resources by the status",
                 "items": {
                   "type": "string"
                 },
@@ -102,7 +102,7 @@
                 "type": "string"
               },
               "types": {
-                "description": "StringArray represents a one-dimensional array of the PostgreSQL character types.",
+                "description": "Types filter resources by the type",
                 "items": {
                   "type": "string"
                 },
@@ -278,7 +278,7 @@
                         "type": "string"
                       },
                       "statuses": {
-                        "description": "StringArray represents a one-dimensional array of the PostgreSQL character types.",
+                        "description": "Statuses filter resources by the status",
                         "items": {
                           "type": "string"
                         },
@@ -299,7 +299,7 @@
                         "type": "string"
                       },
                       "types": {
-                        "description": "StringArray represents a one-dimensional array of the PostgreSQL character types.",
+                        "description": "Types filter resources by the type",
                         "items": {
                           "type": "string"
                         },
@@ -500,7 +500,7 @@
                 "type": "string"
               },
               "statuses": {
-                "description": "StringArray represents a one-dimensional array of the PostgreSQL character types.",
+                "description": "Statuses filter resources by the status",
                 "items": {
                   "type": "string"
                 },
@@ -510,7 +510,7 @@
                 "type": "string"
               },
               "types": {
-                "description": "StringArray represents a one-dimensional array of the PostgreSQL character types.",
+                "description": "Types filter resources by the type",
                 "items": {
                   "type": "string"
                 },
