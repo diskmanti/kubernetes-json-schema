@@ -600,6 +600,9 @@
                         "proxyFromEnvironment": {
                           "type": "boolean"
                         },
+                        "proxyURL": {
+                          "type": "string"
+                        },
                         "proxyUrl": {
                           "pattern": "^http(s)?://.+$",
                           "type": "string"
@@ -1417,6 +1420,9 @@
                         "proxyFromEnvironment": {
                           "type": "boolean"
                         },
+                        "proxyURL": {
+                          "type": "string"
+                        },
                         "proxyUrl": {
                           "pattern": "^http(s)?://.+$",
                           "type": "string"
@@ -2072,6 +2078,9 @@
                         "proxyFromEnvironment": {
                           "type": "boolean"
                         },
+                        "proxyURL": {
+                          "type": "string"
+                        },
                         "proxyUrl": {
                           "pattern": "^http(s)?://.+$",
                           "type": "string"
@@ -2719,6 +2728,9 @@
                         },
                         "proxyFromEnvironment": {
                           "type": "boolean"
+                        },
+                        "proxyURL": {
+                          "type": "string"
                         },
                         "proxyUrl": {
                           "pattern": "^http(s)?://.+$",
@@ -3378,6 +3390,9 @@
                         },
                         "proxyFromEnvironment": {
                           "type": "boolean"
+                        },
+                        "proxyURL": {
+                          "type": "string"
                         },
                         "proxyUrl": {
                           "pattern": "^http(s)?://.+$",
@@ -4132,6 +4147,9 @@
                         "proxyFromEnvironment": {
                           "type": "boolean"
                         },
+                        "proxyURL": {
+                          "type": "string"
+                        },
                         "proxyUrl": {
                           "pattern": "^http(s)?://.+$",
                           "type": "string"
@@ -4746,6 +4764,9 @@
                         },
                         "proxyFromEnvironment": {
                           "type": "boolean"
+                        },
+                        "proxyURL": {
+                          "type": "string"
                         },
                         "proxyUrl": {
                           "pattern": "^http(s)?://.+$",
@@ -5417,6 +5438,9 @@
                         "proxyFromEnvironment": {
                           "type": "boolean"
                         },
+                        "proxyURL": {
+                          "type": "string"
+                        },
                         "proxyUrl": {
                           "pattern": "^http(s)?://.+$",
                           "type": "string"
@@ -6044,6 +6068,9 @@
                         "proxyFromEnvironment": {
                           "type": "boolean"
                         },
+                        "proxyURL": {
+                          "type": "string"
+                        },
                         "proxyUrl": {
                           "pattern": "^http(s)?://.+$",
                           "type": "string"
@@ -6627,6 +6654,9 @@
                         "proxyFromEnvironment": {
                           "type": "boolean"
                         },
+                        "proxyURL": {
+                          "type": "string"
+                        },
                         "proxyUrl": {
                           "pattern": "^http(s)?://.+$",
                           "type": "string"
@@ -7203,6 +7233,9 @@
                         },
                         "proxyFromEnvironment": {
                           "type": "boolean"
+                        },
+                        "proxyURL": {
+                          "type": "string"
                         },
                         "proxyUrl": {
                           "pattern": "^http(s)?://.+$",
@@ -7827,6 +7860,9 @@
                         },
                         "proxyFromEnvironment": {
                           "type": "boolean"
+                        },
+                        "proxyURL": {
+                          "type": "string"
                         },
                         "proxyUrl": {
                           "pattern": "^http(s)?://.+$",
