@@ -3360,6 +3360,10 @@
               "type": "object",
               "additionalProperties": false
             },
+            "respectRBAC": {
+              "description": "RespectRBAC restricts controller from discovering/syncing specific resources, Defaults is empty if not configured. Valid options are strict and normal.",
+              "type": "string"
+            },
             "sharding": {
               "description": "Sharding contains the options for the Application Controller sharding configuration.",
               "properties": {
