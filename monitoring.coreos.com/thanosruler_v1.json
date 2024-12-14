@@ -3604,6 +3604,9 @@
               "format": "int64",
               "type": "integer"
             },
+            "seLinuxChangePolicy": {
+              "type": "string"
+            },
             "seLinuxOptions": {
               "properties": {
                 "level": {
@@ -5797,9 +5800,11 @@
                 "type": "string"
               },
               "status": {
+                "minLength": 1,
                 "type": "string"
               },
               "type": {
+                "minLength": 1,
                 "type": "string"
               }
             },
