@@ -3952,6 +3952,18 @@
         "paused": {
           "type": "boolean"
         },
+        "persistentVolumeClaimRetentionPolicy": {
+          "properties": {
+            "whenDeleted": {
+              "type": "string"
+            },
+            "whenScaled": {
+              "type": "string"
+            }
+          },
+          "type": "object",
+          "additionalProperties": false
+        },
         "podMetadata": {
           "properties": {
             "annotations": {
@@ -4090,6 +4102,9 @@
             "runAsUser": {
               "format": "int64",
               "type": "integer"
+            },
+            "seLinuxChangePolicy": {
+              "type": "string"
             },
             "seLinuxOptions": {
               "properties": {
@@ -6275,9 +6290,11 @@
                 "type": "string"
               },
               "status": {
+                "minLength": 1,
                 "type": "string"
               },
               "type": {
+                "minLength": 1,
                 "type": "string"
               }
             },

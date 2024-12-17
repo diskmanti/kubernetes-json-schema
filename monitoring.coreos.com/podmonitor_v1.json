@@ -538,6 +538,12 @@
               "port": {
                 "type": "string"
               },
+              "portNumber": {
+                "format": "int32",
+                "maximum": 65535,
+                "minimum": 1,
+                "type": "integer"
+              },
               "proxyUrl": {
                 "type": "string"
               },
@@ -791,13 +797,24 @@
         "scrapeClassicHistograms": {
           "type": "boolean"
         },
+        "scrapeFallbackProtocol": {
+          "enum": [
+            "PrometheusProto",
+            "OpenMetricsText0.0.1",
+            "OpenMetricsText1.0.0",
+            "PrometheusText0.0.4",
+            "PrometheusText1.0.0"
+          ],
+          "type": "string"
+        },
         "scrapeProtocols": {
           "items": {
             "enum": [
               "PrometheusProto",
               "OpenMetricsText0.0.1",
               "OpenMetricsText1.0.0",
-              "PrometheusText0.0.4"
+              "PrometheusText0.0.4",
+              "PrometheusText1.0.0"
             ],
             "type": "string"
           },
@@ -843,6 +860,13 @@
           "type": "object",
           "x-kubernetes-map-type": "atomic",
           "additionalProperties": false
+        },
+        "selectorMechanism": {
+          "enum": [
+            "RelabelConfig",
+            "RoleSelector"
+          ],
+          "type": "string"
         },
         "targetLimit": {
           "format": "int64",
