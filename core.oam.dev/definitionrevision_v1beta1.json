@@ -2,11 +2,11 @@
   "description": "DefinitionRevision is the Schema for the DefinitionRevision API",
   "properties": {
     "apiVersion": {
-      "description": "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
+      "description": "APIVersion defines the versioned schema of this representation of an object.\nServers should convert recognized schemas to the latest internal value, and\nmay reject unrecognized values.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
       "type": "string"
     },
     "kind": {
-      "description": "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
+      "description": "Kind is a string value representing the REST resource this object represents.\nServers may infer this from the endpoint the client submits requests to.\nCannot be updated.\nIn CamelCase.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
       "type": "string"
     },
     "metadata": {
@@ -19,11 +19,11 @@
           "description": "ComponentDefinition records the snapshot of the created/modified ComponentDefinition",
           "properties": {
             "apiVersion": {
-              "description": "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
+              "description": "APIVersion defines the versioned schema of this representation of an object.\nServers should convert recognized schemas to the latest internal value, and\nmay reject unrecognized values.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
               "type": "string"
             },
             "kind": {
-              "description": "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
+              "description": "Kind is a string value representing the REST resource this object represents.\nServers may infer this from the endpoint the client submits requests to.\nCannot be updated.\nIn CamelCase.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
               "type": "string"
             },
             "metadata": {
@@ -95,11 +95,11 @@
                   "x-kubernetes-preserve-unknown-fields": true
                 },
                 "podSpecPath": {
-                  "description": "PodSpecPath indicates where/if this workload has K8s podSpec field if one workload has podSpec, trait can do lot's of assumption such as port, env, volume fields.",
+                  "description": "PodSpecPath indicates where/if this workload has K8s podSpec field\nif one workload has podSpec, trait can do lot's of assumption such as port, env, volume fields.",
                   "type": "string"
                 },
                 "revisionLabel": {
-                  "description": "RevisionLabel indicates which label for underlying resources(e.g. pods) of this workload can be used by trait to create resource selectors(e.g. label selector for pods).",
+                  "description": "RevisionLabel indicates which label for underlying resources(e.g. pods) of this workload\ncan be used by trait to create resource selectors(e.g. label selector for pods).",
                   "type": "string"
                 },
                 "schematic": {
@@ -109,7 +109,7 @@
                       "description": "CUE defines the encapsulation in CUE format",
                       "properties": {
                         "template": {
-                          "description": "Template defines the abstraction template data of the capability, it will replace the old CUE template in extension field. Template is a required field if CUE is defined in Capability Definition.",
+                          "description": "Template defines the abstraction template data of the capability, it will replace the old CUE template in extension field.\nTemplate is a required field if CUE is defined in Capability Definition.",
                           "type": "string"
                         }
                       },
@@ -185,7 +185,7 @@
                           "type": "string"
                         },
                         "writeConnectionSecretToRef": {
-                          "description": "WriteConnectionSecretToReference specifies the namespace and name of a Secret to which any connection details for this managed resource should be written. Connection details frequently include the endpoint, username, and password required to connect to the managed resource.",
+                          "description": "WriteConnectionSecretToReference specifies the namespace and name of a\nSecret to which any connection details for this managed resource should\nbe written. Connection details frequently include the endpoint, username,\nand password required to connect to the managed resource.",
                           "properties": {
                             "name": {
                               "description": "Name of the secret.",
@@ -272,12 +272,12 @@
                     "description": "A Condition that may apply to a resource.",
                     "properties": {
                       "lastTransitionTime": {
-                        "description": "LastTransitionTime is the last time this condition transitioned from one status to another.",
+                        "description": "LastTransitionTime is the last time this condition transitioned from one\nstatus to another.",
                         "format": "date-time",
                         "type": "string"
                       },
                       "message": {
-                        "description": "A Message containing details about this condition's last transition from one status to another, if any.",
+                        "description": "A Message containing details about this condition's last transition from\none status to another, if any.",
                         "type": "string"
                       },
                       "reason": {
@@ -289,7 +289,7 @@
                         "type": "string"
                       },
                       "type": {
-                        "description": "Type of this condition. At most one of each condition type may apply to a resource at any point in time.",
+                        "description": "Type of this condition. At most one of each condition type may apply to\na resource at any point in time.",
                         "type": "string"
                       }
                     },
@@ -352,11 +352,11 @@
           "description": "PolicyDefinition records the snapshot of the created/modified PolicyDefinition",
           "properties": {
             "apiVersion": {
-              "description": "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
+              "description": "APIVersion defines the versioned schema of this representation of an object.\nServers should convert recognized schemas to the latest internal value, and\nmay reject unrecognized values.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
               "type": "string"
             },
             "kind": {
-              "description": "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
+              "description": "Kind is a string value representing the REST resource this object represents.\nServers may infer this from the endpoint the client submits requests to.\nCannot be updated.\nIn CamelCase.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
               "type": "string"
             },
             "metadata": {
@@ -400,7 +400,7 @@
                       "type": "string"
                     },
                     "version": {
-                      "description": "Version indicate which version should be used if CRD has multiple versions by default it will use the first one if not specified",
+                      "description": "Version indicate which version should be used if CRD has multiple versions\nby default it will use the first one if not specified",
                       "type": "string"
                     }
                   },
@@ -411,17 +411,17 @@
                   "additionalProperties": false
                 },
                 "manageHealthCheck": {
-                  "description": "ManageHealthCheck means the policy will handle health checking and skip application controller built-in health checking.",
+                  "description": "ManageHealthCheck means the policy will handle health checking and skip application controller\nbuilt-in health checking.",
                   "type": "boolean"
                 },
                 "schematic": {
-                  "description": "Schematic defines the data format and template of the encapsulation of the policy definition. Only CUE schematic is supported for now.",
+                  "description": "Schematic defines the data format and template of the encapsulation of the policy definition.\nOnly CUE schematic is supported for now.",
                   "properties": {
                     "cue": {
                       "description": "CUE defines the encapsulation in CUE format",
                       "properties": {
                         "template": {
-                          "description": "Template defines the abstraction template data of the capability, it will replace the old CUE template in extension field. Template is a required field if CUE is defined in Capability Definition.",
+                          "description": "Template defines the abstraction template data of the capability, it will replace the old CUE template in extension field.\nTemplate is a required field if CUE is defined in Capability Definition.",
                           "type": "string"
                         }
                       },
@@ -497,7 +497,7 @@
                           "type": "string"
                         },
                         "writeConnectionSecretToRef": {
-                          "description": "WriteConnectionSecretToReference specifies the namespace and name of a Secret to which any connection details for this managed resource should be written. Connection details frequently include the endpoint, username, and password required to connect to the managed resource.",
+                          "description": "WriteConnectionSecretToReference specifies the namespace and name of a\nSecret to which any connection details for this managed resource should\nbe written. Connection details frequently include the endpoint, username,\nand password required to connect to the managed resource.",
                           "properties": {
                             "name": {
                               "description": "Name of the secret.",
@@ -538,12 +538,12 @@
                     "description": "A Condition that may apply to a resource.",
                     "properties": {
                       "lastTransitionTime": {
-                        "description": "LastTransitionTime is the last time this condition transitioned from one status to another.",
+                        "description": "LastTransitionTime is the last time this condition transitioned from one\nstatus to another.",
                         "format": "date-time",
                         "type": "string"
                       },
                       "message": {
-                        "description": "A Message containing details about this condition's last transition from one status to another, if any.",
+                        "description": "A Message containing details about this condition's last transition from\none status to another, if any.",
                         "type": "string"
                       },
                       "reason": {
@@ -555,7 +555,7 @@
                         "type": "string"
                       },
                       "type": {
-                        "description": "Type of this condition. At most one of each condition type may apply to a resource at any point in time.",
+                        "description": "Type of this condition. At most one of each condition type may apply to\na resource at any point in time.",
                         "type": "string"
                       }
                     },
@@ -617,11 +617,11 @@
           "description": "TraitDefinition records the snapshot of the created/modified TraitDefinition",
           "properties": {
             "apiVersion": {
-              "description": "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
+              "description": "APIVersion defines the versioned schema of this representation of an object.\nServers should convert recognized schemas to the latest internal value, and\nmay reject unrecognized values.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
               "type": "string"
             },
             "kind": {
-              "description": "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
+              "description": "Kind is a string value representing the REST resource this object represents.\nServers may infer this from the endpoint the client submits requests to.\nCannot be updated.\nIn CamelCase.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
               "type": "string"
             },
             "metadata": {
@@ -658,14 +658,14 @@
               "description": "A TraitDefinitionSpec defines the desired state of a TraitDefinition.",
               "properties": {
                 "appliesToWorkloads": {
-                  "description": "AppliesToWorkloads specifies the list of workload kinds this trait applies to. Workload kinds are specified in resource.group/version format, e.g. server.core.oam.dev/v1alpha2. Traits that omit this field apply to all workload kinds.",
+                  "description": "AppliesToWorkloads specifies the list of workload kinds this trait\napplies to. Workload kinds are specified in resource.group/version format,\ne.g. server.core.oam.dev/v1alpha2. Traits that omit this field apply to\nall workload kinds.",
                   "items": {
                     "type": "string"
                   },
                   "type": "array"
                 },
                 "conflictsWith": {
-                  "description": "ConflictsWith specifies the list of traits(CRD name, Definition name, CRD group) which could not apply to the same workloads with this trait. Traits that omit this field can work with any other traits. Example rules: \"service\" # Trait definition name \"services.k8s.io\" # API resource/crd name \"*.networking.k8s.io\" # API group \"labelSelector:foo=bar\" # label selector labelSelector format: https://pkg.go.dev/k8s.io/apimachinery/pkg/labels#Parse",
+                  "description": "ConflictsWith specifies the list of traits(CRD name, Definition name, CRD group)\nwhich could not apply to the same workloads with this trait.\nTraits that omit this field can work with any other traits.\nExample rules:\n\"service\" # Trait definition name\n\"services.k8s.io\" # API resource/crd name\n\"*.networking.k8s.io\" # API group\n\"labelSelector:foo=bar\" # label selector\nlabelSelector format: https://pkg.go.dev/k8s.io/apimachinery/pkg/labels#Parse",
                   "items": {
                     "type": "string"
                   },
@@ -683,7 +683,7 @@
                       "type": "string"
                     },
                     "version": {
-                      "description": "Version indicate which version should be used if CRD has multiple versions by default it will use the first one if not specified",
+                      "description": "Version indicate which version should be used if CRD has multiple versions\nby default it will use the first one if not specified",
                       "type": "string"
                     }
                   },
@@ -711,13 +711,13 @@
                   "type": "boolean"
                 },
                 "schematic": {
-                  "description": "Schematic defines the data format and template of the encapsulation of the trait. Only CUE and Kube schematic are supported for now.",
+                  "description": "Schematic defines the data format and template of the encapsulation of the trait.\nOnly CUE and Kube schematic are supported for now.",
                   "properties": {
                     "cue": {
                       "description": "CUE defines the encapsulation in CUE format",
                       "properties": {
                         "template": {
-                          "description": "Template defines the abstraction template data of the capability, it will replace the old CUE template in extension field. Template is a required field if CUE is defined in Capability Definition.",
+                          "description": "Template defines the abstraction template data of the capability, it will replace the old CUE template in extension field.\nTemplate is a required field if CUE is defined in Capability Definition.",
                           "type": "string"
                         }
                       },
@@ -793,7 +793,7 @@
                           "type": "string"
                         },
                         "writeConnectionSecretToRef": {
-                          "description": "WriteConnectionSecretToReference specifies the namespace and name of a Secret to which any connection details for this managed resource should be written. Connection details frequently include the endpoint, username, and password required to connect to the managed resource.",
+                          "description": "WriteConnectionSecretToReference specifies the namespace and name of a\nSecret to which any connection details for this managed resource should\nbe written. Connection details frequently include the endpoint, username,\nand password required to connect to the managed resource.",
                           "properties": {
                             "name": {
                               "description": "Name of the secret.",
@@ -822,7 +822,7 @@
                   "additionalProperties": false
                 },
                 "stage": {
-                  "description": "Stage defines the stage information to which this trait resource processing belongs. Currently, PreDispatch and PostDispatch are provided, which are used to control resource pre-process and post-process respectively.",
+                  "description": "Stage defines the stage information to which this trait resource processing belongs.\nCurrently, PreDispatch and PostDispatch are provided, which are used to control resource\npre-process and post-process respectively.",
                   "type": "string"
                 },
                 "status": {
@@ -857,12 +857,12 @@
                     "description": "A Condition that may apply to a resource.",
                     "properties": {
                       "lastTransitionTime": {
-                        "description": "LastTransitionTime is the last time this condition transitioned from one status to another.",
+                        "description": "LastTransitionTime is the last time this condition transitioned from one\nstatus to another.",
                         "format": "date-time",
                         "type": "string"
                       },
                       "message": {
-                        "description": "A Message containing details about this condition's last transition from one status to another, if any.",
+                        "description": "A Message containing details about this condition's last transition from\none status to another, if any.",
                         "type": "string"
                       },
                       "reason": {
@@ -874,7 +874,7 @@
                         "type": "string"
                       },
                       "type": {
-                        "description": "Type of this condition. At most one of each condition type may apply to a resource at any point in time.",
+                        "description": "Type of this condition. At most one of each condition type may apply to\na resource at any point in time.",
                         "type": "string"
                       }
                     },
@@ -927,11 +927,11 @@
           "description": "WorkflowStepDefinition records the snapshot of the created/modified WorkflowStepDefinition",
           "properties": {
             "apiVersion": {
-              "description": "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
+              "description": "APIVersion defines the versioned schema of this representation of an object.\nServers should convert recognized schemas to the latest internal value, and\nmay reject unrecognized values.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
               "type": "string"
             },
             "kind": {
-              "description": "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
+              "description": "Kind is a string value representing the REST resource this object represents.\nServers may infer this from the endpoint the client submits requests to.\nCannot be updated.\nIn CamelCase.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
               "type": "string"
             },
             "metadata": {
@@ -975,7 +975,7 @@
                       "type": "string"
                     },
                     "version": {
-                      "description": "Version indicate which version should be used if CRD has multiple versions by default it will use the first one if not specified",
+                      "description": "Version indicate which version should be used if CRD has multiple versions\nby default it will use the first one if not specified",
                       "type": "string"
                     }
                   },
@@ -986,13 +986,13 @@
                   "additionalProperties": false
                 },
                 "schematic": {
-                  "description": "Schematic defines the data format and template of the encapsulation of the workflow step definition. Only CUE schematic is supported for now.",
+                  "description": "Schematic defines the data format and template of the encapsulation of the workflow step definition.\nOnly CUE schematic is supported for now.",
                   "properties": {
                     "cue": {
                       "description": "CUE defines the encapsulation in CUE format",
                       "properties": {
                         "template": {
-                          "description": "Template defines the abstraction template data of the capability, it will replace the old CUE template in extension field. Template is a required field if CUE is defined in Capability Definition.",
+                          "description": "Template defines the abstraction template data of the capability, it will replace the old CUE template in extension field.\nTemplate is a required field if CUE is defined in Capability Definition.",
                           "type": "string"
                         }
                       },
@@ -1068,7 +1068,7 @@
                           "type": "string"
                         },
                         "writeConnectionSecretToRef": {
-                          "description": "WriteConnectionSecretToReference specifies the namespace and name of a Secret to which any connection details for this managed resource should be written. Connection details frequently include the endpoint, username, and password required to connect to the managed resource.",
+                          "description": "WriteConnectionSecretToReference specifies the namespace and name of a\nSecret to which any connection details for this managed resource should\nbe written. Connection details frequently include the endpoint, username,\nand password required to connect to the managed resource.",
                           "properties": {
                             "name": {
                               "description": "Name of the secret.",
@@ -1109,12 +1109,12 @@
                     "description": "A Condition that may apply to a resource.",
                     "properties": {
                       "lastTransitionTime": {
-                        "description": "LastTransitionTime is the last time this condition transitioned from one status to another.",
+                        "description": "LastTransitionTime is the last time this condition transitioned from one\nstatus to another.",
                         "format": "date-time",
                         "type": "string"
                       },
                       "message": {
-                        "description": "A Message containing details about this condition's last transition from one status to another, if any.",
+                        "description": "A Message containing details about this condition's last transition from\none status to another, if any.",
                         "type": "string"
                       },
                       "reason": {
@@ -1126,7 +1126,7 @@
                         "type": "string"
                       },
                       "type": {
-                        "description": "Type of this condition. At most one of each condition type may apply to a resource at any point in time.",
+                        "description": "Type of this condition. At most one of each condition type may apply to\na resource at any point in time.",
                         "type": "string"
                       }
                     },
