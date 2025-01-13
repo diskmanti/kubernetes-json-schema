@@ -55,6 +55,10 @@
               "fieldSelector": {
                 "type": "string"
               },
+              "health": {
+                "description": "Health filters resources by the health.\nMultiple healths can be provided separated by comma.",
+                "type": "string"
+              },
               "id": {
                 "type": "string"
               },
@@ -250,6 +254,10 @@
                         "type": "string"
                       },
                       "fieldSelector": {
+                        "type": "string"
+                      },
+                      "health": {
+                        "description": "Health filters resources by the health.\nMultiple healths can be provided separated by comma.",
                         "type": "string"
                       },
                       "id": {
@@ -472,6 +480,10 @@
                 "type": "string"
               },
               "fieldSelector": {
+                "type": "string"
+              },
+              "health": {
+                "description": "Health filters resources by the health.\nMultiple healths can be provided separated by comma.",
                 "type": "string"
               },
               "id": {
