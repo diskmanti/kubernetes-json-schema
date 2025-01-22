@@ -583,6 +583,55 @@
               "type": "object",
               "additionalProperties": false
             },
+            "quayAccessTokenSpec": {
+              "properties": {
+                "robotAccount": {
+                  "description": "Name of the robot account you are federating with",
+                  "type": "string"
+                },
+                "serviceAccountRef": {
+                  "description": "Name of the service account you are federating with",
+                  "properties": {
+                    "audiences": {
+                      "description": "Audience specifies the `aud` claim for the service account token\nIf the service account uses a well-known annotation for e.g. IRSA or GCP Workload Identity\nthen this audiences will be appended to the list",
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "name": {
+                      "description": "The name of the ServiceAccount resource being referred to.",
+                      "maxLength": 253,
+                      "minLength": 1,
+                      "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*$",
+                      "type": "string"
+                    },
+                    "namespace": {
+                      "description": "Namespace of the resource being referred to.\nIgnored if referent is not cluster-scoped, otherwise defaults to the namespace of the referent.",
+                      "maxLength": 63,
+                      "minLength": 1,
+                      "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "type": "object",
+                  "additionalProperties": false
+                },
+                "url": {
+                  "description": "URL configures the Quay instance URL. Defaults to quay.io.",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "robotAccount",
+                "serviceAccountRef"
+              ],
+              "type": "object",
+              "additionalProperties": false
+            },
             "stsSessionTokenSpec": {
               "properties": {
                 "auth": {
@@ -762,6 +811,11 @@
             },
             "vaultDynamicSecretSpec": {
               "properties": {
+                "allowEmptyResponse": {
+                  "default": false,
+                  "description": "Do not fail if no secrets are found. Useful for requests where no data is expected.",
+                  "type": "boolean"
+                },
                 "controller": {
                   "description": "Used to select the correct ESO controller (think: ingress.ingressClassName)\nThe ESO controller is instantiated with a specific controller name and filters VDS based on this property",
                   "type": "string"
@@ -1721,6 +1775,7 @@
             "Fake",
             "GCRAccessToken",
             "GithubAccessToken",
+            "QuayAccessToken",
             "Password",
             "STSSessionToken",
             "UUID",
