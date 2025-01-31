@@ -72,7 +72,7 @@
                       "type": "integer"
                     },
                     "maxEntriesLimitPerQuery": {
-                      "description": "MaxEntriesLimitsPerQuery defines the maximum number of log entries\nthat will be returned for a query.",
+                      "description": "MaxEntriesLimitPerQuery defines the maximum number of log entries\nthat will be returned for a query.",
                       "format": "int32",
                       "type": "integer"
                     },
@@ -144,7 +144,7 @@
                         "type": "integer"
                       },
                       "maxEntriesLimitPerQuery": {
-                        "description": "MaxEntriesLimitsPerQuery defines the maximum number of log entries\nthat will be returned for a query.",
+                        "description": "MaxEntriesLimitPerQuery defines the maximum number of log entries\nthat will be returned for a query.",
                         "format": "int32",
                         "type": "integer"
                       },
