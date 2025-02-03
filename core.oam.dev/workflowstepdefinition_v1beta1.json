@@ -143,6 +143,9 @@
           },
           "type": "object",
           "additionalProperties": false
+        },
+        "version": {
+          "type": "string"
         }
       },
       "type": "object",
