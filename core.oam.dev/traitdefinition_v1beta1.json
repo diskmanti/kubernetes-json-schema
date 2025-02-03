@@ -198,6 +198,9 @@
           "type": "object",
           "additionalProperties": false
         },
+        "version": {
+          "type": "string"
+        },
         "workloadRefPath": {
           "description": "WorkloadRefPath indicates where/if a trait accepts a workloadRef object",
           "type": "string"

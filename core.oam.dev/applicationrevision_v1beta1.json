@@ -1103,6 +1103,9 @@
                     "type": "object",
                     "additionalProperties": false
                   },
+                  "version": {
+                    "type": "string"
+                  },
                   "workload": {
                     "description": "Workload is a workload type descriptor",
                     "properties": {
@@ -1467,6 +1470,9 @@
                     },
                     "type": "object",
                     "additionalProperties": false
+                  },
+                  "version": {
+                    "type": "string"
                   }
                 },
                 "type": "object",
@@ -1788,6 +1794,9 @@
                     },
                     "type": "object",
                     "additionalProperties": false
+                  },
+                  "version": {
+                    "type": "string"
                   },
                   "workloadRefPath": {
                     "description": "WorkloadRefPath indicates where/if a trait accepts a workloadRef object",
@@ -2299,6 +2308,9 @@
                     },
                     "type": "object",
                     "additionalProperties": false
+                  },
+                  "version": {
+                    "type": "string"
                   }
                 },
                 "type": "object",
