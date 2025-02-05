@@ -7496,6 +7496,10 @@
                     "type": "object",
                     "additionalProperties": false
                   },
+                  "eksPodIdentity": {
+                    "description": "EKSPodIdentity when enabled will allow access to AWS_* env vars",
+                    "type": "boolean"
+                  },
                   "fromConfigItem": {
                     "type": "string"
                   },
@@ -7660,6 +7664,10 @@
                     },
                     "type": "object",
                     "additionalProperties": false
+                  },
+                  "serviceAccount": {
+                    "description": "ServiceAccount when enabled will allow access to KUBERNETES env vars",
+                    "type": "boolean"
                   }
                 },
                 "type": "object",
