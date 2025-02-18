@@ -27,14 +27,6 @@
       "https://raw.githubusercontent.com/grafana/loki/main/operator/bundle/community/manifests/loki.grafana.com_rulerconfigs.yaml"
     ]
   },
-  "cannary-checker": {
-    "github_repository": "flanksource/canary-checker",
-    "urls": [
-      "https://raw.githubusercontent.com/flanksource/canary-checker/master/config/deploy/Canary.yml",
-      "https://raw.githubusercontent.com/flanksource/canary-checker/master/config/deploy/Component.yml",
-      "https://raw.githubusercontent.com/flanksource/canary-checker/master/config/deploy/topology.yml"
-    ]
-  },
   "olm": {
     "github_repository": "operator-framework/operator-lifecycle-manager",
     "urls": [
