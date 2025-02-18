@@ -30,9 +30,9 @@
   "cannary-checker": {
     "github_repository": "flanksource/canary-checker",
     "urls": [
-      "https://raw.githubusercontent.com/flanksource/canary-checker/refs/heads/master/config/deploy/Canary.yml",
-      "https://raw.githubusercontent.com/flanksource/canary-checker/refs/heads/master/config/deploy/Component.yml",
-      "https://raw.githubusercontent.com/flanksource/canary-checker/refs/heads/master/config/deploy/topology.yml"
+      "https://raw.githubusercontent.com/flanksource/canary-checker/master/config/deploy/Canary.yml",
+      "https://raw.githubusercontent.com/flanksource/canary-checker/master/config/deploy/Component.yml",
+      "https://raw.githubusercontent.com/flanksource/canary-checker/master/config/deploy/topology.yml"
     ]
   },
   "olm": {
