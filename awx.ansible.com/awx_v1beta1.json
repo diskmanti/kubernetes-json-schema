@@ -3013,6 +3013,7 @@
       "additionalProperties": false
     },
     "status": {
+      "x-kubernetes-preserve-unknown-fields": true,
       "properties": {
         "URL": {
           "description": "URL to access the deployed instance",
@@ -3078,7 +3079,8 @@
             "type": "object",
             "additionalProperties": false
           },
-          "type": "array"
+          "type": "array",
+          "x-kubernetes-preserve-unknown-fields": true
         }
       },
       "type": "object",
