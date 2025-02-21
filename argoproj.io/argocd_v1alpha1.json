@@ -1174,6 +1174,10 @@
           "type": "object",
           "additionalProperties": false
         },
+        "installationID": {
+          "description": "InstallationID uniquely identifies an Argo CD instance in multi-instance clusters.",
+          "type": "string"
+        },
         "kustomizeBuildOptions": {
           "description": "KustomizeBuildOptions is used to specify build options/parameters to use with `kustomize build`.",
           "type": "string"
