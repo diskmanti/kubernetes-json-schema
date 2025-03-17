@@ -1924,6 +1924,9 @@
           ],
           "type": "string"
         },
+        "enableServiceLinks": {
+          "type": "boolean"
+        },
         "enforcedNamespaceLabel": {
           "type": "string"
         },
@@ -3694,6 +3697,10 @@
           "additionalProperties": false
         },
         "serviceAccountName": {
+          "type": "string"
+        },
+        "serviceName": {
+          "minLength": 1,
           "type": "string"
         },
         "storage": {
