@@ -2,11 +2,11 @@
   "description": "CloudShell is the Schema for the cloudshells API",
   "properties": {
     "apiVersion": {
-      "description": "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
+      "description": "APIVersion defines the versioned schema of this representation of an object.\nServers should convert recognized schemas to the latest internal value, and\nmay reject unrecognized values.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
       "type": "string"
     },
     "kind": {
-      "description": "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
+      "description": "Kind is a string value representing the REST resource this object represents.\nServers may infer this from the endpoint the client submits requests to.\nCannot be updated.\nIn CamelCase.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
       "type": "string"
     },
     "metadata": {
@@ -23,7 +23,7 @@
           "type": "string"
         },
         "env": {
-          "description": "List of environment variables to set in the container. If it begins with \"TTYD\", that means it's a parameter configured for ttyd, eg: TTYD_SERVER_BUFFER_SIZE. Cannot be updated.",
+          "description": "List of environment variables to set in the container.\nIf it begins with \"TTYD\", that means it's a parameter configured for ttyd, eg: TTYD_SERVER_BUFFER_SIZE.\nCannot be updated.",
           "items": {
             "description": "EnvVar represents an environment variable present in a Container.",
             "properties": {
@@ -32,7 +32,7 @@
                 "type": "string"
               },
               "value": {
-                "description": "Variable references $(VAR_NAME) are expanded using the previously defined environment variables in the container and any service environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. Double $$ are reduced to a single $, which allows for escaping the $(VAR_NAME) syntax: i.e. \"$$(VAR_NAME)\" will produce the string literal \"$(VAR_NAME)\". Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to \"\".",
+                "description": "Variable references $(VAR_NAME) are expanded\nusing the previously defined environment variables in the container and\nany service environment variables. If a variable cannot be resolved,\nthe reference in the input string will be unchanged. Double $$ are reduced\nto a single $, which allows for escaping the $(VAR_NAME) syntax: i.e.\n\"$$(VAR_NAME)\" will produce the string literal \"$(VAR_NAME)\".\nEscaped references will never be expanded, regardless of whether the variable\nexists or not.\nDefaults to \"\".",
                 "type": "string"
               },
               "valueFrom": {
@@ -46,7 +46,7 @@
                         "type": "string"
                       },
                       "name": {
-                        "description": "Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names TODO: Add other useful fields. apiVersion, kind, uid?",
+                        "description": "Name of the referent.\nMore info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names",
                         "type": "string"
                       },
                       "optional": {
@@ -62,7 +62,7 @@
                     "additionalProperties": false
                   },
                   "fieldRef": {
-                    "description": "Selects a field of the pod: supports metadata.name, metadata.namespace, `metadata.labels['<KEY>']`, `metadata.annotations['<KEY>']`, spec.nodeName, spec.serviceAccountName, status.hostIP, status.podIP, status.podIPs.",
+                    "description": "Selects a field of the pod: supports metadata.name, metadata.namespace, `metadata.labels['<KEY>']`, `metadata.annotations['<KEY>']`,\nspec.nodeName, spec.serviceAccountName, status.hostIP, status.podIP, status.podIPs.",
                     "properties": {
                       "apiVersion": {
                         "description": "Version of the schema the FieldPath is written in terms of, defaults to \"v1\".",
@@ -81,7 +81,7 @@
                     "additionalProperties": false
                   },
                   "resourceFieldRef": {
-                    "description": "Selects a resource of the container: only resources limits and requests (limits.cpu, limits.memory, limits.ephemeral-storage, requests.cpu, requests.memory and requests.ephemeral-storage) are currently supported.",
+                    "description": "Selects a resource of the container: only resources limits and requests\n(limits.cpu, limits.memory, limits.ephemeral-storage, requests.cpu, requests.memory and requests.ephemeral-storage) are currently supported.",
                     "properties": {
                       "containerName": {
                         "description": "Container name: required for volumes, optional for env vars",
@@ -120,7 +120,7 @@
                         "type": "string"
                       },
                       "name": {
-                        "description": "Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names TODO: Add other useful fields. apiVersion, kind, uid?",
+                        "description": "Name of the referent.\nMore info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names",
                         "type": "string"
                       },
                       "optional": {
@@ -159,14 +159,21 @@
           "type": "string"
         },
         "image": {
-          "description": "Image defines the image to cloudshell, we can customize an image. Note: the image must be built on top of the officially available base image. Please see: https://github.com/cloudtty/cloudtty#how-to-build-custom-cloudshell-image",
+          "description": "Image defines the image to cloudshell, we can customize an image.\nNote: the image must be built on top of the officially available base image.\nPlease see: https://github.com/cloudtty/cloudtty#how-to-build-custom-cloudshell-image",
           "type": "string"
         },
         "ingressConfig": {
-          "description": "Specifies a port number range 30000-32767 when using nodeport mode, if not specified, kubernetes default random rule is used. NodePort int32 `json:\"NodePort,omitempty\"` IngressConfig specifies necessary parameters to create ingress.",
+          "description": "Specifies a port number range 30000-32767 when using nodeport mode,\nif not specified, kubernetes default random rule is used.\nNodePort int32 `json:\"NodePort,omitempty\"`\nIngressConfig specifies necessary parameters to create ingress.",
           "properties": {
+            "annotations": {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "description": "Annotations specifies a set of key-value pairs that you can attach annotations to a Ingress.",
+              "type": "object"
+            },
             "ingressClassName": {
-              "description": "IngressClassName specifies a ingress controller to ingress, it must be fill when the cluster have multiple ingress controller service.",
+              "description": "IngressClassName specifies a ingress controller to ingress,\nit must be fill when the cluster have multiple ingress controller service.",
               "type": "string"
             },
             "ingressName": {
@@ -174,7 +181,7 @@
               "type": "string"
             },
             "namespace": {
-              "description": "Namespace specifies a namespace that the virtualService will be created in it. if it's empty, default the cloudshell namespace.",
+              "description": "Namespace specifies a namespace that the virtualService will be\ncreated in it. if it's empty, default the cloudshell namespace.",
               "type": "string"
             }
           },
@@ -194,7 +201,7 @@
           "type": "string"
         },
         "secretRef": {
-          "description": "SecretRef represents the secret contains mandatory credentials to access the target cluster. The secret should hold credentials as follows: - secret.data.token - secret.data.caBundle The field is alpha phase, paleas open the featuregate AllowSecretStoreKubeconfig to use it.",
+          "description": "SecretRef represents the secret contains mandatory credentials to access the target cluster.\nThe secret should hold credentials as follows:\n- secret.data.token\n- secret.data.caBundle\nThe field is alpha phase, paleas open the featuregate AllowSecretStoreKubeconfig to use it.",
           "properties": {
             "name": {
               "description": "Name is the name of resource being referenced.",
@@ -216,7 +223,7 @@
           "description": "VirtualServiceConfig specifies some of the parameters necessary to create the virtaulService.",
           "properties": {
             "export_to": {
-              "description": "The value \".\" is reserved and defines an export to the same namespace that the virtual service is declared in. Similarly the value \"*\" is reserved and defines an export to all namespaces.",
+              "description": "The value \".\" is reserved and defines an export to the same namespace that\nthe virtual service is declared in. Similarly the value \"*\" is reserved and\ndefines an export to all namespaces.",
               "type": "string"
             },
             "gateway": {
@@ -224,11 +231,11 @@
               "type": "string"
             },
             "namespace": {
-              "description": "Namespace specifies a namespace that the virtualService will be created in it. if it's empty, default the cloudshell namespace.",
+              "description": "Namespace specifies a namespace that the virtualService will be\ncreated in it. if it's empty, default the cloudshell namespace.",
               "type": "string"
             },
             "virtualServiceName": {
-              "description": "VirtualServiceName specifies a name to virtualService, if it's empty, default \"cloudshell-VirtualService\"",
+              "description": "VirtualServiceName specifies a name to virtualService, if it's\nempty, default \"cloudshell-VirtualService\"",
               "type": "string"
             }
           },
@@ -251,7 +258,7 @@
           "type": "string"
         },
         "phase": {
-          "description": "INSERT ADDITIONAL STATUS FIELD - define observed state of cluster Important: Run \"make\" to regenerate code after modifying this file",
+          "description": "INSERT ADDITIONAL STATUS FIELD - define observed state of cluster\nImportant: Run \"make\" to regenerate code after modifying this file",
           "type": "string"
         }
       },
