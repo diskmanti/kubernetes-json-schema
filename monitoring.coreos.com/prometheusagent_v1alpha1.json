@@ -3915,6 +3915,11 @@
               },
               "metadataConfig": {
                 "properties": {
+                  "maxSamplesPerSend": {
+                    "format": "int32",
+                    "minimum": -1,
+                    "type": "integer"
+                  },
                   "send": {
                     "type": "boolean"
                   },
@@ -4040,7 +4045,7 @@
                     "type": "boolean"
                   },
                   "proxyUrl": {
-                    "pattern": "^http(s)?://.+$",
+                    "pattern": "^(http|https|socks5)://.+$",
                     "type": "string"
                   },
                   "scopes": {
@@ -4235,7 +4240,7 @@
                 "type": "boolean"
               },
               "proxyUrl": {
-                "pattern": "^http(s)?://.+$",
+                "pattern": "^(http|https|socks5)://.+$",
                 "type": "string"
               },
               "queueConfig": {
@@ -5823,6 +5828,11 @@
         },
         "targetLimit": {
           "format": "int64",
+          "type": "integer"
+        },
+        "terminationGracePeriodSeconds": {
+          "format": "int64",
+          "minimum": 0,
           "type": "integer"
         },
         "tolerations": {
