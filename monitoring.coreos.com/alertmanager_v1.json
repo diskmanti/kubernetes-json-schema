@@ -11,6 +11,25 @@
     },
     "spec": {
       "properties": {
+        "additionalArgs": {
+          "items": {
+            "properties": {
+              "name": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "type": "object",
+            "additionalProperties": false
+          },
+          "type": "array"
+        },
         "additionalPeers": {
           "items": {
             "type": "string"
@@ -1000,7 +1019,7 @@
                           "type": "boolean"
                         },
                         "proxyUrl": {
-                          "pattern": "^http(s)?://.+$",
+                          "pattern": "^(http|https|socks5)://.+$",
                           "type": "string"
                         },
                         "scopes": {
@@ -1195,7 +1214,7 @@
                       "type": "boolean"
                     },
                     "proxyUrl": {
-                      "pattern": "^http(s)?://.+$",
+                      "pattern": "^(http|https|socks5)://.+$",
                       "type": "string"
                     },
                     "tlsConfig": {
@@ -4985,6 +5004,11 @@
         },
         "tag": {
           "type": "string"
+        },
+        "terminationGracePeriodSeconds": {
+          "format": "int64",
+          "minimum": 0,
+          "type": "integer"
         },
         "tolerations": {
           "items": {

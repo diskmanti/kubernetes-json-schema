@@ -975,7 +975,7 @@
                     "type": "boolean"
                   },
                   "proxyUrl": {
-                    "pattern": "^http(s)?://.+$",
+                    "pattern": "^(http|https|socks5)://.+$",
                     "type": "string"
                   },
                   "relabelings": {
@@ -4552,7 +4552,7 @@
                     "type": "boolean"
                   },
                   "proxyUrl": {
-                    "pattern": "^http(s)?://.+$",
+                    "pattern": "^(http|https|socks5)://.+$",
                     "type": "string"
                   },
                   "scopes": {
@@ -4747,7 +4747,7 @@
                 "type": "boolean"
               },
               "proxyUrl": {
-                "pattern": "^http(s)?://.+$",
+                "pattern": "^(http|https|socks5)://.+$",
                 "type": "string"
               },
               "readRecent": {
@@ -5110,6 +5110,11 @@
               },
               "metadataConfig": {
                 "properties": {
+                  "maxSamplesPerSend": {
+                    "format": "int32",
+                    "minimum": -1,
+                    "type": "integer"
+                  },
                   "send": {
                     "type": "boolean"
                   },
@@ -5235,7 +5240,7 @@
                     "type": "boolean"
                   },
                   "proxyUrl": {
-                    "pattern": "^http(s)?://.+$",
+                    "pattern": "^(http|https|socks5)://.+$",
                     "type": "string"
                   },
                   "scopes": {
@@ -5430,7 +5435,7 @@
                 "type": "boolean"
               },
               "proxyUrl": {
-                "pattern": "^http(s)?://.+$",
+                "pattern": "^(http|https|socks5)://.+$",
                 "type": "string"
               },
               "queueConfig": {
@@ -6655,6 +6660,19 @@
         },
         "shardRetentionPolicy": {
           "properties": {
+            "retain": {
+              "properties": {
+                "retentionPeriod": {
+                  "pattern": "^(0|(([0-9]+)y)?(([0-9]+)w)?(([0-9]+)d)?(([0-9]+)h)?(([0-9]+)m)?(([0-9]+)s)?(([0-9]+)ms)?)$",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "retentionPeriod"
+              ],
+              "type": "object",
+              "additionalProperties": false
+            },
             "whenScaled": {
               "enum": [
                 "Retain",
@@ -7150,6 +7168,11 @@
         },
         "targetLimit": {
           "format": "int64",
+          "type": "integer"
+        },
+        "terminationGracePeriodSeconds": {
+          "format": "int64",
+          "minimum": 0,
           "type": "integer"
         },
         "thanos": {
