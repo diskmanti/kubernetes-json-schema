@@ -6614,7 +6614,7 @@
           "additionalProperties": false
         },
         "initialRepositories": {
-          "description": "InitialRepositories to configure Argo CD with upon creation of the cluster.",
+          "description": "Deprecated: InitialRepositories to configure Argo CD with upon creation of the cluster.",
           "type": "string"
         },
         "initialSSHKnownHosts": {
@@ -11503,7 +11503,7 @@
           "additionalProperties": false
         },
         "repositoryCredentials": {
-          "description": "RepositoryCredentials are the Git pull credentials to configure Argo CD with upon creation of the cluster.",
+          "description": "Deprecated: RepositoryCredentials are the Git pull credentials to configure Argo CD with upon creation of the cluster.",
           "type": "string"
         },
         "resourceActions": {
