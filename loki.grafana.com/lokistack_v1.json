@@ -3326,6 +3326,10 @@
               },
               "type": "object",
               "additionalProperties": false
+            },
+            "useRequestsAsLimits": {
+              "description": "When UseRequestsAsLimits is true, the operand Pods are configured to have resource limits equal to the resource\nrequests. This imposes a hard limit on resource usage of the LokiStack, but limits its ability to react to load\nspikes, whether on the ingestion or query side.\n\nNote: This is currently a tech-preview feature.",
+              "type": "boolean"
             }
           },
           "type": "object",
