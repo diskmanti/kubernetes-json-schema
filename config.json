@@ -105,31 +105,6 @@
       "https://raw.githubusercontent.com/vmware-tanzu/helm-charts/{version}/charts/velero/crds/volumesnapshotlocations.yaml"
     ]
   },  
-  "kubevela": {
-    "github_repository": "kubevela/kubevela",
-    "urls": [
-      "https://raw.githubusercontent.com/kubevela/kubevela/master/charts/vela-core/crds/core.oam.dev_applicationrevisions.yaml",
-      "https://raw.githubusercontent.com/kubevela/kubevela/master/charts/vela-core/crds/core.oam.dev_applications.yaml",
-      "https://raw.githubusercontent.com/kubevela/kubevela/master/charts/vela-core/crds/core.oam.dev_componentdefinitions.yaml",
-      "https://raw.githubusercontent.com/kubevela/kubevela/master/charts/vela-core/crds/core.oam.dev_definitionrevisions.yaml",
-      "https://raw.githubusercontent.com/kubevela/kubevela/master/charts/vela-core/crds/core.oam.dev_policies.yaml",
-      "https://raw.githubusercontent.com/kubevela/kubevela/master/charts/vela-core/crds/core.oam.dev_policydefinitions.yaml",
-      "https://raw.githubusercontent.com/kubevela/kubevela/master/charts/vela-core/crds/core.oam.dev_resourcetrackers.yaml",
-      "https://raw.githubusercontent.com/kubevela/kubevela/master/charts/vela-core/crds/core.oam.dev_traitdefinitions.yaml",
-      "https://raw.githubusercontent.com/kubevela/kubevela/master/charts/vela-core/crds/core.oam.dev_workflows.yaml",
-      "https://raw.githubusercontent.com/kubevela/kubevela/master/charts/vela-core/crds/core.oam.dev_workflowstepdefinitions.yaml",
-      "https://raw.githubusercontent.com/kubevela/kubevela/master/charts/vela-core/crds/core.oam.dev_workloaddefinitions.yaml"
-    ]
-  },
-  "awx": {
-    "github_repository": "ansible/awx-operator",
-    "urls": [
-      "https://raw.githubusercontent.com/ansible/awx-operator/devel/config/crd/bases/awx.ansible.com_awxbackups.yaml",
-      "https://raw.githubusercontent.com/ansible/awx-operator/devel/config/crd/bases/awx.ansible.com_awxmeshingresses.yaml",
-      "https://raw.githubusercontent.com/ansible/awx-operator/devel/config/crd/bases/awx.ansible.com_awxrestores.yaml",
-      "https://raw.githubusercontent.com/ansible/awx-operator/devel/config/crd/bases/awx.ansible.com_awxs.yaml"
-    ]
-  },
   "oadp-operator": {
     "github_repository": "openshift/oadp-operator",
     "urls": [
