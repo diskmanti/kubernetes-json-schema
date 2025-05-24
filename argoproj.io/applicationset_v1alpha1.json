@@ -382,6 +382,9 @@
                                   "forceCommonLabels": {
                                     "type": "boolean"
                                   },
+                                  "ignoreMissingComponents": {
+                                    "type": "boolean"
+                                  },
                                   "images": {
                                     "items": {
                                       "type": "string"
@@ -390,6 +393,9 @@
                                   },
                                   "kubeVersion": {
                                     "type": "string"
+                                  },
+                                  "labelIncludeTemplates": {
+                                    "type": "boolean"
                                   },
                                   "labelWithoutSelector": {
                                     "type": "boolean"
@@ -817,6 +823,9 @@
                                     "forceCommonLabels": {
                                       "type": "boolean"
                                     },
+                                    "ignoreMissingComponents": {
+                                      "type": "boolean"
+                                    },
                                     "images": {
                                       "items": {
                                         "type": "string"
@@ -825,6 +834,9 @@
                                     },
                                     "kubeVersion": {
                                       "type": "string"
+                                    },
+                                    "labelIncludeTemplates": {
+                                      "type": "boolean"
                                     },
                                     "labelWithoutSelector": {
                                       "type": "boolean"
@@ -1457,6 +1469,9 @@
                                   "forceCommonLabels": {
                                     "type": "boolean"
                                   },
+                                  "ignoreMissingComponents": {
+                                    "type": "boolean"
+                                  },
                                   "images": {
                                     "items": {
                                       "type": "string"
@@ -1465,6 +1480,9 @@
                                   },
                                   "kubeVersion": {
                                     "type": "string"
+                                  },
+                                  "labelIncludeTemplates": {
+                                    "type": "boolean"
                                   },
                                   "labelWithoutSelector": {
                                     "type": "boolean"
@@ -1892,6 +1910,9 @@
                                     "forceCommonLabels": {
                                       "type": "boolean"
                                     },
+                                    "ignoreMissingComponents": {
+                                      "type": "boolean"
+                                    },
                                     "images": {
                                       "items": {
                                         "type": "string"
@@ -1900,6 +1921,9 @@
                                     },
                                     "kubeVersion": {
                                       "type": "string"
+                                    },
+                                    "labelIncludeTemplates": {
+                                      "type": "boolean"
                                     },
                                     "labelWithoutSelector": {
                                       "type": "boolean"
@@ -2532,6 +2556,9 @@
                                   "forceCommonLabels": {
                                     "type": "boolean"
                                   },
+                                  "ignoreMissingComponents": {
+                                    "type": "boolean"
+                                  },
                                   "images": {
                                     "items": {
                                       "type": "string"
@@ -2540,6 +2567,9 @@
                                   },
                                   "kubeVersion": {
                                     "type": "string"
+                                  },
+                                  "labelIncludeTemplates": {
+                                    "type": "boolean"
                                   },
                                   "labelWithoutSelector": {
                                     "type": "boolean"
@@ -2967,6 +2997,9 @@
                                     "forceCommonLabels": {
                                       "type": "boolean"
                                     },
+                                    "ignoreMissingComponents": {
+                                      "type": "boolean"
+                                    },
                                     "images": {
                                       "items": {
                                         "type": "string"
@@ -2975,6 +3008,9 @@
                                     },
                                     "kubeVersion": {
                                       "type": "string"
+                                    },
+                                    "labelIncludeTemplates": {
+                                      "type": "boolean"
                                     },
                                     "labelWithoutSelector": {
                                       "type": "boolean"
@@ -3574,6 +3610,9 @@
                                   "forceCommonLabels": {
                                     "type": "boolean"
                                   },
+                                  "ignoreMissingComponents": {
+                                    "type": "boolean"
+                                  },
                                   "images": {
                                     "items": {
                                       "type": "string"
@@ -3582,6 +3621,9 @@
                                   },
                                   "kubeVersion": {
                                     "type": "string"
+                                  },
+                                  "labelIncludeTemplates": {
+                                    "type": "boolean"
                                   },
                                   "labelWithoutSelector": {
                                     "type": "boolean"
@@ -4009,6 +4051,9 @@
                                     "forceCommonLabels": {
                                       "type": "boolean"
                                     },
+                                    "ignoreMissingComponents": {
+                                      "type": "boolean"
+                                    },
                                     "images": {
                                       "items": {
                                         "type": "string"
@@ -4017,6 +4062,9 @@
                                     },
                                     "kubeVersion": {
                                       "type": "string"
+                                    },
+                                    "labelIncludeTemplates": {
+                                      "type": "boolean"
                                     },
                                     "labelWithoutSelector": {
                                       "type": "boolean"
@@ -4652,6 +4700,9 @@
                                             "forceCommonLabels": {
                                               "type": "boolean"
                                             },
+                                            "ignoreMissingComponents": {
+                                              "type": "boolean"
+                                            },
                                             "images": {
                                               "items": {
                                                 "type": "string"
@@ -4660,6 +4711,9 @@
                                             },
                                             "kubeVersion": {
                                               "type": "string"
+                                            },
+                                            "labelIncludeTemplates": {
+                                              "type": "boolean"
                                             },
                                             "labelWithoutSelector": {
                                               "type": "boolean"
@@ -5087,6 +5141,9 @@
                                               "forceCommonLabels": {
                                                 "type": "boolean"
                                               },
+                                              "ignoreMissingComponents": {
+                                                "type": "boolean"
+                                              },
                                               "images": {
                                                 "items": {
                                                   "type": "string"
@@ -5095,6 +5152,9 @@
                                               },
                                               "kubeVersion": {
                                                 "type": "string"
+                                              },
+                                              "labelIncludeTemplates": {
+                                                "type": "boolean"
                                               },
                                               "labelWithoutSelector": {
                                                 "type": "boolean"
@@ -5727,6 +5787,9 @@
                                             "forceCommonLabels": {
                                               "type": "boolean"
                                             },
+                                            "ignoreMissingComponents": {
+                                              "type": "boolean"
+                                            },
                                             "images": {
                                               "items": {
                                                 "type": "string"
@@ -5735,6 +5798,9 @@
                                             },
                                             "kubeVersion": {
                                               "type": "string"
+                                            },
+                                            "labelIncludeTemplates": {
+                                              "type": "boolean"
                                             },
                                             "labelWithoutSelector": {
                                               "type": "boolean"
@@ -6162,6 +6228,9 @@
                                               "forceCommonLabels": {
                                                 "type": "boolean"
                                               },
+                                              "ignoreMissingComponents": {
+                                                "type": "boolean"
+                                              },
                                               "images": {
                                                 "items": {
                                                   "type": "string"
@@ -6170,6 +6239,9 @@
                                               },
                                               "kubeVersion": {
                                                 "type": "string"
+                                              },
+                                              "labelIncludeTemplates": {
+                                                "type": "boolean"
                                               },
                                               "labelWithoutSelector": {
                                                 "type": "boolean"
@@ -6802,6 +6874,9 @@
                                             "forceCommonLabels": {
                                               "type": "boolean"
                                             },
+                                            "ignoreMissingComponents": {
+                                              "type": "boolean"
+                                            },
                                             "images": {
                                               "items": {
                                                 "type": "string"
@@ -6810,6 +6885,9 @@
                                             },
                                             "kubeVersion": {
                                               "type": "string"
+                                            },
+                                            "labelIncludeTemplates": {
+                                              "type": "boolean"
                                             },
                                             "labelWithoutSelector": {
                                               "type": "boolean"
@@ -7237,6 +7315,9 @@
                                               "forceCommonLabels": {
                                                 "type": "boolean"
                                               },
+                                              "ignoreMissingComponents": {
+                                                "type": "boolean"
+                                              },
                                               "images": {
                                                 "items": {
                                                   "type": "string"
@@ -7245,6 +7326,9 @@
                                               },
                                               "kubeVersion": {
                                                 "type": "string"
+                                              },
+                                              "labelIncludeTemplates": {
+                                                "type": "boolean"
                                               },
                                               "labelWithoutSelector": {
                                                 "type": "boolean"
@@ -7844,6 +7928,9 @@
                                             "forceCommonLabels": {
                                               "type": "boolean"
                                             },
+                                            "ignoreMissingComponents": {
+                                              "type": "boolean"
+                                            },
                                             "images": {
                                               "items": {
                                                 "type": "string"
@@ -7852,6 +7939,9 @@
                                             },
                                             "kubeVersion": {
                                               "type": "string"
+                                            },
+                                            "labelIncludeTemplates": {
+                                              "type": "boolean"
                                             },
                                             "labelWithoutSelector": {
                                               "type": "boolean"
@@ -8279,6 +8369,9 @@
                                               "forceCommonLabels": {
                                                 "type": "boolean"
                                               },
+                                              "ignoreMissingComponents": {
+                                                "type": "boolean"
+                                              },
                                               "images": {
                                                 "items": {
                                                   "type": "string"
@@ -8287,6 +8380,9 @@
                                               },
                                               "kubeVersion": {
                                                 "type": "string"
+                                              },
+                                              "labelIncludeTemplates": {
+                                                "type": "boolean"
                                               },
                                               "labelWithoutSelector": {
                                                 "type": "boolean"
@@ -8901,6 +8997,9 @@
                                             "forceCommonLabels": {
                                               "type": "boolean"
                                             },
+                                            "ignoreMissingComponents": {
+                                              "type": "boolean"
+                                            },
                                             "images": {
                                               "items": {
                                                 "type": "string"
@@ -8909,6 +9008,9 @@
                                             },
                                             "kubeVersion": {
                                               "type": "string"
+                                            },
+                                            "labelIncludeTemplates": {
+                                              "type": "boolean"
                                             },
                                             "labelWithoutSelector": {
                                               "type": "boolean"
@@ -9336,6 +9438,9 @@
                                               "forceCommonLabels": {
                                                 "type": "boolean"
                                               },
+                                              "ignoreMissingComponents": {
+                                                "type": "boolean"
+                                              },
                                               "images": {
                                                 "items": {
                                                   "type": "string"
@@ -9344,6 +9449,9 @@
                                               },
                                               "kubeVersion": {
                                                 "type": "string"
+                                              },
+                                              "labelIncludeTemplates": {
+                                                "type": "boolean"
                                               },
                                               "labelWithoutSelector": {
                                                 "type": "boolean"
@@ -10305,6 +10413,9 @@
                                             "forceCommonLabels": {
                                               "type": "boolean"
                                             },
+                                            "ignoreMissingComponents": {
+                                              "type": "boolean"
+                                            },
                                             "images": {
                                               "items": {
                                                 "type": "string"
@@ -10313,6 +10424,9 @@
                                             },
                                             "kubeVersion": {
                                               "type": "string"
+                                            },
+                                            "labelIncludeTemplates": {
+                                              "type": "boolean"
                                             },
                                             "labelWithoutSelector": {
                                               "type": "boolean"
@@ -10740,6 +10854,9 @@
                                               "forceCommonLabels": {
                                                 "type": "boolean"
                                               },
+                                              "ignoreMissingComponents": {
+                                                "type": "boolean"
+                                              },
                                               "images": {
                                                 "items": {
                                                   "type": "string"
@@ -10748,6 +10865,9 @@
                                               },
                                               "kubeVersion": {
                                                 "type": "string"
+                                              },
+                                              "labelIncludeTemplates": {
+                                                "type": "boolean"
                                               },
                                               "labelWithoutSelector": {
                                                 "type": "boolean"
@@ -11008,6 +11128,12 @@
                               ],
                               "type": "object",
                               "additionalProperties": false
+                            },
+                            "values": {
+                              "additionalProperties": {
+                                "type": "string"
+                              },
+                              "type": "object"
                             }
                           },
                           "type": "object",
@@ -11702,6 +11828,9 @@
                                             "forceCommonLabels": {
                                               "type": "boolean"
                                             },
+                                            "ignoreMissingComponents": {
+                                              "type": "boolean"
+                                            },
                                             "images": {
                                               "items": {
                                                 "type": "string"
@@ -11710,6 +11839,9 @@
                                             },
                                             "kubeVersion": {
                                               "type": "string"
+                                            },
+                                            "labelIncludeTemplates": {
+                                              "type": "boolean"
                                             },
                                             "labelWithoutSelector": {
                                               "type": "boolean"
@@ -12137,6 +12269,9 @@
                                               "forceCommonLabels": {
                                                 "type": "boolean"
                                               },
+                                              "ignoreMissingComponents": {
+                                                "type": "boolean"
+                                              },
                                               "images": {
                                                 "items": {
                                                   "type": "string"
@@ -12145,6 +12280,9 @@
                                               },
                                               "kubeVersion": {
                                                 "type": "string"
+                                              },
+                                              "labelIncludeTemplates": {
+                                                "type": "boolean"
                                               },
                                               "labelWithoutSelector": {
                                                 "type": "boolean"
@@ -12775,6 +12913,9 @@
                                   "forceCommonLabels": {
                                     "type": "boolean"
                                   },
+                                  "ignoreMissingComponents": {
+                                    "type": "boolean"
+                                  },
                                   "images": {
                                     "items": {
                                       "type": "string"
@@ -12783,6 +12924,9 @@
                                   },
                                   "kubeVersion": {
                                     "type": "string"
+                                  },
+                                  "labelIncludeTemplates": {
+                                    "type": "boolean"
                                   },
                                   "labelWithoutSelector": {
                                     "type": "boolean"
@@ -13210,6 +13354,9 @@
                                     "forceCommonLabels": {
                                       "type": "boolean"
                                     },
+                                    "ignoreMissingComponents": {
+                                      "type": "boolean"
+                                    },
                                     "images": {
                                       "items": {
                                         "type": "string"
@@ -13218,6 +13365,9 @@
                                     },
                                     "kubeVersion": {
                                       "type": "string"
+                                    },
+                                    "labelIncludeTemplates": {
+                                      "type": "boolean"
                                     },
                                     "labelWithoutSelector": {
                                       "type": "boolean"
@@ -13856,6 +14006,9 @@
                                             "forceCommonLabels": {
                                               "type": "boolean"
                                             },
+                                            "ignoreMissingComponents": {
+                                              "type": "boolean"
+                                            },
                                             "images": {
                                               "items": {
                                                 "type": "string"
@@ -13864,6 +14017,9 @@
                                             },
                                             "kubeVersion": {
                                               "type": "string"
+                                            },
+                                            "labelIncludeTemplates": {
+                                              "type": "boolean"
                                             },
                                             "labelWithoutSelector": {
                                               "type": "boolean"
@@ -14291,6 +14447,9 @@
                                               "forceCommonLabels": {
                                                 "type": "boolean"
                                               },
+                                              "ignoreMissingComponents": {
+                                                "type": "boolean"
+                                              },
                                               "images": {
                                                 "items": {
                                                   "type": "string"
@@ -14299,6 +14458,9 @@
                                               },
                                               "kubeVersion": {
                                                 "type": "string"
+                                              },
+                                              "labelIncludeTemplates": {
+                                                "type": "boolean"
                                               },
                                               "labelWithoutSelector": {
                                                 "type": "boolean"
@@ -14931,6 +15093,9 @@
                                             "forceCommonLabels": {
                                               "type": "boolean"
                                             },
+                                            "ignoreMissingComponents": {
+                                              "type": "boolean"
+                                            },
                                             "images": {
                                               "items": {
                                                 "type": "string"
@@ -14939,6 +15104,9 @@
                                             },
                                             "kubeVersion": {
                                               "type": "string"
+                                            },
+                                            "labelIncludeTemplates": {
+                                              "type": "boolean"
                                             },
                                             "labelWithoutSelector": {
                                               "type": "boolean"
@@ -15366,6 +15534,9 @@
                                               "forceCommonLabels": {
                                                 "type": "boolean"
                                               },
+                                              "ignoreMissingComponents": {
+                                                "type": "boolean"
+                                              },
                                               "images": {
                                                 "items": {
                                                   "type": "string"
@@ -15374,6 +15545,9 @@
                                               },
                                               "kubeVersion": {
                                                 "type": "string"
+                                              },
+                                              "labelIncludeTemplates": {
+                                                "type": "boolean"
                                               },
                                               "labelWithoutSelector": {
                                                 "type": "boolean"
@@ -16006,6 +16180,9 @@
                                             "forceCommonLabels": {
                                               "type": "boolean"
                                             },
+                                            "ignoreMissingComponents": {
+                                              "type": "boolean"
+                                            },
                                             "images": {
                                               "items": {
                                                 "type": "string"
@@ -16014,6 +16191,9 @@
                                             },
                                             "kubeVersion": {
                                               "type": "string"
+                                            },
+                                            "labelIncludeTemplates": {
+                                              "type": "boolean"
                                             },
                                             "labelWithoutSelector": {
                                               "type": "boolean"
@@ -16441,6 +16621,9 @@
                                               "forceCommonLabels": {
                                                 "type": "boolean"
                                               },
+                                              "ignoreMissingComponents": {
+                                                "type": "boolean"
+                                              },
                                               "images": {
                                                 "items": {
                                                   "type": "string"
@@ -16449,6 +16632,9 @@
                                               },
                                               "kubeVersion": {
                                                 "type": "string"
+                                              },
+                                              "labelIncludeTemplates": {
+                                                "type": "boolean"
                                               },
                                               "labelWithoutSelector": {
                                                 "type": "boolean"
@@ -17048,6 +17234,9 @@
                                             "forceCommonLabels": {
                                               "type": "boolean"
                                             },
+                                            "ignoreMissingComponents": {
+                                              "type": "boolean"
+                                            },
                                             "images": {
                                               "items": {
                                                 "type": "string"
@@ -17056,6 +17245,9 @@
                                             },
                                             "kubeVersion": {
                                               "type": "string"
+                                            },
+                                            "labelIncludeTemplates": {
+                                              "type": "boolean"
                                             },
                                             "labelWithoutSelector": {
                                               "type": "boolean"
@@ -17483,6 +17675,9 @@
                                               "forceCommonLabels": {
                                                 "type": "boolean"
                                               },
+                                              "ignoreMissingComponents": {
+                                                "type": "boolean"
+                                              },
                                               "images": {
                                                 "items": {
                                                   "type": "string"
@@ -17491,6 +17686,9 @@
                                               },
                                               "kubeVersion": {
                                                 "type": "string"
+                                              },
+                                              "labelIncludeTemplates": {
+                                                "type": "boolean"
                                               },
                                               "labelWithoutSelector": {
                                                 "type": "boolean"
@@ -18105,6 +18303,9 @@
                                             "forceCommonLabels": {
                                               "type": "boolean"
                                             },
+                                            "ignoreMissingComponents": {
+                                              "type": "boolean"
+                                            },
                                             "images": {
                                               "items": {
                                                 "type": "string"
@@ -18113,6 +18314,9 @@
                                             },
                                             "kubeVersion": {
                                               "type": "string"
+                                            },
+                                            "labelIncludeTemplates": {
+                                              "type": "boolean"
                                             },
                                             "labelWithoutSelector": {
                                               "type": "boolean"
@@ -18540,6 +18744,9 @@
                                               "forceCommonLabels": {
                                                 "type": "boolean"
                                               },
+                                              "ignoreMissingComponents": {
+                                                "type": "boolean"
+                                              },
                                               "images": {
                                                 "items": {
                                                   "type": "string"
@@ -18548,6 +18755,9 @@
                                               },
                                               "kubeVersion": {
                                                 "type": "string"
+                                              },
+                                              "labelIncludeTemplates": {
+                                                "type": "boolean"
                                               },
                                               "labelWithoutSelector": {
                                                 "type": "boolean"
@@ -19509,6 +19719,9 @@
                                             "forceCommonLabels": {
                                               "type": "boolean"
                                             },
+                                            "ignoreMissingComponents": {
+                                              "type": "boolean"
+                                            },
                                             "images": {
                                               "items": {
                                                 "type": "string"
@@ -19517,6 +19730,9 @@
                                             },
                                             "kubeVersion": {
                                               "type": "string"
+                                            },
+                                            "labelIncludeTemplates": {
+                                              "type": "boolean"
                                             },
                                             "labelWithoutSelector": {
                                               "type": "boolean"
@@ -19944,6 +20160,9 @@
                                               "forceCommonLabels": {
                                                 "type": "boolean"
                                               },
+                                              "ignoreMissingComponents": {
+                                                "type": "boolean"
+                                              },
                                               "images": {
                                                 "items": {
                                                   "type": "string"
@@ -19952,6 +20171,9 @@
                                               },
                                               "kubeVersion": {
                                                 "type": "string"
+                                              },
+                                              "labelIncludeTemplates": {
+                                                "type": "boolean"
                                               },
                                               "labelWithoutSelector": {
                                                 "type": "boolean"
@@ -20212,6 +20434,12 @@
                               ],
                               "type": "object",
                               "additionalProperties": false
+                            },
+                            "values": {
+                              "additionalProperties": {
+                                "type": "string"
+                              },
+                              "type": "object"
                             }
                           },
                           "type": "object",
@@ -20906,6 +21134,9 @@
                                             "forceCommonLabels": {
                                               "type": "boolean"
                                             },
+                                            "ignoreMissingComponents": {
+                                              "type": "boolean"
+                                            },
                                             "images": {
                                               "items": {
                                                 "type": "string"
@@ -20914,6 +21145,9 @@
                                             },
                                             "kubeVersion": {
                                               "type": "string"
+                                            },
+                                            "labelIncludeTemplates": {
+                                              "type": "boolean"
                                             },
                                             "labelWithoutSelector": {
                                               "type": "boolean"
@@ -21341,6 +21575,9 @@
                                               "forceCommonLabels": {
                                                 "type": "boolean"
                                               },
+                                              "ignoreMissingComponents": {
+                                                "type": "boolean"
+                                              },
                                               "images": {
                                                 "items": {
                                                   "type": "string"
@@ -21349,6 +21586,9 @@
                                               },
                                               "kubeVersion": {
                                                 "type": "string"
+                                              },
+                                              "labelIncludeTemplates": {
+                                                "type": "boolean"
                                               },
                                               "labelWithoutSelector": {
                                                 "type": "boolean"
@@ -21985,6 +22225,9 @@
                                   "forceCommonLabels": {
                                     "type": "boolean"
                                   },
+                                  "ignoreMissingComponents": {
+                                    "type": "boolean"
+                                  },
                                   "images": {
                                     "items": {
                                       "type": "string"
@@ -21993,6 +22236,9 @@
                                   },
                                   "kubeVersion": {
                                     "type": "string"
+                                  },
+                                  "labelIncludeTemplates": {
+                                    "type": "boolean"
                                   },
                                   "labelWithoutSelector": {
                                     "type": "boolean"
@@ -22420,6 +22666,9 @@
                                     "forceCommonLabels": {
                                       "type": "boolean"
                                     },
+                                    "ignoreMissingComponents": {
+                                      "type": "boolean"
+                                    },
                                     "images": {
                                       "items": {
                                         "type": "string"
@@ -22428,6 +22677,9 @@
                                     },
                                     "kubeVersion": {
                                       "type": "string"
+                                    },
+                                    "labelIncludeTemplates": {
+                                      "type": "boolean"
                                     },
                                     "labelWithoutSelector": {
                                       "type": "boolean"
@@ -23040,6 +23292,9 @@
                                   "forceCommonLabels": {
                                     "type": "boolean"
                                   },
+                                  "ignoreMissingComponents": {
+                                    "type": "boolean"
+                                  },
                                   "images": {
                                     "items": {
                                       "type": "string"
@@ -23048,6 +23303,9 @@
                                   },
                                   "kubeVersion": {
                                     "type": "string"
+                                  },
+                                  "labelIncludeTemplates": {
+                                    "type": "boolean"
                                   },
                                   "labelWithoutSelector": {
                                     "type": "boolean"
@@ -23475,6 +23733,9 @@
                                     "forceCommonLabels": {
                                       "type": "boolean"
                                     },
+                                    "ignoreMissingComponents": {
+                                      "type": "boolean"
+                                    },
                                     "images": {
                                       "items": {
                                         "type": "string"
@@ -23483,6 +23744,9 @@
                                     },
                                     "kubeVersion": {
                                       "type": "string"
+                                    },
+                                    "labelIncludeTemplates": {
+                                      "type": "boolean"
                                     },
                                     "labelWithoutSelector": {
                                       "type": "boolean"
@@ -24444,6 +24708,9 @@
                                   "forceCommonLabels": {
                                     "type": "boolean"
                                   },
+                                  "ignoreMissingComponents": {
+                                    "type": "boolean"
+                                  },
                                   "images": {
                                     "items": {
                                       "type": "string"
@@ -24452,6 +24719,9 @@
                                   },
                                   "kubeVersion": {
                                     "type": "string"
+                                  },
+                                  "labelIncludeTemplates": {
+                                    "type": "boolean"
                                   },
                                   "labelWithoutSelector": {
                                     "type": "boolean"
@@ -24879,6 +25149,9 @@
                                     "forceCommonLabels": {
                                       "type": "boolean"
                                     },
+                                    "ignoreMissingComponents": {
+                                      "type": "boolean"
+                                    },
                                     "images": {
                                       "items": {
                                         "type": "string"
@@ -24887,6 +25160,9 @@
                                     },
                                     "kubeVersion": {
                                       "type": "string"
+                                    },
+                                    "labelIncludeTemplates": {
+                                      "type": "boolean"
                                     },
                                     "labelWithoutSelector": {
                                       "type": "boolean"
@@ -25147,6 +25423,12 @@
                     ],
                     "type": "object",
                     "additionalProperties": false
+                  },
+                  "values": {
+                    "additionalProperties": {
+                      "type": "string"
+                    },
+                    "type": "object"
                   }
                 },
                 "type": "object",
@@ -25841,6 +26123,9 @@
                                   "forceCommonLabels": {
                                     "type": "boolean"
                                   },
+                                  "ignoreMissingComponents": {
+                                    "type": "boolean"
+                                  },
                                   "images": {
                                     "items": {
                                       "type": "string"
@@ -25849,6 +26134,9 @@
                                   },
                                   "kubeVersion": {
                                     "type": "string"
+                                  },
+                                  "labelIncludeTemplates": {
+                                    "type": "boolean"
                                   },
                                   "labelWithoutSelector": {
                                     "type": "boolean"
@@ -26276,6 +26564,9 @@
                                     "forceCommonLabels": {
                                       "type": "boolean"
                                     },
+                                    "ignoreMissingComponents": {
+                                      "type": "boolean"
+                                    },
                                     "images": {
                                       "items": {
                                         "type": "string"
@@ -26284,6 +26575,9 @@
                                     },
                                     "kubeVersion": {
                                       "type": "string"
+                                    },
+                                    "labelIncludeTemplates": {
+                                      "type": "boolean"
                                     },
                                     "labelWithoutSelector": {
                                       "type": "boolean"
@@ -27039,6 +27333,9 @@
                         "forceCommonLabels": {
                           "type": "boolean"
                         },
+                        "ignoreMissingComponents": {
+                          "type": "boolean"
+                        },
                         "images": {
                           "items": {
                             "type": "string"
@@ -27047,6 +27344,9 @@
                         },
                         "kubeVersion": {
                           "type": "string"
+                        },
+                        "labelIncludeTemplates": {
+                          "type": "boolean"
                         },
                         "labelWithoutSelector": {
                           "type": "boolean"
@@ -27474,6 +27774,9 @@
                           "forceCommonLabels": {
                             "type": "boolean"
                           },
+                          "ignoreMissingComponents": {
+                            "type": "boolean"
+                          },
                           "images": {
                             "items": {
                               "type": "string"
@@ -27482,6 +27785,9 @@
                           },
                           "kubeVersion": {
                             "type": "string"
+                          },
+                          "labelIncludeTemplates": {
+                            "type": "boolean"
                           },
                           "labelWithoutSelector": {
                             "type": "boolean"
