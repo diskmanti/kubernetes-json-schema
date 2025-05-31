@@ -7972,6 +7972,22 @@
           "minLength": 1,
           "type": "string"
         },
+        "nameEscapingScheme": {
+          "enum": [
+            "AllowUTF8",
+            "Underscores",
+            "Dots",
+            "Values"
+          ],
+          "type": "string"
+        },
+        "nameValidationScheme": {
+          "enum": [
+            "UTF8",
+            "Legacy"
+          ],
+          "type": "string"
+        },
         "nativeHistogramBucketLimit": {
           "format": "int64",
           "type": "integer"
