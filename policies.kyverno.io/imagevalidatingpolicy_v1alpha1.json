@@ -64,6 +64,18 @@
           "description": "Attestors provides a list of trusted authorities.",
           "items": {
             "description": "Attestor is an identity that confirms or verifies the authenticity of an image or an attestation",
+            "oneOf": [
+              {
+                "required": [
+                  "cosign"
+                ]
+              },
+              {
+                "required": [
+                  "notary"
+                ]
+              }
+            ],
             "properties": {
               "cosign": {
                 "description": "Cosign defines attestor configuration for Cosign based signatures",
@@ -958,6 +970,18 @@
                         "description": "Attestors provides a list of trusted authorities.",
                         "items": {
                           "description": "Attestor is an identity that confirms or verifies the authenticity of an image or an attestation",
+                          "oneOf": [
+                            {
+                              "required": [
+                                "cosign"
+                              ]
+                            },
+                            {
+                              "required": [
+                                "notary"
+                              ]
+                            }
+                          ],
                           "properties": {
                             "cosign": {
                               "description": "Cosign defines attestor configuration for Cosign based signatures",
@@ -1790,10 +1814,37 @@
                     ],
                     "type": "object",
                     "additionalProperties": false
+                  },
+                  "targets": {
+                    "items": {
+                      "properties": {
+                        "group": {
+                          "type": "string"
+                        },
+                        "kind": {
+                          "type": "string"
+                        },
+                        "resource": {
+                          "type": "string"
+                        },
+                        "version": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "resource",
+                        "version"
+                      ],
+                      "type": "object",
+                      "additionalProperties": false
+                    },
+                    "type": "array"
                   }
                 },
                 "required": [
-                  "spec"
+                  "spec",
+                  "targets"
                 ],
                 "type": "object",
                 "additionalProperties": false

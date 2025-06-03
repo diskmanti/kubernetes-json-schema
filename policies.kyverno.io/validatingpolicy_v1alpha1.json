@@ -896,10 +896,37 @@
                     },
                     "type": "object",
                     "additionalProperties": false
+                  },
+                  "targets": {
+                    "items": {
+                      "properties": {
+                        "group": {
+                          "type": "string"
+                        },
+                        "kind": {
+                          "type": "string"
+                        },
+                        "resource": {
+                          "type": "string"
+                        },
+                        "version": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "resource",
+                        "version"
+                      ],
+                      "type": "object",
+                      "additionalProperties": false
+                    },
+                    "type": "array"
                   }
                 },
                 "required": [
-                  "spec"
+                  "spec",
+                  "targets"
                 ],
                 "type": "object",
                 "additionalProperties": false
