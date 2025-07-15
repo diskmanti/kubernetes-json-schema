@@ -813,6 +813,43 @@
             "host": {
               "type": "string"
             },
+            "noProxy": {
+              "type": "string"
+            },
+            "proxyConnectHeader": {
+              "additionalProperties": {
+                "items": {
+                  "properties": {
+                    "key": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "default": "",
+                      "type": "string"
+                    },
+                    "optional": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "key"
+                  ],
+                  "type": "object",
+                  "x-kubernetes-map-type": "atomic",
+                  "additionalProperties": false
+                },
+                "type": "array"
+              },
+              "type": "object",
+              "x-kubernetes-map-type": "atomic"
+            },
+            "proxyFromEnvironment": {
+              "type": "boolean"
+            },
+            "proxyUrl": {
+              "pattern": "^(http|https|socks5)://.+$",
+              "type": "string"
+            },
             "tlsConfig": {
               "properties": {
                 "ca": {
@@ -5037,6 +5074,9 @@
           ],
           "x-kubernetes-list-type": "map"
         },
+        "scrapeClassicHistograms": {
+          "type": "boolean"
+        },
         "scrapeConfigNamespaceSelector": {
           "properties": {
             "matchExpressions": {
@@ -7667,6 +7707,24 @@
         }
       },
       "type": "object",
+      "x-kubernetes-validations": [
+        {
+          "message": "replicas cannot be set when mode is DaemonSet",
+          "rule": "!(has(self.mode) && self.mode == 'DaemonSet' && has(self.replicas))"
+        },
+        {
+          "message": "storage cannot be set when mode is DaemonSet",
+          "rule": "!(has(self.mode) && self.mode == 'DaemonSet' && has(self.storage))"
+        },
+        {
+          "message": "shards cannot be greater than 1 when mode is DaemonSet",
+          "rule": "!(has(self.mode) && self.mode == 'DaemonSet' && has(self.shards) && self.shards > 1)"
+        },
+        {
+          "message": "persistentVolumeClaimRetentionPolicy cannot be set when mode is DaemonSet",
+          "rule": "!(has(self.mode) && self.mode == 'DaemonSet' && has(self.persistentVolumeClaimRetentionPolicy))"
+        }
+      ],
       "additionalProperties": false
     },
     "status": {
