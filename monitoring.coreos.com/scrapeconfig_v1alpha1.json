@@ -4046,6 +4046,10 @@
               "followRedirects": {
                 "type": "boolean"
               },
+              "labelSelector": {
+                "minLength": 1,
+                "type": "string"
+              },
               "noProxy": {
                 "type": "string"
               },

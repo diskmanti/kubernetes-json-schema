@@ -4342,6 +4342,11 @@
         "routePrefix": {
           "type": "string"
         },
+        "ruleConcurrentEval": {
+          "format": "int32",
+          "minimum": 1,
+          "type": "integer"
+        },
         "ruleNamespaceSelector": {
           "properties": {
             "matchExpressions": {
@@ -4381,6 +4386,14 @@
           "type": "object",
           "x-kubernetes-map-type": "atomic",
           "additionalProperties": false
+        },
+        "ruleOutageTolerance": {
+          "pattern": "^(0|(([0-9]+)y)?(([0-9]+)w)?(([0-9]+)d)?(([0-9]+)h)?(([0-9]+)m)?(([0-9]+)s)?(([0-9]+)ms)?)$",
+          "type": "string"
+        },
+        "ruleQueryOffset": {
+          "pattern": "^(0|(([0-9]+)y)?(([0-9]+)w)?(([0-9]+)d)?(([0-9]+)h)?(([0-9]+)m)?(([0-9]+)s)?(([0-9]+)ms)?)$",
+          "type": "string"
         },
         "ruleSelector": {
           "properties": {

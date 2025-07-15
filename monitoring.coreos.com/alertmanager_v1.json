@@ -716,6 +716,7 @@
               "default": "OnNamespace",
               "enum": [
                 "OnNamespace",
+                "OnNamespaceExceptForAlertmanagerNamespace",
                 "None"
               ],
               "type": "string"
@@ -1363,6 +1364,16 @@
                   "type": "object",
                   "additionalProperties": false
                 },
+                "jira": {
+                  "properties": {
+                    "apiURL": {
+                      "pattern": "^(http|https)://.+$",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object",
+                  "additionalProperties": false
+                },
                 "opsGenieApiKey": {
                   "properties": {
                     "key": {
@@ -1409,6 +1420,56 @@
                 "resolveTimeout": {
                   "pattern": "^(0|(([0-9]+)y)?(([0-9]+)w)?(([0-9]+)d)?(([0-9]+)h)?(([0-9]+)m)?(([0-9]+)s)?(([0-9]+)ms)?)$",
                   "type": "string"
+                },
+                "rocketChat": {
+                  "properties": {
+                    "apiURL": {
+                      "pattern": "^(http|https)://.+$",
+                      "type": "string"
+                    },
+                    "token": {
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "default": "",
+                          "type": "string"
+                        },
+                        "optional": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "key"
+                      ],
+                      "type": "object",
+                      "x-kubernetes-map-type": "atomic",
+                      "additionalProperties": false
+                    },
+                    "tokenID": {
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "default": "",
+                          "type": "string"
+                        },
+                        "optional": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "key"
+                      ],
+                      "type": "object",
+                      "x-kubernetes-map-type": "atomic",
+                      "additionalProperties": false
+                    }
+                  },
+                  "type": "object",
+                  "additionalProperties": false
                 },
                 "slackApiUrl": {
                   "properties": {
@@ -1646,6 +1707,90 @@
                       },
                       "type": "object",
                       "additionalProperties": false
+                    }
+                  },
+                  "type": "object",
+                  "additionalProperties": false
+                },
+                "telegram": {
+                  "properties": {
+                    "apiURL": {
+                      "pattern": "^(http|https)://.+$",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object",
+                  "additionalProperties": false
+                },
+                "victorops": {
+                  "properties": {
+                    "apiKey": {
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "default": "",
+                          "type": "string"
+                        },
+                        "optional": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "key"
+                      ],
+                      "type": "object",
+                      "x-kubernetes-map-type": "atomic",
+                      "additionalProperties": false
+                    },
+                    "apiURL": {
+                      "pattern": "^(http|https)://.+$",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object",
+                  "additionalProperties": false
+                },
+                "webex": {
+                  "properties": {
+                    "apiURL": {
+                      "pattern": "^(http|https)://.+$",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object",
+                  "additionalProperties": false
+                },
+                "wechat": {
+                  "properties": {
+                    "apiCorpID": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "apiSecret": {
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "default": "",
+                          "type": "string"
+                        },
+                        "optional": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "key"
+                      ],
+                      "type": "object",
+                      "x-kubernetes-map-type": "atomic",
+                      "additionalProperties": false
+                    },
+                    "apiURL": {
+                      "pattern": "^(http|https)://.+$",
+                      "type": "string"
                     }
                   },
                   "type": "object",

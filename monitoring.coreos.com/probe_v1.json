@@ -495,11 +495,45 @@
         },
         "prober": {
           "properties": {
+            "noProxy": {
+              "type": "string"
+            },
             "path": {
               "default": "/probe",
               "type": "string"
             },
+            "proxyConnectHeader": {
+              "additionalProperties": {
+                "items": {
+                  "properties": {
+                    "key": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "default": "",
+                      "type": "string"
+                    },
+                    "optional": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "key"
+                  ],
+                  "type": "object",
+                  "x-kubernetes-map-type": "atomic",
+                  "additionalProperties": false
+                },
+                "type": "array"
+              },
+              "type": "object",
+              "x-kubernetes-map-type": "atomic"
+            },
+            "proxyFromEnvironment": {
+              "type": "boolean"
+            },
             "proxyUrl": {
+              "pattern": "^(http|https|socks5)://.+$",
               "type": "string"
             },
             "scheme": {
