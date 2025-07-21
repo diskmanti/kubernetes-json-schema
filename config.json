@@ -5,6 +5,12 @@
       "https://raw.githubusercontent.com/grafana/grafana-operator/master/config/crd/kustomization.yaml"
     ]
   },
+  "kro": {
+    "github_repository": "kro-run/kro",
+    "urls": [
+      "https://raw.githubusercontent.com/kro-run/kro/refs/heads/main/config/crd/bases/kro.run_resourcegraphdefinitions.yaml"
+    ]
+  },
   "origin-ca-issuer": {
     "github_repository": "cloudflare/origin-ca-issuer",
     "urls": [
