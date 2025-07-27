@@ -1018,6 +1018,9 @@
                                   "allowEmpty": {
                                     "type": "boolean"
                                   },
+                                  "enabled": {
+                                    "type": "boolean"
+                                  },
                                   "prune": {
                                     "type": "boolean"
                                   },
@@ -2105,6 +2108,9 @@
                                   "allowEmpty": {
                                     "type": "boolean"
                                   },
+                                  "enabled": {
+                                    "type": "boolean"
+                                  },
                                   "prune": {
                                     "type": "boolean"
                                   },
@@ -2218,6 +2224,9 @@
                   "files": {
                     "items": {
                       "properties": {
+                        "exclude": {
+                          "type": "boolean"
+                        },
                         "path": {
                           "type": "string"
                         }
@@ -3190,6 +3199,9 @@
                               "automated": {
                                 "properties": {
                                   "allowEmpty": {
+                                    "type": "boolean"
+                                  },
+                                  "enabled": {
                                     "type": "boolean"
                                   },
                                   "prune": {
@@ -4244,6 +4256,9 @@
                               "automated": {
                                 "properties": {
                                   "allowEmpty": {
+                                    "type": "boolean"
+                                  },
+                                  "enabled": {
                                     "type": "boolean"
                                   },
                                   "prune": {
@@ -5336,6 +5351,9 @@
                                             "allowEmpty": {
                                               "type": "boolean"
                                             },
+                                            "enabled": {
+                                              "type": "boolean"
+                                            },
                                             "prune": {
                                               "type": "boolean"
                                             },
@@ -6423,6 +6441,9 @@
                                             "allowEmpty": {
                                               "type": "boolean"
                                             },
+                                            "enabled": {
+                                              "type": "boolean"
+                                            },
                                             "prune": {
                                               "type": "boolean"
                                             },
@@ -6536,6 +6557,9 @@
                             "files": {
                               "items": {
                                 "properties": {
+                                  "exclude": {
+                                    "type": "boolean"
+                                  },
                                   "path": {
                                     "type": "string"
                                   }
@@ -7508,6 +7532,9 @@
                                         "automated": {
                                           "properties": {
                                             "allowEmpty": {
+                                              "type": "boolean"
+                                            },
+                                            "enabled": {
                                               "type": "boolean"
                                             },
                                             "prune": {
@@ -8562,6 +8589,9 @@
                                         "automated": {
                                           "properties": {
                                             "allowEmpty": {
+                                              "type": "boolean"
+                                            },
+                                            "enabled": {
                                               "type": "boolean"
                                             },
                                             "prune": {
@@ -9633,6 +9663,9 @@
                                             "allowEmpty": {
                                               "type": "boolean"
                                             },
+                                            "enabled": {
+                                              "type": "boolean"
+                                            },
                                             "prune": {
                                               "type": "boolean"
                                             },
@@ -9961,6 +9994,12 @@
                                 },
                                 "insecure": {
                                   "type": "boolean"
+                                },
+                                "labels": {
+                                  "items": {
+                                    "type": "string"
+                                  },
+                                  "type": "array"
                                 },
                                 "owner": {
                                   "type": "string"
@@ -11047,6 +11086,9 @@
                                         "automated": {
                                           "properties": {
                                             "allowEmpty": {
+                                              "type": "boolean"
+                                            },
+                                            "enabled": {
                                               "type": "boolean"
                                             },
                                             "prune": {
@@ -12464,6 +12506,9 @@
                                             "allowEmpty": {
                                               "type": "boolean"
                                             },
+                                            "enabled": {
+                                              "type": "boolean"
+                                            },
                                             "prune": {
                                               "type": "boolean"
                                             },
@@ -13547,6 +13592,9 @@
                               "automated": {
                                 "properties": {
                                   "allowEmpty": {
+                                    "type": "boolean"
+                                  },
+                                  "enabled": {
                                     "type": "boolean"
                                   },
                                   "prune": {
@@ -14642,6 +14690,9 @@
                                             "allowEmpty": {
                                               "type": "boolean"
                                             },
+                                            "enabled": {
+                                              "type": "boolean"
+                                            },
                                             "prune": {
                                               "type": "boolean"
                                             },
@@ -15729,6 +15780,9 @@
                                             "allowEmpty": {
                                               "type": "boolean"
                                             },
+                                            "enabled": {
+                                              "type": "boolean"
+                                            },
                                             "prune": {
                                               "type": "boolean"
                                             },
@@ -15842,6 +15896,9 @@
                             "files": {
                               "items": {
                                 "properties": {
+                                  "exclude": {
+                                    "type": "boolean"
+                                  },
                                   "path": {
                                     "type": "string"
                                   }
@@ -16814,6 +16871,9 @@
                                         "automated": {
                                           "properties": {
                                             "allowEmpty": {
+                                              "type": "boolean"
+                                            },
+                                            "enabled": {
                                               "type": "boolean"
                                             },
                                             "prune": {
@@ -17868,6 +17928,9 @@
                                         "automated": {
                                           "properties": {
                                             "allowEmpty": {
+                                              "type": "boolean"
+                                            },
+                                            "enabled": {
                                               "type": "boolean"
                                             },
                                             "prune": {
@@ -18939,6 +19002,9 @@
                                             "allowEmpty": {
                                               "type": "boolean"
                                             },
+                                            "enabled": {
+                                              "type": "boolean"
+                                            },
                                             "prune": {
                                               "type": "boolean"
                                             },
@@ -19267,6 +19333,12 @@
                                 },
                                 "insecure": {
                                   "type": "boolean"
+                                },
+                                "labels": {
+                                  "items": {
+                                    "type": "string"
+                                  },
+                                  "type": "array"
                                 },
                                 "owner": {
                                   "type": "string"
@@ -20353,6 +20425,9 @@
                                         "automated": {
                                           "properties": {
                                             "allowEmpty": {
+                                              "type": "boolean"
+                                            },
+                                            "enabled": {
                                               "type": "boolean"
                                             },
                                             "prune": {
@@ -21770,6 +21845,9 @@
                                             "allowEmpty": {
                                               "type": "boolean"
                                             },
+                                            "enabled": {
+                                              "type": "boolean"
+                                            },
                                             "prune": {
                                               "type": "boolean"
                                             },
@@ -22861,6 +22939,9 @@
                                   "allowEmpty": {
                                     "type": "boolean"
                                   },
+                                  "enabled": {
+                                    "type": "boolean"
+                                  },
                                   "prune": {
                                     "type": "boolean"
                                   },
@@ -23928,6 +24009,9 @@
                                   "allowEmpty": {
                                     "type": "boolean"
                                   },
+                                  "enabled": {
+                                    "type": "boolean"
+                                  },
                                   "prune": {
                                     "type": "boolean"
                                   },
@@ -24256,6 +24340,12 @@
                       },
                       "insecure": {
                         "type": "boolean"
+                      },
+                      "labels": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
                       },
                       "owner": {
                         "type": "string"
@@ -25342,6 +25432,9 @@
                               "automated": {
                                 "properties": {
                                   "allowEmpty": {
+                                    "type": "boolean"
+                                  },
+                                  "enabled": {
                                     "type": "boolean"
                                   },
                                   "prune": {
@@ -26759,6 +26852,9 @@
                                   "allowEmpty": {
                                     "type": "boolean"
                                   },
+                                  "enabled": {
+                                    "type": "boolean"
+                                  },
                                   "prune": {
                                     "type": "boolean"
                                   },
@@ -27967,6 +28063,9 @@
                     "automated": {
                       "properties": {
                         "allowEmpty": {
+                          "type": "boolean"
+                        },
+                        "enabled": {
                           "type": "boolean"
                         },
                         "prune": {
