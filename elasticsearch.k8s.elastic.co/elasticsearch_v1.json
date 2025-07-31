@@ -256,7 +256,7 @@
                       "additionalProperties": false
                     },
                     "trafficDistribution": {
-                      "description": "TrafficDistribution offers a way to express preferences for how traffic is\ndistributed to Service endpoints. Implementations can use this field as a\nhint, but are not required to guarantee strict adherence. If the field is\nnot set, the implementation will apply its default routing strategy. If set\nto \"PreferClose\", implementations should prioritize endpoints that are\ntopologically close (e.g., same zone).\nThis is a beta field and requires enabling ServiceTrafficDistribution feature.",
+                      "description": "TrafficDistribution offers a way to express preferences for how traffic\nis distributed to Service endpoints. Implementations can use this field\nas a hint, but are not required to guarantee strict adherence. If the\nfield is not set, the implementation will apply its default routing\nstrategy. If set to \"PreferClose\", implementations should prioritize\nendpoints that are in the same zone.",
                       "type": "string"
                     },
                     "type": {
@@ -765,7 +765,7 @@
                   "additionalProperties": false
                 },
                 "unhealthyPodEvictionPolicy": {
-                  "description": "UnhealthyPodEvictionPolicy defines the criteria for when unhealthy pods\nshould be considered for eviction. Current implementation considers healthy pods,\nas pods that have status.conditions item with type=\"Ready\",status=\"True\".\n\nValid policies are IfHealthyBudget and AlwaysAllow.\nIf no policy is specified, the default behavior will be used,\nwhich corresponds to the IfHealthyBudget policy.\n\nIfHealthyBudget policy means that running pods (status.phase=\"Running\"),\nbut not yet healthy can be evicted only if the guarded application is not\ndisrupted (status.currentHealthy is at least equal to status.desiredHealthy).\nHealthy pods will be subject to the PDB for eviction.\n\nAlwaysAllow policy means that all running pods (status.phase=\"Running\"),\nbut not yet healthy are considered disrupted and can be evicted regardless\nof whether the criteria in a PDB is met. This means perspective running\npods of a disrupted application might not get a chance to become healthy.\nHealthy pods will be subject to the PDB for eviction.\n\nAdditional policies may be added in the future.\nClients making eviction decisions should disallow eviction of unhealthy pods\nif they encounter an unrecognized policy in this field.\n\nThis field is beta-level. The eviction API uses this field when\nthe feature gate PDBUnhealthyPodEvictionPolicy is enabled (enabled by default).",
+                  "description": "UnhealthyPodEvictionPolicy defines the criteria for when unhealthy pods\nshould be considered for eviction. Current implementation considers healthy pods,\nas pods that have status.conditions item with type=\"Ready\",status=\"True\".\n\nValid policies are IfHealthyBudget and AlwaysAllow.\nIf no policy is specified, the default behavior will be used,\nwhich corresponds to the IfHealthyBudget policy.\n\nIfHealthyBudget policy means that running pods (status.phase=\"Running\"),\nbut not yet healthy can be evicted only if the guarded application is not\ndisrupted (status.currentHealthy is at least equal to status.desiredHealthy).\nHealthy pods will be subject to the PDB for eviction.\n\nAlwaysAllow policy means that all running pods (status.phase=\"Running\"),\nbut not yet healthy are considered disrupted and can be evicted regardless\nof whether the criteria in a PDB is met. This means perspective running\npods of a disrupted application might not get a chance to become healthy.\nHealthy pods will be subject to the PDB for eviction.\n\nAdditional policies may be added in the future.\nClients making eviction decisions should disallow eviction of unhealthy pods\nif they encounter an unrecognized policy in this field.",
                   "type": "string"
                 }
               },
@@ -1149,7 +1149,7 @@
                       "additionalProperties": false
                     },
                     "trafficDistribution": {
-                      "description": "TrafficDistribution offers a way to express preferences for how traffic is\ndistributed to Service endpoints. Implementations can use this field as a\nhint, but are not required to guarantee strict adherence. If the field is\nnot set, the implementation will apply its default routing strategy. If set\nto \"PreferClose\", implementations should prioritize endpoints that are\ntopologically close (e.g., same zone).\nThis is a beta field and requires enabling ServiceTrafficDistribution feature.",
+                      "description": "TrafficDistribution offers a way to express preferences for how traffic\nis distributed to Service endpoints. Implementations can use this field\nas a hint, but are not required to guarantee strict adherence. If the\nfield is not set, the implementation will apply its default routing\nstrategy. If set to \"PreferClose\", implementations should prioritize\nendpoints that are in the same zone.",
                       "type": "string"
                     },
                     "type": {
