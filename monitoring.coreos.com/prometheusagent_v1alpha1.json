@@ -2321,6 +2321,9 @@
         "hostNetwork": {
           "type": "boolean"
         },
+        "hostUsers": {
+          "type": "boolean"
+        },
         "ignoreNamespaceSelectors": {
           "type": "boolean"
         },
@@ -3505,6 +3508,7 @@
         },
         "minReadySeconds": {
           "format": "int32",
+          "minimum": 0,
           "type": "integer"
         },
         "mode": {
@@ -3541,7 +3545,19 @@
             "convertHistogramsToNHCB": {
               "type": "boolean"
             },
+            "ignoreResourceAttributes": {
+              "items": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array",
+              "x-kubernetes-list-type": "set"
+            },
             "keepIdentifyingResourceAttributes": {
+              "type": "boolean"
+            },
+            "promoteAllResourceAttributes": {
               "type": "boolean"
             },
             "promoteResourceAttributes": {
@@ -7723,6 +7739,14 @@
         {
           "message": "persistentVolumeClaimRetentionPolicy cannot be set when mode is DaemonSet",
           "rule": "!(has(self.mode) && self.mode == 'DaemonSet' && has(self.persistentVolumeClaimRetentionPolicy))"
+        },
+        {
+          "message": "scrapeConfigSelector cannot be set when mode is DaemonSet",
+          "rule": "!(has(self.mode) && self.mode == 'DaemonSet' && has(self.scrapeConfigSelector))"
+        },
+        {
+          "message": "probeSelector cannot be set when mode is DaemonSet",
+          "rule": "!(has(self.mode) && self.mode == 'DaemonSet' && has(self.probeSelector))"
         }
       ],
       "additionalProperties": false

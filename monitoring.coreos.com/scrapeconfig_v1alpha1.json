@@ -1981,6 +1981,7 @@
                 "type": "string"
               },
               "hostNetworkingHost": {
+                "minLength": 1,
                 "type": "string"
               },
               "matchFirstNetwork": {
@@ -2262,6 +2263,9 @@
                 "additionalProperties": false
               },
               "port": {
+                "format": "int32",
+                "maximum": 65535,
+                "minimum": 0,
                 "type": "integer"
               },
               "proxyConnectHeader": {

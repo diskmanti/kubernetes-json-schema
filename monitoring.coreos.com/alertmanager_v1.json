@@ -3399,6 +3399,9 @@
           ],
           "x-kubernetes-list-type": "map"
         },
+        "hostUsers": {
+          "type": "boolean"
+        },
         "image": {
           "type": "string"
         },
@@ -4574,6 +4577,7 @@
         },
         "minReadySeconds": {
           "format": "int32",
+          "minimum": 0,
           "type": "integer"
         },
         "nodeSelector": {
