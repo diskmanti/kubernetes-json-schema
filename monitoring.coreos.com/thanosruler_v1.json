@@ -1927,6 +1927,14 @@
           ],
           "type": "string"
         },
+        "enableFeatures": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": "array",
+          "x-kubernetes-list-type": "set"
+        },
         "enableServiceLinks": {
           "type": "boolean"
         },
@@ -2154,6 +2162,9 @@
             "ip"
           ],
           "x-kubernetes-list-type": "map"
+        },
+        "hostUsers": {
+          "type": "boolean"
         },
         "image": {
           "type": "string"
@@ -3321,6 +3332,7 @@
         },
         "minReadySeconds": {
           "format": "int32",
+          "minimum": 0,
           "type": "integer"
         },
         "nodeSelector": {
@@ -4276,6 +4288,10 @@
           "format": "int32",
           "type": "integer"
         },
+        "resendDelay": {
+          "pattern": "^(0|(([0-9]+)y)?(([0-9]+)w)?(([0-9]+)d)?(([0-9]+)h)?(([0-9]+)m)?(([0-9]+)s)?(([0-9]+)ms)?)$",
+          "type": "string"
+        },
         "resources": {
           "properties": {
             "claims": {
@@ -4346,6 +4362,10 @@
           "format": "int32",
           "minimum": 1,
           "type": "integer"
+        },
+        "ruleGracePeriod": {
+          "pattern": "^(0|(([0-9]+)y)?(([0-9]+)w)?(([0-9]+)d)?(([0-9]+)h)?(([0-9]+)m)?(([0-9]+)s)?(([0-9]+)ms)?)$",
+          "type": "string"
         },
         "ruleNamespaceSelector": {
           "properties": {
