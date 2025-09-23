@@ -150,7 +150,8 @@
             "PublicCloud",
             "USGovernmentCloud",
             "ChinaCloud",
-            "GermanCloud"
+            "GermanCloud",
+            "AzureStackCloud"
           ],
           "type": "string"
         },
