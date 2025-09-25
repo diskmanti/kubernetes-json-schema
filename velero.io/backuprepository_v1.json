@@ -40,7 +40,7 @@
           "type": "string"
         },
         "resticIdentifier": {
-          "description": "ResticIdentifier is the full restic-compatible string for identifying\nthis repository.",
+          "description": "ResticIdentifier is the full restic-compatible string for identifying\nthis repository. This field is only used when RepositoryType is \"restic\".",
           "type": "string"
         },
         "volumeNamespace": {
@@ -51,7 +51,6 @@
       "required": [
         "backupStorageLocation",
         "maintenanceFrequency",
-        "resticIdentifier",
         "volumeNamespace"
       ],
       "type": "object",
