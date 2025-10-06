@@ -15,13 +15,6 @@
     "spec": {
       "description": "ResourceGraphDefinitionSpec defines the desired state of ResourceGraphDefinition",
       "properties": {
-        "defaultServiceAccounts": {
-          "additionalProperties": {
-            "type": "string"
-          },
-          "description": "ServiceAccount configuration for controller impersonation.\nKey is the namespace, value is the service account name to use.\nSpecial key \"*\" defines the default service account for any\nnamespace not explicitly mapped.",
-          "type": "object"
-        },
         "resources": {
           "description": "The resources that are part of the resourcegraphdefinition.",
           "items": {
