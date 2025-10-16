@@ -45,13 +45,11 @@
           "description": "Reference to the issuer responsible for issuing the certificate.\nIf the issuer is namespace-scoped, it must be in the same namespace\nas the Certificate. If the issuer is cluster-scoped, it can be used\nfrom any namespace.\n\nThe `name` field of the reference must always be specified.",
           "properties": {
             "group": {
-              "default": "cert-manager.io",
-              "description": "Group of the issuer being referred to.",
+              "description": "Group of the issuer being referred to.\nDefaults to 'cert-manager.io'.",
               "type": "string"
             },
             "kind": {
-              "default": "Issuer",
-              "description": "Kind of the issuer being referred to.",
+              "description": "Kind of the issuer being referred to.\nDefaults to 'Issuer'.",
               "type": "string"
             },
             "name": {
