@@ -55,7 +55,7 @@
         "results": {
           "description": "PolicyReportResult provides result details",
           "items": {
-            "description": "ReportResult provides the result for an individual policy",
+            "description": "PolicyReportResult provides the result for an individual policy",
             "properties": {
               "category": {
                 "description": "Category indicates policy category",
@@ -77,7 +77,7 @@
                 "type": "object"
               },
               "resourceSelector": {
-                "description": "ResourceSelector is an optional label selector for checked Kubernetes resources.\nFor example, a policy result may apply to all pods that match a label.\nEither a Subject or a ResourceSelector can be specified. If neither are provided, the\nresult is assumed to be for the policy report scope.",
+                "description": "SubjectSelector is an optional label selector for checked Kubernetes resources.\nFor example, a policy result may apply to all pods that match a label.\nEither a Subject or a SubjectSelector can be specified.\nIf neither are provided, the result is assumed to be for the policy report scope.",
                 "properties": {
                   "matchExpressions": {
                     "description": "matchExpressions is a list of label selector requirements. The requirements are ANDed.",
@@ -194,7 +194,7 @@
                 "type": "string"
               },
               "source": {
-                "description": "Source is an identifier for the policy engine that manages this report\nIf the Source is specified at this level, it will override the Source\nfield set at the Report level",
+                "description": "Source is an identifier for the policy engine that manages this report",
                 "type": "string"
               },
               "timestamp": {
