@@ -172,6 +172,10 @@
               "description": "Annotations specifies a set of key-value pairs that you can attach annotations to a Ingress.",
               "type": "object"
             },
+            "host": {
+              "description": "Host specifies a host to access the ingress.",
+              "type": "string"
+            },
             "ingressClassName": {
               "description": "IngressClassName specifies a ingress controller to ingress,\nit must be fill when the cluster have multiple ingress controller service.",
               "type": "string"
