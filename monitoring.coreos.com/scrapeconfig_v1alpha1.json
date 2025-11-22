@@ -1117,6 +1117,8 @@
               },
               "scheme": {
                 "enum": [
+                  "http",
+                  "https",
                   "HTTP",
                   "HTTPS"
                 ],
@@ -10138,6 +10140,8 @@
         },
         "scheme": {
           "enum": [
+            "http",
+            "https",
             "HTTP",
             "HTTPS"
           ],

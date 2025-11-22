@@ -3610,12 +3610,10 @@
                   "managedIdentity": {
                     "properties": {
                       "clientId": {
+                        "minLength": 1,
                         "type": "string"
                       }
                     },
-                    "required": [
-                      "clientId"
-                    ],
                     "type": "object",
                     "additionalProperties": false
                   },

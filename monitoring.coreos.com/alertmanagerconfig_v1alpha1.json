@@ -4182,6 +4182,9 @@
                     "message": {
                       "type": "string"
                     },
+                    "monospace": {
+                      "type": "boolean"
+                    },
                     "priority": {
                       "type": "string"
                     },

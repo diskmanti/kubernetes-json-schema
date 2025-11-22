@@ -567,11 +567,14 @@
             "scheme": {
               "enum": [
                 "http",
-                "https"
+                "https",
+                "HTTP",
+                "HTTPS"
               ],
               "type": "string"
             },
             "url": {
+              "minLength": 1,
               "type": "string"
             }
           },

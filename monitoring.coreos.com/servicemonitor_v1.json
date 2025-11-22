@@ -592,7 +592,9 @@
               "scheme": {
                 "enum": [
                   "http",
-                  "https"
+                  "https",
+                  "HTTP",
+                  "HTTPS"
                 ],
                 "type": "string"
               },
