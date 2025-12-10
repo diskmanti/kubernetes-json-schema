@@ -41,7 +41,7 @@ jobs:
         run: ./openapi2jsonschema.py ${{ matrix.crds_name }}
       - name: Create Pull Request
         id: createPR
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@v8
         with:
           title: 'build(deps): upgrade CRDS ${{ matrix.crds_name }}'
           commit-message: 'build(deps): upgrade CRDS ${{ matrix.crds_name }}'
