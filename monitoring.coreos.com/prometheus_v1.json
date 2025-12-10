@@ -930,6 +930,7 @@
                     "type": "string"
                   },
                   "pathPrefix": {
+                    "minLength": 1,
                     "type": "string"
                   },
                   "port": {
@@ -1037,6 +1038,12 @@
                     "type": "array"
                   },
                   "scheme": {
+                    "enum": [
+                      "http",
+                      "https",
+                      "HTTP",
+                      "HTTPS"
+                    ],
                     "type": "string"
                   },
                   "sigv4": {
@@ -5176,12 +5183,10 @@
                   "managedIdentity": {
                     "properties": {
                       "clientId": {
+                        "minLength": 1,
                         "type": "string"
                       }
                     },
-                    "required": [
-                      "clientId"
-                    ],
                     "type": "object",
                     "additionalProperties": false
                   },
