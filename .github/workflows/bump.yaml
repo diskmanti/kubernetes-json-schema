@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - id: crds
         name: List CRDS
         run: echo crds=$(jq  -c 'keys' config.json) >> ${GITHUB_OUTPUT}
@@ -30,7 +30,7 @@ jobs:
         crds_name: ${{ fromJson(needs.list_crds.outputs.crds) }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Install Python
         uses: actions/setup-python@v6
         with:
