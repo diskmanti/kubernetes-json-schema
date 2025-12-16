@@ -3580,6 +3580,10 @@
               "type": "object",
               "additionalProperties": false
             },
+            "disableIngress": {
+              "description": "DisableIngress disables automatic creation of external access resources (Route / Ingress).\nWhen true, no Route or Ingress will be created for the gateway.",
+              "type": "boolean"
+            },
             "mode": {
               "default": "openshift-logging",
               "description": "Mode defines the mode in which lokistack-gateway component will be configured.",
