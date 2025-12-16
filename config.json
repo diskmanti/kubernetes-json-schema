@@ -8,7 +8,7 @@
   "kro": {
     "github_repository": "kro-run/kro",
     "urls": [
-      "https://raw.githubusercontent.com/kro-run/kro/refs/heads/main/config/crd/bases/kro.run_resourcegraphdefinitions.yaml"
+      "https://raw.githubusercontent.com/kubernetes-sigs/kro/refs/heads/main/helm/crds/kro.run_resourcegraphdefinitions.yaml"
     ]
   },
   "origin-ca-issuer": {
