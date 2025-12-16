@@ -1,5 +1,5 @@
 {
-  "description": "ResourceGraphDefinition is the Schema for the resourcegraphdefinitions API",
+  "description": "ResourceGraphDefinition is the core API for defining reusable groups of Kubernetes resources.\nIt allows you to create custom resources that manage multiple underlying resources as a cohesive unit.\nWhen you create a ResourceGraphDefinition, kro automatically generates a CRD and deploys a controller\nto manage instances of your custom resource. Resources can reference each other using CEL expressions,\nand kro ensures they are created in the correct dependency order.",
   "properties": {
     "apiVersion": {
       "description": "APIVersion defines the versioned schema of this representation of an object.\nServers should convert recognized schemas to the latest internal value, and\nmay reject unrecognized values.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
@@ -13,33 +13,38 @@
       "type": "object"
     },
     "spec": {
-      "description": "ResourceGraphDefinitionSpec defines the desired state of ResourceGraphDefinition",
+      "description": "ResourceGraphDefinitionSpec defines the desired state of ResourceGraphDefinition.\nIt contains the schema for instances (defining the CRD structure) and the list of\nKubernetes resources that make up the graph.",
       "properties": {
         "resources": {
-          "description": "The resources that are part of the resourcegraphdefinition.",
+          "description": "Resources is the list of Kubernetes resources that will be created and managed\nfor each instance. Resources can reference each other using CEL expressions,\ncreating a dependency graph that determines creation order.",
           "items": {
+            "description": "Resource represents a Kubernetes resource that is part of the ResourceGraphDefinition.\nEach resource can either be created using a template or reference an existing resource.\nResources can depend on each other through CEL expressions, creating a dependency graph.",
             "properties": {
               "externalRef": {
-                "description": "ExternalRef is a reference to an external resource.\nIt allows the user to specify the Kind, Version, Name and Namespace of the resource\nto be read and used in the Graph.",
+                "description": "ExternalRef references an existing resource in the cluster instead of creating one.\nThis is useful for reading existing resources and using their values in other resources.\nExactly one of template or externalRef must be provided.",
                 "properties": {
                   "apiVersion": {
+                    "description": "APIVersion is the API version of the external resource.\nExample: \"v1\" for core resources, \"apps/v1\" for Deployments.",
                     "type": "string"
                   },
                   "kind": {
+                    "description": "Kind is the kind of the external resource.\nExample: \"Service\", \"ConfigMap\", \"Deployment\".",
                     "type": "string"
                   },
                   "metadata": {
+                    "description": "Metadata contains the name and optional namespace of the external resource.",
                     "properties": {
                       "name": {
+                        "description": "Name is the name of the external resource to reference.\nThis field is required.",
                         "type": "string"
                       },
                       "namespace": {
+                        "description": "Namespace is the namespace of the external resource.\nIf empty, the instance's namespace will be used.",
                         "type": "string"
                       }
                     },
                     "required": [
-                      "name",
-                      "namespace"
+                      "name"
                     ],
                     "type": "object",
                     "additionalProperties": false
@@ -54,21 +59,25 @@
                 "additionalProperties": false
               },
               "id": {
+                "description": "ID is a unique identifier for this resource within the ResourceGraphDefinition.\nIt is used to reference this resource in CEL expressions from other resources.\nExample: \"deployment\", \"service\", \"configmap\".",
                 "type": "string"
               },
               "includeWhen": {
+                "description": "IncludeWhen is a list of CEL expressions that determine whether this resource should be created.\nAll expressions must evaluate to true for the resource to be included.\nIf not specified, the resource is always included.\nExample: [\"schema.spec.enableMonitoring == true\"]",
                 "items": {
                   "type": "string"
                 },
                 "type": "array"
               },
               "readyWhen": {
+                "description": "ReadyWhen is a list of CEL expressions that determine when this resource is considered ready.\nAll expressions must evaluate to true for the resource to be ready.\nIf not specified, the resource is considered ready when it exists.\nExample: [\"self.status.phase == 'Running'\", \"self.status.readyReplicas > 0\"]",
                 "items": {
                   "type": "string"
                 },
                 "type": "array"
               },
               "template": {
+                "description": "Template is the Kubernetes resource manifest to create.\nIt can contain CEL expressions (using ${...} syntax) that reference other resources.\nExactly one of template or externalRef must be provided.",
                 "type": "object",
                 "x-kubernetes-preserve-unknown-fields": true
               }
@@ -88,7 +97,7 @@
           "type": "array"
         },
         "schema": {
-          "description": "The schema of the resourcegraphdefinition, which includes the\napiVersion, kind, spec, status, types, and some validation\nrules.",
+          "description": "Schema defines the structure of instances created from this ResourceGraphDefinition.\nIt specifies the API version, kind, and fields (spec/status) for the generated CRD.\nUse SimpleSchema syntax to define the instance schema concisely.",
           "properties": {
             "additionalPrinterColumns": {
               "description": "AdditionalPrinterColumns defines additional printer columns\nthat will be passed down to the created CRD. If set, no\ndefault printer columns will be added to the created CRD,\nand if default printer columns need to be retained, they\nneed to be added explicitly.",
@@ -132,7 +141,7 @@
               "type": "array"
             },
             "apiVersion": {
-              "description": "The APIVersion of the resourcegraphdefinition. This is used to generate\nand create the CRD for the resourcegraphdefinition.",
+              "description": "APIVersion is the version identifier for the generated CRD.\nMust follow Kubernetes versioning conventions (v1, v1alpha1, v1beta1, etc.).\nThis field is immutable after creation.\nExample: \"v1alpha1\", \"v1\", \"v2beta1\"",
               "pattern": "^v[0-9]+(alpha[0-9]+|beta[0-9]+)?$",
               "type": "string",
               "x-kubernetes-validations": [
@@ -144,11 +153,17 @@
             },
             "group": {
               "default": "kro.run",
-              "description": "The group of the resourcegraphdefinition. This is used to set the API group\nof the generated CRD. If omitted, it defaults to \"kro.run\".",
-              "type": "string"
+              "description": "Group is the API group for the generated CRD. Together with APIVersion and Kind,\nit forms the complete GVK (Group-Version-Kind) identifier.\nIf omitted, defaults to \"kro.run\". This field is immutable after creation.\nExample: \"mycompany.io\", \"databases.example.com\"",
+              "type": "string",
+              "x-kubernetes-validations": [
+                {
+                  "message": "group is immutable",
+                  "rule": "self == oldSelf"
+                }
+              ]
             },
             "kind": {
-              "description": "The kind of the resourcegraphdefinition. This is used to generate\nand create the CRD for the resourcegraphdefinition.",
+              "description": "Kind is the name of the custom resource type that will be created.\nThis becomes the kind field of the generated CRD and must be a valid Kubernetes kind name\n(PascalCase, starting with a capital letter). This field is immutable after creation.\nExample: \"WebApplication\", \"Database\", \"MicroService\"",
               "pattern": "^[A-Z][a-zA-Z0-9]{0,62}$",
               "type": "string",
               "x-kubernetes-validations": [
@@ -159,35 +174,19 @@
               ]
             },
             "spec": {
-              "description": "The spec of the resourcegraphdefinition. Typically, this is the spec of\nthe CRD that the resourcegraphdefinition is managing. This is adhering\nto the SimpleSchema spec",
+              "description": "Spec defines the schema for the instance's spec section using SimpleSchema syntax.\nThis becomes the OpenAPI schema for instances of the generated CRD.\nUse SimpleSchema's concise syntax to define fields, types, defaults, and validations.\nExample: {\"replicas\": \"integer | default=1 | min=1 | max=10\"}",
               "type": "object",
               "x-kubernetes-preserve-unknown-fields": true
             },
             "status": {
-              "description": "The status of the resourcegraphdefinition. This is the status of the CRD\nthat the resourcegraphdefinition is managing. This is adhering to the\nSimpleSchema spec.",
+              "description": "Status defines the schema for the instance's status section using SimpleSchema syntax.\nUnlike spec, status fields use CEL expressions to project values from underlying resources.\nThis allows you to surface important information from managed resources at the instance level.\nExample: {\"connectionName\": \"${database.status.connectionName}\", \"endpoint\": \"${service.status.loadBalancer.ingress[0].hostname}\"}",
               "type": "object",
               "x-kubernetes-preserve-unknown-fields": true
             },
             "types": {
-              "description": "Types is a map of custom type definitions. These can be used in the spec\nof the resourcegraphdefinition. Each type definition is also adhering to\nthe SimpleSchema spec.",
+              "description": "Types is a map of custom type definitions that can be referenced in the Spec.\nThis allows you to define reusable complex types using SimpleSchema syntax.\nReference custom types in Spec using the type name.\nExample: {\"Server\": {\"host\": \"string\", \"port\": \"integer\"}}",
               "type": "object",
               "x-kubernetes-preserve-unknown-fields": true
-            },
-            "validation": {
-              "description": "Validation is a list of validation rules that are applied to the\nresourcegraphdefinition.",
-              "items": {
-                "properties": {
-                  "expression": {
-                    "type": "string"
-                  },
-                  "message": {
-                    "type": "string"
-                  }
-                },
-                "type": "object",
-                "additionalProperties": false
-              },
-              "type": "array"
             }
           },
           "required": [
@@ -205,10 +204,10 @@
       "additionalProperties": false
     },
     "status": {
-      "description": "ResourceGraphDefinitionStatus defines the observed state of ResourceGraphDefinition",
+      "description": "ResourceGraphDefinitionStatus defines the observed state of ResourceGraphDefinition.\nIt provides information about the deployment state, resource ordering, and conditions.",
       "properties": {
         "conditions": {
-          "description": "Conditions represent the latest available observations of an object's state",
+          "description": "Conditions represent the latest available observations of the ResourceGraphDefinition's state.\nCommon condition types include \"Ready\", \"Validated\", and \"ReconcilerDeployed\".",
           "items": {
             "description": "Condition is the common struct used by all CRDs managed by ACK service\ncontrollers to indicate terminal states  of the CR and its backend AWS\nservice API resource",
             "properties": {
@@ -250,17 +249,17 @@
           "type": "array"
         },
         "resources": {
-          "description": "Resources represents the resources, and their information (dependencies for now)",
+          "description": "Resources provides detailed information about each resource in the graph,\nincluding their dependencies.",
           "items": {
-            "description": "ResourceInformation defines the information about a resource\nin the resourcegraphdefinition",
+            "description": "ResourceInformation provides detailed information about a specific resource\nin the ResourceGraphDefinition, particularly its dependencies on other resources.",
             "properties": {
               "dependencies": {
-                "description": "Dependencies represents the resource dependencies of a resource graph definition",
+                "description": "Dependencies lists all resources that this resource depends on.\nA resource depends on another if it references it in a CEL expression.\nThese dependencies determine the order of resource creation.",
                 "items": {
-                  "description": "Dependency defines the dependency a resource has observed\nfrom the resources it points to based on expressions",
+                  "description": "Dependency represents a dependency relationship between resources.\nWhen a resource uses CEL expressions to reference another resource,\na dependency is created to ensure proper ordering.",
                   "properties": {
                     "id": {
-                      "description": "ID represents the id of the dependency resource",
+                      "description": "ID is the unique identifier of the resource that this resource depends on.",
                       "type": "string"
                     }
                   },
@@ -270,7 +269,7 @@
                 "type": "array"
               },
               "id": {
-                "description": "ID represents the id of the resources we're providing information for",
+                "description": "ID is the unique identifier of the resource as defined in the resources list.",
                 "type": "string"
               }
             },
@@ -280,11 +279,11 @@
           "type": "array"
         },
         "state": {
-          "description": "State is the state of the resourcegraphdefinition",
+          "description": "State indicates whether the ResourceGraphDefinition is Active or Inactive.\nActive means the CRD has been created and the controller is running.\nInactive means the ResourceGraphDefinition has been disabled or encountered an error.",
           "type": "string"
         },
         "topologicalOrder": {
-          "description": "TopologicalOrder is the topological order of the resourcegraphdefinition graph",
+          "description": "TopologicalOrder is the ordered list of resource IDs based on their dependencies.\nResources are created in this order to ensure dependencies are satisfied.\nExample: [\"configmap\", \"deployment\", \"service\"]",
           "items": {
             "type": "string"
           },
