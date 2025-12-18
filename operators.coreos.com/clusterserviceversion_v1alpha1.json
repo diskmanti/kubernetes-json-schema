@@ -8368,6 +8368,21 @@
             "additionalProperties": false
           }
         },
+        "release": {
+          "description": "release specifies the packaging version of the operator, defaulting to empty\nrelease is optional\n\nA ClusterServiceVersion's release field is used to distinguish between different builds of the same operator version\nThis is useful for operators that need to make changes to the CSV which don't affect their functionality,\nfor example:\n- to fix a typo in their description\n- to add/amend annotations or labels\n- to amend examples or documentation\n- to produce different builds for different environments\n\nIt is up to operator authors to determine the semantics of release versions they use\nfor their operator.  All release versions must conform to the semver prerelease format\n(dot-separated identifiers containing only alphanumerics and hyphens) and are limited\nto a maximum length of 20 characters.",
+          "type": "string",
+          "maxLength": 20,
+          "x-kubernetes-validations": [
+            {
+              "rule": "self.matches('^[0-9A-Za-z-]+(\\\\.[0-9A-Za-z-]+)*$')",
+              "message": "release version must be composed of dot-separated identifiers containing only alphanumerics and hyphens"
+            },
+            {
+              "rule": "!self.split('.').exists(x, x.matches('^0[0-9]+$'))",
+              "message": "numeric identifiers in release version must not have leading zeros"
+            }
+          ]
+        },
         "replaces": {
           "description": "The name of a CSV this one replaces. Should match the `metadata.Name` field of the old CSV.",
           "type": "string"
