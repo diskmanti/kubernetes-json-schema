@@ -605,8 +605,6 @@
                               "syncSource": {
                                 "properties": {
                                   "path": {
-                                    "minLength": 1,
-                                    "pattern": "^.{2,}|[^./]$",
                                     "type": "string"
                                   },
                                   "targetBranch": {
@@ -1020,9 +1018,6 @@
                                   "allowEmpty": {
                                     "type": "boolean"
                                   },
-                                  "enabled": {
-                                    "type": "boolean"
-                                  },
                                   "prune": {
                                     "type": "boolean"
                                   },
@@ -1072,9 +1067,6 @@
                                   "limit": {
                                     "format": "int64",
                                     "type": "integer"
-                                  },
-                                  "refresh": {
-                                    "type": "boolean"
                                   }
                                 },
                                 "type": "object",
@@ -1700,8 +1692,6 @@
                               "syncSource": {
                                 "properties": {
                                   "path": {
-                                    "minLength": 1,
-                                    "pattern": "^.{2,}|[^./]$",
                                     "type": "string"
                                   },
                                   "targetBranch": {
@@ -2115,9 +2105,6 @@
                                   "allowEmpty": {
                                     "type": "boolean"
                                   },
-                                  "enabled": {
-                                    "type": "boolean"
-                                  },
                                   "prune": {
                                     "type": "boolean"
                                   },
@@ -2167,9 +2154,6 @@
                                   "limit": {
                                     "format": "int64",
                                     "type": "integer"
-                                  },
-                                  "refresh": {
-                                    "type": "boolean"
                                   }
                                 },
                                 "type": "object",
@@ -2234,9 +2218,6 @@
                   "files": {
                     "items": {
                       "properties": {
-                        "exclude": {
-                          "type": "boolean"
-                        },
                         "path": {
                           "type": "string"
                         }
@@ -2798,8 +2779,6 @@
                               "syncSource": {
                                 "properties": {
                                   "path": {
-                                    "minLength": 1,
-                                    "pattern": "^.{2,}|[^./]$",
                                     "type": "string"
                                   },
                                   "targetBranch": {
@@ -3213,9 +3192,6 @@
                                   "allowEmpty": {
                                     "type": "boolean"
                                   },
-                                  "enabled": {
-                                    "type": "boolean"
-                                  },
                                   "prune": {
                                     "type": "boolean"
                                   },
@@ -3265,9 +3241,6 @@
                                   "limit": {
                                     "format": "int64",
                                     "type": "integer"
-                                  },
-                                  "refresh": {
-                                    "type": "boolean"
                                   }
                                 },
                                 "type": "object",
@@ -3860,8 +3833,6 @@
                               "syncSource": {
                                 "properties": {
                                   "path": {
-                                    "minLength": 1,
-                                    "pattern": "^.{2,}|[^./]$",
                                     "type": "string"
                                   },
                                   "targetBranch": {
@@ -4275,9 +4246,6 @@
                                   "allowEmpty": {
                                     "type": "boolean"
                                   },
-                                  "enabled": {
-                                    "type": "boolean"
-                                  },
                                   "prune": {
                                     "type": "boolean"
                                   },
@@ -4327,9 +4295,6 @@
                                   "limit": {
                                     "format": "int64",
                                     "type": "integer"
-                                  },
-                                  "refresh": {
-                                    "type": "boolean"
                                   }
                                 },
                                 "type": "object",
@@ -4958,8 +4923,6 @@
                                         "syncSource": {
                                           "properties": {
                                             "path": {
-                                              "minLength": 1,
-                                              "pattern": "^.{2,}|[^./]$",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -5373,9 +5336,6 @@
                                             "allowEmpty": {
                                               "type": "boolean"
                                             },
-                                            "enabled": {
-                                              "type": "boolean"
-                                            },
                                             "prune": {
                                               "type": "boolean"
                                             },
@@ -5425,9 +5385,6 @@
                                             "limit": {
                                               "format": "int64",
                                               "type": "integer"
-                                            },
-                                            "refresh": {
-                                              "type": "boolean"
                                             }
                                           },
                                           "type": "object",
@@ -6053,8 +6010,6 @@
                                         "syncSource": {
                                           "properties": {
                                             "path": {
-                                              "minLength": 1,
-                                              "pattern": "^.{2,}|[^./]$",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -6468,9 +6423,6 @@
                                             "allowEmpty": {
                                               "type": "boolean"
                                             },
-                                            "enabled": {
-                                              "type": "boolean"
-                                            },
                                             "prune": {
                                               "type": "boolean"
                                             },
@@ -6520,9 +6472,6 @@
                                             "limit": {
                                               "format": "int64",
                                               "type": "integer"
-                                            },
-                                            "refresh": {
-                                              "type": "boolean"
                                             }
                                           },
                                           "type": "object",
@@ -6587,9 +6536,6 @@
                             "files": {
                               "items": {
                                 "properties": {
-                                  "exclude": {
-                                    "type": "boolean"
-                                  },
                                   "path": {
                                     "type": "string"
                                   }
@@ -7151,8 +7097,6 @@
                                         "syncSource": {
                                           "properties": {
                                             "path": {
-                                              "minLength": 1,
-                                              "pattern": "^.{2,}|[^./]$",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -7566,9 +7510,6 @@
                                             "allowEmpty": {
                                               "type": "boolean"
                                             },
-                                            "enabled": {
-                                              "type": "boolean"
-                                            },
                                             "prune": {
                                               "type": "boolean"
                                             },
@@ -7618,9 +7559,6 @@
                                             "limit": {
                                               "format": "int64",
                                               "type": "integer"
-                                            },
-                                            "refresh": {
-                                              "type": "boolean"
                                             }
                                           },
                                           "type": "object",
@@ -8213,8 +8151,6 @@
                                         "syncSource": {
                                           "properties": {
                                             "path": {
-                                              "minLength": 1,
-                                              "pattern": "^.{2,}|[^./]$",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -8628,9 +8564,6 @@
                                             "allowEmpty": {
                                               "type": "boolean"
                                             },
-                                            "enabled": {
-                                              "type": "boolean"
-                                            },
                                             "prune": {
                                               "type": "boolean"
                                             },
@@ -8680,9 +8613,6 @@
                                             "limit": {
                                               "format": "int64",
                                               "type": "integer"
-                                            },
-                                            "refresh": {
-                                              "type": "boolean"
                                             }
                                           },
                                           "type": "object",
@@ -9290,8 +9220,6 @@
                                         "syncSource": {
                                           "properties": {
                                             "path": {
-                                              "minLength": 1,
-                                              "pattern": "^.{2,}|[^./]$",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -9705,9 +9633,6 @@
                                             "allowEmpty": {
                                               "type": "boolean"
                                             },
-                                            "enabled": {
-                                              "type": "boolean"
-                                            },
                                             "prune": {
                                               "type": "boolean"
                                             },
@@ -9757,9 +9682,6 @@
                                             "limit": {
                                               "format": "int64",
                                               "type": "integer"
-                                            },
-                                            "refresh": {
-                                              "type": "boolean"
                                             }
                                           },
                                           "type": "object",
@@ -10017,9 +9939,6 @@
                               "type": "object",
                               "additionalProperties": false
                             },
-                            "continueOnRepoNotFoundError": {
-                              "type": "boolean"
-                            },
                             "filters": {
                               "items": {
                                 "properties": {
@@ -10027,9 +9946,6 @@
                                     "type": "string"
                                   },
                                   "targetBranchMatch": {
-                                    "type": "string"
-                                  },
-                                  "titleMatch": {
                                     "type": "string"
                                   }
                                 },
@@ -10045,12 +9961,6 @@
                                 },
                                 "insecure": {
                                   "type": "boolean"
-                                },
-                                "labels": {
-                                  "items": {
-                                    "type": "string"
-                                  },
-                                  "type": "array"
                                 },
                                 "owner": {
                                   "type": "string"
@@ -10726,8 +10636,6 @@
                                         "syncSource": {
                                           "properties": {
                                             "path": {
-                                              "minLength": 1,
-                                              "pattern": "^.{2,}|[^./]$",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -11141,9 +11049,6 @@
                                             "allowEmpty": {
                                               "type": "boolean"
                                             },
-                                            "enabled": {
-                                              "type": "boolean"
-                                            },
                                             "prune": {
                                               "type": "boolean"
                                             },
@@ -11193,9 +11098,6 @@
                                             "limit": {
                                               "format": "int64",
                                               "type": "integer"
-                                            },
-                                            "refresh": {
-                                              "type": "boolean"
                                             }
                                           },
                                           "type": "object",
@@ -12149,8 +12051,6 @@
                                         "syncSource": {
                                           "properties": {
                                             "path": {
-                                              "minLength": 1,
-                                              "pattern": "^.{2,}|[^./]$",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -12564,9 +12464,6 @@
                                             "allowEmpty": {
                                               "type": "boolean"
                                             },
-                                            "enabled": {
-                                              "type": "boolean"
-                                            },
                                             "prune": {
                                               "type": "boolean"
                                             },
@@ -12616,9 +12513,6 @@
                                             "limit": {
                                               "format": "int64",
                                               "type": "integer"
-                                            },
-                                            "refresh": {
-                                              "type": "boolean"
                                             }
                                           },
                                           "type": "object",
@@ -13242,8 +13136,6 @@
                               "syncSource": {
                                 "properties": {
                                   "path": {
-                                    "minLength": 1,
-                                    "pattern": "^.{2,}|[^./]$",
                                     "type": "string"
                                   },
                                   "targetBranch": {
@@ -13657,9 +13549,6 @@
                                   "allowEmpty": {
                                     "type": "boolean"
                                   },
-                                  "enabled": {
-                                    "type": "boolean"
-                                  },
                                   "prune": {
                                     "type": "boolean"
                                   },
@@ -13709,9 +13598,6 @@
                                   "limit": {
                                     "format": "int64",
                                     "type": "integer"
-                                  },
-                                  "refresh": {
-                                    "type": "boolean"
                                   }
                                 },
                                 "type": "object",
@@ -14343,8 +14229,6 @@
                                         "syncSource": {
                                           "properties": {
                                             "path": {
-                                              "minLength": 1,
-                                              "pattern": "^.{2,}|[^./]$",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -14758,9 +14642,6 @@
                                             "allowEmpty": {
                                               "type": "boolean"
                                             },
-                                            "enabled": {
-                                              "type": "boolean"
-                                            },
                                             "prune": {
                                               "type": "boolean"
                                             },
@@ -14810,9 +14691,6 @@
                                             "limit": {
                                               "format": "int64",
                                               "type": "integer"
-                                            },
-                                            "refresh": {
-                                              "type": "boolean"
                                             }
                                           },
                                           "type": "object",
@@ -15438,8 +15316,6 @@
                                         "syncSource": {
                                           "properties": {
                                             "path": {
-                                              "minLength": 1,
-                                              "pattern": "^.{2,}|[^./]$",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -15853,9 +15729,6 @@
                                             "allowEmpty": {
                                               "type": "boolean"
                                             },
-                                            "enabled": {
-                                              "type": "boolean"
-                                            },
                                             "prune": {
                                               "type": "boolean"
                                             },
@@ -15905,9 +15778,6 @@
                                             "limit": {
                                               "format": "int64",
                                               "type": "integer"
-                                            },
-                                            "refresh": {
-                                              "type": "boolean"
                                             }
                                           },
                                           "type": "object",
@@ -15972,9 +15842,6 @@
                             "files": {
                               "items": {
                                 "properties": {
-                                  "exclude": {
-                                    "type": "boolean"
-                                  },
                                   "path": {
                                     "type": "string"
                                   }
@@ -16536,8 +16403,6 @@
                                         "syncSource": {
                                           "properties": {
                                             "path": {
-                                              "minLength": 1,
-                                              "pattern": "^.{2,}|[^./]$",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -16951,9 +16816,6 @@
                                             "allowEmpty": {
                                               "type": "boolean"
                                             },
-                                            "enabled": {
-                                              "type": "boolean"
-                                            },
                                             "prune": {
                                               "type": "boolean"
                                             },
@@ -17003,9 +16865,6 @@
                                             "limit": {
                                               "format": "int64",
                                               "type": "integer"
-                                            },
-                                            "refresh": {
-                                              "type": "boolean"
                                             }
                                           },
                                           "type": "object",
@@ -17598,8 +17457,6 @@
                                         "syncSource": {
                                           "properties": {
                                             "path": {
-                                              "minLength": 1,
-                                              "pattern": "^.{2,}|[^./]$",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -18013,9 +17870,6 @@
                                             "allowEmpty": {
                                               "type": "boolean"
                                             },
-                                            "enabled": {
-                                              "type": "boolean"
-                                            },
                                             "prune": {
                                               "type": "boolean"
                                             },
@@ -18065,9 +17919,6 @@
                                             "limit": {
                                               "format": "int64",
                                               "type": "integer"
-                                            },
-                                            "refresh": {
-                                              "type": "boolean"
                                             }
                                           },
                                           "type": "object",
@@ -18675,8 +18526,6 @@
                                         "syncSource": {
                                           "properties": {
                                             "path": {
-                                              "minLength": 1,
-                                              "pattern": "^.{2,}|[^./]$",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -19090,9 +18939,6 @@
                                             "allowEmpty": {
                                               "type": "boolean"
                                             },
-                                            "enabled": {
-                                              "type": "boolean"
-                                            },
                                             "prune": {
                                               "type": "boolean"
                                             },
@@ -19142,9 +18988,6 @@
                                             "limit": {
                                               "format": "int64",
                                               "type": "integer"
-                                            },
-                                            "refresh": {
-                                              "type": "boolean"
                                             }
                                           },
                                           "type": "object",
@@ -19402,9 +19245,6 @@
                               "type": "object",
                               "additionalProperties": false
                             },
-                            "continueOnRepoNotFoundError": {
-                              "type": "boolean"
-                            },
                             "filters": {
                               "items": {
                                 "properties": {
@@ -19412,9 +19252,6 @@
                                     "type": "string"
                                   },
                                   "targetBranchMatch": {
-                                    "type": "string"
-                                  },
-                                  "titleMatch": {
                                     "type": "string"
                                   }
                                 },
@@ -19430,12 +19267,6 @@
                                 },
                                 "insecure": {
                                   "type": "boolean"
-                                },
-                                "labels": {
-                                  "items": {
-                                    "type": "string"
-                                  },
-                                  "type": "array"
                                 },
                                 "owner": {
                                   "type": "string"
@@ -20111,8 +19942,6 @@
                                         "syncSource": {
                                           "properties": {
                                             "path": {
-                                              "minLength": 1,
-                                              "pattern": "^.{2,}|[^./]$",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -20526,9 +20355,6 @@
                                             "allowEmpty": {
                                               "type": "boolean"
                                             },
-                                            "enabled": {
-                                              "type": "boolean"
-                                            },
                                             "prune": {
                                               "type": "boolean"
                                             },
@@ -20578,9 +20404,6 @@
                                             "limit": {
                                               "format": "int64",
                                               "type": "integer"
-                                            },
-                                            "refresh": {
-                                              "type": "boolean"
                                             }
                                           },
                                           "type": "object",
@@ -21534,8 +21357,6 @@
                                         "syncSource": {
                                           "properties": {
                                             "path": {
-                                              "minLength": 1,
-                                              "pattern": "^.{2,}|[^./]$",
                                               "type": "string"
                                             },
                                             "targetBranch": {
@@ -21949,9 +21770,6 @@
                                             "allowEmpty": {
                                               "type": "boolean"
                                             },
-                                            "enabled": {
-                                              "type": "boolean"
-                                            },
                                             "prune": {
                                               "type": "boolean"
                                             },
@@ -22001,9 +21819,6 @@
                                             "limit": {
                                               "format": "int64",
                                               "type": "integer"
-                                            },
-                                            "refresh": {
-                                              "type": "boolean"
                                             }
                                           },
                                           "type": "object",
@@ -22633,8 +22448,6 @@
                               "syncSource": {
                                 "properties": {
                                   "path": {
-                                    "minLength": 1,
-                                    "pattern": "^.{2,}|[^./]$",
                                     "type": "string"
                                   },
                                   "targetBranch": {
@@ -23048,9 +22861,6 @@
                                   "allowEmpty": {
                                     "type": "boolean"
                                   },
-                                  "enabled": {
-                                    "type": "boolean"
-                                  },
                                   "prune": {
                                     "type": "boolean"
                                   },
@@ -23100,9 +22910,6 @@
                                   "limit": {
                                     "format": "int64",
                                     "type": "integer"
-                                  },
-                                  "refresh": {
-                                    "type": "boolean"
                                   }
                                 },
                                 "type": "object",
@@ -23708,8 +23515,6 @@
                               "syncSource": {
                                 "properties": {
                                   "path": {
-                                    "minLength": 1,
-                                    "pattern": "^.{2,}|[^./]$",
                                     "type": "string"
                                   },
                                   "targetBranch": {
@@ -24123,9 +23928,6 @@
                                   "allowEmpty": {
                                     "type": "boolean"
                                   },
-                                  "enabled": {
-                                    "type": "boolean"
-                                  },
                                   "prune": {
                                     "type": "boolean"
                                   },
@@ -24175,9 +23977,6 @@
                                   "limit": {
                                     "format": "int64",
                                     "type": "integer"
-                                  },
-                                  "refresh": {
-                                    "type": "boolean"
                                   }
                                 },
                                 "type": "object",
@@ -24435,9 +24234,6 @@
                     "type": "object",
                     "additionalProperties": false
                   },
-                  "continueOnRepoNotFoundError": {
-                    "type": "boolean"
-                  },
                   "filters": {
                     "items": {
                       "properties": {
@@ -24445,9 +24241,6 @@
                           "type": "string"
                         },
                         "targetBranchMatch": {
-                          "type": "string"
-                        },
-                        "titleMatch": {
                           "type": "string"
                         }
                       },
@@ -24463,12 +24256,6 @@
                       },
                       "insecure": {
                         "type": "boolean"
-                      },
-                      "labels": {
-                        "items": {
-                          "type": "string"
-                        },
-                        "type": "array"
                       },
                       "owner": {
                         "type": "string"
@@ -25144,8 +24931,6 @@
                               "syncSource": {
                                 "properties": {
                                   "path": {
-                                    "minLength": 1,
-                                    "pattern": "^.{2,}|[^./]$",
                                     "type": "string"
                                   },
                                   "targetBranch": {
@@ -25559,9 +25344,6 @@
                                   "allowEmpty": {
                                     "type": "boolean"
                                   },
-                                  "enabled": {
-                                    "type": "boolean"
-                                  },
                                   "prune": {
                                     "type": "boolean"
                                   },
@@ -25611,9 +25393,6 @@
                                   "limit": {
                                     "format": "int64",
                                     "type": "integer"
-                                  },
-                                  "refresh": {
-                                    "type": "boolean"
                                   }
                                 },
                                 "type": "object",
@@ -26567,8 +26346,6 @@
                               "syncSource": {
                                 "properties": {
                                   "path": {
-                                    "minLength": 1,
-                                    "pattern": "^.{2,}|[^./]$",
                                     "type": "string"
                                   },
                                   "targetBranch": {
@@ -26982,9 +26759,6 @@
                                   "allowEmpty": {
                                     "type": "boolean"
                                   },
-                                  "enabled": {
-                                    "type": "boolean"
-                                  },
                                   "prune": {
                                     "type": "boolean"
                                   },
@@ -27034,9 +26808,6 @@
                                   "limit": {
                                     "format": "int64",
                                     "type": "integer"
-                                  },
-                                  "refresh": {
-                                    "type": "boolean"
                                   }
                                 },
                                 "type": "object",
@@ -27177,9 +26948,6 @@
         },
         "strategy": {
           "properties": {
-            "deletionOrder": {
-              "type": "string"
-            },
             "rollingSync": {
               "properties": {
                 "steps": {
@@ -27788,8 +27556,6 @@
                     "syncSource": {
                       "properties": {
                         "path": {
-                          "minLength": 1,
-                          "pattern": "^.{2,}|[^./]$",
                           "type": "string"
                         },
                         "targetBranch": {
@@ -28203,9 +27969,6 @@
                         "allowEmpty": {
                           "type": "boolean"
                         },
-                        "enabled": {
-                          "type": "boolean"
-                        },
                         "prune": {
                           "type": "boolean"
                         },
@@ -28255,9 +28018,6 @@
                         "limit": {
                           "format": "int64",
                           "type": "integer"
-                        },
-                        "refresh": {
-                          "type": "boolean"
                         }
                       },
                       "type": "object",
@@ -28426,10 +28186,6 @@
             "additionalProperties": false
           },
           "type": "array"
-        },
-        "resourcesCount": {
-          "format": "int64",
-          "type": "integer"
         }
       },
       "type": "object",
