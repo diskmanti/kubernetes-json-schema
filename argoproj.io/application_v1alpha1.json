@@ -77,10 +77,6 @@
               "description": "Limit is the maximum number of attempts for retrying a failed sync. If set to 0, no retries will be performed.",
               "format": "int64",
               "type": "integer"
-            },
-            "refresh": {
-              "description": "Refresh indicates if the latest revision should be used on retry instead of the initial one (default: false)",
-              "type": "boolean"
             }
           },
           "type": "object",
@@ -1695,13 +1691,11 @@
               "description": "SyncSource specifies where to sync hydrated manifests from.",
               "properties": {
                 "path": {
-                  "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.",
-                  "minLength": 1,
-                  "pattern": "^.{2,}|[^./]$",
+                  "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. If hydrateTo is set, this is just the path from which hydrated manifests will be synced.",
                   "type": "string"
                 },
                 "targetBranch": {
-                  "description": "TargetBranch is the branch from which hydrated manifests will be synced.\nIf HydrateTo is not set, this is also the branch to which hydrated manifests are committed.",
+                  "description": "TargetBranch is the branch to which hydrated manifests should be committed",
                   "type": "string"
                 }
               },
@@ -2187,10 +2181,6 @@
                   "description": "AllowEmpty allows apps have zero live resources (default: false)",
                   "type": "boolean"
                 },
-                "enabled": {
-                  "description": "Enable allows apps to explicitly control automated sync",
-                  "type": "boolean"
-                },
                 "prune": {
                   "description": "Prune specifies whether to delete resources from the cluster that are not found in the sources anymore as part of automated sync (default: false)",
                   "type": "boolean"
@@ -2249,10 +2239,6 @@
                   "description": "Limit is the maximum number of attempts for retrying a failed sync. If set to 0, no retries will be performed.",
                   "format": "int64",
                   "type": "integer"
-                },
-                "refresh": {
-                  "description": "Refresh indicates if the latest revision should be used on retry instead of the initial one (default: false)",
-                  "type": "boolean"
                 }
               },
               "type": "object",
@@ -2321,11 +2307,11 @@
               "type": "string"
             },
             "message": {
-              "description": "Message is a human-readable informational message describing the health status\n\nDeprecated: this field is not used and will be removed in a future release.",
+              "description": "Message is a human-readable informational message describing the health status",
               "type": "string"
             },
             "status": {
-              "description": "Status holds the status code of the application",
+              "description": "Status holds the status code of the application or resource",
               "type": "string"
             }
           },
@@ -3380,10 +3366,6 @@
                       "description": "Limit is the maximum number of attempts for retrying a failed sync. If set to 0, no retries will be performed.",
                       "format": "int64",
                       "type": "integer"
-                    },
-                    "refresh": {
-                      "description": "Refresh indicates if the latest revision should be used on retry instead of the initial one (default: false)",
-                      "type": "boolean"
                     }
                   },
                   "type": "object",
@@ -4457,13 +4439,6 @@
                         "description": "HookType specifies the type of the hook. Empty for non-hook resources",
                         "type": "string"
                       },
-                      "images": {
-                        "description": "Images contains the images related to the ResourceResult",
-                        "items": {
-                          "type": "string"
-                        },
-                        "type": "array"
-                      },
                       "kind": {
                         "description": "Kind specifies the API kind of the resource",
                         "type": "string"
@@ -5464,7 +5439,7 @@
                 "description": "Health indicates the health status of the resource (e.g., Healthy, Degraded, Progressing).",
                 "properties": {
                   "lastTransitionTime": {
-                    "description": "LastTransitionTime is the time the HealthStatus was set or updated\n\nDeprecated: this field is not used and will be removed in a future release.",
+                    "description": "LastTransitionTime is the time the HealthStatus was set or updated",
                     "format": "date-time",
                     "type": "string"
                   },
@@ -5473,7 +5448,7 @@
                     "type": "string"
                   },
                   "status": {
-                    "description": "Status holds the status code of the resource",
+                    "description": "Status holds the status code of the application or resource",
                     "type": "string"
                   }
                 },
@@ -5600,13 +5575,11 @@
                       "description": "SyncSource specifies where to sync hydrated manifests from.",
                       "properties": {
                         "path": {
-                          "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.",
-                          "minLength": 1,
-                          "pattern": "^.{2,}|[^./]$",
+                          "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. If hydrateTo is set, this is just the path from which hydrated manifests will be synced.",
                           "type": "string"
                         },
                         "targetBranch": {
-                          "description": "TargetBranch is the branch from which hydrated manifests will be synced.\nIf HydrateTo is not set, this is also the branch to which hydrated manifests are committed.",
+                          "description": "TargetBranch is the branch to which hydrated manifests should be committed",
                           "type": "string"
                         }
                       },
@@ -5694,13 +5667,11 @@
                       "description": "SyncSource specifies where to sync hydrated manifests from.",
                       "properties": {
                         "path": {
-                          "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. The Path should never point to the root of the repo. If hydrateTo is set, this is just the path from which\nhydrated manifests will be synced.",
-                          "minLength": 1,
-                          "pattern": "^.{2,}|[^./]$",
+                          "description": "Path is a directory path within the git repository where hydrated manifests should be committed to and synced\nfrom. If hydrateTo is set, this is just the path from which hydrated manifests will be synced.",
                           "type": "string"
                         },
                         "targetBranch": {
-                          "description": "TargetBranch is the branch from which hydrated manifests will be synced.\nIf HydrateTo is not set, this is also the branch to which hydrated manifests are committed.",
+                          "description": "TargetBranch is the branch to which hydrated manifests should be committed",
                           "type": "string"
                         }
                       },
