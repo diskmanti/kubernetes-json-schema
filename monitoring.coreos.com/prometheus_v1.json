@@ -4300,6 +4300,13 @@
           "type": "object",
           "additionalProperties": false
         },
+        "podManagementPolicy": {
+          "enum": [
+            "OrderedReady",
+            "Parallel"
+          ],
+          "type": "string"
+        },
         "podMetadata": {
           "properties": {
             "annotations": {
@@ -5230,6 +5237,10 @@
                     "type": "object",
                     "additionalProperties": false
                   },
+                  "scope": {
+                    "pattern": "^[\\w\\s:/.\\\\-]+$",
+                    "type": "string"
+                  },
                   "sdk": {
                     "properties": {
                       "tenantId": {
@@ -5237,6 +5248,24 @@
                         "type": "string"
                       }
                     },
+                    "type": "object",
+                    "additionalProperties": false
+                  },
+                  "workloadIdentity": {
+                    "properties": {
+                      "clientId": {
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "tenantId": {
+                        "minLength": 1,
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "clientId",
+                      "tenantId"
+                    ],
                     "type": "object",
                     "additionalProperties": false
                   }
@@ -6622,6 +6651,9 @@
           "pattern": "^(0|(([0-9]+)y)?(([0-9]+)w)?(([0-9]+)d)?(([0-9]+)h)?(([0-9]+)m)?(([0-9]+)s)?(([0-9]+)ms)?)$",
           "type": "string"
         },
+        "scrapeNativeHistograms": {
+          "type": "boolean"
+        },
         "scrapeProtocols": {
           "items": {
             "enum": [
@@ -7879,13 +7911,16 @@
             "clientType": {
               "enum": [
                 "http",
-                "grpc"
+                "grpc",
+                "HTTP",
+                "GRPC"
               ],
               "type": "string"
             },
             "compression": {
               "enum": [
-                "gzip"
+                "gzip",
+                "Gzip"
               ],
               "type": "string"
             },
@@ -8084,6 +8119,45 @@
             }
           },
           "type": "object",
+          "additionalProperties": false
+        },
+        "updateStrategy": {
+          "properties": {
+            "rollingUpdate": {
+              "properties": {
+                "maxUnavailable": {
+                  "anyOf": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ],
+                  "x-kubernetes-int-or-string": true
+                }
+              },
+              "type": "object",
+              "additionalProperties": false
+            },
+            "type": {
+              "enum": [
+                "OnDelete",
+                "RollingUpdate"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object",
+          "x-kubernetes-validations": [
+            {
+              "message": "rollingUpdate requires type to be RollingUpdate",
+              "rule": "!(self.type != 'RollingUpdate' && has(self.rollingUpdate))"
+            }
+          ],
           "additionalProperties": false
         },
         "version": {

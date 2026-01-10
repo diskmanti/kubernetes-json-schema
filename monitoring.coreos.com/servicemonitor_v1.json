@@ -850,6 +850,9 @@
         "scrapeClassicHistograms": {
           "type": "boolean"
         },
+        "scrapeNativeHistograms": {
+          "type": "boolean"
+        },
         "scrapeProtocols": {
           "items": {
             "enum": [
