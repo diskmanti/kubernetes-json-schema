@@ -58,6 +58,19 @@
                 "type": "object",
                 "additionalProperties": false
               },
+              "forEach": {
+                "description": "ForEach expands this resource into a collection of resources.\nEach entry binds a variable name to a CEL expression that evaluates to an array.\nkro creates one resource instance for each element in the array.\nWith multiple entries, kro creates the cartesian product of all combinations.\nUse the variable directly in template expressions (e.g., ${region}).\nExample: [{\"region\": \"${schema.spec.regions}\"}, {\"tier\": \"${schema.spec.tiers}\"}]",
+                "items": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "description": "ForEachDimension defines a single expansion axis in a forEach block.\nEach dimension is a map with exactly one entry where the key is the variable name\nand the value is the CEL expression. Example: {\"region\": \"${schema.spec.regions}\"}\nMultiple dimensions create a cartesian product of expansions.",
+                  "maxProperties": 1,
+                  "minProperties": 1,
+                  "type": "object"
+                },
+                "type": "array"
+              },
               "id": {
                 "description": "ID is a unique identifier for this resource within the ResourceGraphDefinition.\nIt is used to reference this resource in CEL expressions from other resources.\nExample: \"deployment\", \"service\", \"configmap\".",
                 "type": "string"
@@ -172,6 +185,27 @@
                   "rule": "self == oldSelf"
                 }
               ]
+            },
+            "metadata": {
+              "description": "Metadata to apply to the generated CRD",
+              "properties": {
+                "annotations": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "description": "Annotations to apply to the generated CRD",
+                  "type": "object"
+                },
+                "labels": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "description": "Labels to apply to the generated CRD",
+                  "type": "object"
+                }
+              },
+              "type": "object",
+              "additionalProperties": false
             },
             "spec": {
               "description": "Spec defines the schema for the instance's spec section using SimpleSchema syntax.\nThis becomes the OpenAPI schema for instances of the generated CRD.\nUse SimpleSchema's concise syntax to define fields, types, defaults, and validations.\nExample: {\"replicas\": \"integer | default=1 | min=1 | max=10\"}",
