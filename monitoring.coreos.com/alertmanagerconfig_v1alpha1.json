@@ -802,6 +802,7 @@
                 "items": {
                   "properties": {
                     "authIdentity": {
+                      "minLength": 1,
                       "type": "string"
                     },
                     "authPassword": {
@@ -845,9 +846,11 @@
                       "additionalProperties": false
                     },
                     "authUsername": {
+                      "minLength": 1,
                       "type": "string"
                     },
                     "from": {
+                      "minLength": 1,
                       "type": "string"
                     },
                     "headers": {
@@ -872,6 +875,7 @@
                       "x-kubernetes-list-type": "atomic"
                     },
                     "hello": {
+                      "minLength": 1,
                       "type": "string"
                     },
                     "html": {
@@ -884,9 +888,11 @@
                       "type": "boolean"
                     },
                     "smarthost": {
+                      "minLength": 1,
                       "type": "string"
                     },
                     "text": {
+                      "minLength": 1,
                       "type": "string"
                     },
                     "tlsConfig": {
@@ -1032,6 +1038,7 @@
                       "additionalProperties": false
                     },
                     "to": {
+                      "minLength": 1,
                       "type": "string"
                     }
                   },
@@ -2257,6 +2264,7 @@
                 "items": {
                   "properties": {
                     "actions": {
+                      "minLength": 1,
                       "type": "string"
                     },
                     "apiKey": {
@@ -2284,6 +2292,7 @@
                       "type": "string"
                     },
                     "description": {
+                      "minLength": 1,
                       "type": "string"
                     },
                     "details": {
@@ -2308,6 +2317,7 @@
                       "x-kubernetes-list-type": "atomic"
                     },
                     "entity": {
+                      "minLength": 1,
                       "type": "string"
                     },
                     "httpConfig": {
@@ -2872,21 +2882,26 @@
                       "additionalProperties": false
                     },
                     "message": {
+                      "minLength": 1,
                       "type": "string"
                     },
                     "note": {
+                      "minLength": 1,
                       "type": "string"
                     },
                     "priority": {
+                      "minLength": 1,
                       "type": "string"
                     },
                     "responders": {
                       "items": {
                         "properties": {
                           "id": {
+                            "minLength": 1,
                             "type": "string"
                           },
                           "name": {
+                            "minLength": 1,
                             "type": "string"
                           },
                           "type": {
@@ -2901,6 +2916,7 @@
                             "type": "string"
                           },
                           "username": {
+                            "minLength": 1,
                             "type": "string"
                           }
                         },
@@ -2917,9 +2933,11 @@
                       "type": "boolean"
                     },
                     "source": {
+                      "minLength": 1,
                       "type": "string"
                     },
                     "tags": {
+                      "minLength": 1,
                       "type": "string"
                     },
                     "updateAlerts": {
@@ -2944,7 +2962,6 @@
                       "type": "string"
                     },
                     "clientURL": {
-                      "pattern": "^https?://.+$",
                       "type": "string"
                     },
                     "component": {
@@ -3549,7 +3566,6 @@
                             "type": "string"
                           },
                           "href": {
-                            "pattern": "^https?://.+$",
                             "type": "string"
                           },
                           "src": {
@@ -3571,7 +3587,6 @@
                             "type": "string"
                           },
                           "href": {
-                            "pattern": "^https?://.+$",
                             "type": "string"
                           }
                         },
@@ -4277,7 +4292,6 @@
                       "type": "string"
                     },
                     "url": {
-                      "pattern": "^https?://.+$",
                       "type": "string"
                     },
                     "urlTitle": {
@@ -4330,7 +4344,6 @@
                             "type": "string"
                           },
                           "url": {
-                            "pattern": "^https?://.+$",
                             "type": "string"
                           }
                         },
@@ -4941,11 +4954,9 @@
                       "additionalProperties": false
                     },
                     "iconURL": {
-                      "pattern": "^https?://.+$",
                       "type": "string"
                     },
                     "imageURL": {
-                      "pattern": "^https?://.+$",
                       "type": "string"
                     },
                     "linkNames": {
@@ -4962,7 +4973,6 @@
                       "type": "string"
                     },
                     "thumbURL": {
-                      "pattern": "^https?://.+$",
                       "type": "string"
                     },
                     "title": {
@@ -5072,7 +5082,6 @@
                             "type": "string"
                           },
                           "url": {
-                            "pattern": "^https?://.+$",
                             "type": "string"
                           },
                           "value": {
@@ -5723,11 +5732,9 @@
                       "type": "string"
                     },
                     "iconURL": {
-                      "pattern": "^https?://.+$",
                       "type": "string"
                     },
                     "imageURL": {
-                      "pattern": "^https?://.+$",
                       "type": "string"
                     },
                     "linkNames": {
@@ -5757,7 +5764,6 @@
                       "type": "string"
                     },
                     "thumbURL": {
-                      "pattern": "^https?://.+$",
                       "type": "string"
                     },
                     "timeout": {
@@ -5769,7 +5775,6 @@
                       "type": "string"
                     },
                     "titleLink": {
-                      "pattern": "^https?://.+$",
                       "type": "string"
                     },
                     "username": {
@@ -6357,9 +6362,11 @@
                       "additionalProperties": false
                     },
                     "message": {
+                      "minLength": 1,
                       "type": "string"
                     },
                     "phoneNumber": {
+                      "minLength": 1,
                       "type": "string"
                     },
                     "sendResolved": {
@@ -6424,12 +6431,15 @@
                       "additionalProperties": false
                     },
                     "subject": {
+                      "minLength": 1,
                       "type": "string"
                     },
                     "targetARN": {
+                      "minLength": 1,
                       "type": "string"
                     },
                     "topicARN": {
+                      "minLength": 1,
                       "type": "string"
                     }
                   },
@@ -8872,7 +8882,6 @@
                       "type": "string"
                     },
                     "url": {
-                      "pattern": "^https?://.+$",
                       "type": "string"
                     },
                     "urlSecret": {
@@ -8906,6 +8915,7 @@
                 "items": {
                   "properties": {
                     "agentID": {
+                      "minLength": 1,
                       "type": "string"
                     },
                     "apiSecret": {
@@ -8933,6 +8943,7 @@
                       "type": "string"
                     },
                     "corpID": {
+                      "minLength": 1,
                       "type": "string"
                     },
                     "httpConfig": {
@@ -9497,21 +9508,26 @@
                       "additionalProperties": false
                     },
                     "message": {
+                      "minLength": 1,
                       "type": "string"
                     },
                     "messageType": {
+                      "minLength": 1,
                       "type": "string"
                     },
                     "sendResolved": {
                       "type": "boolean"
                     },
                     "toParty": {
+                      "minLength": 1,
                       "type": "string"
                     },
                     "toTag": {
+                      "minLength": 1,
                       "type": "string"
                     },
                     "toUser": {
+                      "minLength": 1,
                       "type": "string"
                     }
                   },
@@ -9554,9 +9570,13 @@
               "x-kubernetes-list-type": "set"
             },
             "groupInterval": {
+              "minLength": 1,
+              "pattern": "^(0|(([0-9]+)y)?(([0-9]+)w)?(([0-9]+)d)?(([0-9]+)h)?(([0-9]+)m)?(([0-9]+)s)?(([0-9]+)ms)?)$",
               "type": "string"
             },
             "groupWait": {
+              "minLength": 1,
+              "pattern": "^(0|(([0-9]+)y)?(([0-9]+)w)?(([0-9]+)d)?(([0-9]+)h)?(([0-9]+)m)?(([0-9]+)s)?(([0-9]+)ms)?)$",
               "type": "string"
             },
             "matchers": {
@@ -9602,6 +9622,8 @@
               "type": "string"
             },
             "repeatInterval": {
+              "minLength": 1,
+              "pattern": "^(0|(([0-9]+)y)?(([0-9]+)w)?(([0-9]+)d)?(([0-9]+)h)?(([0-9]+)m)?(([0-9]+)s)?(([0-9]+)ms)?)$",
               "type": "string"
             },
             "routes": {

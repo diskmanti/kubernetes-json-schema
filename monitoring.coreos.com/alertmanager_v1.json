@@ -3464,6 +3464,9 @@
           ],
           "x-kubernetes-list-type": "map"
         },
+        "hostNetwork": {
+          "type": "boolean"
+        },
         "hostUsers": {
           "type": "boolean"
         },
