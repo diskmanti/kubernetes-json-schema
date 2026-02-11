@@ -20410,6 +20410,12 @@
         }
       },
       "type": "object",
+      "x-kubernetes-validations": [
+        {
+          "message": "spec.sso and spec.oidcConfig cannot both be set",
+          "rule": "!(has(self.sso) && has(self.oidcConfig))"
+        }
+      ],
       "additionalProperties": false
     },
     "status": {
