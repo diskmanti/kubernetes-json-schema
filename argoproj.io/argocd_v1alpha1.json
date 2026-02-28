@@ -1922,6 +1922,18 @@
           },
           "type": "array"
         },
+        "networkPolicy": {
+          "description": "NetworkPolicy controls whether the operator should create NetworkPolicy resources for this Argo CD instance.",
+          "properties": {
+            "enabled": {
+              "default": true,
+              "description": "Enabled defines whether NetworkPolicy resources should be created for this Argo CD instance.\nWhen enabled, the operator will reconcile NetworkPolicies for Argo CD components.\nWhen disabled, the operator will remove any previously-created NetworkPolicies.",
+              "type": "boolean"
+            }
+          },
+          "type": "object",
+          "additionalProperties": false
+        },
         "nodePlacement": {
           "description": "NodePlacement defines NodeSelectors and Taints for Argo CD workloads",
           "properties": {
@@ -2245,15 +2257,15 @@
           "description": "Prometheus defines the Prometheus server options for ArgoCD.",
           "properties": {
             "enabled": {
-              "description": "Enabled will toggle Prometheus support globally for ArgoCD.",
+              "description": "Enabled will toggle Prometheus support globally for ArgoCD.\nWhen set to true, ServiceMonitors and PrometheusRules will be created for Argo CD metrics.\nThe Prometheus CR, Route, and Ingress are deprecated and will no longer be created.",
               "type": "boolean"
             },
             "host": {
-              "description": "Host is the hostname to use for Ingress/Route resources.",
+              "description": "Host is the hostname to use for Ingress/Route resources.\nDeprecated: This field is no longer used and will be ignored.",
               "type": "string"
             },
             "ingress": {
-              "description": "Ingress defines the desired state for an Ingress for the Prometheus component.",
+              "description": "Ingress defines the desired state for an Ingress for the Prometheus component.\nDeprecated: This field is no longer used and will be ignored.",
               "properties": {
                 "annotations": {
                   "additionalProperties": {
@@ -2305,7 +2317,7 @@
               "additionalProperties": false
             },
             "route": {
-              "description": "Route defines the desired state for an OpenShift Route for the Prometheus component.",
+              "description": "Route defines the desired state for an OpenShift Route for the Prometheus component.\nDeprecated: This field is no longer used and will be ignored.",
               "properties": {
                 "annotations": {
                   "additionalProperties": {
@@ -2404,7 +2416,7 @@
               "additionalProperties": false
             },
             "size": {
-              "description": "Size is the replica count for the Prometheus StatefulSet.",
+              "description": "Size is the replica count for the Prometheus StatefulSet.\nDeprecated: This field is no longer used and will be ignored.",
               "format": "int32",
               "type": "integer"
             }
