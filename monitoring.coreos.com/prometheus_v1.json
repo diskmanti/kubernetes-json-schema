@@ -5937,7 +5937,7 @@
                 "additionalProperties": false
               },
               "url": {
-                "minLength": 1,
+                "pattern": "^(http|https)://.+$",
                 "type": "string"
               },
               "writeRelabelConfigs": {
@@ -6215,6 +6215,10 @@
         "sampleLimit": {
           "format": "int64",
           "type": "integer"
+        },
+        "schedulerName": {
+          "minLength": 1,
+          "type": "string"
         },
         "scrapeClasses": {
           "items": {
@@ -9161,6 +9165,12 @@
                             },
                             "signerName": {
                               "type": "string"
+                            },
+                            "userAnnotations": {
+                              "additionalProperties": {
+                                "type": "string"
+                              },
+                              "type": "object"
                             }
                           },
                           "required": [
