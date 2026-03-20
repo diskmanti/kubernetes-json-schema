@@ -1543,6 +1543,9 @@
                     "authUsername": {
                       "type": "string"
                     },
+                    "forceImplicitTLS": {
+                      "type": "boolean"
+                    },
                     "from": {
                       "type": "string"
                     },
@@ -4835,6 +4838,10 @@
         "routePrefix": {
           "type": "string"
         },
+        "schedulerName": {
+          "minLength": 1,
+          "type": "string"
+        },
         "secrets": {
           "items": {
             "type": "string"
@@ -6604,6 +6611,12 @@
                             },
                             "signerName": {
                               "type": "string"
+                            },
+                            "userAnnotations": {
+                              "additionalProperties": {
+                                "type": "string"
+                              },
+                              "type": "object"
                             }
                           },
                           "required": [
