@@ -4364,7 +4364,7 @@
                 "additionalProperties": false
               },
               "url": {
-                "minLength": 1,
+                "pattern": "^(http|https)://.+$",
                 "type": "string"
               },
               "writeRelabelConfigs": {
@@ -4605,6 +4605,10 @@
           "type": "object",
           "x-kubernetes-map-type": "atomic",
           "additionalProperties": false
+        },
+        "schedulerName": {
+          "minLength": 1,
+          "type": "string"
         },
         "securityContext": {
           "properties": {
@@ -6386,6 +6390,12 @@
                             },
                             "signerName": {
                               "type": "string"
+                            },
+                            "userAnnotations": {
+                              "additionalProperties": {
+                                "type": "string"
+                              },
+                              "type": "object"
                             }
                           },
                           "required": [

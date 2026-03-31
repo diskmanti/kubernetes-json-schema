@@ -1954,6 +1954,7 @@
                 "items": {
                   "properties": {
                     "name": {
+                      "minLength": 1,
                       "type": "string"
                     },
                     "values": {
@@ -1984,6 +1985,7 @@
               },
               "host": {
                 "minLength": 1,
+                "pattern": "^[a-zA-Z][a-zA-Z0-9+.-]*://.+$",
                 "type": "string"
               },
               "hostNetworkingHost": {
@@ -2548,6 +2550,7 @@
                 "items": {
                   "properties": {
                     "name": {
+                      "minLength": 1,
                       "type": "string"
                     },
                     "values": {
@@ -3089,6 +3092,7 @@
                 "items": {
                   "properties": {
                     "name": {
+                      "minLength": 1,
                       "type": "string"
                     },
                     "values": {
@@ -3744,8 +3748,7 @@
                 "type": "string"
               },
               "server": {
-                "minLength": 1,
-                "pattern": "^http(s)?://.+$",
+                "pattern": "^https?://.+$",
                 "type": "string"
               },
               "tlsConfig": {
@@ -5086,8 +5089,7 @@
                 "additionalProperties": false
               },
               "url": {
-                "minLength": 1,
-                "pattern": "^http(s)?://.+$",
+                "pattern": "^https?://.+$",
                 "type": "string"
               }
             },
@@ -8432,7 +8434,7 @@
                 "type": "string"
               },
               "server": {
-                "minLength": 1,
+                "pattern": "^https?://.+$",
                 "type": "string"
               },
               "tagSeparator": {
@@ -8914,7 +8916,7 @@
                 "type": "string"
               },
               "identityEndpoint": {
-                "pattern": "^http(s)?:\\/\\/.+$",
+                "pattern": "^https?://.+$",
                 "type": "string"
               },
               "password": {
@@ -9798,8 +9800,7 @@
                 "additionalProperties": false
               },
               "url": {
-                "minLength": 1,
-                "pattern": "^http(s)?://.+$",
+                "pattern": "^https?://.+$",
                 "type": "string"
               }
             },
@@ -9884,7 +9885,7 @@
                 "type": "string"
               },
               "apiURL": {
-                "pattern": "^http(s)?://.+$",
+                "pattern": "^https?://.+$",
                 "type": "string"
               },
               "enableHTTP2": {
@@ -10196,6 +10197,7 @@
               },
               "targets": {
                 "items": {
+                  "minLength": 1,
                   "type": "string"
                 },
                 "minItems": 1,

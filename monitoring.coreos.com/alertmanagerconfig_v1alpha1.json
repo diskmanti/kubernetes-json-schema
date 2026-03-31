@@ -849,6 +849,9 @@
                       "minLength": 1,
                       "type": "string"
                     },
+                    "forceImplicitTLS": {
+                      "type": "boolean"
+                    },
                     "from": {
                       "minLength": 1,
                       "type": "string"
@@ -5739,6 +5742,10 @@
                     },
                     "linkNames": {
                       "type": "boolean"
+                    },
+                    "messageText": {
+                      "minLength": 1,
+                      "type": "string"
                     },
                     "mrkdwnIn": {
                       "items": {
