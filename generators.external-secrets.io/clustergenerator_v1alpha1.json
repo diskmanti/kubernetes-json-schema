@@ -1365,6 +1365,10 @@
                               },
                               "type": "object",
                               "additionalProperties": false
+                            },
+                            "vaultRole": {
+                              "description": "VaultRole specifies the Vault role to use for TLS certificate authentication.",
+                              "type": "string"
                             }
                           },
                           "type": "object",
