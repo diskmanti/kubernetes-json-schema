@@ -473,7 +473,7 @@
                   "description": "Type of authorzation to use to access the remote write endpoint",
                   "enum": [
                     "basic",
-                    "header"
+                    "bearer"
                   ],
                   "type": "string"
                 },
