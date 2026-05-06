@@ -47,7 +47,8 @@
                 "enum": [
                   "OAuth",
                   "ManagedIdentity",
-                  "SDK"
+                  "SDK",
+                  "WorkloadIdentity"
                 ],
                 "type": "string"
               },
@@ -786,6 +787,10 @@
               },
               "followRedirects": {
                 "type": "boolean"
+              },
+              "healthFilter": {
+                "minLength": 1,
+                "type": "string"
               },
               "namespace": {
                 "minLength": 1,
@@ -7245,6 +7250,7 @@
                 "type": "string"
               },
               "roleARN": {
+                "minLength": 1,
                 "type": "string"
               },
               "secretKey": {
@@ -8115,6 +8121,7 @@
                 "type": "boolean"
               },
               "namespace": {
+                "minLength": 1,
                 "type": "string"
               },
               "noProxy": {
@@ -8431,6 +8438,7 @@
                 "type": "string"
               },
               "region": {
+                "minLength": 1,
                 "type": "string"
               },
               "server": {
@@ -8438,6 +8446,7 @@
                 "type": "string"
               },
               "tagSeparator": {
+                "minLength": 1,
                 "type": "string"
               },
               "tlsConfig": {
@@ -8870,6 +8879,7 @@
                 "type": "boolean"
               },
               "applicationCredentialId": {
+                "minLength": 1,
                 "type": "string"
               },
               "applicationCredentialName": {
@@ -10364,6 +10374,12 @@
         }
       },
       "type": "object",
+      "x-kubernetes-validations": [
+        {
+          "message": "at most one of basicAuth, authorization, or oauth2 can be configured",
+          "rule": "[has(self.basicAuth), has(self.authorization), has(self.oauth2)].filter(x, x).size() <= 1"
+        }
+      ],
       "additionalProperties": false
     },
     "status": {
