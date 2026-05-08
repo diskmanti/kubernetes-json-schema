@@ -1377,6 +1377,32 @@
                   "type": "object",
                   "additionalProperties": false
                 },
+                "mattermost": {
+                  "properties": {
+                    "webhookURL": {
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "default": "",
+                          "type": "string"
+                        },
+                        "optional": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "key"
+                      ],
+                      "type": "object",
+                      "x-kubernetes-map-type": "atomic",
+                      "additionalProperties": false
+                    }
+                  },
+                  "type": "object",
+                  "additionalProperties": false
+                },
                 "opsGenieApiKey": {
                   "properties": {
                     "key": {

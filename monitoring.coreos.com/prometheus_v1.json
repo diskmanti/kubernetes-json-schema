@@ -1068,6 +1068,10 @@
                         "x-kubernetes-map-type": "atomic",
                         "additionalProperties": false
                       },
+                      "externalId": {
+                        "minLength": 1,
+                        "type": "string"
+                      },
                       "profile": {
                         "type": "string"
                       },
@@ -1102,6 +1106,12 @@
                       }
                     },
                     "type": "object",
+                    "x-kubernetes-validations": [
+                      {
+                        "message": "externalId can only be used when roleArn is specified",
+                        "rule": "!has(self.externalId) || has(self.roleArn)"
+                      }
+                    ],
                     "additionalProperties": false
                   },
                   "timeout": {
@@ -5749,6 +5759,10 @@
                     "x-kubernetes-map-type": "atomic",
                     "additionalProperties": false
                   },
+                  "externalId": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
                   "profile": {
                     "type": "string"
                   },
@@ -5783,6 +5797,12 @@
                   }
                 },
                 "type": "object",
+                "x-kubernetes-validations": [
+                  {
+                    "message": "externalId can only be used when roleArn is specified",
+                    "rule": "!has(self.externalId) || has(self.roleArn)"
+                  }
+                ],
                 "additionalProperties": false
               },
               "tlsConfig": {
@@ -6930,6 +6950,41 @@
           "type": "object",
           "additionalProperties": false
         },
+        "shardingStrategy": {
+          "properties": {
+            "mode": {
+              "enum": [
+                "Address",
+                "Topology"
+              ],
+              "type": "string"
+            },
+            "topology": {
+              "properties": {
+                "externalLabelName": {
+                  "type": "string"
+                },
+                "values": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array",
+                  "x-kubernetes-list-type": "atomic"
+                }
+              },
+              "type": "object",
+              "additionalProperties": false
+            }
+          },
+          "type": "object",
+          "x-kubernetes-validations": [
+            {
+              "message": "topology can only be defined when mode is set to 'Topology'",
+              "rule": "!has(self.topology) || (has(self.mode) && self.mode == 'Topology')"
+            }
+          ],
+          "additionalProperties": false
+        },
         "shards": {
           "format": "int32",
           "type": "integer"
@@ -7560,6 +7615,22 @@
                 },
                 "certFile": {
                   "type": "string"
+                },
+                "cipherSuites": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "minItems": 1,
+                  "type": "array",
+                  "x-kubernetes-list-type": "set"
+                },
+                "curves": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "minItems": 1,
+                  "type": "array",
+                  "x-kubernetes-list-type": "set"
                 },
                 "insecureSkipVerify": {
                   "type": "boolean"
@@ -9684,6 +9755,12 @@
         }
       },
       "type": "object",
+      "x-kubernetes-validations": [
+        {
+          "message": "shards must be greater than or equal to the number of topology values when sharding strategy mode is Topology",
+          "rule": "!has(self.shardingStrategy) || !has(self.shardingStrategy.mode) || self.shardingStrategy.mode != 'Topology' || !has(self.shardingStrategy.topology) || !has(self.shardingStrategy.topology.values) || self.shardingStrategy.topology.values.size() == 0 || (has(self.shards) ? self.shards : 1) >= self.shardingStrategy.topology.values.size()"
+        }
+      ],
       "additionalProperties": false
     },
     "status": {
