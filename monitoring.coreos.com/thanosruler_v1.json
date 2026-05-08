@@ -2147,6 +2147,22 @@
             "certFile": {
               "type": "string"
             },
+            "cipherSuites": {
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array",
+              "x-kubernetes-list-type": "set"
+            },
+            "curves": {
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array",
+              "x-kubernetes-list-type": "set"
+            },
             "insecureSkipVerify": {
               "type": "boolean"
             },
@@ -4176,6 +4192,10 @@
                     "x-kubernetes-map-type": "atomic",
                     "additionalProperties": false
                   },
+                  "externalId": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
                   "profile": {
                     "type": "string"
                   },
@@ -4210,6 +4230,12 @@
                   }
                 },
                 "type": "object",
+                "x-kubernetes-validations": [
+                  {
+                    "message": "externalId can only be used when roleArn is specified",
+                    "rule": "!has(self.externalId) || has(self.roleArn)"
+                  }
+                ],
                 "additionalProperties": false
               },
               "tlsConfig": {
