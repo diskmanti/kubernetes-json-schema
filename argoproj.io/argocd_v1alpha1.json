@@ -657,6 +657,21 @@
                   "description": "LogLevel refers to the log level used by the Agent component.",
                   "type": "string"
                 },
+                "metrics": {
+                  "description": "Metrics defines the metrics configuration for the Agent ServiceMonitor.",
+                  "properties": {
+                    "interval": {
+                      "description": "Interval specifies the Prometheus scrape interval for this component's ServiceMonitor.\nIf empty, Prometheus uses its default scrape interval.",
+                      "type": "string"
+                    },
+                    "scrapeTimeout": {
+                      "description": "ScrapeTimeout specifies the Prometheus scrape timeout for this component's ServiceMonitor.\nIf empty, Prometheus uses the global scrape timeout.",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object",
+                  "additionalProperties": false
+                },
                 "redis": {
                   "description": "Redis defines the Redis options for the Agent component.",
                   "properties": {
@@ -886,6 +901,21 @@
                 "logLevel": {
                   "description": "LogLevel refers to the log level used by the Principal component.",
                   "type": "string"
+                },
+                "metrics": {
+                  "description": "Metrics defines the metrics configuration for the Principal ServiceMonitor.",
+                  "properties": {
+                    "interval": {
+                      "description": "Interval specifies the Prometheus scrape interval for this component's ServiceMonitor.\nIf empty, Prometheus uses its default scrape interval.",
+                      "type": "string"
+                    },
+                    "scrapeTimeout": {
+                      "description": "ScrapeTimeout specifies the Prometheus scrape timeout for this component's ServiceMonitor.\nIf empty, Prometheus uses the global scrape timeout.",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object",
+                  "additionalProperties": false
                 },
                 "namespace": {
                   "description": "Namespace is the configuration for the Principal component namespace.",
@@ -1216,6 +1246,21 @@
               "description": "LogLevel refers to the log level used by the Application Controller component. Defaults to ArgoCDDefaultLogLevel if not configured. Valid options are debug, info, error, and warn.",
               "type": "string"
             },
+            "metrics": {
+              "description": "Metrics defines the metrics configuration for the Application Controller ServiceMonitor.",
+              "properties": {
+                "interval": {
+                  "description": "Interval specifies the Prometheus scrape interval for this component's ServiceMonitor.\nIf empty, Prometheus uses its default scrape interval.",
+                  "type": "string"
+                },
+                "scrapeTimeout": {
+                  "description": "ScrapeTimeout specifies the Prometheus scrape timeout for this component's ServiceMonitor.\nIf empty, Prometheus uses the global scrape timeout.",
+                  "type": "string"
+                }
+              },
+              "type": "object",
+              "additionalProperties": false
+            },
             "parallelismLimit": {
               "description": "ParallelismLimit defines the limit for parallel kubectl operations",
               "format": "int32",
@@ -1306,6 +1351,15 @@
             "sharding": {
               "description": "Sharding contains the options for the Application Controller sharding configuration.",
               "properties": {
+                "algorithm": {
+                  "description": "DistributionAlgorithm determines what algorithm will be used for distribution of shards. Valid options are legacy, round-robin, and consistent-hashing",
+                  "enum": [
+                    "legacy",
+                    "round-robin",
+                    "consistent-hashing"
+                  ],
+                  "type": "string"
+                },
                 "clustersPerShard": {
                   "description": "ClustersPerShard defines the maximum number of clusters managed by each argocd shard",
                   "format": "int32",
@@ -1926,7 +1980,6 @@
           "description": "NetworkPolicy controls whether the operator should create NetworkPolicy resources for this Argo CD instance.",
           "properties": {
             "enabled": {
-              "default": true,
               "description": "Enabled defines whether NetworkPolicy resources should be created for this Argo CD instance.\nWhen enabled, the operator will reconcile NetworkPolicies for Argo CD components.\nWhen disabled, the operator will remove any previously-created NetworkPolicies.",
               "type": "boolean"
             }
@@ -2164,6 +2217,21 @@
             "logformat": {
               "description": "Deprecated: use LogFormat instead.",
               "type": "string"
+            },
+            "metrics": {
+              "description": "Metrics defines the metrics configuration for the Notifications ServiceMonitor.",
+              "properties": {
+                "interval": {
+                  "description": "Interval specifies the Prometheus scrape interval for this component's ServiceMonitor.\nIf empty, Prometheus uses its default scrape interval.",
+                  "type": "string"
+                },
+                "scrapeTimeout": {
+                  "description": "ScrapeTimeout specifies the Prometheus scrape timeout for this component's ServiceMonitor.\nIf empty, Prometheus uses the global scrape timeout.",
+                  "type": "string"
+                }
+              },
+              "type": "object",
+              "additionalProperties": false
             },
             "replicas": {
               "description": "Replicas defines the number of replicas to run for notifications-controller",
@@ -4123,6 +4191,21 @@
             "logLevel": {
               "description": "LogLevel describes the log level that should be used by the Repo Server. Defaults to ArgoCDDefaultLogLevel if not set.  Valid options are debug, info, error, and warn.",
               "type": "string"
+            },
+            "metrics": {
+              "description": "Metrics defines the metrics configuration for the Repo Server ServiceMonitor.",
+              "properties": {
+                "interval": {
+                  "description": "Interval specifies the Prometheus scrape interval for this component's ServiceMonitor.\nIf empty, Prometheus uses its default scrape interval.",
+                  "type": "string"
+                },
+                "scrapeTimeout": {
+                  "description": "ScrapeTimeout specifies the Prometheus scrape timeout for this component's ServiceMonitor.\nIf empty, Prometheus uses the global scrape timeout.",
+                  "type": "string"
+                }
+              },
+              "type": "object",
+              "additionalProperties": false
             },
             "mountsatoken": {
               "description": "MountSAToken describes whether you would like to have the Repo server mount the service account token",
@@ -7676,6 +7759,21 @@
             "logLevel": {
               "description": "LogLevel refers to the log level to be used by the ArgoCD Server component. Defaults to ArgoCDDefaultLogLevel if not set.  Valid options are debug, info, error, and warn.",
               "type": "string"
+            },
+            "metrics": {
+              "description": "Metrics defines the metrics configuration for the Server ServiceMonitor.",
+              "properties": {
+                "interval": {
+                  "description": "Interval specifies the Prometheus scrape interval for this component's ServiceMonitor.\nIf empty, Prometheus uses its default scrape interval.",
+                  "type": "string"
+                },
+                "scrapeTimeout": {
+                  "description": "ScrapeTimeout specifies the Prometheus scrape timeout for this component's ServiceMonitor.\nIf empty, Prometheus uses the global scrape timeout.",
+                  "type": "string"
+                }
+              },
+              "type": "object",
+              "additionalProperties": false
             },
             "replicas": {
               "description": "Replicas defines the number of replicas for argocd-server. Default is nil. Value should be greater than or equal to 0. Value will be ignored if Autoscaler is enabled.",
