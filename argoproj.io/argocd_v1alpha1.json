@@ -1367,7 +1367,7 @@
                   "type": "integer"
                 },
                 "dynamicScalingEnabled": {
-                  "description": "DynamicScalingEnabled defines whether dynamic scaling should be enabled for Application Controller component",
+                  "description": "Deprecated: dynamicScalingEnabled is deprecated and will be removed in a future release.\nDynamicScalingEnabled defines whether dynamic scaling should be enabled for Application Controller component.",
                   "type": "boolean"
                 },
                 "enabled": {
