@@ -260,7 +260,7 @@
         "conditions": {
           "description": "Conditions holds the current service state of the autoscaling controller.",
           "items": {
-            "description": "Condition represents Elasticsearch resource's condition.\n**This API is in technical preview and may be changed or removed in a future release.**",
+            "description": "Condition represents the ECK resource's condition.",
             "properties": {
               "lastTransitionTime": {
                 "format": "date-time",
@@ -273,7 +273,7 @@
                 "type": "string"
               },
               "type": {
-                "description": "ConditionType defines the condition of an Elasticsearch resource.",
+                "description": "ConditionType defines the condition of a resource.",
                 "type": "string"
               }
             },
