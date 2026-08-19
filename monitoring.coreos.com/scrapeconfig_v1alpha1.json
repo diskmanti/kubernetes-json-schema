@@ -5625,6 +5625,7 @@
         },
         "keepDroppedTargets": {
           "format": "int64",
+          "minimum": 0,
           "type": "integer"
         },
         "kubernetesSDConfigs": {
@@ -6808,14 +6809,17 @@
         },
         "labelLimit": {
           "format": "int64",
+          "minimum": 0,
           "type": "integer"
         },
         "labelNameLengthLimit": {
           "format": "int64",
+          "minimum": 0,
           "type": "integer"
         },
         "labelValueLengthLimit": {
           "format": "int64",
+          "minimum": 0,
           "type": "integer"
         },
         "lightSailSDConfigs": {
@@ -7967,6 +7971,7 @@
               },
               "modulus": {
                 "format": "int64",
+                "minimum": 0,
                 "type": "integer"
               },
               "regex": {
@@ -8016,6 +8021,7 @@
         },
         "nativeHistogramBucketLimit": {
           "format": "int64",
+          "minimum": 0,
           "type": "integer"
         },
         "nativeHistogramMinBucketFactor": {
@@ -9856,6 +9862,7 @@
               },
               "modulus": {
                 "format": "int64",
+                "minimum": 0,
                 "type": "integer"
               },
               "regex": {
@@ -9885,6 +9892,7 @@
         },
         "sampleLimit": {
           "format": "int64",
+          "minimum": 0,
           "type": "integer"
         },
         "scalewaySDConfigs": {
@@ -10225,6 +10233,7 @@
         },
         "targetLimit": {
           "format": "int64",
+          "minimum": 0,
           "type": "integer"
         },
         "tlsConfig": {

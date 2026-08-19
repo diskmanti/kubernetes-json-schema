@@ -134,18 +134,22 @@
         },
         "keepDroppedTargets": {
           "format": "int64",
+          "minimum": 0,
           "type": "integer"
         },
         "labelLimit": {
           "format": "int64",
+          "minimum": 0,
           "type": "integer"
         },
         "labelNameLengthLimit": {
           "format": "int64",
+          "minimum": 0,
           "type": "integer"
         },
         "labelValueLengthLimit": {
           "format": "int64",
+          "minimum": 0,
           "type": "integer"
         },
         "metricRelabelings": {
@@ -181,6 +185,7 @@
               },
               "modulus": {
                 "format": "int64",
+                "minimum": 0,
                 "type": "integer"
               },
               "regex": {
@@ -212,6 +217,7 @@
         },
         "nativeHistogramBucketLimit": {
           "format": "int64",
+          "minimum": 0,
           "type": "integer"
         },
         "nativeHistogramMinBucketFactor": {
@@ -592,6 +598,7 @@
         },
         "sampleLimit": {
           "format": "int64",
+          "minimum": 0,
           "type": "integer"
         },
         "scrapeClass": {
@@ -624,6 +631,7 @@
         },
         "targetLimit": {
           "format": "int64",
+          "minimum": 0,
           "type": "integer"
         },
         "targets": {
@@ -678,6 +686,7 @@
                       },
                       "modulus": {
                         "format": "int64",
+                        "minimum": 0,
                         "type": "integer"
                       },
                       "regex": {
@@ -789,6 +798,7 @@
                       },
                       "modulus": {
                         "format": "int64",
+                        "minimum": 0,
                         "type": "integer"
                       },
                       "regex": {
