@@ -1139,6 +1139,7 @@
               },
               "services": {
                 "items": {
+                  "minLength": 1,
                   "type": "string"
                 },
                 "type": "array",
@@ -1150,6 +1151,7 @@
               },
               "tags": {
                 "items": {
+                  "minLength": 1,
                   "type": "string"
                 },
                 "type": "array",
@@ -1989,7 +1991,6 @@
                 "type": "boolean"
               },
               "host": {
-                "minLength": 1,
                 "pattern": "^[a-zA-Z][a-zA-Z0-9+.-]*://.+$",
                 "type": "string"
               },
@@ -4390,9 +4391,7 @@
               },
               "role": {
                 "enum": [
-                  "hcloud",
                   "Hcloud",
-                  "robot",
                   "Robot"
                 ],
                 "type": "string"
@@ -5729,6 +5728,7 @@
                 "properties": {
                   "names": {
                     "items": {
+                      "minLength": 1,
                       "type": "string"
                     },
                     "type": "array",
@@ -8915,11 +8915,8 @@
               "availability": {
                 "enum": [
                   "Public",
-                  "public",
                   "Admin",
-                  "admin",
-                  "Internal",
-                  "internal"
+                  "Internal"
                 ],
                 "type": "string"
               },
