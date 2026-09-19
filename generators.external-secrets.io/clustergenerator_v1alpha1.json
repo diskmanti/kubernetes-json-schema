@@ -117,7 +117,7 @@
                           "description": "ServiceAccountRef specified the service account\nthat should be used when authenticating with WorkloadIdentity.",
                           "properties": {
                             "audiences": {
-                              "description": "Audience specifies the `aud` claim for the service account token\nIf the service account uses a well-known annotation for e.g. IRSA or GCP Workload Identity\nthen this audiences will be appended to the list",
+                              "description": "Audience specifies the `aud` claim for the service account token\nSome providers automatically extend the audience field based on well-known annotations for workload\nidentity (e.g. IRSA or GCP Workload Identity)",
                               "items": {
                                 "type": "string"
                               },
@@ -354,7 +354,7 @@
                   "description": "Name of the service account you are federating with",
                   "properties": {
                     "audiences": {
-                      "description": "Audience specifies the `aud` claim for the service account token\nIf the service account uses a well-known annotation for e.g. IRSA or GCP Workload Identity\nthen this audiences will be appended to the list",
+                      "description": "Audience specifies the `aud` claim for the service account token\nSome providers automatically extend the audience field based on well-known annotations for workload\nidentity (e.g. IRSA or GCP Workload Identity)",
                       "items": {
                         "type": "string"
                       },
@@ -407,7 +407,7 @@
                           "description": "ServiceAccountSelector is a reference to a ServiceAccount resource.",
                           "properties": {
                             "audiences": {
-                              "description": "Audience specifies the `aud` claim for the service account token\nIf the service account uses a well-known annotation for e.g. IRSA or GCP Workload Identity\nthen this audiences will be appended to the list",
+                              "description": "Audience specifies the `aud` claim for the service account token\nSome providers automatically extend the audience field based on well-known annotations for workload\nidentity (e.g. IRSA or GCP Workload Identity)",
                               "items": {
                                 "type": "string"
                               },
@@ -627,7 +627,7 @@
                           "description": "ServiceAccountSelector is a reference to a ServiceAccount resource.",
                           "properties": {
                             "audiences": {
-                              "description": "Audience specifies the `aud` claim for the service account token\nIf the service account uses a well-known annotation for e.g. IRSA or GCP Workload Identity\nthen this audiences will be appended to the list",
+                              "description": "Audience specifies the `aud` claim for the service account token\nSome providers automatically extend the audience field based on well-known annotations for workload\nidentity (e.g. IRSA or GCP Workload Identity)",
                               "items": {
                                 "type": "string"
                               },
@@ -760,7 +760,7 @@
                           "description": "serviceAccountRef is the reference to the kubernetes ServiceAccount to be used for obtaining the tokens,\nwhen Kubernetes is configured as provider in workload identity pool.",
                           "properties": {
                             "audiences": {
-                              "description": "Audience specifies the `aud` claim for the service account token\nIf the service account uses a well-known annotation for e.g. IRSA or GCP Workload Identity\nthen this audiences will be appended to the list",
+                              "description": "Audience specifies the `aud` claim for the service account token\nSome providers automatically extend the audience field based on well-known annotations for workload\nidentity (e.g. IRSA or GCP Workload Identity)",
                               "items": {
                                 "type": "string"
                               },
@@ -891,6 +891,118 @@
               "type": "object",
               "additionalProperties": false
             },
+            "gitlabDeployTokenSpec": {
+              "description": "GitlabDeployTokenSpec defines the desired state to generate a GitLab deploy token.",
+              "properties": {
+                "auth": {
+                  "description": "Auth configures how ESO authenticates with the GitLab API.",
+                  "properties": {
+                    "token": {
+                      "description": "Token references a secret containing a GitLab access token (personal, group, or\nproject) with the api scope and at least the Maintainer role on the target.",
+                      "properties": {
+                        "secretRef": {
+                          "description": "SecretKeySelector is a reference to a specific 'key' within a Secret resource.\nIn some instances, `key` is a required field.",
+                          "properties": {
+                            "key": {
+                              "description": "A key in the referenced Secret.\nSome instances of this field may be defaulted, in others it may be required.",
+                              "maxLength": 253,
+                              "minLength": 1,
+                              "pattern": "^[-._a-zA-Z0-9]+$",
+                              "type": "string"
+                            },
+                            "name": {
+                              "description": "The name of the Secret resource being referred to.",
+                              "maxLength": 253,
+                              "minLength": 1,
+                              "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*$",
+                              "type": "string"
+                            },
+                            "namespace": {
+                              "description": "The namespace of the Secret resource being referred to.\nIgnored if referent is not cluster-scoped, otherwise defaults to the namespace of the referent.",
+                              "maxLength": 63,
+                              "minLength": 1,
+                              "pattern": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+                              "type": "string"
+                            }
+                          },
+                          "type": "object",
+                          "additionalProperties": false
+                        }
+                      },
+                      "required": [
+                        "secretRef"
+                      ],
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": [
+                    "token"
+                  ],
+                  "type": "object",
+                  "additionalProperties": false
+                },
+                "expiresAt": {
+                  "description": "ExpiresAt is an optional expiry for the deploy token. If omitted the token does\nnot expire on the GitLab side and is revoked only when the generator state is\ncleaned up (on regeneration or when the consuming ExternalSecret is deleted).",
+                  "format": "date-time",
+                  "type": "string"
+                },
+                "groupID": {
+                  "description": "GroupID is the numeric ID or unescaped path (e.g. parent/group) of the group to\ncreate the deploy token in. The generator URL-escapes paths before calling the\nGitLab API, so do not pre-encode. Mutually exclusive with projectID.",
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "name": {
+                  "description": "Name of the deploy token.",
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "projectID": {
+                  "description": "ProjectID is the numeric ID or unescaped path (e.g. group/project) of the\nproject to create the deploy token in. The generator URL-escapes paths before\ncalling the GitLab API, so do not pre-encode. Mutually exclusive with groupID.",
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "scopes": {
+                  "description": "Scopes granted to the deploy token. At least one scope is required.",
+                  "items": {
+                    "description": "GitlabDeployTokenScope is a scope that can be granted to a GitLab deploy token.",
+                    "enum": [
+                      "read_repository",
+                      "read_registry",
+                      "write_registry",
+                      "read_package_registry",
+                      "write_package_registry",
+                      "read_virtual_registry",
+                      "write_virtual_registry"
+                    ],
+                    "type": "string"
+                  },
+                  "minItems": 1,
+                  "type": "array"
+                },
+                "url": {
+                  "description": "URL configures the GitLab instance URL. Defaults to https://gitlab.com.",
+                  "type": "string"
+                },
+                "username": {
+                  "description": "Username is an optional username for the deploy token. GitLab defaults it to\ngitlab+deploy-token-{n} when omitted.",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "auth",
+                "name",
+                "scopes"
+              ],
+              "type": "object",
+              "x-kubernetes-validations": [
+                {
+                  "message": "exactly one of projectID or groupID must be set",
+                  "rule": "has(self.projectID) != has(self.groupID)"
+                }
+              ],
+              "additionalProperties": false
+            },
             "grafanaSpec": {
               "description": "GrafanaSpec controls the behavior of the grafana generator.",
               "properties": {
@@ -968,6 +1080,12 @@
                     "role": {
                       "description": "Role is the role of the service account.\nSee here for the documentation on basic roles offered by Grafana:\nhttps://grafana.com/docs/grafana/latest/administration/roles-and-permissions/access-control/rbac-fixed-basic-role-definitions/",
                       "type": "string"
+                    },
+                    "secondsToLive": {
+                      "description": "SecondsToLive is the number of seconds before the generated service account token will expire.\nSome Grafana deployments (e.g. AWS Managed Grafana) require this value to be set.",
+                      "format": "int64",
+                      "minimum": 1,
+                      "type": "integer"
                     }
                   },
                   "required": [
@@ -1115,7 +1233,7 @@
                   "description": "Name of the service account you are federating with",
                   "properties": {
                     "audiences": {
-                      "description": "Audience specifies the `aud` claim for the service account token\nIf the service account uses a well-known annotation for e.g. IRSA or GCP Workload Identity\nthen this audiences will be appended to the list",
+                      "description": "Audience specifies the `aud` claim for the service account token\nSome providers automatically extend the audience field based on well-known annotations for workload\nidentity (e.g. IRSA or GCP Workload Identity)",
                       "items": {
                         "type": "string"
                       },
@@ -1194,7 +1312,7 @@
                           "description": "ServiceAccountSelector is a reference to a ServiceAccount resource.",
                           "properties": {
                             "audiences": {
-                              "description": "Audience specifies the `aud` claim for the service account token\nIf the service account uses a well-known annotation for e.g. IRSA or GCP Workload Identity\nthen this audiences will be appended to the list",
+                              "description": "Audience specifies the `aud` claim for the service account token\nSome providers automatically extend the audience field based on well-known annotations for workload\nidentity (e.g. IRSA or GCP Workload Identity)",
                               "items": {
                                 "type": "string"
                               },
@@ -1605,7 +1723,7 @@
                               "description": "ServiceAccountRef to a service account for impersonation",
                               "properties": {
                                 "audiences": {
-                                  "description": "Audience specifies the `aud` claim for the service account token\nIf the service account uses a well-known annotation for e.g. IRSA or GCP Workload Identity\nthen this audiences will be appended to the list",
+                                  "description": "Audience specifies the `aud` claim for the service account token\nSome providers automatically extend the audience field based on well-known annotations for workload\nidentity (e.g. IRSA or GCP Workload Identity)",
                                   "items": {
                                     "type": "string"
                                   },
@@ -1651,7 +1769,7 @@
                                   "description": "ServiceAccountSelector is a reference to a ServiceAccount resource.",
                                   "properties": {
                                     "audiences": {
-                                      "description": "Audience specifies the `aud` claim for the service account token\nIf the service account uses a well-known annotation for e.g. IRSA or GCP Workload Identity\nthen this audiences will be appended to the list",
+                                      "description": "Audience specifies the `aud` claim for the service account token\nSome providers automatically extend the audience field based on well-known annotations for workload\nidentity (e.g. IRSA or GCP Workload Identity)",
                                       "items": {
                                         "type": "string"
                                       },
@@ -1706,7 +1824,7 @@
                                   "description": "ServiceAccountSelector is a reference to a ServiceAccount resource.",
                                   "properties": {
                                     "audiences": {
-                                      "description": "Audience specifies the `aud` claim for the service account token\nIf the service account uses a well-known annotation for e.g. IRSA or GCP Workload Identity\nthen this audiences will be appended to the list",
+                                      "description": "Audience specifies the `aud` claim for the service account token\nSome providers automatically extend the audience field based on well-known annotations for workload\nidentity (e.g. IRSA or GCP Workload Identity)",
                                       "items": {
                                         "type": "string"
                                       },
@@ -1877,7 +1995,7 @@
                                   "description": "Service account field containing the name of a kubernetes ServiceAccount.",
                                   "properties": {
                                     "audiences": {
-                                      "description": "Audience specifies the `aud` claim for the service account token\nIf the service account uses a well-known annotation for e.g. IRSA or GCP Workload Identity\nthen this audiences will be appended to the list",
+                                      "description": "Audience specifies the `aud` claim for the service account token\nSome providers automatically extend the audience field based on well-known annotations for workload\nidentity (e.g. IRSA or GCP Workload Identity)",
                                       "items": {
                                         "type": "string"
                                       },
@@ -1999,7 +2117,7 @@
                               "description": "Optional service account field containing the name of a kubernetes ServiceAccount.\nIf the service account is specified, the service account secret token JWT will be used\nfor authenticating with Vault. If the service account selector is not supplied,\nthe secretRef will be used instead.",
                               "properties": {
                                 "audiences": {
-                                  "description": "Audience specifies the `aud` claim for the service account token\nIf the service account uses a well-known annotation for e.g. IRSA or GCP Workload Identity\nthen this audiences will be appended to the list",
+                                  "description": "Audience specifies the `aud` claim for the service account token\nSome providers automatically extend the audience field based on well-known annotations for workload\nidentity (e.g. IRSA or GCP Workload Identity)",
                                   "items": {
                                     "type": "string"
                                   },
@@ -2580,6 +2698,7 @@
             "Fake",
             "GCRAccessToken",
             "GithubAccessToken",
+            "GitlabDeployToken",
             "QuayAccessToken",
             "Password",
             "SSHKey",
