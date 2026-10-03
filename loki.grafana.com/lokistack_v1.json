@@ -811,12 +811,6 @@
           "description": "Storage defines the spec for the object storage endpoint to store logs.",
           "properties": {
             "schemas": {
-              "default": [
-                {
-                  "effectiveDate": "2020-10-11",
-                  "version": "v11"
-                }
-              ],
               "description": "Schemas for reading and writing logs.",
               "items": {
                 "description": "ObjectStorageSchema defines a schema version and the date when it will become effective.",
@@ -901,6 +895,7 @@
             }
           },
           "required": [
+            "schemas",
             "secret"
           ],
           "type": "object",
