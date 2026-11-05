@@ -157,10 +157,6 @@
                 "directory": {
                   "description": "Directory holds path/directory specific options",
                   "properties": {
-                    "disableExtensionFilter": {
-                      "description": "DisableExtensionFilter controls whether the built-in file-extension filter is skipped during\nmanifest generation. When false (the default), only files with a .yaml, .yml, .json, or\n.jsonnet extension are considered as potential manifests. Set it to true to disable the filter\nso that files with custom extensions (e.g. *.yaml.sealed) can be matched by the include/exclude\nglob patterns instead.",
-                      "type": "boolean"
-                    },
                     "exclude": {
                       "description": "Exclude contains a glob pattern to match paths against that should be explicitly excluded from being used during manifest generation",
                       "type": "string"
@@ -620,10 +616,6 @@
                   "directory": {
                     "description": "Directory holds path/directory specific options",
                     "properties": {
-                      "disableExtensionFilter": {
-                        "description": "DisableExtensionFilter controls whether the built-in file-extension filter is skipped during\nmanifest generation. When false (the default), only files with a .yaml, .yml, .json, or\n.jsonnet extension are considered as potential manifests. Set it to true to disable the filter\nso that files with custom extensions (e.g. *.yaml.sealed) can be matched by the include/exclude\nglob patterns instead.",
-                        "type": "boolean"
-                      },
                       "exclude": {
                         "description": "Exclude contains a glob pattern to match paths against that should be explicitly excluded from being used during manifest generation",
                         "type": "string"
@@ -1223,10 +1215,6 @@
             "directory": {
               "description": "Directory holds path/directory specific options",
               "properties": {
-                "disableExtensionFilter": {
-                  "description": "DisableExtensionFilter controls whether the built-in file-extension filter is skipped during\nmanifest generation. When false (the default), only files with a .yaml, .yml, .json, or\n.jsonnet extension are considered as potential manifests. Set it to true to disable the filter\nso that files with custom extensions (e.g. *.yaml.sealed) can be matched by the include/exclude\nglob patterns instead.",
-                  "type": "boolean"
-                },
                 "exclude": {
                   "description": "Exclude contains a glob pattern to match paths against that should be explicitly excluded from being used during manifest generation",
                   "type": "string"
@@ -1683,10 +1671,6 @@
                 "directory": {
                   "description": "Directory specifies path/directory specific options",
                   "properties": {
-                    "disableExtensionFilter": {
-                      "description": "DisableExtensionFilter controls whether the built-in file-extension filter is skipped during\nmanifest generation. When false (the default), only files with a .yaml, .yml, .json, or\n.jsonnet extension are considered as potential manifests. Set it to true to disable the filter\nso that files with custom extensions (e.g. *.yaml.sealed) can be matched by the include/exclude\nglob patterns instead.",
-                      "type": "boolean"
-                    },
                     "exclude": {
                       "description": "Exclude contains a glob pattern to match paths against that should be explicitly excluded from being used during manifest generation",
                       "type": "string"
@@ -2183,10 +2167,6 @@
               "directory": {
                 "description": "Directory holds path/directory specific options",
                 "properties": {
-                  "disableExtensionFilter": {
-                    "description": "DisableExtensionFilter controls whether the built-in file-extension filter is skipped during\nmanifest generation. When false (the default), only files with a .yaml, .yml, .json, or\n.jsonnet extension are considered as potential manifests. Set it to true to disable the filter\nso that files with custom extensions (e.g. *.yaml.sealed) can be matched by the include/exclude\nglob patterns instead.",
-                    "type": "boolean"
-                  },
                   "exclude": {
                     "description": "Exclude contains a glob pattern to match paths against that should be explicitly excluded from being used during manifest generation",
                     "type": "string"
@@ -2780,7 +2760,7 @@
               "type": "string"
             },
             "message": {
-              "description": "Message is a human-readable informational message describing the health status",
+              "description": "Message is a human-readable informational message describing the health status\n\nDeprecated: this field is not used and will be removed in a future release.",
               "type": "string"
             },
             "status": {
@@ -2847,10 +2827,6 @@
                   "directory": {
                     "description": "Directory holds path/directory specific options",
                     "properties": {
-                      "disableExtensionFilter": {
-                        "description": "DisableExtensionFilter controls whether the built-in file-extension filter is skipped during\nmanifest generation. When false (the default), only files with a .yaml, .yml, .json, or\n.jsonnet extension are considered as potential manifests. Set it to true to disable the filter\nso that files with custom extensions (e.g. *.yaml.sealed) can be matched by the include/exclude\nglob patterns instead.",
-                        "type": "boolean"
-                      },
                       "exclude": {
                         "description": "Exclude contains a glob pattern to match paths against that should be explicitly excluded from being used during manifest generation",
                         "type": "string"
@@ -3310,10 +3286,6 @@
                     "directory": {
                       "description": "Directory holds path/directory specific options",
                       "properties": {
-                        "disableExtensionFilter": {
-                          "description": "DisableExtensionFilter controls whether the built-in file-extension filter is skipped during\nmanifest generation. When false (the default), only files with a .yaml, .yml, .json, or\n.jsonnet extension are considered as potential manifests. Set it to true to disable the filter\nso that files with custom extensions (e.g. *.yaml.sealed) can be matched by the include/exclude\nglob patterns instead.",
-                          "type": "boolean"
-                        },
                         "exclude": {
                           "description": "Exclude contains a glob pattern to match paths against that should be explicitly excluded from being used during manifest generation",
                           "type": "string"
@@ -3935,10 +3907,6 @@
                         "directory": {
                           "description": "Directory holds path/directory specific options",
                           "properties": {
-                            "disableExtensionFilter": {
-                              "description": "DisableExtensionFilter controls whether the built-in file-extension filter is skipped during\nmanifest generation. When false (the default), only files with a .yaml, .yml, .json, or\n.jsonnet extension are considered as potential manifests. Set it to true to disable the filter\nso that files with custom extensions (e.g. *.yaml.sealed) can be matched by the include/exclude\nglob patterns instead.",
-                              "type": "boolean"
-                            },
                             "exclude": {
                               "description": "Exclude contains a glob pattern to match paths against that should be explicitly excluded from being used during manifest generation",
                               "type": "string"
@@ -4398,10 +4366,6 @@
                           "directory": {
                             "description": "Directory holds path/directory specific options",
                             "properties": {
-                              "disableExtensionFilter": {
-                                "description": "DisableExtensionFilter controls whether the built-in file-extension filter is skipped during\nmanifest generation. When false (the default), only files with a .yaml, .yml, .json, or\n.jsonnet extension are considered as potential manifests. Set it to true to disable the filter\nso that files with custom extensions (e.g. *.yaml.sealed) can be matched by the include/exclude\nglob patterns instead.",
-                                "type": "boolean"
-                              },
                               "exclude": {
                                 "description": "Exclude contains a glob pattern to match paths against that should be explicitly excluded from being used during manifest generation",
                                 "type": "string"
@@ -5017,10 +4981,6 @@
                     "directory": {
                       "description": "Directory holds path/directory specific options",
                       "properties": {
-                        "disableExtensionFilter": {
-                          "description": "DisableExtensionFilter controls whether the built-in file-extension filter is skipped during\nmanifest generation. When false (the default), only files with a .yaml, .yml, .json, or\n.jsonnet extension are considered as potential manifests. Set it to true to disable the filter\nso that files with custom extensions (e.g. *.yaml.sealed) can be matched by the include/exclude\nglob patterns instead.",
-                          "type": "boolean"
-                        },
                         "exclude": {
                           "description": "Exclude contains a glob pattern to match paths against that should be explicitly excluded from being used during manifest generation",
                           "type": "string"
@@ -5480,10 +5440,6 @@
                       "directory": {
                         "description": "Directory holds path/directory specific options",
                         "properties": {
-                          "disableExtensionFilter": {
-                            "description": "DisableExtensionFilter controls whether the built-in file-extension filter is skipped during\nmanifest generation. When false (the default), only files with a .yaml, .yml, .json, or\n.jsonnet extension are considered as potential manifests. Set it to true to disable the filter\nso that files with custom extensions (e.g. *.yaml.sealed) can be matched by the include/exclude\nglob patterns instead.",
-                            "type": "boolean"
-                          },
                           "exclude": {
                             "description": "Exclude contains a glob pattern to match paths against that should be explicitly excluded from being used during manifest generation",
                             "type": "string"
@@ -6071,10 +6027,6 @@
                         "directory": {
                           "description": "Directory specifies path/directory specific options",
                           "properties": {
-                            "disableExtensionFilter": {
-                              "description": "DisableExtensionFilter controls whether the built-in file-extension filter is skipped during\nmanifest generation. When false (the default), only files with a .yaml, .yml, .json, or\n.jsonnet extension are considered as potential manifests. Set it to true to disable the filter\nso that files with custom extensions (e.g. *.yaml.sealed) can be matched by the include/exclude\nglob patterns instead.",
-                              "type": "boolean"
-                            },
                             "exclude": {
                               "description": "Exclude contains a glob pattern to match paths against that should be explicitly excluded from being used during manifest generation",
                               "type": "string"
@@ -6596,10 +6548,6 @@
                         "directory": {
                           "description": "Directory specifies path/directory specific options",
                           "properties": {
-                            "disableExtensionFilter": {
-                              "description": "DisableExtensionFilter controls whether the built-in file-extension filter is skipped during\nmanifest generation. When false (the default), only files with a .yaml, .yml, .json, or\n.jsonnet extension are considered as potential manifests. Set it to true to disable the filter\nso that files with custom extensions (e.g. *.yaml.sealed) can be matched by the include/exclude\nglob patterns instead.",
-                              "type": "boolean"
-                            },
                             "exclude": {
                               "description": "Exclude contains a glob pattern to match paths against that should be explicitly excluded from being used during manifest generation",
                               "type": "string"
@@ -7209,10 +7157,6 @@
                     "directory": {
                       "description": "Directory holds path/directory specific options",
                       "properties": {
-                        "disableExtensionFilter": {
-                          "description": "DisableExtensionFilter controls whether the built-in file-extension filter is skipped during\nmanifest generation. When false (the default), only files with a .yaml, .yml, .json, or\n.jsonnet extension are considered as potential manifests. Set it to true to disable the filter\nso that files with custom extensions (e.g. *.yaml.sealed) can be matched by the include/exclude\nglob patterns instead.",
-                          "type": "boolean"
-                        },
                         "exclude": {
                           "description": "Exclude contains a glob pattern to match paths against that should be explicitly excluded from being used during manifest generation",
                           "type": "string"
@@ -7672,10 +7616,6 @@
                       "directory": {
                         "description": "Directory holds path/directory specific options",
                         "properties": {
-                          "disableExtensionFilter": {
-                            "description": "DisableExtensionFilter controls whether the built-in file-extension filter is skipped during\nmanifest generation. When false (the default), only files with a .yaml, .yml, .json, or\n.jsonnet extension are considered as potential manifests. Set it to true to disable the filter\nso that files with custom extensions (e.g. *.yaml.sealed) can be matched by the include/exclude\nglob patterns instead.",
-                            "type": "boolean"
-                          },
                           "exclude": {
                             "description": "Exclude contains a glob pattern to match paths against that should be explicitly excluded from being used during manifest generation",
                             "type": "string"
