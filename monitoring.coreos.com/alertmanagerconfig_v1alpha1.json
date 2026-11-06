@@ -8339,6 +8339,12 @@
                     "roomID"
                   ],
                   "type": "object",
+                  "x-kubernetes-validations": [
+                    {
+                      "message": "httpConfig.authorization or httpConfig.bearerTokenSecret is required",
+                      "rule": "has(self.httpConfig) && (has(self.httpConfig.authorization) || has(self.httpConfig.bearerTokenSecret))"
+                    }
+                  ],
                   "additionalProperties": false
                 },
                 "type": "array",
@@ -9621,6 +9627,30 @@
               "minLength": 1,
               "pattern": "^(0|(([0-9]+)y)?(([0-9]+)w)?(([0-9]+)d)?(([0-9]+)h)?(([0-9]+)m)?(([0-9]+)s)?(([0-9]+)ms)?)$",
               "type": "string"
+            },
+            "labels": {
+              "items": {
+                "properties": {
+                  "key": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "key",
+                  "value"
+                ],
+                "type": "object",
+                "additionalProperties": false
+              },
+              "type": "array",
+              "x-kubernetes-list-map-keys": [
+                "key"
+              ],
+              "x-kubernetes-list-type": "map"
             },
             "matchers": {
               "items": {
