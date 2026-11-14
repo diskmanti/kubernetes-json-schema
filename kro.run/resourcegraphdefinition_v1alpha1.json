@@ -200,7 +200,7 @@
               ]
             },
             "metadata": {
-              "description": "Metadata configures instance name validation and metadata applied to the generated CRD.",
+              "description": "Metadata configures instance metadata validation and metadata applied to the generated CRD.",
               "properties": {
                 "annotations": {
                   "additionalProperties": {
@@ -216,9 +216,16 @@
                   "description": "Labels to apply to the generated CRD",
                   "type": "object"
                 },
-                "nameValidation": {
-                  "description": "NameValidation constrains instance metadata.name using marker-only SimpleSchema syntax.\nSupported markers are minLength, maxLength, pattern, enum, and validation.\nExample: \"maxLength=30 pattern=^[a-z].*$\"",
-                  "type": "string"
+                "validation": {
+                  "description": "Validation defines constraints on instance metadata fields.",
+                  "properties": {
+                    "name": {
+                      "description": "Name constrains instance metadata.name using marker-only SimpleSchema syntax.\nSupported markers are minLength, maxLength, pattern, enum, and validation.\nExample: \"maxLength=30 pattern=^[a-z].*$\"",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object",
+                  "additionalProperties": false
                 }
               },
               "type": "object",
