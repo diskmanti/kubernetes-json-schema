@@ -27,6 +27,9 @@
         "convertClassicHistogramsToNHCB": {
           "type": "boolean"
         },
+        "extraScrapeMetrics": {
+          "type": "boolean"
+        },
         "fallbackScrapeProtocol": {
           "enum": [
             "PrometheusProto",

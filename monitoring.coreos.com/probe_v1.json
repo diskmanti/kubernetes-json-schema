@@ -112,6 +112,9 @@
         "enableHttp2": {
           "type": "boolean"
         },
+        "extraScrapeMetrics": {
+          "type": "boolean"
+        },
         "fallbackScrapeProtocol": {
           "enum": [
             "PrometheusProto",
