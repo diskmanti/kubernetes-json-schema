@@ -306,7 +306,7 @@
         "conditions": {
           "description": "Conditions represent the latest available observations of the ResourceGraphDefinition's state.\nCommon condition types include \"Ready\", \"GraphRevisionsResolved\", \"GraphAccepted\",\n\"KindReady\", and \"ControllerReady\".",
           "items": {
-            "description": "Condition is the common struct used by all CRDs managed by ACK service\ncontrollers to indicate terminal states  of the CR and its backend AWS\nservice API resource",
+            "description": "Condition describes one aspect of the observed state of an object managed by\nkro: a ResourceGraphDefinition, Graph, GraphRevision, or an instance of an\nRGD-generated kind. Conditions are reported in the object's status.conditions\nlist, which holds at most one entry per Type.",
             "properties": {
               "lastTransitionTime": {
                 "description": "Last time the condition transitioned from one status to another.",
